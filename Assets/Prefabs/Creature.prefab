@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 704635377937465742}
   - component: {fileID: 704635377937465739}
   - component: {fileID: 3735576035688760040}
+  - component: {fileID: 2798124344368182291}
   m_Layer: 0
   m_Name: Creature
   m_TagString: Untagged
@@ -143,3 +144,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RangeOfInfluence: 5
+--- !u!114 &2798124344368182291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 704635377937465745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e900b333cc83c449a4a0c7331c54797, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CreatureSpeed: 15
