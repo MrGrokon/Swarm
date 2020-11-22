@@ -49,14 +49,14 @@ public class CreatureManager : MonoBehaviour
     #endregion
 
     #region Creature Master Related
-       public void GetCenterOfMass()
+       /*public void GetCenterOfMass()
        {
 
-       }
+       }*/
     #endregion
 
     #region Low Level Functions
-    private Vector3 GetLimitOnAxis(Vector3 axis, bool _max)
+    /*private Vector3 GetLimitOnAxis(Vector3 axis, bool _max)
     {
         //return the highest or lower cell position on a defined axis
         if (Application.isPlaying == true)
@@ -105,6 +105,6 @@ public class CreatureManager : MonoBehaviour
             }
         }
         return Vector3.zero;
-    }
+    }*/
     #endregion
 }

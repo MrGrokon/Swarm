@@ -30,12 +30,13 @@ public class CreatureAction_Interface : MonoBehaviour
     public Material CrossMaterial;
     public Material ClimbMaterial;
 
-    private void Awake()
-    {
+    private void Start()
+     {
         CreatureManager.Instance.AddCreature(this.gameObject);
         _renderer = this.GetComponent<MeshRenderer>();
         ChangeCreatureAction(CreatureAction.Motion);
-    }
+    }   
+    
 
     #region Creature Action Management
     public void ChangeCreatureAction(CreatureAction _action)
