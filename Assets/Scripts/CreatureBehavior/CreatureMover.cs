@@ -18,11 +18,10 @@ public class CreatureMover : MonoBehaviour
     {
         if(this.gameObject == CreatureManager.Instance.MasterCreature)
         {
-
         }
         else
         {
-
+            this.GetComponent<Rigidbody>().AddForce(DirOfMotion * CreatureSpeed);
         }
     }
 }
