@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -31,12 +32,29 @@ public class CreatureAction_Interface : MonoBehaviour
     public Material ClimbMaterial;
 
     private void Start()
-     {
+    {
         CreatureManager.Instance.AddCreature(this.gameObject);
         _renderer = this.GetComponent<MeshRenderer>();
         ChangeCreatureAction(CreatureAction.Motion);
     }   
     
+
+    private void Update()
+    {
+        if (InputTester.input_Instance.Inputs.Actions.MoveFB.ReadValue<float>() != 0)
+        {
+            var dirValue = InputTester.input_Instance.Inputs.Actions.MoveFB.ReadValue<float>();
+            Vector3 direction = new Vector3(0,0,1 * dirValue); //Prendre en compte le forward de la caméra pour la direction
+            this.GetComponent<CreatureMover>().Move(direction);
+        }
+
+        if (InputTester.input_Instance.Inputs.Actions.MoveRL.ReadValue<float>() != 0)
+        {
+            var dirValue = InputTester.input_Instance.Inputs.Actions.MoveRL.ReadValue<float>();
+            Vector3 direction = new Vector3(1 * dirValue,0,0); //Prendre en compte le forward de la caméra pour la direction
+            this.GetComponent<CreatureMover>().Move(direction);
+        }
+    }
 
     #region Creature Action Management
     public void ChangeCreatureAction(CreatureAction _action)
