@@ -27,6 +27,15 @@ public class CreatureManager : MonoBehaviour
         #endregion
     }
 
+    #region Debug
+    private void OnDrawGizmos() {
+        if(MasterCreature != null){
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(MasterCreature.transform.position, 1f);
+        }
+    }
+    #endregion
+
     #region Creature Managing Functions
     public void AddCreature(GameObject _creature)
     {
