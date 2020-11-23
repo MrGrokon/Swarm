@@ -45,20 +45,23 @@ public class CreatureAction_Interface : MonoBehaviour
 
     private void Update()
     {
-        _joystickDir = new Vector3(InputTester.input_Instance.Inputs.Actions.MoveRL.ReadValue<float>(), 0f, InputTester.input_Instance.Inputs.Actions.MoveFB.ReadValue<float>()).normalized;
+        Vector3  _joystickDir = new Vector3(InputTester.input_Instance.Inputs.Actions.MoveRL.ReadValue<float>(), 0f, InputTester.input_Instance.Inputs.Actions.MoveFB.ReadValue<float>()).normalized;
         if(_joystickDir != Vector3.zero){
-            switch (MyAction)
-            {   
+            switch (MyAction){
+           
                 case CreatureAction.Motion:
+                    Vector3 direction = new Vector3(Camera.main.transform.forward.x,0,Camera.main.transform.forward.z); //Prendre en compte le forward de la caméra pour la direction
+                    //TODO: project on plane de du movement joystick par rapport au ground en prenant en compte les Left/Right de la camera
                     _Mover.Move(_joystickDir);
-                break;
+                    break;
 
-                default:
+                    default:
                     Debug.Log("CreatureAction_Interface -> someting fucked up !");
-                break;
+                    break;
             }
         }
-        else{
+        else
+        {
             //l'info ne s'applique pas, car le systeme de priorité l'override
             ChangeCreatureAction(CreatureAction.Static);
         }

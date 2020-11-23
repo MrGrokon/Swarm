@@ -26,7 +26,8 @@ public class CreatureMover : MonoBehaviour
             //le neigbourg le plus proche dans la direction du joystick 
             //listOfNeighourg[0] -> pourrais etre le this.gameObject
             //c'est pour ca que j'ai choisi de faire le ListOfNeigbourg[1]
-            Debug.Log( this.name +" je bouge vers voisin "+ _coppyCat.GetListOfNeigbourg(DirOfMotion)[1].name);
+            
+            //Debug.Log( this.name +" je bouge vers voisin "+ _coppyCat.GetListOfNeigbourg(DirOfMotion)[1].name);
 
             //fo trouver un moyen de recupérer le voisin avec l'angle qui match le plus vers joystickDir
             //Vector3 MotionDir = ( (_coppyCat.GetListOfNeigbourg(DirOfMotion)[1].transform.position + DirOfMotion) - this.transform.position ).normalized;
