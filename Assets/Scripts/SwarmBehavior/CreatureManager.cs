@@ -84,7 +84,7 @@ public class CreatureManager : MonoBehaviour
            return CenterOfMass;
        }
 
-       public GameObject GetLeaderDynamically(Vector3 JoystickDirection, int NmbOfCellAveraged = 3){
+       public GameObject GetLeaderDynamically(Vector3 JoystickDirection, int NmbOfCellAveraged = 1){
            GameObject[] Cells_orderedByAngle = GetAllCreatures(MaxSwarmDistanceToGetMedian).OrderBy(x => Vector3.Angle(JoystickDirection, x.transform.position - GetCenterOfMass())).ToArray<GameObject>();
             GameObject FarestCellOfAngle = Cells_orderedByAngle[0];
             for (int i = 0; i < NmbOfCellAveraged; i++)

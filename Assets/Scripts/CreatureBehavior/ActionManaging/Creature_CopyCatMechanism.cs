@@ -46,7 +46,7 @@ public class Creature_CopyCatMechanism : MonoBehaviour
         CreatureAction_Interface.CreatureAction _MyAction = _actionInterface.MyAction;
         GameObject[] _Neigbours = GetListOfNeigbourg();
         foreach(var _nb in _Neigbours){
-            Debug.DrawLine(this.transform.position, _nb.transform.position, Color.magenta);
+            //Debug.DrawLine(this.transform.position, _nb.transform.position, Color.magenta);
             CreatureAction_Interface.CreatureAction _nb_Action = _nb.GetComponent<CreatureAction_Interface>().MyAction;
             if(CreatureAction_Interface.Is_A_PriorTo_B(_nb_Action, _MyAction)){
                 _actionInterface.ChangeCreatureAction(_nb_Action);
