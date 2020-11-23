@@ -19,8 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9263cbbd-789f-4c8f-93f5-4ded22655efe" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CameraManager.meta" beforeDir="false" />
+    <list default="true" id="9263cbbd-789f-4c8f-93f5-4ded22655efe" name="Default Changelist" comment="Base du pont avec teleportation des boules vers leur point d'ancre">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/CopyCat_Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/CopyCat_Scene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CreatureBehavior/CreatureMover.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CreatureBehavior/CreatureMover.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,9 +40,30 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CreatureBehavior/CreatureCross.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Théo/Documents/GitHub/Swarm/Swarm/Assets/PlayerInputs.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Théo/Documents/GitHub/Swarm/Swarm/Assets/Prefabs/CameraPrefab.prefab" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Théo/Documents/GitHub/Swarm/Swarm/Assets/Scripts/CameraManager.meta" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Assets/Scripts/CreatureBehavior/CreatureMover.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CreatureBehavior/CreatureCross.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1kh5Ld8f0aydaK3GSCl9WBwTuIN" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Discover.Launch.Via.Unity" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
@@ -61,12 +85,51 @@
       <method v="2" />
     </configuration>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
+    <task id="LOCAL-00001" summary="Base du pont avec teleportation des boules vers leur point d'ancre">
+      <created>1606130518698</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1606130518698</updated>
+    </task>
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9263cbbd-789f-4c8f-93f5-4ded22655efe" name="Default Changelist" comment="Base du pont avec teleportation des boules vers leur point d'ancre" />
+      <created>1606139931140</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1606139931140</updated>
+      <workItem from="1606139949074" duration="3013000" />
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Base du pont avec teleportation des boules vers leur point d'ancre" />
+    <option name="LAST_COMMIT_MESSAGE" value="Base du pont avec teleportation des boules vers leur point d'ancre" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="552" y="293" key="Vcs.Push.Dialog.v2" timestamp="1606130530448">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state x="552" y="293" key="Vcs.Push.Dialog.v2/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1606130530448" />
   </component>
 </project>

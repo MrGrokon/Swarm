@@ -21,7 +21,7 @@ public class CreatureMover : MonoBehaviour
         }
         else
         {
-            this.GetComponent<Rigidbody>().AddForce(DirOfMotion * CreatureSpeed);
+            //this.GetComponent<Rigidbody>().AddForce(DirOfMotion * CreatureSpeed);
         }
     }
 }
