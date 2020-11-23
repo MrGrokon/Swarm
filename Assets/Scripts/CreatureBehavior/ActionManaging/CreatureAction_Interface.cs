@@ -22,6 +22,9 @@ public class CreatureAction_Interface : MonoBehaviour
 
     #region Private vars
     MeshRenderer _renderer;
+    private CreatureMover _Mover;
+
+    Vector3 _joystickDir;
     #endregion
 
     [Header("Matérials Assignation")]
@@ -35,54 +38,61 @@ public class CreatureAction_Interface : MonoBehaviour
     {
         CreatureManager.Instance.AddCreature(this.gameObject);
         _renderer = this.GetComponent<MeshRenderer>();
-        ChangeCreatureAction(CreatureAction.Motion);
+        ChangeCreatureAction(CreatureAction.Static);
+        _Mover = this.GetComponent<CreatureMover>();
     }   
     
 
     private void Update()
     {
-        if (InputTester.input_Instance.Inputs.Actions.MoveFB.ReadValue<float>() != 0)
-        {
-            var dirValue = InputTester.input_Instance.Inputs.Actions.MoveFB.ReadValue<float>();
-            Vector3 direction = new Vector3(0,0,1 * dirValue); //Prendre en compte le forward de la caméra pour la direction
-            this.GetComponent<CreatureMover>().Move(direction);
-        }
+        _joystickDir = new Vector3(InputTester.input_Instance.Inputs.Actions.MoveRL.ReadValue<float>(), 0f, InputTester.input_Instance.Inputs.Actions.MoveFB.ReadValue<float>()).normalized;
+        if(_joystickDir != Vector3.zero){
+            switch (MyAction)
+            {   
+                case CreatureAction.Motion:
+                    _Mover.Move(_joystickDir);
+                break;
 
-        if (InputTester.input_Instance.Inputs.Actions.MoveRL.ReadValue<float>() != 0)
-        {
-            var dirValue = InputTester.input_Instance.Inputs.Actions.MoveRL.ReadValue<float>();
-            Vector3 direction = new Vector3(1 * dirValue,0,0); //Prendre en compte le forward de la caméra pour la direction
-            this.GetComponent<CreatureMover>().Move(direction);
+                default:
+                    Debug.Log("CreatureAction_Interface -> someting fucked up !");
+                break;
+            }
+        }
+        else{
+            //l'info ne s'applique pas, car le systeme de priorité l'override
+            ChangeCreatureAction(CreatureAction.Static);
         }
     }
 
     #region Creature Action Management
     public void ChangeCreatureAction(CreatureAction _action)
     {
-        switch (_action)
-        {
-            case CreatureAction.Static:
-                _renderer.material = StandardMaterial;
-                break;
+        if(MyAction != _action){
+            switch (_action)
+            {
+                case CreatureAction.Static:
+                    _renderer.material = StandardMaterial;
+                    break;
 
-            case CreatureAction.Motion:
-                _renderer.material = MotionMaterial;
-                break;
+                case CreatureAction.Motion:
+                    _renderer.material = MotionMaterial;
+                    break;
 
-            case CreatureAction.Climb:
-                _renderer.material = ClimbMaterial;
-                break;
+                case CreatureAction.Climb:
+                    _renderer.material = ClimbMaterial;
+                    break;
 
-            case CreatureAction.Cross:
-                _renderer.material = CrossMaterial;
-                break;
+                case CreatureAction.Cross:
+                    _renderer.material = CrossMaterial;
+                    break;
 
 
-            case CreatureAction.Eat:
-                _renderer.material = EatMaterial;
-                break;
-        }
-        MyAction = _action;
+                case CreatureAction.Eat:
+                    _renderer.material = EatMaterial;
+                    break;
+            }
+            MyAction = _action;
+        } 
     }
 
     public static bool Is_A_PriorTo_B(CreatureAction A, CreatureAction B)
@@ -90,18 +100,18 @@ public class CreatureAction_Interface : MonoBehaviour
         int A_priority, B_priority;
         CreatureActionByPriority.TryGetValue(A, out A_priority);
         CreatureActionByPriority.TryGetValue(B, out B_priority);
-        /*if(A_priority == null || B_priority == null)
-        {
-            Debug.Log("A or B is Null");
-            return null;
-        }*/
-        //else{
+
         if(A_priority > B_priority)
         {
+            //Debug.Log("a>b");
             return true;
         }
+        if(A_priority == B_priority){
+            //Debug.Log("a == b");
+            return false;
+        }
+        //Debug.Log("A < B");
         return false;
-        //}
     }
     #endregion
 }

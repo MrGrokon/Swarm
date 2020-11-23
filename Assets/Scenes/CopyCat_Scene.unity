@@ -1354,6 +1354,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Creature (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 2798124344368182291, guid: d715f5a4b4bb85a4c88caad606f68a6f,
+        type: 3}
+      propertyPath: CreatureSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3735576035688760040, guid: d715f5a4b4bb85a4c88caad606f68a6f,
+        type: 3}
+      propertyPath: RangeOfInfluence
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d715f5a4b4bb85a4c88caad606f68a6f, type: 3}
 --- !u!1001 &3839716810603972223
@@ -1417,6 +1427,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3839716809274295633, guid: e127f7045cdcce04aa1b8876fdc889b5,
+        type: 3}
+      propertyPath: MaxSwarmDistanceToGetMedian
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 3839716809274295634, guid: e127f7045cdcce04aa1b8876fdc889b5,
         type: 3}
