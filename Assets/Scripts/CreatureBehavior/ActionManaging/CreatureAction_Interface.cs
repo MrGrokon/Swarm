@@ -44,16 +44,17 @@ public class CreatureAction_Interface : MonoBehaviour
         if (InputTester.input_Instance.Inputs.Actions.MoveFB.ReadValue<float>() != 0)
         {
             var dirValue = InputTester.input_Instance.Inputs.Actions.MoveFB.ReadValue<float>();
-            Vector3 direction = new Vector3(0,0,1 * dirValue); //Prendre en compte le forward de la caméra pour la direction
+            Vector3 direction = new Vector3(Camera.main.transform.forward.x,0,Camera.main.transform.forward.z); //Prendre en compte le forward de la caméra pour la direction
             this.GetComponent<CreatureMover>().Move(direction);
         }
 
         if (InputTester.input_Instance.Inputs.Actions.MoveRL.ReadValue<float>() != 0)
         {
             var dirValue = InputTester.input_Instance.Inputs.Actions.MoveRL.ReadValue<float>();
-            Vector3 direction = new Vector3(1 * dirValue,0,0); //Prendre en compte le forward de la caméra pour la direction
+            Vector3 direction = new Vector3(Camera.main.transform.forward.x,0,Camera.main.transform.forward.z); //Prendre en compte le forward de la caméra pour la direction
             this.GetComponent<CreatureMover>().Move(direction);
         }
+        Debug.DrawRay(Camera.main.transform.position, new Vector3(Camera.main.transform.forward.x,0,Camera.main.transform.forward.z) * 5f, Color.red);
     }
 
     #region Creature Action Management
