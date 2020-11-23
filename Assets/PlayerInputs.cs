@@ -33,6 +33,14 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Axis"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""RotateCamera"",
+                    ""type"": ""Value"",
+                    ""id"": ""b091a6f6-1904-4e20-a045-a8e0632955ee"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -57,6 +65,39 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                     ""action"": ""Move F/B"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""ce297a5d-11df-485c-838f-c971d25dc716"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RotateCamera"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""9f7e4c47-0f68-4032-a226-71cbac5f1475"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RotateCamera"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""5e5e6e27-796f-4f2a-819e-de8416ff133a"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RotateCamera"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -79,6 +120,7 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
         m_Actions = asset.FindActionMap("Actions", throwIfNotFound: true);
         m_Actions_MoveRL = m_Actions.FindAction("Move R/L", throwIfNotFound: true);
         m_Actions_MoveFB = m_Actions.FindAction("Move F/B", throwIfNotFound: true);
+        m_Actions_RotateCamera = m_Actions.FindAction("RotateCamera", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -130,12 +172,14 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
     private IActionsActions m_ActionsActionsCallbackInterface;
     private readonly InputAction m_Actions_MoveRL;
     private readonly InputAction m_Actions_MoveFB;
+    private readonly InputAction m_Actions_RotateCamera;
     public struct ActionsActions
     {
         private @PlayerInputs m_Wrapper;
         public ActionsActions(@PlayerInputs wrapper) { m_Wrapper = wrapper; }
         public InputAction @MoveRL => m_Wrapper.m_Actions_MoveRL;
         public InputAction @MoveFB => m_Wrapper.m_Actions_MoveFB;
+        public InputAction @RotateCamera => m_Wrapper.m_Actions_RotateCamera;
         public InputActionMap Get() { return m_Wrapper.m_Actions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -151,6 +195,9 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                 @MoveFB.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnMoveFB;
                 @MoveFB.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnMoveFB;
                 @MoveFB.canceled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnMoveFB;
+                @RotateCamera.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnRotateCamera;
+                @RotateCamera.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnRotateCamera;
+                @RotateCamera.canceled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnRotateCamera;
             }
             m_Wrapper.m_ActionsActionsCallbackInterface = instance;
             if (instance != null)
@@ -161,6 +208,9 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                 @MoveFB.started += instance.OnMoveFB;
                 @MoveFB.performed += instance.OnMoveFB;
                 @MoveFB.canceled += instance.OnMoveFB;
+                @RotateCamera.started += instance.OnRotateCamera;
+                @RotateCamera.performed += instance.OnRotateCamera;
+                @RotateCamera.canceled += instance.OnRotateCamera;
             }
         }
     }
@@ -178,5 +228,6 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
     {
         void OnMoveRL(InputAction.CallbackContext context);
         void OnMoveFB(InputAction.CallbackContext context);
+        void OnRotateCamera(InputAction.CallbackContext context);
     }
 }
