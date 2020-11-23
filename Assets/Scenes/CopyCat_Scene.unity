@@ -1444,6 +1444,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Creature (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 2798124344368182291, guid: d715f5a4b4bb85a4c88caad606f68a6f,
+        type: 3}
+      propertyPath: CreatureSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3735576035688760040, guid: d715f5a4b4bb85a4c88caad606f68a6f,
+        type: 3}
+      propertyPath: RangeOfInfluence
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d715f5a4b4bb85a4c88caad606f68a6f, type: 3}
 --- !u!1001 &1574959836826929891

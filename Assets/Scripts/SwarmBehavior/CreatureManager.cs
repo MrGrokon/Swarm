@@ -11,7 +11,7 @@ public class CreatureManager : MonoBehaviour
     [SerializeField]
     private List<GameObject> SwarmCreatures = new List<GameObject>();
 
-    public float MaxSwarmDistanceToGetMedian = 5f;
+    public float MaxSwarmDistanceToGetMedian = -1f;
 
     private void Awake()
     {
@@ -84,6 +84,7 @@ public class CreatureManager : MonoBehaviour
                     FarestCellOfAngle = Cells_orderedByAngle[i];
                 }
             }
+            MasterCreature = FarestCellOfAngle;
             return FarestCellOfAngle;
        }
     #endregion
