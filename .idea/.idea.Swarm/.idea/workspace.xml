@@ -19,9 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9263cbbd-789f-4c8f-93f5-4ded22655efe" name="Default Changelist" comment="Base du pont avec teleportation des boules vers leur point d'ancre">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/indexLayout.xml" afterDir="false" />
+    <list default="true" id="9263cbbd-789f-4c8f-93f5-4ded22655efe" name="Default Changelist" comment="Amélioration du pont avec premier déplacement des boules adjacentes vers le master">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PlayerInputs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlayerInputs.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PlayerInputs.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlayerInputs.inputactions" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Creature.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Creature.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/CopyCat_Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/CopyCat_Scene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/CreatureBehavior/CreatureMover.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CreatureBehavior/CreatureMover.cs" afterDir="false" />
     </list>
@@ -65,7 +67,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor &amp; Play">
     <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
@@ -100,9 +102,17 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1606139931140</updated>
-      <workItem from="1606139949074" duration="3013000" />
+      <workItem from="1606139949074" duration="4353000" />
+      <workItem from="1606232249250" duration="4652000" />
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Amélioration du pont avec premier déplacement des boules adjacentes vers le master">
+      <created>1606143109063</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1606143109063</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -124,7 +134,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Base du pont avec teleportation des boules vers leur point d'ancre" />
-    <option name="LAST_COMMIT_MESSAGE" value="Base du pont avec teleportation des boules vers leur point d'ancre" />
+    <MESSAGE value="Amélioration du pont avec premier déplacement des boules adjacentes vers le master" />
+    <option name="LAST_COMMIT_MESSAGE" value="Amélioration du pont avec premier déplacement des boules adjacentes vers le master" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="293" key="Vcs.Push.Dialog.v2" timestamp="1606130530448">

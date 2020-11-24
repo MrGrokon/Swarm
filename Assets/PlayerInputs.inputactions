@@ -20,6 +20,22 @@
                     "expectedControlType": "Axis",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "Bridge R/L",
+                    "type": "Value",
+                    "id": "57bc3603-7e8e-4bca-bd26-5f930e58a9fe",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Bridge F/B",
+                    "type": "Value",
+                    "id": "92737d9d-605a-4bc8-ab84-84cdf834ba80",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -42,6 +58,28 @@
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "Move F/B",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8dbfd0dc-38ce-49f3-b9ad-64b921f6af14",
+                    "path": "<Gamepad>/rightStick/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Bridge R/L",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1911c0d5-9ce5-4416-b362-016d18b49a18",
+                    "path": "<Gamepad>/rightStick/y",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Bridge F/B",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
