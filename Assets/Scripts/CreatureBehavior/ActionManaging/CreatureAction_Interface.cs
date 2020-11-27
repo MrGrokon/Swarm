@@ -63,6 +63,7 @@ public class CreatureAction_Interface : MonoBehaviour
         else
         {
             //l'info ne s'applique pas, car le systeme de priorité l'override
+            //CA TJR PAS MARCHE !
             ChangeCreatureAction(CreatureAction.Static);
         }
     }
