@@ -20,8 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e9a9fd44-a60f-4fbc-b03b-f25159acb4b3" name="Default Changelist" comment="Camera system implémenté">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CreatureBehavior/ActionManaging/CreatureAction_Interface.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CreatureBehavior/ActionManaging/CreatureAction_Interface.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PlayerInputs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlayerInputs.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PlayerInputs.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlayerInputs.inputactions" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/CopyCat_Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/CopyCat_Scene.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,11 +32,20 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock://C:/Users/Théo/Documents/GitHub/Swarm/Swarm/Assets/PlayerInputs.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Théo/Documents/GitHub/Swarm/Swarm/Assets/Prefabs/CameraPrefab.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Théo/Documents/GitHub/Swarm/Swarm/Assets/Scenes/CopyCat_Scene.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Théo/Documents/GitHub/Swarm/Swarm/Assets/Scenes/CopyCat_Scene.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://diff.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://diff.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Théo/Documents/GitHub/Swarm/Swarm/Assets/Scenes/CopyCat_Scene.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Théo/Documents/GitHub/Swarm/Swarm/Assets/Scenes/CopyCat_Scene.unity" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -42,6 +54,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/CreatureBehavior/CreatureMover.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CameraManager/CameraManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CreatureBehavior/ActionManaging/CreatureAction_Interface.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CreatureBehavior/CreatureCross.cs" />
       </list>
     </option>
   </component>
@@ -124,9 +137,21 @@
     <option name="LAST_COMMIT_MESSAGE" value="Camera system implémenté" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="184" y="126" key="MergeDialog" timestamp="1606658624057">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state x="184" y="126" key="MergeDialog/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1606658624057" />
+    <state x="598" y="321" key="MultipleFileMergeDialog" timestamp="1606658650636">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state x="598" y="321" key="MultipleFileMergeDialog/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1606658650636" />
     <state x="552" y="293" key="Vcs.Push.Dialog.v2" timestamp="1606123682944">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="552" y="293" key="Vcs.Push.Dialog.v2/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1606123682944" />
+    <state x="732" y="274" key="git4idea.branch.GitSmartOperationDialog" timestamp="1606658592382">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state x="732" y="274" key="git4idea.branch.GitSmartOperationDialog/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1606658592382" />
   </component>
 </project>
