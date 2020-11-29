@@ -19,13 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9263cbbd-789f-4c8f-93f5-4ded22655efe" name="Default Changelist" comment="Amélioration du pont avec premier déplacement des boules adjacentes vers le master">
+    <list default="true" id="e9a9fd44-a60f-4fbc-b03b-f25159acb4b3" name="Default Changelist" comment="Camera system implémenté">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayerInputs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlayerInputs.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayerInputs.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlayerInputs.inputactions" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Creature.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Creature.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/CopyCat_Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/CopyCat_Scene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CreatureBehavior/CreatureMover.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CreatureBehavior/CreatureMover.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CreatureBehavior/ActionManaging/CreatureAction_Interface.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CreatureBehavior/ActionManaging/CreatureAction_Interface.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,25 +29,23 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="main" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CreatureBehavior/CreatureCross.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Théo/Documents/GitHub/Swarm/Swarm/Assets/PlayerInputs.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Théo/Documents/GitHub/Swarm/Swarm/Assets/Prefabs/CameraPrefab.prefab" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/Assets/CameraManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CreatureBehavior/CreatureMover.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/CreatureBehavior/CreatureCross.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CameraManager/CameraManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CreatureBehavior/ActionManaging/CreatureAction_Interface.cs" />
       </list>
     </option>
   </component>
-  <component name="ProjectId" id="1kh5Ld8f0aydaK3GSCl9WBwTuIN" />
+  <component name="ProjectId" id="1kgWRL9xhW13eBvb9G63GM0hhKZ" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -61,13 +55,14 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor &amp; Play">
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
@@ -89,30 +84,22 @@
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
-    <task id="LOCAL-00001" summary="Base du pont avec teleportation des boules vers leur point d'ancre">
-      <created>1606130518698</created>
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e9a9fd44-a60f-4fbc-b03b-f25159acb4b3" name="Default Changelist" comment="" />
+      <created>1606122712142</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1606122712142</updated>
+      <workItem from="1606122731146" duration="1657000" />
+    </task>
+    <task id="LOCAL-00001" summary="Camera system implémenté">
+      <created>1606123669149</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1606130518698</updated>
+      <updated>1606123669149</updated>
     </task>
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="9263cbbd-789f-4c8f-93f5-4ded22655efe" name="Default Changelist" comment="Base du pont avec teleportation des boules vers leur point d'ancre" />
-      <created>1606139931140</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1606139931140</updated>
-      <workItem from="1606139949074" duration="4353000" />
-      <workItem from="1606232249250" duration="4652000" />
-    </task>
-    <task id="LOCAL-00002" summary="Amélioration du pont avec premier déplacement des boules adjacentes vers le master">
-      <created>1606143109063</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1606143109063</updated>
-    </task>
-    <option name="localTasksCounter" value="3" />
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -133,14 +120,13 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Base du pont avec teleportation des boules vers leur point d'ancre" />
-    <MESSAGE value="Amélioration du pont avec premier déplacement des boules adjacentes vers le master" />
-    <option name="LAST_COMMIT_MESSAGE" value="Amélioration du pont avec premier déplacement des boules adjacentes vers le master" />
+    <MESSAGE value="Camera system implémenté" />
+    <option name="LAST_COMMIT_MESSAGE" value="Camera system implémenté" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="552" y="293" key="Vcs.Push.Dialog.v2" timestamp="1606130530448">
+    <state x="552" y="293" key="Vcs.Push.Dialog.v2" timestamp="1606123682944">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
-    <state x="552" y="293" key="Vcs.Push.Dialog.v2/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1606130530448" />
+    <state x="552" y="293" key="Vcs.Push.Dialog.v2/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1606123682944" />
   </component>
 </project>

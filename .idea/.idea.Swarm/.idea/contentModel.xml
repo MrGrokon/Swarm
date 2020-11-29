@@ -8,12 +8,14 @@
       <e p="Assets" t="Include">
         <e p="PlayerInputs.cs" t="Include" />
         <e p="Scripts" t="Include">
+          <e p="CameraManager" t="Include">
+            <e p="CameraManager.cs" t="Include" />
+          </e>
           <e p="CreatureBehavior" t="Include">
             <e p="ActionManaging" t="Include">
               <e p="Creature_CopyCatMechanism.cs" t="Include" />
               <e p="CreatureAction_Interface.cs" t="Include" />
             </e>
-            <e p="CreatureCross.cs" t="Include" />
             <e p="CreatureMover.cs" t="Include" />
           </e>
           <e p="SwarmBehavior" t="Include">
