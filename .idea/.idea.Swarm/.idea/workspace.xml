@@ -19,12 +19,46 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e9a9fd44-a60f-4fbc-b03b-f25159acb4b3" name="Default Changelist" comment="Camera system implémenté">
+    <list default="true" id="e9a9fd44-a60f-4fbc-b03b-f25159acb4b3" name="Default Changelist" comment="Merge du main dans le bridge">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayerInputs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlayerInputs.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayerInputs.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlayerInputs.inputactions" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/CopyCat_Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/CopyCat_Scene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/--SwarmManager--.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/--SwarmManager--.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/CameraPrefab.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/CameraPrefab.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Creature.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Creature.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BehaviorTest.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BehaviorTest.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/CopyCat_Scene.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/CopyCat_Scene.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CameraManager.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CameraManager/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CameraManager/CameraManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CameraManager/CameraManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CreatureBehavior.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CreatureBehavior/ActionManaging.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CreatureBehavior/ActionManaging/CreatureAction_Interface.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CreatureBehavior/ActionManaging/CreatureAction_Interface.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CreatureBehavior/ActionManaging/Creature_CopyCatMechanism.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CreatureBehavior/ActionManaging/Creature_CopyCatMechanism.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CreatureBehavior/CreatureCross.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CreatureBehavior/CreatureCross.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CreatureBehavior/CreatureMover.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CreatureBehavior/CreatureMover.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SceneManager.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SceneManager/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SwarmBehavior.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SwarmBehavior/CreatureManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SwarmBehavior/CreatureManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SwarmBehavior/InputTester.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SwarmBehavior/InputTester.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SwarmBehavior/MasterCreature.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SwarmBehavior/MasterCreature.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,18 +68,13 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="Bridge" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock://C:/Users/Théo/Documents/GitHub/Swarm/Swarm/Assets/Scenes/CopyCat_Scene.unity" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Théo/Documents/GitHub/Swarm/Swarm/Assets/Scenes/CopyCat_Scene.unity" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://diff.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://diff.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Théo/Documents/GitHub/Swarm/Swarm/Assets/Scenes/CopyCat_Scene.unity" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Théo/Documents/GitHub/Swarm/Swarm/Assets/Scenes/CopyCat_Scene.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/InputTester.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -55,6 +84,8 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/CameraManager/CameraManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CreatureBehavior/ActionManaging/CreatureAction_Interface.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CreatureBehavior/CreatureCross.cs" />
+        <option value="$PROJECT_DIR$/Assets/InputTester.cs" />
+        <option value="$PROJECT_DIR$/Assets/PackMover.cs" />
       </list>
     </option>
   </component>
@@ -104,6 +135,9 @@
       <option name="presentableId" value="Default" />
       <updated>1606122712142</updated>
       <workItem from="1606122731146" duration="1657000" />
+      <workItem from="1606668458389" duration="1956000" />
+      <workItem from="1606917889306" duration="4446000" />
+      <workItem from="1607018165915" duration="751000" />
     </task>
     <task id="LOCAL-00001" summary="Camera system implémenté">
       <created>1606123669149</created>
@@ -112,7 +146,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606123669149</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Merge du main dans le bridge">
+      <created>1606664177577</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1606664177577</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -134,7 +175,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Camera system implémenté" />
-    <option name="LAST_COMMIT_MESSAGE" value="Camera system implémenté" />
+    <MESSAGE value="Merge du main dans le bridge" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge du main dans le bridge" />
   </component>
   <component name="WindowStateProjectService">
     <state x="184" y="126" key="MergeDialog" timestamp="1606658624057">
@@ -145,10 +187,10 @@
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="598" y="321" key="MultipleFileMergeDialog/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1606658650636" />
-    <state x="552" y="293" key="Vcs.Push.Dialog.v2" timestamp="1606123682944">
+    <state x="552" y="293" key="Vcs.Push.Dialog.v2" timestamp="1606664189784">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
-    <state x="552" y="293" key="Vcs.Push.Dialog.v2/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1606123682944" />
+    <state x="552" y="293" key="Vcs.Push.Dialog.v2/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1606664189784" />
     <state x="732" y="274" key="git4idea.branch.GitSmartOperationDialog" timestamp="1606658592382">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>

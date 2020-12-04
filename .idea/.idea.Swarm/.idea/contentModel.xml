@@ -6,26 +6,9 @@
     <e p="C:\Users\Théo\Documents\GitHub\Swarm\Swarm" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="CreatureFormation.cs" t="Include" />
+        <e p="InputTester.cs" t="Include" />
+        <e p="PackMover.cs" t="Include" />
         <e p="PlayerInputs.cs" t="Include" />
-        <e p="Scripts" t="Include">
-          <e p="CameraManager" t="Include">
-            <e p="CameraManager.cs" t="Include" />
-          </e>
-          <e p="CreatureBehavior" t="Include">
-            <e p="ActionManaging" t="Include">
-              <e p="Creature_CopyCatMechanism.cs" t="Include" />
-              <e p="CreatureAction_Interface.cs" t="Include" />
-            </e>
-            <e p="CreatureCross.cs" t="Include" />
-            <e p="CreatureMover.cs" t="Include" />
-          </e>
-          <e p="SwarmBehavior" t="Include">
-            <e p="CreatureManager.cs" t="Include" />
-            <e p="InputTester.cs" t="Include" />
-            <e p="MasterCreature.cs" t="Include" />
-          </e>
-        </e>
       </e>
       <e p="obj" t="ExcludeRecursive" />
       <e p="Packages" t="ExcludeRecursive" />
