@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PackOrderere : MonoBehaviour
+public class PackOrderer : MonoBehaviour
 {
     public enum formation
     {

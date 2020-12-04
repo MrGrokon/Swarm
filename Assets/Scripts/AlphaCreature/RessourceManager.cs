@@ -16,4 +16,10 @@ public class RessourceManager : MonoBehaviour
     {
         
     }
+
+    public float Hunger
+    {
+        get => hunger;
+        set => hunger = value;
+    }
 }
