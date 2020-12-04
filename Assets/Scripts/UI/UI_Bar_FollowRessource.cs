@@ -15,13 +15,13 @@ public class UI_Bar_FollowRessource : MonoBehaviour
                 Debug.Log("Slider Not Found: must be place on a UI Object");
             }
             else{
-                //_slider.maxValue = 
+                _slider.maxValue = Objects.Instance.Alpha.GetComponent<RessourceManager>().GetMax(Rsc_Followed);
             }
             
         }
 
         private void Update() {
-            //_slider.value = Alpha.getressource(type)
+            _slider.value = Objects.Instance.Alpha.GetComponent<RessourceManager>().GetRessource(Rsc_Followed);
         }
     #endregion
 }

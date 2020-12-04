@@ -27,7 +27,7 @@ public class RessourceManager : MonoBehaviour
     public enum Resource{Health, Hunger};
 
     #region Date Returning Functions
-        float GetRessource(Resource TryedType){
+        public float GetRessource(Resource TryedType){
             switch (TryedType)
             {
                 case Resource.Hunger:
@@ -44,7 +44,7 @@ public class RessourceManager : MonoBehaviour
             return -1f;
         }
 
-        float GetMax(Resource TryedType){
+        public float GetMax(Resource TryedType){
             switch (TryedType)
             {
                 case Resource.Hunger:
