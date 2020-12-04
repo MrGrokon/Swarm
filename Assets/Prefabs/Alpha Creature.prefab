@@ -273,7 +273,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13c71de683d28ec459e9f558f78530fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedMultiplier: 1.5
+  speedMultiplier: 2
   speed: 8
 --- !u!114 &8682247731385797725
 MonoBehaviour:
@@ -304,7 +304,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myFormation: 0
   formationPoints: []
-  formationPointsLocation: []
   formationPointPrefab: {fileID: 5087105970270098506, guid: eae16a6942308234884c58668378421f,
     type: 3}
 --- !u!114 &2093394661

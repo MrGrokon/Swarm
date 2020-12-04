@@ -5,8 +5,16 @@ using UnityEngine;
 
 public class Attack : MonoBehaviour
 {
+
     [SerializeField] private List<GameObject> PreyInTrigger;
     // Update is called once per frame
+
+    private RessourceManager _ressource;
+
+    private void Start() {
+        _ressource = this.GetComponent<RessourceManager>();
+    }
+
     void Update()
     {
         if (InputTester.inputInstance._playerInputs.Actions.Attack.triggered)
@@ -14,6 +22,8 @@ public class Attack : MonoBehaviour
             foreach (var obj in PreyInTrigger)
             {
                 Destroy(obj);
+                _ressource.GainRessource(RessourceManager.Resource.Hunger, 20f);
+                
             }
         }
     }

@@ -21,6 +21,9 @@ public class CreatureIntelligence : MonoBehaviour
             _nm_Agent = this.GetComponent<NavMeshAgent>();
             //ChangeCreatureState(CreatureState.Follow);
             _nm_Agent.SetDestination(RandomPositionAroundAlpha());
+
+            //Ajoute les créatures préexistante au pack
+            PackManager.packInstance.Add_PackMember(this.gameObject);
         }
 
         private void Update() {

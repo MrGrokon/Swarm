@@ -23,13 +23,16 @@ public class PackManager : MonoBehaviour
 
     public void Add_PackMember(GameObject creature)
     {
-        Pack_Member.Add(creature);
+        if(Pack_Member.Contains(creature) == false){
+            Pack_Member.Add(creature);
+        }
     }
 
     public void Remove_PackMember(GameObject creature)
     {
-        Pack_Member.Remove(creature);
-        Destroy(creature);
+        if(Pack_Member.Contains(creature)){
+            Pack_Member.Remove(creature);
+        }
     }
 
     public void SetFormationPoint()
