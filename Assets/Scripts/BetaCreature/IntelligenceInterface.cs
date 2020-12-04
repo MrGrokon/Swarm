@@ -15,7 +15,7 @@ public class IntelligenceInterface : MonoBehaviour
         }
     }
 
-    #region SetTargets()
+    #region SetTargets() Surdeffinitions
 
     public void SetTarget(GameObject _target)
     {
@@ -23,11 +23,11 @@ public class IntelligenceInterface : MonoBehaviour
     }
 
     public void SetTarget(Transform _target){
-
+        _MyIntelect.Target = _target.position;
     }
 
     public void SetTarget(Vector3 _target){
-
+        _MyIntelect.Target = _target;
     }
 
     #endregion
