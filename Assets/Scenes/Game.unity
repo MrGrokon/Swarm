@@ -217,8 +217,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 264094554}
-  m_LocalRotation: {x: 0.3679893, y: -1e-45, z: 1e-45, w: 0.9298301}
-  m_LocalPosition: {x: 39.561764, y: 17.78, z: -5.5445156}
+  m_LocalRotation: {x: 0.36798927, y: -1e-45, z: -0, w: 0.9298301}
+  m_LocalPosition: {x: 39.561764, y: 18, z: -5.5445156}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 852501980}
@@ -235,7 +235,6 @@ GameObject:
   m_Component:
   - component: {fileID: 534562126}
   - component: {fileID: 534562125}
-  - component: {fileID: 534562124}
   - component: {fileID: 534562123}
   m_Layer: 0
   m_Name: Camera
@@ -278,14 +277,6 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
---- !u!81 &534562124
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 534562122}
-  m_Enabled: 1
 --- !u!20 &534562125
 Camera:
   m_ObjectHideFlags: 0
@@ -336,8 +327,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534562122}
-  m_LocalRotation: {x: 0.3679893, y: -1e-45, z: 1e-45, w: 0.9298301}
-  m_LocalPosition: {x: 39.561764, y: 17.78, z: -5.5445156}
+  m_LocalRotation: {x: 0.36798927, y: -1e-45, z: 0, w: 0.9298301}
+  m_LocalPosition: {x: 39.561764, y: 18, z: -5.5445156}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -956,7 +947,7 @@ PrefabInstance:
     - target: {fileID: 8082260682968824203, guid: b8ca2ec5494f96e468e120b752962fe1,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.22
       objectReference: {fileID: 0}
     - target: {fileID: 8082260682968824203, guid: b8ca2ec5494f96e468e120b752962fe1,
         type: 3}
@@ -1002,16 +993,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8726772832846971018, guid: b8ca2ec5494f96e468e120b752962fe1,
-        type: 3}
-      propertyPath: speedMultiplier
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8726772832846971018, guid: b8ca2ec5494f96e468e120b752962fe1,
-        type: 3}
-      propertyPath: speed
-      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b8ca2ec5494f96e468e120b752962fe1, type: 3}
