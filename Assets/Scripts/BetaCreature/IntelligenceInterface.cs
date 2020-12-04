@@ -5,15 +5,33 @@ using UnityEngine;
 
 public class IntelligenceInterface : MonoBehaviour
 {
-    public CreatureIntelligence MyIntelect;
+    private CreatureIntelligence _MyIntelect;
 
-    private void Start()
+    private void Awake()
     {
-        MyIntelect = GetComponent<CreatureIntelligence>();
+        _MyIntelect = this.GetComponent<CreatureIntelligence>();
+        if(_MyIntelect == null){
+            Debug.Log("Critical Error: CreatureIntel not found for " + this.name);
+        }
     }
 
-    private void SetTarget(GameObject Target)
+    #region SetTargets() Surdeffinitions
+
+    public void SetTarget(GameObject _target)
     {
-        
+        _MyIntelect.Target = _target.transform.position;
+        _MyIntelect.ChangeCreatureState(CreatureIntelligence.CreatureState.InFormation);
     }
+
+    public void SetTarget(Transform _target){
+        _MyIntelect.Target = _target.position;
+        _MyIntelect.ChangeCreatureState(CreatureIntelligence.CreatureState.InFormation);
+    }
+
+    public void SetTarget(Vector3 _target){
+        _MyIntelect.Target = _target;
+        _MyIntelect.ChangeCreatureState(CreatureIntelligence.CreatureState.InFormation);
+    }
+
+    #endregion
 }
