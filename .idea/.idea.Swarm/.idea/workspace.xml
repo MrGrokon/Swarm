@@ -19,9 +19,15 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e9a9fd44-a60f-4fbc-b03b-f25159acb4b3" name="Default Changelist" comment="Camera system implémenté">
+    <list default="true" id="e9a9fd44-a60f-4fbc-b03b-f25159acb4b3" name="Default Changelist" comment="Tout les scripts implémentés comme convenu dans le flow chart">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CreatureBehavior/ActionManaging/CreatureAction_Interface.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CreatureBehavior/ActionManaging/CreatureAction_Interface.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CreatureMover.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CreatureMover.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/PackOrderer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/PackOrderer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InputTester.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InputTester.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerInputs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerInputs.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerInputs.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerInputs.inputactions" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PreySniffer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PreySniffer.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,11 +35,20 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="Chasse_Main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock://C:/Users/Théo/Documents/GitHub/Swarm/Swarm/Assets/PlayerInputs.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Théo/Documents/GitHub/Swarm/Swarm/Assets/Prefabs/CameraPrefab.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CreatureMover.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PreySniffer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/BetaCreature/IntelligenceInterface.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/DetectPlayer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PackManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Théo/Documents/GitHub/Swarm/Swarm/Assets/PlayerInputs.cs.meta" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -42,6 +57,22 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/CreatureBehavior/CreatureMover.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CameraManager/CameraManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CreatureBehavior/ActionManaging/CreatureAction_Interface.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CreatureBehavior/CreatureCross.cs" />
+        <option value="$PROJECT_DIR$/Assets/InputTester.cs" />
+        <option value="$PROJECT_DIR$/Assets/PackMover.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/BetaCreature/HealthSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/BetaCreature/CreatureIntelligence.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/BetaCreature/IntelligenceInterface.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PackManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/RessourceManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/BetaCreature_Creator.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Prey/HealthSystemPrey.cs" />
+        <option value="$PROJECT_DIR$/Assets/DetectPlayer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Prey/PreyManagerOrWhatEverWeCallIt.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PreySniffer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/InputTester.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CreatureMover.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/PackOrderer.cs" />
       </list>
     </option>
   </component>
@@ -91,6 +122,11 @@
       <option name="presentableId" value="Default" />
       <updated>1606122712142</updated>
       <workItem from="1606122731146" duration="1657000" />
+      <workItem from="1606668458389" duration="1956000" />
+      <workItem from="1606917889306" duration="4446000" />
+      <workItem from="1607018165915" duration="751000" />
+      <workItem from="1607087468044" duration="5324000" />
+      <workItem from="1607092849844" duration="297000" />
     </task>
     <task id="LOCAL-00001" summary="Camera system implémenté">
       <created>1606123669149</created>
@@ -99,7 +135,28 @@
       <option name="project" value="LOCAL" />
       <updated>1606123669149</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Merge du main dans le bridge">
+      <created>1606664177577</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1606664177577</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Base CHasse">
+      <created>1607087521153</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1607087521153</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Tout les scripts implémentés comme convenu dans le flow chart">
+      <created>1607093512724</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1607093512724</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -121,12 +178,27 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Camera system implémenté" />
-    <option name="LAST_COMMIT_MESSAGE" value="Camera system implémenté" />
+    <MESSAGE value="Merge du main dans le bridge" />
+    <MESSAGE value="Base CHasse" />
+    <MESSAGE value="Tout les scripts implémentés comme convenu dans le flow chart" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tout les scripts implémentés comme convenu dans le flow chart" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="552" y="293" key="Vcs.Push.Dialog.v2" timestamp="1606123682944">
+    <state x="184" y="126" key="MergeDialog" timestamp="1606658624057">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
-    <state x="552" y="293" key="Vcs.Push.Dialog.v2/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1606123682944" />
+    <state x="184" y="126" key="MergeDialog/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1606658624057" />
+    <state x="598" y="321" key="MultipleFileMergeDialog" timestamp="1606658650636">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state x="598" y="321" key="MultipleFileMergeDialog/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1606658650636" />
+    <state x="552" y="293" key="Vcs.Push.Dialog.v2" timestamp="1607093521557">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state x="552" y="293" key="Vcs.Push.Dialog.v2/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1607093521557" />
+    <state x="732" y="274" key="git4idea.branch.GitSmartOperationDialog" timestamp="1606658592382">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state x="732" y="274" key="git4idea.branch.GitSmartOperationDialog/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1606658592382" />
   </component>
 </project>
