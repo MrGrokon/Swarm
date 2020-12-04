@@ -9,7 +9,7 @@ public class UI_Bar_FollowRessource : MonoBehaviour
     private Slider _slider;
     
     #region Unity Functions
-        private void Awake() {
+        private void Start() {
             _slider = this.GetComponent<Slider>();
             if(_slider == null){
                 Debug.Log("Slider Not Found: must be place on a UI Object");
