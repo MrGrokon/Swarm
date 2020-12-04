@@ -10,11 +10,14 @@ public class PreySniffer : MonoBehaviour
 
     private void GetPrey()
     {
-        target = proof;
+        target = proof.GetComponent<DetectPlayer>().prey;
     }
 
     private void LateUpdate()
     {
-        
+        if (InputTester.inputInstance._playerInputs.Actions.GetPrey.ReadValue<float>() != 0)
+        {
+            GetPrey();
+        }
     }
 }

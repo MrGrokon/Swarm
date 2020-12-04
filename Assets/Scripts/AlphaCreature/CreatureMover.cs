@@ -5,6 +5,10 @@ using UnityEngine;
 public class CreatureMover : MonoBehaviour
 {
     private Rigidbody rb;
+
+    [SerializeField] private float speedMultiplier;
+
+    [SerializeField] private float speed;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +26,11 @@ public class CreatureMover : MonoBehaviour
 
     public void Move(Vector3 direction)
     {
-        rb.transform.position += direction * Time.fixedDeltaTime;
+        if(InputTester.inputInstance._playerInputs.Actions.MovementMode.triggered)
+            rb.transform.position += direction * speed * speedMultiplier * Time.fixedDeltaTime;
+        else
+        {
+            rb.transform.position += direction * speed * Time.fixedDeltaTime;
+        }
     }
 }

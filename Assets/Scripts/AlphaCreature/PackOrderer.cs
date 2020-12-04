@@ -15,11 +15,11 @@ public class PackOrderere : MonoBehaviour
 
     private void Update()
     {
-        /*if()
-        SetFormation("test", myFormation);*/
+        if(InputTester.inputInstance.formationAxis != Vector2.zero)
+            SetFormation("test", myFormation, InputTester.inputInstance.formationAxis);
     }
 
-    public void SetFormation(string str, formation _formation)
+    public void SetFormation(string str, formation _formation, Vector2 formationAxis)
     {
         
     }

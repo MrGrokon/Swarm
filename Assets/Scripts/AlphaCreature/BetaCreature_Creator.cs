@@ -9,8 +9,8 @@ public class BetaCreature_Creator : MonoBehaviour
 
     private void Update()
     {
-        //if(InputTester.inputInstance.)
-            //CreateBeta();
+        if(InputTester.inputInstance._playerInputs.Actions.CreateBeta.triggered) //Inclure également le cout de la création dans le if
+            CreateBeta();
     }
 
     private void CreateBeta()

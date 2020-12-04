@@ -44,6 +44,46 @@
                     "expectedControlType": "Axis",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "GetPrey",
+                    "type": "Button",
+                    "id": "414cb75d-f653-4d94-bdd5-13ae7de80e17",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "CreateBeta",
+                    "type": "Button",
+                    "id": "41137e2c-55ea-4f0a-897a-310e94d80fb2",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "FormationX",
+                    "type": "Value",
+                    "id": "1466461a-958d-44e8-86e7-a2050fe97594",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "FormationY",
+                    "type": "Value",
+                    "id": "d51095f9-6607-40f8-9b9c-d1ce582879af",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "MovementMode",
+                    "type": "Button",
+                    "id": "d72abd5e-8a56-4ae4-8207-5105cef0fea9",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -123,6 +163,61 @@
                     "action": "RotateCamera",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "f0833c3a-0ae1-45d0-9e2a-0293aca22ec2",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "GetPrey",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "17023f43-c126-48fa-9301-29dae1ae37d3",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CreateBeta",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "85274c16-b37a-4478-b195-607259706fef",
+                    "path": "<Gamepad>/dpad/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "FormationX",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "04326f6c-4cbf-4f12-86f4-2d448ae8de85",
+                    "path": "<Gamepad>/dpad/y",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "FormationY",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ce823774-a4ef-4cd6-a580-a9f76a667b06",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MovementMode",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

@@ -8,7 +8,8 @@ public class InputTester : MonoBehaviour
 {
 
     public static InputTester inputInstance;
-    private PlayerInputs _playerInputs;
+    public PlayerInputs _playerInputs;
+    public Vector2 formationAxis;
 
     public Vector3 direction;
     // Start is called before the first frame update
@@ -31,6 +32,7 @@ public class InputTester : MonoBehaviour
     void Update()
     {
         direction = new Vector3(_playerInputs.Actions.MoveRL.ReadValue<float>(), 0, _playerInputs.Actions.MoveFB.ReadValue<float>());
+        formationAxis = new Vector2(_playerInputs.Actions.FormationX.ReadValue<float>(), _playerInputs.Actions.FormationY.ReadValue<float>());
     }
 
     private void OnEnable()

@@ -1,4 +1,4 @@
-// GENERATED AUTOMATICALLY FROM 'Assets/PlayerInputs.inputactions'
+// GENERATED AUTOMATICALLY FROM 'Assets/Scripts/PlayerInputs.inputactions'
 
 using System;
 using System.Collections;
@@ -55,6 +55,46 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                     ""type"": ""Value"",
                     ""id"": ""30eb780b-7b1c-434f-9c28-d242e5f7c916"",
                     ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""GetPrey"",
+                    ""type"": ""Button"",
+                    ""id"": ""414cb75d-f653-4d94-bdd5-13ae7de80e17"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""CreateBeta"",
+                    ""type"": ""Button"",
+                    ""id"": ""41137e2c-55ea-4f0a-897a-310e94d80fb2"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""FormationX"",
+                    ""type"": ""Value"",
+                    ""id"": ""1466461a-958d-44e8-86e7-a2050fe97594"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""FormationY"",
+                    ""type"": ""Value"",
+                    ""id"": ""d51095f9-6607-40f8-9b9c-d1ce582879af"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""MovementMode"",
+                    ""type"": ""Button"",
+                    ""id"": ""d72abd5e-8a56-4ae4-8207-5105cef0fea9"",
+                    ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
                 }
@@ -136,6 +176,61 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                     ""action"": ""RotateCamera"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f0833c3a-0ae1-45d0-9e2a-0293aca22ec2"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""GetPrey"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""17023f43-c126-48fa-9301-29dae1ae37d3"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CreateBeta"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""85274c16-b37a-4478-b195-607259706fef"",
+                    ""path"": ""<Gamepad>/dpad/x"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""FormationX"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""04326f6c-4cbf-4f12-86f4-2d448ae8de85"",
+                    ""path"": ""<Gamepad>/dpad/y"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""FormationY"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ce823774-a4ef-4cd6-a580-a9f76a667b06"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MovementMode"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -161,6 +256,11 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
         m_Actions_BridgeRL = m_Actions.FindAction("Bridge R/L", throwIfNotFound: true);
         m_Actions_BridgeFB = m_Actions.FindAction("Bridge F/B", throwIfNotFound: true);
         m_Actions_RotateCamera = m_Actions.FindAction("RotateCamera", throwIfNotFound: true);
+        m_Actions_GetPrey = m_Actions.FindAction("GetPrey", throwIfNotFound: true);
+        m_Actions_CreateBeta = m_Actions.FindAction("CreateBeta", throwIfNotFound: true);
+        m_Actions_FormationX = m_Actions.FindAction("FormationX", throwIfNotFound: true);
+        m_Actions_FormationY = m_Actions.FindAction("FormationY", throwIfNotFound: true);
+        m_Actions_MovementMode = m_Actions.FindAction("MovementMode", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -215,6 +315,11 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
     private readonly InputAction m_Actions_BridgeRL;
     private readonly InputAction m_Actions_BridgeFB;
     private readonly InputAction m_Actions_RotateCamera;
+    private readonly InputAction m_Actions_GetPrey;
+    private readonly InputAction m_Actions_CreateBeta;
+    private readonly InputAction m_Actions_FormationX;
+    private readonly InputAction m_Actions_FormationY;
+    private readonly InputAction m_Actions_MovementMode;
     public struct ActionsActions
     {
         private @PlayerInputs m_Wrapper;
@@ -224,6 +329,11 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
         public InputAction @BridgeRL => m_Wrapper.m_Actions_BridgeRL;
         public InputAction @BridgeFB => m_Wrapper.m_Actions_BridgeFB;
         public InputAction @RotateCamera => m_Wrapper.m_Actions_RotateCamera;
+        public InputAction @GetPrey => m_Wrapper.m_Actions_GetPrey;
+        public InputAction @CreateBeta => m_Wrapper.m_Actions_CreateBeta;
+        public InputAction @FormationX => m_Wrapper.m_Actions_FormationX;
+        public InputAction @FormationY => m_Wrapper.m_Actions_FormationY;
+        public InputAction @MovementMode => m_Wrapper.m_Actions_MovementMode;
         public InputActionMap Get() { return m_Wrapper.m_Actions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -248,6 +358,21 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                 @RotateCamera.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnRotateCamera;
                 @RotateCamera.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnRotateCamera;
                 @RotateCamera.canceled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnRotateCamera;
+                @GetPrey.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnGetPrey;
+                @GetPrey.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnGetPrey;
+                @GetPrey.canceled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnGetPrey;
+                @CreateBeta.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnCreateBeta;
+                @CreateBeta.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnCreateBeta;
+                @CreateBeta.canceled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnCreateBeta;
+                @FormationX.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnFormationX;
+                @FormationX.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnFormationX;
+                @FormationX.canceled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnFormationX;
+                @FormationY.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnFormationY;
+                @FormationY.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnFormationY;
+                @FormationY.canceled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnFormationY;
+                @MovementMode.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnMovementMode;
+                @MovementMode.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnMovementMode;
+                @MovementMode.canceled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnMovementMode;
             }
             m_Wrapper.m_ActionsActionsCallbackInterface = instance;
             if (instance != null)
@@ -267,6 +392,21 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                 @RotateCamera.started += instance.OnRotateCamera;
                 @RotateCamera.performed += instance.OnRotateCamera;
                 @RotateCamera.canceled += instance.OnRotateCamera;
+                @GetPrey.started += instance.OnGetPrey;
+                @GetPrey.performed += instance.OnGetPrey;
+                @GetPrey.canceled += instance.OnGetPrey;
+                @CreateBeta.started += instance.OnCreateBeta;
+                @CreateBeta.performed += instance.OnCreateBeta;
+                @CreateBeta.canceled += instance.OnCreateBeta;
+                @FormationX.started += instance.OnFormationX;
+                @FormationX.performed += instance.OnFormationX;
+                @FormationX.canceled += instance.OnFormationX;
+                @FormationY.started += instance.OnFormationY;
+                @FormationY.performed += instance.OnFormationY;
+                @FormationY.canceled += instance.OnFormationY;
+                @MovementMode.started += instance.OnMovementMode;
+                @MovementMode.performed += instance.OnMovementMode;
+                @MovementMode.canceled += instance.OnMovementMode;
             }
         }
     }
@@ -287,5 +427,10 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
         void OnBridgeRL(InputAction.CallbackContext context);
         void OnBridgeFB(InputAction.CallbackContext context);
         void OnRotateCamera(InputAction.CallbackContext context);
+        void OnGetPrey(InputAction.CallbackContext context);
+        void OnCreateBeta(InputAction.CallbackContext context);
+        void OnFormationX(InputAction.CallbackContext context);
+        void OnFormationY(InputAction.CallbackContext context);
+        void OnMovementMode(InputAction.CallbackContext context);
     }
 }
