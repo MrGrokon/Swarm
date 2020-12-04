@@ -33,7 +33,7 @@ Transform:
   m_GameObject: {fileID: 8082260682968824200}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -127,7 +127,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56fd6074e868ab543803b1763dde5668, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CreatureCost: 0
+  creatureCost: 10
+  betaPrefab: {fileID: 6973114331606709531, guid: 51cfc9cdfd43a5a4596e32d6be8e0c93,
+    type: 3}
 --- !u!114 &8726772832846971018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,8 +142,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13c71de683d28ec459e9f558f78530fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedMultiplier: 0
-  speed: 0
+  speedMultiplier: 1.5
+  speed: 8
 --- !u!114 &8682247731385797725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,8 +156,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07c6b31c7af91044b944ad05340685f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
-  hunger: 0
+  _health: 100
+  _hunger: 100
+  AmountOfHungerLoosePerSeconds: 2
 --- !u!114 &955693708350964911
 MonoBehaviour:
   m_ObjectHideFlags: 0
