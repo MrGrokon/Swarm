@@ -13,8 +13,8 @@ public class PackOrderer : MonoBehaviour
     };
 
     [SerializeField] private formation myFormation;
-    [SerializeField] private List<Transform> formationPoints;
-    private List<Vector3> formationPointsLocation;
+    [SerializeField] private List<Transform> formationPoints = new List<Transform>();
+    private List<Vector3> formationPointsLocation = new List<Vector3>();
     private bool crossTriggered = false;
 
     [SerializeField] private GameObject formationPointPrefab;
