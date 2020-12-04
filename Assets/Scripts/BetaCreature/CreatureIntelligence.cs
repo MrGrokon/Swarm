@@ -1,53 +1,33 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
+//using System.Diagnostics;    WTF is that ?
 using UnityEngine;
 
 public class CreatureIntelligence : MonoBehaviour
 {
-    public enum MyState
+    public enum CreatureState
     {
         Follow,
         Attack
     };
 
-    private Transform target;
+    [HideInInspector]
+    public Transform Target;
 
-    [SerializeField] private MyState state;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public CreatureState MyState;
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (target)
+    private void Update() {
+        switch (MyState)
         {
-            MoveTo();
+            case CreatureState.Follow:
+            break;
+
+            case CreatureState.Attack:
+            break;
+
+            default:
+            Debug.Log("Error: Creature State Incorect");
+            break;
         }
-    }
-
-    public void SwitchState()
-    {
-        switch (state)
-        {
-            case MyState.Follow:
-                
-                break;
-            case MyState.Attack:
-                break;
-        }
-    }
-
-    public void ChangeState(MyState newState)
-    {
-        state = newState;
-    }
-
-    private void MoveTo()
-    {
-        
     }
 }
