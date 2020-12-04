@@ -14,7 +14,7 @@ public class PackOrderer : MonoBehaviour
 
     [SerializeField] private formation myFormation;
     [SerializeField] private List<Transform> formationPoints;
-    [SerializeField] private List<Vector3> formationPointsLocation;
+    private List<Vector3> formationPointsLocation;
     private bool crossTriggered = false;
 
     [SerializeField] private GameObject formationPointPrefab;
@@ -31,6 +31,8 @@ public class PackOrderer : MonoBehaviour
 
     public void SetFormation(string str, formation _formation, Vector2 formationAxis)
     {
+        formationPoints.Clear();
+        formationPointsLocation.Clear();
         crossTriggered = true;
         print("Setup de la formation...");
         switch (_formation)
