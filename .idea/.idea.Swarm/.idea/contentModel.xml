@@ -6,12 +6,16 @@
     <e p="C:\Users\Théo\Documents\GitHub\Swarm\Swarm" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="DetectPlayer.cs" t="Include" />
         <e p="Scripts" t="Include">
           <e p="AlphaCreature" t="Include">
             <e p="BetaCreature_Creator.cs" t="Include" />
+            <e p="CharacterController" t="Include">
+              <e p="InputTester.cs" t="Include" />
+              <e p="PlayerInputs.cs" t="Include" />
+            </e>
             <e p="CreatureMover.cs" t="Include" />
             <e p="PackOrderer.cs" t="Include" />
+            <e p="PreySniffer.cs" t="Include" />
             <e p="RessourceManager.cs" t="Include" />
           </e>
           <e p="BetaCreature" t="Include">
@@ -19,15 +23,21 @@
             <e p="HealthSystem.cs" t="Include" />
             <e p="IntelligenceInterface.cs" t="Include" />
           </e>
-          <e p="InputTester.cs" t="Include" />
-          <e p="PackManager.cs" t="Include" />
+          <e p="Managers" t="Include">
+            <e p="Objects.cs" t="Include" />
+            <e p="PackManager.cs" t="Include" />
+          </e>
           <e p="PackMover.cs" t="Include" />
-          <e p="PlayerInputs.cs" t="Include" />
           <e p="Prey" t="Include">
             <e p="HealthSystemPrey.cs" t="Include" />
             <e p="PreyManagerOrWhatEverWeCallIt.cs" t="Include" />
           </e>
-          <e p="PreySniffer.cs" t="Include" />
+          <e p="Tracks" t="Include">
+            <e p="DetectPlayer.cs" t="Include" />
+          </e>
+          <e p="UI" t="Include">
+            <e p="UI_Bar_FollowRessource.cs" t="Include" />
+          </e>
         </e>
       </e>
       <e p="obj" t="ExcludeRecursive" />

@@ -1,4 +1,4 @@
-// GENERATED AUTOMATICALLY FROM 'Assets/Scripts/PlayerInputs.inputactions'
+// GENERATED AUTOMATICALLY FROM 'Assets/Scripts/AlphaCreature/CharacterController/PlayerInputs.inputactions'
 
 using System;
 using System.Collections;
@@ -94,6 +94,14 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                     ""name"": ""MovementMode"",
                     ""type"": ""Button"",
                     ""id"": ""d72abd5e-8a56-4ae4-8207-5105cef0fea9"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Attack"",
+                    ""type"": ""Button"",
+                    ""id"": ""c473b79d-657b-427a-ac0e-00df27d82814"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -231,6 +239,17 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                     ""action"": ""MovementMode"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ece33bb3-17f2-4789-a3f2-0fee0839b4bc"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Attack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -261,6 +280,7 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
         m_Actions_FormationX = m_Actions.FindAction("FormationX", throwIfNotFound: true);
         m_Actions_FormationY = m_Actions.FindAction("FormationY", throwIfNotFound: true);
         m_Actions_MovementMode = m_Actions.FindAction("MovementMode", throwIfNotFound: true);
+        m_Actions_Attack = m_Actions.FindAction("Attack", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -320,6 +340,7 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
     private readonly InputAction m_Actions_FormationX;
     private readonly InputAction m_Actions_FormationY;
     private readonly InputAction m_Actions_MovementMode;
+    private readonly InputAction m_Actions_Attack;
     public struct ActionsActions
     {
         private @PlayerInputs m_Wrapper;
@@ -334,6 +355,7 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
         public InputAction @FormationX => m_Wrapper.m_Actions_FormationX;
         public InputAction @FormationY => m_Wrapper.m_Actions_FormationY;
         public InputAction @MovementMode => m_Wrapper.m_Actions_MovementMode;
+        public InputAction @Attack => m_Wrapper.m_Actions_Attack;
         public InputActionMap Get() { return m_Wrapper.m_Actions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -373,6 +395,9 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                 @MovementMode.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnMovementMode;
                 @MovementMode.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnMovementMode;
                 @MovementMode.canceled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnMovementMode;
+                @Attack.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnAttack;
+                @Attack.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnAttack;
+                @Attack.canceled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnAttack;
             }
             m_Wrapper.m_ActionsActionsCallbackInterface = instance;
             if (instance != null)
@@ -407,6 +432,9 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                 @MovementMode.started += instance.OnMovementMode;
                 @MovementMode.performed += instance.OnMovementMode;
                 @MovementMode.canceled += instance.OnMovementMode;
+                @Attack.started += instance.OnAttack;
+                @Attack.performed += instance.OnAttack;
+                @Attack.canceled += instance.OnAttack;
             }
         }
     }
@@ -432,5 +460,6 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
         void OnFormationX(InputAction.CallbackContext context);
         void OnFormationY(InputAction.CallbackContext context);
         void OnMovementMode(InputAction.CallbackContext context);
+        void OnAttack(InputAction.CallbackContext context);
     }
 }

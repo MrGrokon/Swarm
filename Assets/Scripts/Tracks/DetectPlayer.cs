@@ -10,7 +10,7 @@ public class DetectPlayer : MonoBehaviour
     {
         if (other.transform.CompareTag("Player"))
         {
-            other.transform.GetComponent<PreySniffer>().proof = prey;
+            other.transform.GetComponent<PreySniffer>().proof = this.gameObject;
         }
     }
 

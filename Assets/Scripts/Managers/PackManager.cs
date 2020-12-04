@@ -36,5 +36,10 @@ public class PackManager : MonoBehaviour
     {
         
     }
+
+    public int GetPackLenght()
+    {
+        return Pack_Member.Count;
+    }
     
 }
