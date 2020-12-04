@@ -17,6 +17,8 @@ public class PackOrderer : MonoBehaviour
     [SerializeField] private List<Vector3> formationPointsLocation;
     private bool crossTriggered = false;
 
+    [SerializeField] private GameObject formationPointPrefab;
+
     private void Update()
     {
         if(InputTester.inputInstance.formationAxis != Vector2.zero && crossTriggered == false)
@@ -34,7 +36,7 @@ public class PackOrderer : MonoBehaviour
         switch (_formation)
         {
             case formation.Triangle:
-                var player = ObjectsInstance._instance.Player;
+                var player = Objects.Instance.Alpha;
                 bool leftSide = true;
                 for (int i = 0; i < PackManager.packInstance.GetPackLenght(); i++)
                 {
@@ -44,7 +46,7 @@ public class PackOrderer : MonoBehaviour
                     }
                     else if (i == PackManager.packInstance.GetPackLenght() / 2)
                     {
-                        formationPointsLocation.Add(new Vector3(player.transform.position.x - 1, 0,player.transform.position.z + 1));
+                        formationPointsLocation.Add(new Vector3(player.transform.position.x + 1, 0,player.transform.position.z - 1));
                         leftSide = false;
                     }
                     else
@@ -53,17 +55,18 @@ public class PackOrderer : MonoBehaviour
                             formationPointsLocation.Add(new Vector3(formationPointsLocation[i-1].x - 1, 0,formationPointsLocation[i-1].z - 1));
                         else
                         {
-                            formationPointsLocation.Add(new Vector3(formationPointsLocation[i-1].x - 1, 0,formationPointsLocation[i-1].z + 1));
+                            formationPointsLocation.Add(new Vector3(formationPointsLocation[i-1].x + 1, 0,formationPointsLocation[i-1].z - 1));
                         }
                     }
-                }
+                } 
                 break;
         }
 
         foreach (var position in formationPointsLocation)
         {
-            var empty = Instantiate(new GameObject(), position, Quaternion.identity);
-            empty.transform.parent = ObjectsInstance._instance.Player.transform;
+            var empty = Instantiate(formationPointPrefab, position, Quaternion.identity);
+            empty.transform.parent = Objects.Instance.Alpha.transform;
+            print("Passage");
         }
     }
 }
