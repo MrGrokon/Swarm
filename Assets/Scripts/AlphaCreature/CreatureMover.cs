@@ -29,10 +29,10 @@ public class CreatureMover : MonoBehaviour
         Vector3 CameraDirection = new Vector3(Camera.main.transform.forward.x, 0, Camera.main.transform.forward.z);
         Debug.DrawRay(transform.position, CameraDirection, Color.red);
         if(InputTester.inputInstance._playerInputs.Actions.MovementMode.triggered)
-            rb.transform.position += Vector3.Scale(direction, CameraDirection) * speed * speedMultiplier * Time.fixedDeltaTime;
+            rb.transform.position += direction * speed * speedMultiplier * Time.fixedDeltaTime;
         else
         {
-            rb.transform.position += Vector3.Scale(direction, CameraDirection) * speed * Time.fixedDeltaTime;
+            rb.transform.position += direction * speed * Time.fixedDeltaTime;
         }
     }
 }
