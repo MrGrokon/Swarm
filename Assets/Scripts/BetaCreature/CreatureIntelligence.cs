@@ -8,7 +8,7 @@ public class CreatureIntelligence : MonoBehaviour
 {
     public enum CreatureState{Follow, Attack, InFormation, Static};
 
-    [HideInInspector]
+    //[HideInInspector]
     public Vector3 Target;
     public CreatureState MyState;
     [Range(0.05f, 1f)]
@@ -64,18 +64,10 @@ public class CreatureIntelligence : MonoBehaviour
                 if(_state == CreatureState.Follow){
                     _nm_Agent.SetDestination(RandomPositionAroundAlpha());
                 }
-                /*switch(_state){
-                    case CreatureState.Attack:
-                    MyState = _state;
-                    break;
-
-                    case CreatureState.Follow:
-                    break;
-
-                    default:
-                    Debug.Log("Error ChangeCreatureState() value Incorrect");
-                    break;
-                }*/
+                if(_state == CreatureState.InFormation){
+                    _nm_Agent.SetDestination(Target);
+                }
+                MyState = _state;
         }
 
     #endregion
