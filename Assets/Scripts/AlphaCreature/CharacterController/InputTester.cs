@@ -20,7 +20,6 @@ public class InputTester : MonoBehaviour
         if (inputInstance == null)
         {
             inputInstance = this;
-            DontDestroyOnLoad(this.gameObject);
         }
         else
         {

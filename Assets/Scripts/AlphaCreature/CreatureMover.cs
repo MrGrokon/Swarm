@@ -26,11 +26,13 @@ public class CreatureMover : MonoBehaviour
 
     public void Move(Vector3 direction)
     {
+        Vector3 CameraDirection = new Vector3(Camera.main.transform.forward.x, 0, Camera.main.transform.forward.z);
+        Debug.DrawRay(transform.position, CameraDirection, Color.red);
         if(InputTester.inputInstance._playerInputs.Actions.MovementMode.triggered)
-            rb.transform.position += direction * speed * speedMultiplier * Time.fixedDeltaTime;
+            rb.transform.position += CameraDirection * speed * speedMultiplier * Time.fixedDeltaTime;
         else
         {
-            rb.transform.position += direction * speed * Time.fixedDeltaTime;
+            rb.transform.position += CameraDirection * speed * Time.fixedDeltaTime;
         }
     }
 }
