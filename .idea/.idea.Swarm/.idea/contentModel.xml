@@ -6,8 +6,7 @@
     <e p="C:\Users\Théo\Documents\GitHub\Swarm\Swarm" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="GeneratePrey.cs" t="Include" />
-        <e p="PreyAiManager.cs" t="Include" />
+        <e p="CameraRotate.cs" t="Include" />
         <e p="Scripts" t="Include">
           <e p="AlphaCreature" t="Include">
             <e p="Attack.cs" t="Include" />
@@ -28,13 +27,16 @@
           <e p="Common" t="Include">
             <e p="HealthSysteme.cs" t="Include" />
           </e>
+          <e p="DebugScript.cs" t="Include" />
           <e p="Managers" t="Include">
+            <e p="GeneratePrey.cs" t="Include" />
             <e p="Objects.cs" t="Include" />
             <e p="PackManager.cs" t="Include" />
           </e>
           <e p="PackMover.cs" t="Include" />
           <e p="Prey" t="Include">
-            <e p="PreyManagerOrWhatEverWeCallIt.cs" t="Include" />
+            <e p="PreyAiManager.cs" t="Include" />
+            <e p="TracksCreatorOverTime.cs" t="Include" />
           </e>
           <e p="Tracks" t="Include">
             <e p="DetectPlayer.cs" t="Include" />

@@ -8,6 +8,7 @@ public class BetaCreature_Creator : MonoBehaviour
 {
     [SerializeField] private float creatureCost = 10f;
     [SerializeField] private GameObject betaPrefab;
+    [SerializeField] private int maxPackMember;
 
     private void Update()
     {
@@ -18,8 +19,8 @@ public class BetaCreature_Creator : MonoBehaviour
     private void CreateBeta()
     {
         RessourceManager _resources = GetComponent<RessourceManager>();
-        if(_resources.Hunger - creatureCost > 0f){
-            Debug.Log("i Created a Beta");
+        if(_resources.Hunger - creatureCost > 0f && PackManager.packInstance.GetPackLenght() < maxPackMember){
+            Debug.Log("I Created a Beta");
             _resources.LooseRessource(RessourceManager.Resource.Hunger, creatureCost);
 
             //TODO: changer le This.transform.position, par une position d'apparition définie pour le beta
@@ -27,7 +28,7 @@ public class BetaCreature_Creator : MonoBehaviour
             PackManager.packInstance.Add_PackMember(_betaCreature);
         }
         else{
-            Debug.Log("Not enougth Hunger to create a Beta");
+            Debug.Log("Not enougth Hunger to create a Beta or too much pack member");
         }
     }
 }
