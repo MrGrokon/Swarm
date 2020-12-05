@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 1853304259910867410}
   - component: {fileID: 1853304259910867413}
   - component: {fileID: 1853304259910867412}
+  - component: {fileID: 7363252381579076272}
+  - component: {fileID: 1900186649020025721}
   m_Layer: 0
   m_Name: Prey
   m_TagString: Prey
@@ -93,3 +95,32 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7363252381579076272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1853304259910867415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad30a673d1b954346a0b1dcaa5d0c562, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roamingDistance: 50
+--- !u!114 &1900186649020025721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1853304259910867415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd27db88339d87e488cb2059fc094074, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TrackPrefab: {fileID: 2622212310027546019, guid: 231e5a63cde58af49aaa0fa98bd94fa5,
+    type: 3}
+  MinTimeToLeaveTrack: 5
+  MaxTimeToLeaveTrack: 25
