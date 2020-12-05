@@ -47,6 +47,10 @@ public class PackOrderer : MonoBehaviour
 
     public void SetFormation(string str, formation _formation, Vector2 formationAxis)
     {
+        foreach (var empty in formationPoints)
+        {
+            Destroy(empty);
+        }
         formationPoints.Clear();
         formationPointsLocation.Clear();
         crossTriggered = true;

@@ -23,7 +23,7 @@ public class Attack : MonoBehaviour
             {
                 Destroy(obj);
                 _ressource.GainRessource(RessourceManager.Resource.Hunger, 20f);
-                
+                PackManager.packInstance.gameObject.GetComponent<GeneratePrey>().listOfPrey.Remove(obj);
             }
         }
     }
