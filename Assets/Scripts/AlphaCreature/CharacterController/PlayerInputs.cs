@@ -105,6 +105,22 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""ChangeCamera"",
+                    ""type"": ""Button"",
+                    ""id"": ""2974958f-a61a-41b2-8639-a3f581254474"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Reset"",
+                    ""type"": ""Button"",
+                    ""id"": ""a4772163-e23c-4861-9b01-cdf58e9dc673"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -250,6 +266,28 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                     ""action"": ""Attack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a43ca5b8-b82d-4776-b0b4-96d6fe8f8650"",
+                    ""path"": ""<Gamepad>/rightStickPress"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChangeCamera"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2f89821a-c720-4058-bc68-0b9c2366b9e6"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Reset"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -281,6 +319,8 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
         m_Actions_FormationY = m_Actions.FindAction("FormationY", throwIfNotFound: true);
         m_Actions_MovementMode = m_Actions.FindAction("MovementMode", throwIfNotFound: true);
         m_Actions_Attack = m_Actions.FindAction("Attack", throwIfNotFound: true);
+        m_Actions_ChangeCamera = m_Actions.FindAction("ChangeCamera", throwIfNotFound: true);
+        m_Actions_Reset = m_Actions.FindAction("Reset", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -341,6 +381,8 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
     private readonly InputAction m_Actions_FormationY;
     private readonly InputAction m_Actions_MovementMode;
     private readonly InputAction m_Actions_Attack;
+    private readonly InputAction m_Actions_ChangeCamera;
+    private readonly InputAction m_Actions_Reset;
     public struct ActionsActions
     {
         private @PlayerInputs m_Wrapper;
@@ -356,6 +398,8 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
         public InputAction @FormationY => m_Wrapper.m_Actions_FormationY;
         public InputAction @MovementMode => m_Wrapper.m_Actions_MovementMode;
         public InputAction @Attack => m_Wrapper.m_Actions_Attack;
+        public InputAction @ChangeCamera => m_Wrapper.m_Actions_ChangeCamera;
+        public InputAction @Reset => m_Wrapper.m_Actions_Reset;
         public InputActionMap Get() { return m_Wrapper.m_Actions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -398,6 +442,12 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                 @Attack.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnAttack;
                 @Attack.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnAttack;
                 @Attack.canceled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnAttack;
+                @ChangeCamera.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnChangeCamera;
+                @ChangeCamera.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnChangeCamera;
+                @ChangeCamera.canceled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnChangeCamera;
+                @Reset.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnReset;
+                @Reset.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnReset;
+                @Reset.canceled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnReset;
             }
             m_Wrapper.m_ActionsActionsCallbackInterface = instance;
             if (instance != null)
@@ -435,6 +485,12 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                 @Attack.started += instance.OnAttack;
                 @Attack.performed += instance.OnAttack;
                 @Attack.canceled += instance.OnAttack;
+                @ChangeCamera.started += instance.OnChangeCamera;
+                @ChangeCamera.performed += instance.OnChangeCamera;
+                @ChangeCamera.canceled += instance.OnChangeCamera;
+                @Reset.started += instance.OnReset;
+                @Reset.performed += instance.OnReset;
+                @Reset.canceled += instance.OnReset;
             }
         }
     }
@@ -461,5 +517,7 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
         void OnFormationY(InputAction.CallbackContext context);
         void OnMovementMode(InputAction.CallbackContext context);
         void OnAttack(InputAction.CallbackContext context);
+        void OnChangeCamera(InputAction.CallbackContext context);
+        void OnReset(InputAction.CallbackContext context);
     }
 }

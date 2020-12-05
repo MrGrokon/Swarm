@@ -87,6 +87,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   terrain: {fileID: 0}
-  maxPrey: 0
+  maxPrey: 5
   listOfPrey: []
-  preyPrefab: {fileID: 0}
+  preyPrefab: {fileID: 1853304259910867415, guid: 29c888cf0a78cd4498fce567d441f7ba,
+    type: 3}
