@@ -30,7 +30,7 @@ public class GeneratePrey : MonoBehaviour
         {
             int X = (int)Random.Range(minMaxX.x, minMaxX.y);
             int Y = (int)Random.Range(minMaxY.x, minMaxY.y);
-            var prey = Instantiate(preyPrefab, new Vector3(X, terrain.transform.position.y + 0.5f, Y), Quaternion.identity);
+            var prey = Instantiate(preyPrefab, new Vector3(X, terrain.transform.position.y + 1f, Y), Quaternion.identity);
             listOfPrey.Add(prey);
         }
     }

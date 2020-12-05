@@ -19,12 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e9a9fd44-a60f-4fbc-b03b-f25159acb4b3" name="Default Changelist" comment="Reformation du maib">
+    <list default="true" id="e9a9fd44-a60f-4fbc-b03b-f25159acb4b3" name="Default Changelist" comment="Correctif sur la formation #2">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/Attack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/Attack.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/PackOrderer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/PackOrderer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PackManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PackManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,17 +33,24 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="ThéoBranch" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PackManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://diff.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://diff.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/Théo/Documents/GitHub/Swarm/Swarm/Assets/PlayerInputs.cs.meta" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/BetaCreature/IntelligenceInterface.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://diff.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://diff.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://diff.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/GeneratePrey.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://diff.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://diff.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/AlphaCreature/PackOrderer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CreatureMover.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/ObjectsInstance.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -69,6 +75,8 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/BetaCreature_Creator.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PackManager.cs" />
         <option value="$PROJECT_DIR$/Assets/ObjectsInstance.cs" />
+        <option value="$PROJECT_DIR$/Assets/GeneratePrey.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/Attack.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/PackOrderer.cs" />
       </list>
     </option>
@@ -168,7 +176,21 @@
       <option name="project" value="LOCAL" />
       <updated>1607105355978</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Correctif sur la formation">
+      <created>1607124688723</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1607124688723</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Correctif sur la formation #2">
+      <created>1607125054106</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1607125054106</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -195,24 +217,26 @@
     <MESSAGE value="Tout les scripts implémentés comme convenu dans le flow chart" />
     <MESSAGE value="Ajout des inputs" />
     <MESSAGE value="Reformation du maib" />
-    <option name="LAST_COMMIT_MESSAGE" value="Reformation du maib" />
+    <MESSAGE value="Correctif sur la formation" />
+    <MESSAGE value="Correctif sur la formation #2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Correctif sur la formation #2" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="184" y="126" key="MergeDialog" timestamp="1606658624057">
+    <state x="184" y="126" key="MergeDialog" timestamp="1607127730538">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
-    <state x="184" y="126" key="MergeDialog/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1606658624057" />
+    <state x="184" y="126" key="MergeDialog/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1607127730538" />
     <state x="598" y="321" key="MultipleFileMergeDialog" timestamp="1606658650636">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="598" y="321" key="MultipleFileMergeDialog/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1606658650636" />
-    <state x="552" y="293" key="Vcs.Push.Dialog.v2" timestamp="1607105366471">
+    <state x="552" y="293" key="Vcs.Push.Dialog.v2" timestamp="1607125204382">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
-    <state x="552" y="293" key="Vcs.Push.Dialog.v2/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1607105366471" />
-    <state x="732" y="274" key="git4idea.branch.GitSmartOperationDialog" timestamp="1606658592382">
+    <state x="552" y="293" key="Vcs.Push.Dialog.v2/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1607125204382" />
+    <state x="732" y="274" key="git4idea.branch.GitSmartOperationDialog" timestamp="1607127707057">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
-    <state x="732" y="274" key="git4idea.branch.GitSmartOperationDialog/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1606658592382" />
+    <state x="732" y="274" key="git4idea.branch.GitSmartOperationDialog/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1607127707057" />
   </component>
 </project>
