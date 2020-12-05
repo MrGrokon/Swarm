@@ -8,7 +8,7 @@ public class TracksCreatorOverTime : MonoBehaviour
     public float MinTimeToLeaveTrack = 5f, MaxTimeToLeaveTrack = 25f;
 
     //private List<GameObject> tracks = new List<GameObject>();    
-    public float _timePassed = 0f, _timeToWait;
+    private float _timePassed = 0f, _timeToWait;
 
     #region Unity Functions
         private void Awake() {
