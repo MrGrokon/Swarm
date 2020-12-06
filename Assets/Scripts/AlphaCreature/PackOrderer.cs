@@ -49,7 +49,7 @@ public class PackOrderer : MonoBehaviour
     {
         foreach (var empty in formationPoints)
         {
-            Destroy(empty);
+            Destroy(empty.gameObject);
         }
         formationPoints.Clear();
         formationPointsLocation.Clear();

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class GeneratePrey : MonoBehaviour
 {
@@ -28,9 +29,10 @@ public class GeneratePrey : MonoBehaviour
     {
         if (listOfPrey.Count < maxPrey)
         {
-            int X = (int)Random.Range(minMaxX.x, minMaxX.y);
-            int Y = (int)Random.Range(minMaxY.x, minMaxY.y);
-            var prey = Instantiate(preyPrefab, new Vector3(X, terrain.transform.position.y + 1f, Y), Quaternion.identity);
+            Vector3 randomSpawnPosition = Random.insideUnitSphere * ((minMaxX.y - minMaxX.x) + (minMaxY.y - minMaxY.x));
+            NavMeshHit hit;
+            NavMesh.SamplePosition(randomSpawnPosition, out hit, (minMaxX.y - minMaxX.x) + (minMaxY.y - minMaxY.x), NavMesh.AllAreas);
+            var prey = Instantiate(preyPrefab, hit.position, Quaternion.identity);
             listOfPrey.Add(prey);
         }
     }
