@@ -158,36 +158,6 @@ Transform:
   m_Father: {fileID: 8082260682968824203}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &3469031508668377344
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8635048808926078965}
-  m_Layer: 0
-  m_Name: 3rd person Aim
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8635048808926078965
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3469031508668377344}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.75, y: 0.87, z: 4.43}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 8082260682968824203}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8082260682968824200
 GameObject:
   m_ObjectHideFlags: 0
@@ -228,7 +198,6 @@ Transform:
   m_Children:
   - {fileID: 373900985}
   - {fileID: 495979198}
-  - {fileID: 8635048808926078965}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -324,6 +293,7 @@ MonoBehaviour:
   creatureCost: 10
   betaPrefab: {fileID: 6973114331606709531, guid: 51cfc9cdfd43a5a4596e32d6be8e0c93,
     type: 3}
+  maxPackMember: 0
 --- !u!114 &8726772832846971018
 MonoBehaviour:
   m_ObjectHideFlags: 0
