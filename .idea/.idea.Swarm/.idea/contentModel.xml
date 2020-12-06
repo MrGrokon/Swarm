@@ -32,6 +32,7 @@
             <e p="GeneratePrey.cs" t="Include" />
             <e p="Objects.cs" t="Include" />
             <e p="PackManager.cs" t="Include" />
+            <e p="StartAsChildOf.cs" t="Include" />
           </e>
           <e p="PackMover.cs" t="Include" />
           <e p="Prey" t="Include">
