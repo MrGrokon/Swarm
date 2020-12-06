@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -36,5 +37,16 @@ public class PreyAiManager : MonoBehaviour
         NavMesh.SamplePosition(randomDestination, out hit, roamingDistance, 1);
         AI.SetDestination(hit.position);
         finishedMovementTask = false;
+    }
+
+    public void Die()
+    {
+        foreach (var track in GetComponent<TracksCreatorOverTime>().preyTracks)
+        {
+            Destroy(track);
+        }
+
+        GetComponent<TracksCreatorOverTime>().preyTracks.Clear();
+        Destroy(gameObject);
     }
 }

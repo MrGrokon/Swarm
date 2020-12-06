@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4195671181614474849}
   - component: {fileID: 1038497780488227599}
   - component: {fileID: 7304684852303629078}
+  - component: {fileID: 3314841442416103658}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -72,3 +73,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19803db39cc66c4499749556803c8a30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Alpha: {fileID: 0}
+--- !u!114 &3314841442416103658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4195671181614474848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6161438842065a4d83db19ee79c4857, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  terrain: {fileID: 0}
+  maxPrey: 5
+  listOfPrey: []
+  preyPrefab: {fileID: 1853304259910867415, guid: 29c888cf0a78cd4498fce567d441f7ba,
+    type: 3}

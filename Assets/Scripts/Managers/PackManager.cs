@@ -23,18 +23,34 @@ public class PackManager : MonoBehaviour
 
     public void Add_PackMember(GameObject creature)
     {
-        Pack_Member.Add(creature);
+        if(Pack_Member.Contains(creature) == false){
+            Pack_Member.Add(creature);
+        }
     }
 
     public void Remove_PackMember(GameObject creature)
     {
-        Pack_Member.Remove(creature);
-        Destroy(creature);
+        if(Pack_Member.Contains(creature)){
+            Pack_Member.Remove(creature);
+        }
     }
 
     public void SetFormationPoint()
     {
-        
+        Transform[] _temp = Objects.Instance.Alpha.GetComponent<PackOrderer>().formationPoints.ToArray();
+        // better luck next time
+        for (int i = 0; i < _temp.Length; i++)
+        {
+            Pack_Member[i].GetComponent<IntelligenceInterface>().SetTarget(_temp[i]);
+        }
+    }
+
+    public void FreeAllBetas(){
+        foreach(var _beta in Pack_Member){
+            CreatureIntelligence _intel = _beta.GetComponent<CreatureIntelligence>();
+            _intel.Target = Vector3.zero;
+            _intel.ChangeCreatureState(CreatureIntelligence.CreatureState.Follow);
+        }
     }
 
     public int GetPackLenght()

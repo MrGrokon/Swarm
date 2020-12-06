@@ -13,16 +13,32 @@ public class PackOrderer : MonoBehaviour
     };
 
     [SerializeField] private formation myFormation;
-    [SerializeField] private List<Transform> formationPoints;
-    [SerializeField] private List<Vector3> formationPointsLocation;
+    public List<Transform> formationPoints = new List<Transform>();
+    private List<Vector3> formationPointsLocation = new List<Vector3>();
     private bool crossTriggered = false;
+    public bool isInFormation = false;
 
     [SerializeField] private GameObject formationPointPrefab;
 
     private void Update()
     {
-        if(InputTester.inputInstance.formationAxis != Vector2.zero && crossTriggered == false)
-            SetFormation("test", myFormation, InputTester.inputInstance.formationAxis);
+        if(isInFormation){
+            PackManager.packInstance.SetFormationPoint();
+        }
+
+        if(InputTester.inputInstance.formationAxis != Vector2.zero && crossTriggered == false){
+            isInFormation = ! isInFormation;
+
+            if(isInFormation){
+                SetFormation("test", myFormation, InputTester.inputInstance.formationAxis);
+                
+            }
+            else{
+                PackManager.packInstance.FreeAllBetas();
+            }
+            
+            
+        }
         else if(InputTester.inputInstance.formationAxis == Vector2.zero)
         {
             crossTriggered = false;
@@ -31,6 +47,12 @@ public class PackOrderer : MonoBehaviour
 
     public void SetFormation(string str, formation _formation, Vector2 formationAxis)
     {
+        foreach (var empty in formationPoints)
+        {
+            Destroy(empty);
+        }
+        formationPoints.Clear();
+        formationPointsLocation.Clear();
         crossTriggered = true;
         print("Setup de la formation...");
         switch (_formation)
@@ -66,6 +88,7 @@ public class PackOrderer : MonoBehaviour
         {
             var empty = Instantiate(formationPointPrefab, position, Quaternion.identity);
             empty.transform.parent = Objects.Instance.Alpha.transform;
+            formationPoints.Add(empty.transform);
             print("Passage");
         }
     }
