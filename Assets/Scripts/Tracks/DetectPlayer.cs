@@ -6,6 +6,18 @@ using UnityEngine;
 public class DetectPlayer : MonoBehaviour
 {
     public GameObject prey;
+
+    #region Unity Functions
+
+    private void Start() {
+        //ajoute a la liste de trace, cette trace si elle n'est pas déja dedant
+        //evite les erreur pour les traces qui ne sont pas placer par le TracksCreatorOverTime
+        TracksCreatorOverTime _trackManager = prey.GetComponent<TracksCreatorOverTime>();
+        if(_trackManager.PreyTracks.Contains(this.gameObject) == false){
+            _trackManager.PreyTracks.Add(this.gameObject);
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.transform.CompareTag("Player"))
@@ -21,4 +33,6 @@ public class DetectPlayer : MonoBehaviour
             other.transform.GetComponent<PreySniffer>().proof = null;
         }
     }
+    
+    #endregion
 }
