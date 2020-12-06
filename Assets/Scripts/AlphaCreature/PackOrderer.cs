@@ -30,8 +30,7 @@ public class PackOrderer : MonoBehaviour
             isInFormation = ! isInFormation;
 
             if(isInFormation){
-                SetFormation("test", myFormation, InputTester.inputInstance.formationAxis);
-                
+                SetFormation( myFormation, InputTester.inputInstance.formationAxis);
             }
             else{
                 PackManager.packInstance.FreeAllBetas();
@@ -45,7 +44,7 @@ public class PackOrderer : MonoBehaviour
         }
     }
 
-    public void SetFormation(string str, formation _formation, Vector2 formationAxis)
+    public void SetFormation(formation _formation, Vector2 formationAxis)
     {
         foreach (var empty in formationPoints)
         {
