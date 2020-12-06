@@ -8,13 +8,12 @@ public class PreyAiManager : MonoBehaviour
 {
     private bool finishedMovementTask = true;
 
-    private NavMeshAgent AI;
+    private NavMeshAgent _nm_Agent;
 
     [SerializeField] private float roamingDistance;
-    // Start is called before the first frame update
     void Start()
     {
-        AI = GetComponent<NavMeshAgent>();
+        _nm_Agent = GetComponent<NavMeshAgent>();
     }
 
     // Update is called once per frame
@@ -24,7 +23,7 @@ public class PreyAiManager : MonoBehaviour
         {
             SetNewRoamDestination();
         }
-        else if (Vector3.Distance(transform.position, AI.destination) <= 2f)
+        else if (Vector3.Distance(transform.position, _nm_Agent.destination) <= 2f)
         {
             finishedMovementTask = true;
         }
@@ -35,18 +34,18 @@ public class PreyAiManager : MonoBehaviour
         Vector3 randomDestination = Random.insideUnitSphere * roamingDistance + transform.position;
         NavMeshHit hit;
         NavMesh.SamplePosition(randomDestination, out hit, roamingDistance, 1);
-        AI.SetDestination(hit.position);
+        _nm_Agent.SetDestination(hit.position);
         finishedMovementTask = false;
     }
 
     public void Die()
     {
-        foreach (var track in GetComponent<TracksCreatorOverTime>().preyTracks)
+        foreach (var track in GetComponent<TracksCreatorOverTime>().PreyTracks)
         {
             Destroy(track);
         }
 
-        GetComponent<TracksCreatorOverTime>().preyTracks.Clear();
+        GetComponent<TracksCreatorOverTime>().PreyTracks.Clear();
         Destroy(gameObject);
     }
 }
