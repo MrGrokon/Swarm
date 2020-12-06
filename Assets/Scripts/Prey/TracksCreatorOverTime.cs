@@ -10,7 +10,8 @@ public class TracksCreatorOverTime : MonoBehaviour
     //private List<GameObject> tracks = new List<GameObject>();    
     private float _timePassed = 0f, _timeToWait;
 
-    public List<GameObject> preyTracks;
+    [HideInInspector]
+    public List<GameObject> PreyTracks = new List<GameObject>();
 
     #region Unity Functions
         private void Awake() {
@@ -26,6 +27,10 @@ public class TracksCreatorOverTime : MonoBehaviour
                 CreateTrack();
             }
         }
+
+        private void OnDestroy() {
+            DestroyAllAffilatedTracks();
+        }
     #endregion
 
 
@@ -34,11 +39,16 @@ public class TracksCreatorOverTime : MonoBehaviour
         _timeToWait = Random.Range(MinTimeToLeaveTrack, MaxTimeToLeaveTrack);
     }
 
-    public void CreateTrack()
+    private void CreateTrack()
     {
         GameObject _track = Instantiate(TrackPrefab, this.transform.position, Quaternion.identity);
         _track.GetComponent<DetectPlayer>().prey = this.gameObject;
-        preyTracks.Add(_track);
-        //tracks.Add(_track);
+        PreyTracks.Add(_track);
+    }
+
+    private void DestroyAllAffilatedTracks(){
+        foreach(var track in PreyTracks){
+            Destroy(track);
+        }
     }
 }
