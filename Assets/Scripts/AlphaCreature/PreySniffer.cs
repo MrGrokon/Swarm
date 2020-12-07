@@ -7,7 +7,7 @@ public class PreySniffer : MonoBehaviour
 {
     public GameObject proof;
     private GameObject target;
-    [SerializeField] private LineRenderer trail;
+    public LineRenderer trail;
     [SerializeField] private bool OnHunt;
     private bool inputTriggered = false;
 

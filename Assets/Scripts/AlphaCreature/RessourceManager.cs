@@ -74,6 +74,8 @@ public class RessourceManager : MonoBehaviour
                 else{
                     Health += amount;
                 }
+
+                Health = Mathf.Clamp(Health, 0, MaxHealth);
             break;
 
             case Resource.Hunger:
@@ -83,6 +85,7 @@ public class RessourceManager : MonoBehaviour
             else{
                 Hunger += amount;
             }
+            Hunger = Mathf.Clamp(Hunger, 0, MaxHunger);
             break;
 
             default:
@@ -97,6 +100,7 @@ public class RessourceManager : MonoBehaviour
         {
             case Resource.Health:
                 Health -= amount;
+                Health = Mathf.Clamp(Health, 0, MaxHealth);
                 if(Health <= 0){
                     Debug.Log("no more Health");
                     //TODO: call a die function some way
@@ -105,6 +109,7 @@ public class RessourceManager : MonoBehaviour
 
             case Resource.Hunger:
                 Hunger -= amount;
+                Hunger = Mathf.Clamp(Hunger, 0, MaxHunger);
                 if(Hunger <= 0){
                     Debug.Log("no more stamina");
                     //TODO: call a die function some way

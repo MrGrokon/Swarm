@@ -35,7 +35,7 @@ public class CreatureMover : MonoBehaviour
 
         if (InputTester.inputInstance.direction.z != 0)
         {
-            if(InputTester.inputInstance._playerInputs.Actions.MovementMode.triggered)
+            if(InputTester.inputInstance._playerInputs.Actions.MovementMode.ReadValue<float>() > 0)
                 rb.transform.position += fwdCameraDirection * InputTester.inputInstance.direction.z * speed * speedMultiplier * Time.fixedDeltaTime;
             else
             {
@@ -45,7 +45,7 @@ public class CreatureMover : MonoBehaviour
 
         if (InputTester.inputInstance.direction.x != 0)
         {
-            if(InputTester.inputInstance._playerInputs.Actions.MovementMode.triggered)
+            if(InputTester.inputInstance._playerInputs.Actions.MovementMode.ReadValue<float>() > 0)
                 rb.transform.position += rgtCameraDirection * InputTester.inputInstance.direction.x * speed * speedMultiplier * Time.fixedDeltaTime;
             else
             {

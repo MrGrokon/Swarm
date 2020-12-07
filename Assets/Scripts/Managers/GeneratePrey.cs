@@ -29,9 +29,9 @@ public class GeneratePrey : MonoBehaviour
     {
         if (listOfPrey.Count < maxPrey)
         {
-            Vector3 randomSpawnPosition = Random.insideUnitSphere * ((minMaxX.y - minMaxX.x) + (minMaxY.y - minMaxY.x));
+            Vector3 randomSpawnPosition = Random.insideUnitSphere * 200f;
             NavMeshHit hit;
-            NavMesh.SamplePosition(randomSpawnPosition, out hit, (minMaxX.y - minMaxX.x) + (minMaxY.y - minMaxY.x), NavMesh.AllAreas);
+            NavMesh.SamplePosition(randomSpawnPosition, out hit, 200f, NavMesh.AllAreas);
             var prey = Instantiate(preyPrefab, hit.position, Quaternion.identity);
             listOfPrey.Add(prey);
         }
