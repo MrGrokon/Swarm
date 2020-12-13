@@ -7,7 +7,6 @@ public class Attack : MonoBehaviour
 {
 
     [SerializeField] private List<GameObject> PreyInTrigger;
-    // Update is called once per frame
 
     private RessourceManager _ressource;
 
@@ -15,6 +14,7 @@ public class Attack : MonoBehaviour
         _ressource = this.GetComponent<RessourceManager>();
     }
 
+    #region Unity Function
     void Update()
     {
         if (InputTester.inputInstance._playerInputs.Actions.Attack.triggered)
@@ -44,4 +44,5 @@ public class Attack : MonoBehaviour
             PreyInTrigger.Remove(other.transform.gameObject);
         }
     }
+    #endregion
 }
