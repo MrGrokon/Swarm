@@ -36,6 +36,8 @@
           </e>
           <e p="PackMover.cs" t="Include" />
           <e p="Prey" t="Include">
+            <e p="AiDetection.cs" t="Include" />
+            <e p="FieldOfViewEditor.cs" t="Include" />
             <e p="PreyAiManager.cs" t="Include" />
             <e p="TracksCreatorOverTime.cs" t="Include" />
           </e>

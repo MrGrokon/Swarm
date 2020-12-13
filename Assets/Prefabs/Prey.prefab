@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1900186649020025721}
   - component: {fileID: 7339573845739339711}
   - component: {fileID: 8128917941845414919}
+  - component: {fileID: 6394319303653858047}
   m_Layer: 0
   m_Name: Prey
   m_TagString: Prey
@@ -112,6 +113,7 @@ MonoBehaviour:
     type: 3}
   MinTimeToLeaveTrack: 5
   MaxTimeToLeaveTrack: 25
+  PreyTracks: []
 --- !u!114 &7339573845739339711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,7 +126,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c580a843f463c646821543fb2785c62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aiState: 0
   roamingDistance: 50
+  fleeDistance: 0
+  fleeMagnitude: 0
+  fleeTime: 0
+  maxFleeTime: 0
 --- !u!195 &8128917941845414919
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -147,3 +154,25 @@ NavMeshAgent:
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &6394319303653858047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1853304259910867415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a2fd233881e88643881e10340cbbf2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  viewRadius: 10
+  viewAngle: 45
+  targetMask:
+    serializedVersion: 2
+    m_Bits: 512
+  obstacleMask:
+    serializedVersion: 2
+    m_Bits: 256
+  validTarget: {fileID: 0}
+  targetsInViewRadius: []
