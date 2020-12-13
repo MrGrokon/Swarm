@@ -9,6 +9,7 @@ public class TrackRenderer : MonoBehaviour
     public int MyTrackIndex;
 
     [Header("Display Parameters")]
+    public Gradient FreshnessGradient;
     public float DistanceToPoint = 2f;
     [Range(1f, 10f)]
     public float TimeToBeDisplayed = 5f;
@@ -68,6 +69,8 @@ public class TrackRenderer : MonoBehaviour
         Vector3 _nextPos = (this.transform.position - PositionTargeted ) * DistanceToPoint;
         _Line.SetPosition(0, this.transform.position);
         _Line.SetPosition(1, _nextPos);
+        _Line.startColor = GetGradientColorOverFreshness();
+        _Line.endColor = GetGradientColorOverFreshness();
         #endregion
         //TODO: Theo changes
     }
@@ -76,6 +79,12 @@ public class TrackRenderer : MonoBehaviour
         IsDisplayed = false;
         _Line.enabled = false;
         TimePassed =0f;
+    }
+
+    private Color GetGradientColorOverFreshness(){
+        float _value = Mathf.Lerp(0f, PreyRelated.GetComponent<TracksCreatorOverTime>().PreyTracks.Count, MyTrackIndex);
+        _value = Mathf.Clamp(_value, 0f, 1f);
+        return FreshnessGradient.Evaluate(_value);
     }
     #endregion
 }
