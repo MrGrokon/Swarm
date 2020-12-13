@@ -2,80 +2,50 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class PreySniffer : MonoBehaviour
 {
-    [HideInInspector]
-    public GameObject proof;
-    private GameObject target;
+    //[HideInInspector]
+    public List<GameObject> ProofsList = new List<GameObject>();
     
-    [Range(1f, 15f)]
+    /*[Range(1f, 15f)]
     public float TimeToHunt = 5f;
-    private float TimePassed;
+    private float TimePassed;*/
     
-    private LineRenderer trail;
-    private bool OnHunt;
     private bool inputTriggered = false;
 
     #region Unity Functions
-        private void Awake() {
-            trail = GameObject.Find("TrackRenderer").GetComponent<LineRenderer>();
-        }
 
-        private void LateUpdate()
-        {
-            if (InputTester.inputInstance._playerInputs.Actions.GetPrey.ReadValue<float>() != 0 && !inputTriggered)
-            {
-                trail.gameObject.SetActive(true);
-                GetPrey();
+        private void Update() {
+            if(InputTester.inputInstance._playerInputs.Actions.GetPrey.ReadValue<float>() != 0f && inputTriggered == false){
+                Debug.Log("J'appuis sur btn getPrey");
                 inputTriggered = true;
-            }
-
-            if (OnHunt && target)
-            {
-                TimePassed = TimePassed + Time.deltaTime;
-                if(TimePassed < TimeToHunt){
-                    trail.SetPosition(0, Objects.Instance.Alpha.transform.position);
-                    trail.SetPosition(1, target.transform.position);
-                    FadeOutTrail(Mathf.Lerp(0f, TimeToHunt, TimePassed));
-                }
-                else{
-                    ResetTrackerValue();
+                if(ProofsList.Count > 0){
+                    //this will sort the arrey so ProofList[0] will always be the closest to the alpha
+                    ProofsList.OrderBy(x => Vector3.Distance(this.transform.position, x.transform.position));
+                    ProofsList[0].GetComponent<TrackRenderer>().UseTrack();
                 }
             }
-            else
-            {
-                OnHunt = false;
-                trail.gameObject.SetActive(false);
-            }
-
-            if (InputTester.inputInstance._playerInputs.Actions.GetPrey.ReadValue<float>() == 0 && inputTriggered)
-            {
+            #region InputReseter
+            else{
                 inputTriggered = false;
             }
+            #endregion
         }
+
+        #region Gestion de la ProofsList
+        private void OnTriggerEnter(Collider _col) {
+            if(_col.tag == "Track" && ProofsList.Contains(_col.gameObject) == false){
+                ProofsList.Add(_col.gameObject);
+            }
+        }
+
+        private void OnTriggerExit(Collider _col) {
+            if(_col.tag == "Track" && ProofsList.Contains(_col.gameObject)){
+                ProofsList.Remove(_col.gameObject);
+            }
+        }
+        #endregion
     #endregion
-
-    private void GetPrey()
-    {
-        target = proof.GetComponent<DetectPlayer>().prey;
-        trail.SetPosition(0, Objects.Instance.Alpha.transform.position);
-        trail.SetPosition(1, target.transform.position);
-        OnHunt = true;
-    }
-
-    private void FadeOutTrail(float _LerpedValue){
-        /*trail.colorGradient.alphaKeys.SetValue(new GradientAlphaKey(_LerpedValue * 255f, 0f), 0);
-        trail.colorGradient.alphaKeys.SetValue(new GradientAlphaKey(_LerpedValue * 255f, 1f), 1);*/
-
-        //TODO: fadeout of the trail, maybe by shader
-          
-    }
-
-    public void ResetTrackerValue(){
-        trail.gameObject.SetActive(false);
-        TimePassed = 0f;
-        target = null;
-        OnHunt =false;
-    }
 }
