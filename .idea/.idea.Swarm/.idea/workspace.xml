@@ -19,13 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e9a9fd44-a60f-4fbc-b03b-f25159acb4b3" name="Default Changelist" comment="Add some forget scripts">
+    <list default="true" id="e9a9fd44-a60f-4fbc-b03b-f25159acb4b3" name="Default Changelist" comment="Fix AI naviguation problems&#10;Add base mesh rendering for previsualization&#10;Fix navmesh">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Prey.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Prey.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game/NavMesh.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game/NavMesh.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Prey/PreyAiManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Prey/PreyAiManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tracks/TrackRenderer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tracks/TrackRenderer.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,8 +82,9 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CharacterController/InputTester.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Prey/FieldOfViewEditor.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Prey/AiDetection.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Tracks/TrackRenderer.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Prey/PreyAiManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Tracks/TrackRenderer.cs" />
+        <option value="$PROJECT_DIR$/Assets/AiSoundDetection.cs" />
       </list>
     </option>
   </component>
@@ -249,7 +247,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607290062365</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Fix AI naviguation problems&#10;Add base mesh rendering for previsualization&#10;Fix navmesh">
+      <created>1607895400454</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1607895400454</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -283,7 +288,8 @@
     <MESSAGE value="Ajout du camera Rotate" />
     <MESSAGE value="Fix des spawn des proies,&#10;Clamp des valeur de faim et vie,&#10;Possible fix du trail qui ne dépop pas" />
     <MESSAGE value="Add flee state, field of view visualization for the AI&#10;Create visual detection for AI" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add flee state, field of view visualization for the AI&#10;Create visual detection for AI" />
+    <MESSAGE value="Fix AI naviguation problems&#10;Add base mesh rendering for previsualization&#10;Fix navmesh" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix AI naviguation problems&#10;Add base mesh rendering for previsualization&#10;Fix navmesh" />
   </component>
   <component name="WindowStateProjectService">
     <state x="184" y="126" key="MergeDialog" timestamp="1607264162917">
@@ -294,14 +300,14 @@
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="598" y="321" key="MultipleFileMergeDialog/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1607268519074" />
-    <state x="552" y="293" key="Vcs.Push.Dialog.v2" timestamp="1607290066291">
+    <state x="552" y="293" key="Vcs.Push.Dialog.v2" timestamp="1607895402760">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
-    <state x="552" y="293" key="Vcs.Push.Dialog.v2/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1607290066291" />
-    <state x="777" y="474" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607287216803">
+    <state x="552" y="293" key="Vcs.Push.Dialog.v2/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1607895402760" />
+    <state x="777" y="474" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607895431069">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
-    <state x="777" y="474" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1607287216803" />
+    <state x="777" y="474" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1607895431069" />
     <state x="732" y="274" key="git4idea.branch.GitSmartOperationDialog" timestamp="1607888021724">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>

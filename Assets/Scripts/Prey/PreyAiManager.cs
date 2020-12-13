@@ -27,10 +27,12 @@ public class PreyAiManager : MonoBehaviour
     [SerializeField] private float maxFleeTime;
 
     private AiDetection myDetector;
+    private AiSoundDetection mySonorDetection;
     void Start()
     {
         _nm_Agent = GetComponent<NavMeshAgent>();
         myDetector = GetComponent<AiDetection>();
+        mySonorDetection = GetComponent<AiSoundDetection>();
     }
 
     // Update is called once per frame
@@ -43,7 +45,7 @@ public class PreyAiManager : MonoBehaviour
         }
         UpdateStates();
 
-        if (myDetector.FindVisibleTargets())
+        if (myDetector.FindVisibleTargets() || mySonorDetection.FindVisibleTargets())
         {
             seePlayer = true;
             finishedMovementTask = true;
