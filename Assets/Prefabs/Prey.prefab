@@ -127,8 +127,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aiState: 0
-  roamingDistance: 50
-  fleeDistance: 10
+  roamingDistance: 100
+  fleeDistance: 100
   fleeMagnitude: 10
   fleeTime: 0
   maxFleeTime: 10

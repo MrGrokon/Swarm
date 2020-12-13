@@ -6,7 +6,7 @@ using UnityEngine.AI;
 
 public class PreyAiManager : MonoBehaviour
 {
-    private bool finishedMovementTask = true;
+    [SerializeField] private bool finishedMovementTask = true;
 
     private NavMeshAgent _nm_Agent;
 
@@ -118,9 +118,9 @@ public class PreyAiManager : MonoBehaviour
 
     private void ManageTimer()
     {
-        if(fleeTime > 0)
+        if(fleeTime > 0 && aiState == States.Flee)
             fleeTime -= 1 * Time.deltaTime;
-        else
+        else if(fleeTime <= 0 && aiState == States.Flee)
         {
             seePlayer = false;
             finishedMovementTask = true;
