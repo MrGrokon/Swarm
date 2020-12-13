@@ -128,10 +128,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aiState: 0
   roamingDistance: 50
-  fleeDistance: 0
-  fleeMagnitude: 0
+  fleeDistance: 10
+  fleeMagnitude: 10
   fleeTime: 0
-  maxFleeTime: 0
+  maxFleeTime: 10
 --- !u!195 &8128917941845414919
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -166,8 +166,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a2fd233881e88643881e10340cbbf2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viewRadius: 10
-  viewAngle: 45
+  viewRadius: 15.32
+  viewAngle: 70
   targetMask:
     serializedVersion: 2
     m_Bits: 512
