@@ -5,6 +5,10 @@ using UnityEngine;
 
 public class DetectPlayer : MonoBehaviour
 {
+
+    /*
+    BEWARE: this script shouldn't be used anymore
+     */
     public GameObject prey;
 
     #region Unity Functions
@@ -22,7 +26,7 @@ public class DetectPlayer : MonoBehaviour
     {
         if (other.transform.CompareTag("Player"))
         {
-            other.transform.GetComponent<PreySniffer>().proof = this.gameObject;
+            //other.transform.GetComponent<PreySniffer>().proof = this.gameObject;
         }
     }
 
@@ -30,7 +34,7 @@ public class DetectPlayer : MonoBehaviour
     {
         if (other.transform.CompareTag("Player"))
         {
-            other.transform.GetComponent<PreySniffer>().proof = null;
+            //other.transform.GetComponent<PreySniffer>().proof = null;
         }
     }
     
