@@ -175,6 +175,7 @@ GameObject:
   - component: {fileID: 8726772832846971018}
   - component: {fileID: 8682247731385797725}
   - component: {fileID: 955693708350964911}
+  - component: {fileID: 8557050220945068656}
   - component: {fileID: 2093394661}
   - component: {fileID: 5492609072286834361}
   - component: {fileID: 1991325941}
@@ -342,6 +343,20 @@ MonoBehaviour:
   isInFormation: 0
   formationPointPrefab: {fileID: 5087105970270098506, guid: eae16a6942308234884c58668378421f,
     type: 3}
+--- !u!114 &8557050220945068656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8082260682968824200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 330f335965f134f478e5a7716ae54fc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsAsleep: 0
+  TimeToRecoverHunger: 10
 --- !u!114 &2093394661
 MonoBehaviour:
   m_ObjectHideFlags: 0
