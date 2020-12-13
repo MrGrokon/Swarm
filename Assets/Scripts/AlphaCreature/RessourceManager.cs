@@ -10,6 +10,8 @@ public class RessourceManager : MonoBehaviour
 
     public float AmountOfHungerLoosePerSeconds = 2f;
 
+    private FallAsleep _asleep;
+
     #region Geter & Seter
     public float Hunger
     {
@@ -127,11 +129,18 @@ public class RessourceManager : MonoBehaviour
         private void Awake() {
             _health = MaxHealth;
             _hunger = MaxHunger;
+
+            _asleep = this.GetComponent<FallAsleep>();
+            if(_asleep == null){
+                Debug.Log("Critical Error: FallAsleep not found");
+            }
         }
 
         private void Update() {
             //Decrease Hunger over time X units/seconds
-            LooseRessource(Resource.Hunger, AmountOfHungerLoosePerSeconds * Time.deltaTime);
+            if(_asleep.IsAsleep == false){
+                LooseRessource(Resource.Hunger, AmountOfHungerLoosePerSeconds * Time.deltaTime);
+            }
         }
     #endregion
 }
