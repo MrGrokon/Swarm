@@ -44,7 +44,7 @@ public class TrackRenderer : MonoBehaviour
     public void UseTrack(){
         Debug.Log("I UsedTrack()");
         IsDisplayed = true;
-        CreateVisualMesh(GetNextTrack());
+        DrawLineToward(GetNextTrack());
     }
 
     private Vector3 GetNextTrack(){
@@ -70,12 +70,12 @@ public class TrackRenderer : MonoBehaviour
         // _nextPos not right but Debug.drawnLine working pretty well, to be solved later
         Vector3 _nextPos = (this.transform.position - PositionTargeted ) * DistanceToPoint;
         _Line.SetPosition(0, this.transform.position);
-        _Line.SetPosition(1, _nextPos);
+        _Line.SetPosition(1, PositionTargeted);
         _Line.startColor = GetGradientColorOverFreshness();
         _Line.endColor = GetGradientColorOverFreshness();
         #endregion
         //TODO: Theo changes
-        CreateVisualMesh(PositionTargeted);
+        //CreateVisualMesh(PositionTargeted);
     }
 
     private void EraseTrail(){

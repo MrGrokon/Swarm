@@ -4,9 +4,9 @@
     <e p="C:\Users\Théo\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
     <e p="C:\Users\Théo\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_Swarm.-460535874.00" t="ExcludeRecursive" />
     <e p="C:\Users\Théo\Documents\GitHub\Swarm\Swarm" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="AiSoundDetection.cs" t="Include" />
         <e p="CameraRotate.cs" t="Include" />
         <e p="Scripts" t="Include">
           <e p="AlphaCreature" t="Include">
@@ -17,6 +17,7 @@
               <e p="PlayerInputs.cs" t="Include" />
             </e>
             <e p="CreatureMover.cs" t="Include" />
+            <e p="FallAsleep.cs" t="Include" />
             <e p="PackOrderer.cs" t="Include" />
             <e p="PreySniffer.cs" t="Include" />
             <e p="RessourceManager.cs" t="Include" />
@@ -32,6 +33,10 @@
           <e p="DeprecatedScripts" t="Include">
             <e p="DetectPlayer.cs" t="Include" />
           </e>
+          <e p="Editor" t="Include">
+            <e p="FieldOfViewEditor.cs" t="Include" />
+            <e p="SoundRangeEditor.cs" t="Include" />
+          </e>
           <e p="Managers" t="Include">
             <e p="GeneratePrey.cs" t="Include" />
             <e p="Objects.cs" t="Include" />
@@ -41,9 +46,8 @@
           <e p="PackMover.cs" t="Include" />
           <e p="Prey" t="Include">
             <e p="AiDetection.cs" t="Include" />
-            <e p="FieldOfViewEditor.cs" t="Include" />
+            <e p="AiSoundDetection.cs" t="Include" />
             <e p="PreyAiManager.cs" t="Include" />
-            <e p="SoundRangeEditor.cs" t="Include" />
             <e p="TracksCreatorOverTime.cs" t="Include" />
           </e>
           <e p="Tracks" t="Include">
