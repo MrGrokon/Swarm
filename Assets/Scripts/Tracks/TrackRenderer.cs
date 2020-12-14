@@ -18,6 +18,8 @@ public class TrackRenderer : MonoBehaviour
 
     private LineRenderer _Line;
 
+    [SerializeField] private GameObject lastPrevisuMesh;
+
     #region Unity Functions
     void Start()
     {
@@ -42,7 +44,7 @@ public class TrackRenderer : MonoBehaviour
     public void UseTrack(){
         Debug.Log("I UsedTrack()");
         IsDisplayed = true;
-        DrawLineToward(GetNextTrack());
+        CreateVisualMesh(GetNextTrack());
     }
 
     private Vector3 GetNextTrack(){
@@ -73,12 +75,13 @@ public class TrackRenderer : MonoBehaviour
         _Line.endColor = GetGradientColorOverFreshness();
         #endregion
         //TODO: Theo changes
+        CreateVisualMesh(PositionTargeted);
     }
 
     private void EraseTrail(){
         IsDisplayed = false;
         _Line.enabled = false;
-        TimePassed =0f;
+        TimePassed = 0f;
     }
 
     private Color GetGradientColorOverFreshness(){
@@ -87,4 +90,51 @@ public class TrackRenderer : MonoBehaviour
         return FreshnessGradient.Evaluate(_value);
     }
     #endregion
+
+    private void CreateVisualMesh(Vector3 DistancePoint)
+    {
+        
+        Vector3[] vertices = new Vector3[3];
+        Vector2[] uv = new Vector2[3];
+        int[] triangles = new int[3];
+
+        
+        
+        vertices[0] = transform.position;
+        vertices[1] = DistancePoint + new Vector3(10,0,0);
+        vertices[2] = DistancePoint - new Vector3(10,0,0);
+        
+        uv[0] = transform.position;
+        uv[1] = DistancePoint + new Vector3(10,0,0);
+        uv[2] = DistancePoint - new Vector3(10,0,0);
+
+        triangles[0] = 0;
+        triangles[1] = 1;
+        triangles[2] = 2;
+        
+        Mesh mesh = new Mesh();
+        mesh.vertices = vertices;
+        mesh.uv = uv;
+        mesh.triangles = triangles;
+
+        if (!lastPrevisuMesh)
+        {
+            GameObject visuMesh = new GameObject("Visualization", typeof(MeshFilter), typeof(MeshRenderer));
+            visuMesh.GetComponent<MeshFilter>().mesh = mesh;
+            visuMesh.transform.localScale = new Vector3(1, 1, 1);
+            visuMesh.transform.position = transform.position;
+            lastPrevisuMesh = visuMesh;
+        }
+        else
+        {
+            Destroy(lastPrevisuMesh);
+            lastPrevisuMesh = new GameObject("Visualization", typeof(MeshFilter), typeof(MeshRenderer));
+            lastPrevisuMesh.GetComponent<MeshFilter>().mesh = mesh;
+            lastPrevisuMesh.transform.localScale = new Vector3(-1, -1, -1);
+            lastPrevisuMesh.transform.position = transform.position;
+        }
+        
+        
+
+    }
 }
