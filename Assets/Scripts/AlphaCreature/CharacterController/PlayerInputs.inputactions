@@ -78,9 +78,17 @@
                     "interactions": ""
                 },
                 {
-                    "name": "MovementMode",
+                    "name": "RT",
                     "type": "Button",
                     "id": "d72abd5e-8a56-4ae4-8207-5105cef0fea9",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "LT",
+                    "type": "Button",
+                    "id": "e4311cd1-5eb5-4912-ab45-9ea581361d67",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -239,7 +247,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "MovementMode",
+                    "action": "RT",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -273,6 +281,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Reset",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "41372747-730c-4f02-a85b-34e7e2a06407",
+                    "path": "<Gamepad>/leftTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LT",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
