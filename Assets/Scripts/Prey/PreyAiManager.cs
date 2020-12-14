@@ -6,7 +6,7 @@ using UnityEngine.AI;
 
 public class PreyAiManager : MonoBehaviour
 {
-    private bool finishedMovementTask = true;
+    [SerializeField] private bool finishedMovementTask = true;
 
     private NavMeshAgent _nm_Agent;
 
@@ -27,10 +27,12 @@ public class PreyAiManager : MonoBehaviour
     [SerializeField] private float maxFleeTime;
 
     private AiDetection myDetector;
+    private AiSoundDetection mySonorDetection;
     void Start()
     {
         _nm_Agent = GetComponent<NavMeshAgent>();
         myDetector = GetComponent<AiDetection>();
+        mySonorDetection = GetComponent<AiSoundDetection>();
     }
 
     // Update is called once per frame
@@ -43,7 +45,7 @@ public class PreyAiManager : MonoBehaviour
         }
         UpdateStates();
 
-        if (myDetector.FindVisibleTargets())
+        if (myDetector.FindVisibleTargets() || mySonorDetection.FindVisibleTargets())
         {
             seePlayer = true;
             finishedMovementTask = true;
@@ -118,9 +120,9 @@ public class PreyAiManager : MonoBehaviour
 
     private void ManageTimer()
     {
-        if(fleeTime > 0)
+        if(fleeTime > 0 && aiState == States.Flee)
             fleeTime -= 1 * Time.deltaTime;
-        else
+        else if(fleeTime <= 0 && aiState == States.Flee)
         {
             seePlayer = false;
             finishedMovementTask = true;
