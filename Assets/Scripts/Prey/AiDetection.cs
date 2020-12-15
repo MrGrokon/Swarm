@@ -44,7 +44,7 @@ public class AiDetection : MonoBehaviour
         return validTarget;
     }
     
-    public Vector3 DirFromAngle(float  angleInDegrees, bool angleIsGlobal)  //Créer une direction depuis un angle, uniquement utilisée dans les scripts éditeur
+    public Vector3 DirFromAngle(float angleInDegrees, bool angleIsGlobal)  //Créer une direction depuis un angle, uniquement utilisée dans les scripts éditeur
     {
         if (!angleIsGlobal)
         {

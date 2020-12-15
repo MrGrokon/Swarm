@@ -75,7 +75,7 @@ public class TrackRenderer : MonoBehaviour
         _Line.endColor = GetGradientColorOverFreshness();
         #endregion
         //TODO: Theo changes
-        //CreateVisualMesh(PositionTargeted);
+        CreateVisualMesh(PositionTargeted);
     }
 
     private void EraseTrail(){ 
@@ -101,12 +101,12 @@ public class TrackRenderer : MonoBehaviour
         
         
         vertices[0] = transform.position;
-        vertices[1] = DistancePoint + new Vector3(10,0,0);
-        vertices[2] = DistancePoint - new Vector3(10,0,0);
+        vertices[1] = DistancePoint + GetComponent<TrackInfo>().DirFromAngle(GetComponent<TrackInfo>().actualAngle / 2, false);
+        vertices[2] = DistancePoint + GetComponent<TrackInfo>().DirFromAngle(-GetComponent<TrackInfo>().actualAngle / 2, false);
         
         uv[0] = transform.position;
-        uv[1] = DistancePoint + new Vector3(10,0,0);
-        uv[2] = DistancePoint - new Vector3(10,0,0);
+        uv[1] = DistancePoint + GetComponent<TrackInfo>().DirFromAngle(GetComponent<TrackInfo>().actualAngle / 2, false);
+        uv[2] = DistancePoint + GetComponent<TrackInfo>().DirFromAngle(-GetComponent<TrackInfo>().actualAngle / 2, false);
 
         triangles[0] = 0;
         triangles[1] = 1;
@@ -121,7 +121,7 @@ public class TrackRenderer : MonoBehaviour
         {
             GameObject visuMesh = new GameObject("Visualization", typeof(MeshFilter), typeof(MeshRenderer));
             visuMesh.GetComponent<MeshFilter>().mesh = mesh;
-            visuMesh.transform.localScale = new Vector3(1, 1, 1);
+            visuMesh.transform.localScale = new Vector3(-1, -1, -1);
             visuMesh.transform.position = transform.position;
             lastPrevisuMesh = visuMesh;
         }

@@ -7,7 +7,6 @@ public class CameraRotate : MonoBehaviour
 {
 
     public static CameraRotate cameraInstance;
-    public CinemachineFreeLook camera;
 
     [SerializeField] private float cameraSpeed;
     // Start is called before the first frame update
@@ -28,7 +27,8 @@ public class CameraRotate : MonoBehaviour
     {
         if (InputTester.inputInstance._playerInputs.Actions.RotateCamera.ReadValue<float>() != 0)
         {
-            camera.m_XAxis.Value += InputTester.inputInstance._playerInputs.Actions.RotateCamera.ReadValue<float>() * cameraSpeed * Time.deltaTime;
+            transform.RotateAround(transform.parent.position, Vector3.up, cameraSpeed * InputTester.inputInstance._playerInputs.Actions.RotateCamera.ReadValue<float>() * Time.deltaTime);
+            print(InputTester.inputInstance._playerInputs.Actions.RotateCamera.ReadValue<float>());
         }
     }
 }

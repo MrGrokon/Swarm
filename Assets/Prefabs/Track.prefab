@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2622212310027546029}
   - component: {fileID: 2622212310027546028}
   - component: {fileID: 2584634481384568929}
+  - component: {fileID: 4517095959734189727}
   m_Layer: 0
   m_Name: Track
   m_TagString: Track
@@ -93,6 +94,22 @@ MonoBehaviour:
   DistanceToPoint: 2
   TimeToBeDisplayed: 5
   lastPrevisuMesh: {fileID: 0}
+--- !u!114 &4517095959734189727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2622212310027546019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6071ee126c5cd514c997869de4981639, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anglesByFreshnessLevel: []
+  distanceByFreshnessLevel: []
+  actualAngle: 160
+  actualDistance: 200
 --- !u!1 &6439192239389745614
 GameObject:
   m_ObjectHideFlags: 0

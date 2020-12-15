@@ -57,6 +57,7 @@
             <e p="UI_Bar_FollowRessource.cs" t="Include" />
           </e>
         </e>
+        <e p="TrackInfo.cs" t="Include" />
       </e>
       <e p="obj" t="ExcludeRecursive" />
       <e p="Packages" t="ExcludeRecursive" />
