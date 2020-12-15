@@ -35,13 +35,13 @@ public class PreySniffer : MonoBehaviour
         }
 
         #region Gestion de la ProofsList
-        private void OnTriggerEnter(Collider _col) {
+        private void OnTriggerEnter(Collider _col) { //Ajout de la traçe dans la liste du joueur comme étant analysable
             if(_col.tag == "Track" && ProofsList.Contains(_col.gameObject) == false){
                 ProofsList.Add(_col.gameObject);
             }
         }
 
-        private void OnTriggerExit(Collider _col) {
+        private void OnTriggerExit(Collider _col) { //Suppression de la traçe dans la liste du joueur comme étant analysable
             if(_col.tag == "Track" && ProofsList.Contains(_col.gameObject)){
                 ProofsList.Remove(_col.gameObject);
             }

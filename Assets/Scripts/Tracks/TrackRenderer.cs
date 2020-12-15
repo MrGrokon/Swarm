@@ -41,13 +41,13 @@ public class TrackRenderer : MonoBehaviour
     }
     #endregion
 
-    public void UseTrack(){
+    public void UseTrack(){  //Affichage de la ligne de rendu
         Debug.Log("I UsedTrack()");
         IsDisplayed = true;
         DrawLineToward(GetNextTrack());
     }
 
-    private Vector3 GetNextTrack(){
+    private Vector3 GetNextTrack(){  //Obtention de la position de la prochaine traçe
         //Get the value of next track or the prey
         GameObject _target;
         TracksCreatorOverTime _prey_trackCreator = PreyRelated.GetComponent<TracksCreatorOverTime>();
@@ -62,7 +62,7 @@ public class TrackRenderer : MonoBehaviour
     }
 
     #region Trail Displayer
-    private void DrawLineToward(Vector3 PositionTargeted){
+    private void DrawLineToward(Vector3 PositionTargeted){  //Création de la ligne de traque
         //drawn the track Info toward the next target or prey
         Debug.DrawLine(this.transform.position, PositionTargeted, Color.magenta);
         #region track info by line renderer
@@ -78,20 +78,20 @@ public class TrackRenderer : MonoBehaviour
         //CreateVisualMesh(PositionTargeted);
     }
 
-    private void EraseTrail(){
+    private void EraseTrail(){ 
         IsDisplayed = false;
         _Line.enabled = false;
         TimePassed = 0f;
     }
 
-    private Color GetGradientColorOverFreshness(){
+    private Color GetGradientColorOverFreshness(){  //Créer un gradient selon la fraicheur de la traçe et la distance
         float _value = Mathf.Lerp(0f, PreyRelated.GetComponent<TracksCreatorOverTime>().PreyTracks.Count, MyTrackIndex);
         _value = Mathf.Clamp(_value, 0f, 1f);
         return FreshnessGradient.Evaluate(_value);
     }
     #endregion
 
-    private void CreateVisualMesh(Vector3 DistancePoint)
+    private void CreateVisualMesh(Vector3 DistancePoint)  //Creation du mesh de visualisation, il ne s'agit là que d'une base qui n'est pas fonctionelle
     {
         
         Vector3[] vertices = new Vector3[3];

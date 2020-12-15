@@ -27,11 +27,11 @@ public class GeneratePrey : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (listOfPrey.Count < maxPrey)
+        if (listOfPrey.Count < maxPrey)  //Génération des proies
         {
             Vector3 randomSpawnPosition = Random.insideUnitSphere * 200f;
             NavMeshHit hit;
-            NavMesh.SamplePosition(randomSpawnPosition, out hit, 200f, NavMesh.AllAreas);
+            NavMesh.SamplePosition(randomSpawnPosition, out hit, 200f, NavMesh.AllAreas); //Sample la position donnée sur le navmesh et peut retourner un bool
             var prey = Instantiate(preyPrefab, hit.position, Quaternion.identity);
             listOfPrey.Add(prey);
         }

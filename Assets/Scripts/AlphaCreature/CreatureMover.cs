@@ -25,10 +25,13 @@ public class CreatureMover : MonoBehaviour
         
     }
 
-    public void Move(Vector3 direction)
+    public void Move(Vector3 direction)  //Player Movement
     {
+        
+        //Directions de la caméra
         Vector3 fwdCameraDirection = new Vector3(Camera.main.transform.forward.x, 0, Camera.main.transform.forward.z);
         Vector3 rgtCameraDirection = new Vector3(Camera.main.transform.right.x, 0, Camera.main.transform.right.z); 
+        
         Debug.DrawRay(Camera.main.transform.position, fwdCameraDirection , Color.blue);
 
         #region movementRegion

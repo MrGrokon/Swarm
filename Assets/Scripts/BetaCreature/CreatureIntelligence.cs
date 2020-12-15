@@ -60,6 +60,7 @@ public class CreatureIntelligence : MonoBehaviour
     
     #region Data Managing Functions
         
+    //Changement du state du membre de la meute
         public void ChangeCreatureState(CreatureState _state){
                 if(_state == CreatureState.Follow){
                     _nm_Agent.SetDestination(RandomPositionAroundAlpha());
@@ -74,6 +75,7 @@ public class CreatureIntelligence : MonoBehaviour
 
     #region  Low Level Function
 
+    //Création d'une position aléatoire autour du joueur
         private Vector3 RandomPositionAroundAlpha(float OptionnalDistanceRange = 5f){
             Vector3 RandomPos = Random.insideUnitCircle;
             RandomPos.z = RandomPos.y;

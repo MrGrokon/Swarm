@@ -13,6 +13,7 @@ public class HealthSysteme : MonoBehaviour
         _health = MaxHealth;
     }
 
+    //Infliger des dommages
     public void TakeDamage(int _amount){
         _health -= _amount;
         if(_health<= 0){
@@ -20,6 +21,7 @@ public class HealthSysteme : MonoBehaviour
         }
     }
 
+    //Donner de la vie
     public void Heal(int _amount){
         _health += _amount;
         if(_health > MaxHealth){

@@ -30,7 +30,7 @@ public class PackOrderer : MonoBehaviour
             isInFormation = ! isInFormation;
 
             if(isInFormation){
-                SetFormation( myFormation, InputTester.inputInstance.formationAxis);
+                SetFormation( myFormation);
             }
             else{
                 PackManager.packInstance.FreeAllBetas();
@@ -44,7 +44,8 @@ public class PackOrderer : MonoBehaviour
         }
     }
 
-    public void SetFormation(formation _formation, Vector2 formationAxis)
+    //Mise en place d'une formlation selon la formation choisi
+    public void SetFormation(formation _formation) 
     {
         foreach (var empty in formationPoints)
         {
@@ -83,7 +84,8 @@ public class PackOrderer : MonoBehaviour
                 break;
         }
 
-        foreach (var position in formationPointsLocation)
+        //Création des positions de formations
+        foreach (var position in formationPointsLocation)  
         {
             var empty = Instantiate(formationPointPrefab, position, Quaternion.identity);
             empty.transform.parent = Objects.Instance.Alpha.transform;

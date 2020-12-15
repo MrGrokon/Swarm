@@ -45,7 +45,7 @@ public class PackManager : MonoBehaviour
         }
     }
 
-    public void FreeAllBetas(){
+    public void FreeAllBetas(){ //"Casse" la formation actuel
         foreach(var _beta in Pack_Member){
             CreatureIntelligence _intel = _beta.GetComponent<CreatureIntelligence>();
             _intel.Target = Vector3.zero;
