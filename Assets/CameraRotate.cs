@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
-public class CameraRotate : MonoBehaviour
-{
-
+public class CameraRotate : MonoBehaviour {
+    public CinemachineVirtualCamera camera;
     public static CameraRotate cameraInstance;
 
     [SerializeField] private float cameraSpeed;
@@ -23,12 +23,19 @@ public class CameraRotate : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        if (InputTester.inputInstance._playerInputs.Actions.RotateCamera.ReadValue<float>() != 0)
+    void Update() {
+        var cameraAxisInput = InputTester.inputInstance._playerInputs.Actions.RotateCamera.ReadValue<Vector2>();
+        if (cameraAxisInput.x != 0)
         {
-            transform.RotateAround(transform.parent.position, Vector3.up, cameraSpeed * InputTester.inputInstance._playerInputs.Actions.RotateCamera.ReadValue<float>() * Time.deltaTime);
-            print(InputTester.inputInstance._playerInputs.Actions.RotateCamera.ReadValue<float>());
+            transform.RotateAround(transform.parent.position, Vector3.up, cameraSpeed * cameraAxisInput.x * Time.deltaTime);
+            
+//            print(cameraAxisInput.x);
+        }
+
+        if (Gamepad.current.rightStickButton.wasPressedThisFrame) {
+            Debug.Log("fonctionne");
+            var cinemachineComponent = this.camera.GetCinemachineComponent<Cinemachine3rdPersonFollow>();
+            cinemachineComponent.CameraSide = -cinemachineComponent.CameraSide;
         }
     }
 }
