@@ -20,21 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e9a9fd44-a60f-4fbc-b03b-f25159acb4b3" name="Default Changelist" comment=" 0.5.1.1 : Ajout du sound detection">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Checkout_at_13_12_2020_20_32__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Checkout_at_13_12_2020_20_32__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Checkout_at_13_12_2020_22_49__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Checkout_at_13_12_2020_22_49__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_12_2020_14_27__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_12_2020_14_27__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Merge_at_13_12_2020_20_32__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Merge_at_13_12_2020_20_32__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Merge_at_13_12_2020_20_33__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Merge_at_13_12_2020_20_33__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Merge_at_13_12_2020_20_33__Default_Changelist_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Merge_at_13_12_2020_20_33__Default_Changelist_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Merge_at_13_12_2020_22_49__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Merge_at_13_12_2020_22_49__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Merge_at_15_12_2020_14_27__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Merge_at_15_12_2020_14_27__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Update_at_14_12_2020_09_52__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Update_at_14_12_2020_09_52__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CharacterController/PlayerInputs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CharacterController/PlayerInputs.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CharacterController/PlayerInputs.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CharacterController/PlayerInputs.inputactions" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CreatureMover.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CreatureMover.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Prey/TracksCreatorOverTime.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Prey/TracksCreatorOverTime.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tracks/TrackRenderer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tracks/TrackRenderer.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,13 +83,13 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Managers/PackManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Prey/AiSoundDetection.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Prey/PreyAiManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Prey/TracksCreatorOverTime.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/DebugScript.cs" />
         <option value="$PROJECT_DIR$/Assets/CameraRotate.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Prey/AiDetection.cs" />
         <option value="$PROJECT_DIR$/Assets/TrackInfo.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Tracks/TrackRenderer.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CreatureMover.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Tracks/TrackRenderer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Prey/TracksCreatorOverTime.cs" />
       </list>
     </option>
   </component>
@@ -178,7 +167,8 @@
       <workItem from="1607988860373" duration="758000" />
       <workItem from="1608023677684" duration="1362000" />
       <workItem from="1608056982369" duration="669000" />
-      <workItem from="1608210920802" duration="2087000" />
+      <workItem from="1608210920802" duration="2183000" />
+      <workItem from="1608238891545" duration="3446000" />
     </task>
     <task id="LOCAL-00001" summary="Camera system implémenté">
       <created>1606123669149</created>
@@ -292,7 +282,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607943786196</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="0.6.0.0 : Add sprint mecanic">
+      <created>1608213047223</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1608213047223</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -329,7 +326,8 @@
     <MESSAGE value="Fix AI naviguation problems&#10;Add base mesh rendering for previsualization&#10;Fix navmesh" />
     <MESSAGE value=" 0.5.1.0 : Fix TrackRenderer trail" />
     <MESSAGE value=" 0.5.1.1 : Ajout du sound detection" />
-    <option name="LAST_COMMIT_MESSAGE" value=" 0.5.1.1 : Ajout du sound detection" />
+    <MESSAGE value="0.6.0.0 : Add sprint mecanic" />
+    <option name="LAST_COMMIT_MESSAGE" value="0.6.0.0 : Add sprint mecanic" />
   </component>
   <component name="WindowStateProjectService">
     <state x="184" y="126" key="MergeDialog" timestamp="1607896176207">
@@ -340,10 +338,10 @@
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="598" y="321" key="MultipleFileMergeDialog/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1607268519074" />
-    <state x="552" y="293" key="Vcs.Push.Dialog.v2" timestamp="1608046376445">
+    <state x="552" y="293" key="Vcs.Push.Dialog.v2" timestamp="1608213062693">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
-    <state x="552" y="293" key="Vcs.Push.Dialog.v2/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1608046376445" />
+    <state x="552" y="293" key="Vcs.Push.Dialog.v2/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1608213062693" />
     <state x="777" y="474" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607988875474">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>

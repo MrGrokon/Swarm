@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -19,6 +20,9 @@ public class TrackRenderer : MonoBehaviour
     private LineRenderer _Line;
 
     [SerializeField] private GameObject lastPrevisuMesh;
+
+    private Vector3 AngleA;
+    private Vector3 AngleB;
 
     #region Unity Functions
     void Start()
@@ -75,7 +79,8 @@ public class TrackRenderer : MonoBehaviour
         _Line.endColor = GetGradientColorOverFreshness();
         #endregion
         //TODO: Theo changes
-        CreateVisualMesh(PositionTargeted);
+        DistanceToPoint = Vector3.Distance(transform.position, PositionTargeted);
+        CreateVisualMesh();
     }
 
     private void EraseTrail(){ 
@@ -91,22 +96,25 @@ public class TrackRenderer : MonoBehaviour
     }
     #endregion
 
-    private void CreateVisualMesh(Vector3 DistancePoint)  //Creation du mesh de visualisation, il ne s'agit là que d'une base qui n'est pas fonctionelle
+    private void CreateVisualMesh()  //Creation du mesh de visualisation, il ne s'agit là que d'une base qui n'est pas fonctionelle
     {
         
         Vector3[] vertices = new Vector3[3];
         Vector2[] uv = new Vector2[3];
         int[] triangles = new int[3];
 
+        AngleA = GetComponent<TrackInfo>().DirFromAngle(-GetComponent<TrackInfo>().actualAngle / 2, false);
+        AngleB = new Vector3(-AngleA.x, AngleA.y, AngleA.z);
         
+        vertices[0] = new Vector3(0,0);
+        vertices[1] = AngleA * DistanceToPoint;
+        vertices[2] = AngleB * DistanceToPoint;
         
-        vertices[0] = transform.position;
-        vertices[1] = DistancePoint + GetComponent<TrackInfo>().DirFromAngle(GetComponent<TrackInfo>().actualAngle / 2, false);
-        vertices[2] = DistancePoint + GetComponent<TrackInfo>().DirFromAngle(-GetComponent<TrackInfo>().actualAngle / 2, false);
-        
-        uv[0] = transform.position;
-        uv[1] = DistancePoint + GetComponent<TrackInfo>().DirFromAngle(GetComponent<TrackInfo>().actualAngle / 2, false);
-        uv[2] = DistancePoint + GetComponent<TrackInfo>().DirFromAngle(-GetComponent<TrackInfo>().actualAngle / 2, false);
+        print(AngleB * DistanceToPoint);
+
+        uv[0] = new Vector3(0,1);
+        uv[1] = AngleA * DistanceToPoint;
+        uv[2] = AngleB * DistanceToPoint;
 
         triangles[0] = 0;
         triangles[1] = 1;
@@ -121,7 +129,7 @@ public class TrackRenderer : MonoBehaviour
         {
             GameObject visuMesh = new GameObject("Visualization", typeof(MeshFilter), typeof(MeshRenderer));
             visuMesh.GetComponent<MeshFilter>().mesh = mesh;
-            visuMesh.transform.localScale = new Vector3(-1, -1, -1);
+            visuMesh.transform.localScale = new Vector3(1, 1, 1);
             visuMesh.transform.position = transform.position;
             lastPrevisuMesh = visuMesh;
         }
@@ -130,11 +138,23 @@ public class TrackRenderer : MonoBehaviour
             Destroy(lastPrevisuMesh);
             lastPrevisuMesh = new GameObject("Visualization", typeof(MeshFilter), typeof(MeshRenderer));
             lastPrevisuMesh.GetComponent<MeshFilter>().mesh = mesh;
-            lastPrevisuMesh.transform.localScale = new Vector3(-1, -1, -1);
+            lastPrevisuMesh.transform.localScale = new Vector3(1, 1, 1);
             lastPrevisuMesh.transform.position = transform.position;
         }
         
         
 
+    }
+
+    private void OnDrawGizmos()
+    {
+        AngleA = GetComponent<TrackInfo>().DirFromAngle(-GetComponent<TrackInfo>().actualAngle / 2, false);
+        //AngleB = GetComponent<TrackInfo>().DirFromAngle(GetComponent<TrackInfo>().actualAngle / 2, false);
+        AngleB = new Vector3(-AngleA.x, AngleA.y, AngleA.z);
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position + AngleA * DistanceToPoint, 1f);
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position + AngleB * DistanceToPoint, 1f);
+        
     }
 }
