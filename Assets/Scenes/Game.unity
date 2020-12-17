@@ -1019,6 +1019,31 @@ PrefabInstance:
       propertyPath: InstanciateBetaOnStart
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8726772832846971018, guid: b8ca2ec5494f96e468e120b752962fe1,
+        type: 3}
+      propertyPath: multiplierAddedAtEachInput
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726772832846971018, guid: b8ca2ec5494f96e468e120b752962fe1,
+        type: 3}
+      propertyPath: actualSprintState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726772832846971018, guid: b8ca2ec5494f96e468e120b752962fe1,
+        type: 3}
+      propertyPath: sprintState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726772832846971018, guid: b8ca2ec5494f96e468e120b752962fe1,
+        type: 3}
+      propertyPath: maxSpeedMultiplier
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726772832846971018, guid: b8ca2ec5494f96e468e120b752962fe1,
+        type: 3}
+      propertyPath: multiplierLosseOverTime
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b8ca2ec5494f96e468e120b752962fe1, type: 3}
 --- !u!4 &8082260680867104870 stripped

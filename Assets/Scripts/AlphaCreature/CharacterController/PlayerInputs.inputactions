@@ -78,7 +78,15 @@
                     "interactions": ""
                 },
                 {
-                    "name": "MovementMode",
+                    "name": "LeftSprintButton",
+                    "type": "Button",
+                    "id": "4f322ce2-da05-49c4-bdc2-46ecfcf58a92",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "RightSprintButton",
                     "type": "Button",
                     "id": "d72abd5e-8a56-4ae4-8207-5105cef0fea9",
                     "expectedControlType": "Button",
@@ -239,7 +247,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "MovementMode",
+                    "action": "RightSprintButton",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -273,6 +281,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Reset",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "30c90430-ce0a-40eb-bc66-933571017a1d",
+                    "path": "<Gamepad>/leftTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LeftSprintButton",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
