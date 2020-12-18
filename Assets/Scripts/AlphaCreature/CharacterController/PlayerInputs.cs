@@ -190,7 +190,7 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                 {
                     ""name"": ""negative"",
                     ""id"": ""a33fff0d-3aaf-465b-a9bf-7cba0582e103"",
-                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""path"": ""<Gamepad>/rightStick/right"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -201,7 +201,7 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                 {
                     ""name"": ""positive"",
                     ""id"": ""23c2f44c-0c25-43c8-92ac-46991969b419"",
-                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""path"": ""<Gamepad>/rightStick/left"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
