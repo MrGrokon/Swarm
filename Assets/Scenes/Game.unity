@@ -347,8 +347,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd6043bde05a7fc4cba197d06915c1e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damping: {x: 0.1, y: 0.62, z: 0.3}
-  ShoulderOffset: {x: 0.12, y: 0.11, z: -2.85}
+  Damping: {x: 0.1, y: 0.86, z: 0.3}
+  ShoulderOffset: {x: -0.57, y: 1.32, z: -4.35}
   VerticalArmLength: 0.4
   CameraSide: 1
   CameraDistance: 2
@@ -508,7 +508,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1324630655}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 38.33776, y: 3.21, z: 7.065485}
+  m_LocalPosition: {x: 37.647762, y: 4.42, z: 5.5654845}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -580,7 +580,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1743952174}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 38.33776, y: 3.21, z: 7.065485}
+  m_LocalPosition: {x: 37.647762, y: 4.42, z: 5.5654845}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1065977300}
@@ -742,7 +742,7 @@ PrefabInstance:
     - target: {fileID: 5386110685191464007, guid: da24192a800e15f45aebc2a45780b08f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5386110685191464007, guid: da24192a800e15f45aebc2a45780b08f,
         type: 3}
@@ -805,7 +805,7 @@ Transform:
   m_Children:
   - {fileID: 2135339502}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2135339502 stripped
 Transform:

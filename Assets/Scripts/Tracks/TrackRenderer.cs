@@ -33,6 +33,7 @@ public class TrackRenderer : MonoBehaviour
             Debug.Log("Error: _LineRenderer not defined for " + this.name + " child");
             
         }
+        
     }
 
     private void Update() {
@@ -103,14 +104,14 @@ public class TrackRenderer : MonoBehaviour
         Vector2[] uv = new Vector2[3];
         int[] triangles = new int[3];
 
-        AngleA = GetComponent<TrackInfo>().DirFromAngle(-GetComponent<TrackInfo>().actualAngle / 2, false);
+        AngleA = GetComponent<TrackInfo>().DirFromAngle(-GetComponent<TrackInfo>().actualAngle / 2, true);
         AngleB = new Vector3(-AngleA.x, AngleA.y, AngleA.z);
+        
         
         vertices[0] = new Vector3(0,0);
         vertices[1] = AngleA * DistanceToPoint;
         vertices[2] = AngleB * DistanceToPoint;
         
-        print(AngleB * DistanceToPoint);
 
         uv[0] = new Vector3(0,1);
         uv[1] = AngleA * DistanceToPoint;
@@ -131,6 +132,7 @@ public class TrackRenderer : MonoBehaviour
             visuMesh.GetComponent<MeshFilter>().mesh = mesh;
             visuMesh.transform.localScale = new Vector3(1, 1, 1);
             visuMesh.transform.position = transform.position;
+            visuMesh.transform.eulerAngles = new Vector3(0, this.transform.eulerAngles.y + 180, 0);
             lastPrevisuMesh = visuMesh;
         }
         else
@@ -139,6 +141,7 @@ public class TrackRenderer : MonoBehaviour
             lastPrevisuMesh = new GameObject("Visualization", typeof(MeshFilter), typeof(MeshRenderer));
             lastPrevisuMesh.GetComponent<MeshFilter>().mesh = mesh;
             lastPrevisuMesh.transform.localScale = new Vector3(1, 1, 1);
+            lastPrevisuMesh.transform.eulerAngles = new Vector3(0, this.transform.eulerAngles.y + 180, 0);
             lastPrevisuMesh.transform.position = transform.position;
         }
         
