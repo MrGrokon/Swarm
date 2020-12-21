@@ -133,6 +133,7 @@ public class TrackRenderer : MonoBehaviour
             visuMesh.transform.localScale = new Vector3(1, 1, 1);
             visuMesh.transform.position = transform.position;
             visuMesh.transform.eulerAngles = new Vector3(0, this.transform.eulerAngles.y + 180, 0);
+            visuMesh.transform.parent = this.transform;
             lastPrevisuMesh = visuMesh;
         }
         else
@@ -143,6 +144,7 @@ public class TrackRenderer : MonoBehaviour
             lastPrevisuMesh.transform.localScale = new Vector3(1, 1, 1);
             lastPrevisuMesh.transform.eulerAngles = new Vector3(0, this.transform.eulerAngles.y + 180, 0);
             lastPrevisuMesh.transform.position = transform.position;
+            lastPrevisuMesh.transform.parent = this.transform;
         }
         
         

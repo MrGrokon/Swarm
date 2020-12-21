@@ -62,6 +62,11 @@ public class CreatureMover : MonoBehaviour
             rb.transform.position += rgtCameraDirection * InputTester.inputInstance.direction.x * speed * speedMultiplier * Time.fixedDeltaTime;
         }
         
+        if (speedMultiplier < 1.2f)
+        {
+            GetComponent<Renderer>().material.color = Color.white;
+        }
+        
 
         #endregion
         
@@ -74,12 +79,16 @@ public class CreatureMover : MonoBehaviour
             case 1:
                 speedMultiplier += multiplierAddedAtEachInput;
                 sprintState = 2;
+                GetComponent<Renderer>().material.color = Color.yellow;
                 break;
             case 2:
                 speedMultiplier += multiplierAddedAtEachInput;
                 sprintState = 1;
+                GetComponent<Renderer>().material.color = Color.green;
                 break;
         }
+
+        
 
        
     }

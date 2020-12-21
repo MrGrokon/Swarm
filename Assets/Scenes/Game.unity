@@ -1047,7 +1047,7 @@ PrefabInstance:
     - target: {fileID: 8726772832846971018, guid: b8ca2ec5494f96e468e120b752962fe1,
         type: 3}
       propertyPath: multiplierLosseOverTime
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b8ca2ec5494f96e468e120b752962fe1, type: 3}
@@ -1075,4 +1075,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 262606e3457346441b02fbe0b56bac27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraSpeed: 40
+  cameraSpeed: 80
