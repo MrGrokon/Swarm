@@ -14,7 +14,7 @@ public class AiDetection : MonoBehaviour
     public Transform validTarget;
     public Collider[] targetsInViewRadius = new Collider[0];
 
-    public Transform FindVisibleTargets()
+    public Transform FindVisibleTargets() //Repérage des cibles à portée
     {
         
         targetsInViewRadius = Physics.OverlapSphere(transform.position, viewRadius, targetMask);
@@ -44,7 +44,7 @@ public class AiDetection : MonoBehaviour
         return validTarget;
     }
     
-    public Vector3 DirFromAngle(float  angleInDegrees, bool angleIsGlobal)
+    public Vector3 DirFromAngle(float angleInDegrees, bool angleIsGlobal)  //Créer une direction depuis un angle, uniquement utilisée dans les scripts éditeur
     {
         if (!angleIsGlobal)
         {

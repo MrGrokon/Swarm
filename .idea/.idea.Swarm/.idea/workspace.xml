@@ -19,18 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e9a9fd44-a60f-4fbc-b03b-f25159acb4b3" name="Default Changelist" comment=" 0.5.0.1 : Forgot some scripts">
+    <list default="true" id="e9a9fd44-a60f-4fbc-b03b-f25159acb4b3" name="Default Changelist" comment=" 0.6.1.0 : Ajout de feedback sur le sommeil, Ajout de signes pour le sprint, Augmentation de la vitesse de la caméra, Dépop du cône de traque">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AiSoundDetection.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AiSoundDetection.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Track.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Track.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Prey/FieldOfViewEditor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Prey/FieldOfViewEditor.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Prey/SoundRangeEditor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Prey/SoundRangeEditor.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tracks/TrackRenderer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tracks/TrackRenderer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CameraRotate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CameraRotate.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +40,9 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/GeneratePrey.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/ThridPersonCamera.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://F:/UnityProject/CsLike/CsLike/Assets/Scripts/BotDetection.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/TrackInfo.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/BetaCreature/IntelligenceInterface.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CreatureMover.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.6.3/Runtime/Core/AxisState.cs" root0="SKIP_HIGHLIGHTING" />
@@ -65,7 +60,6 @@
         <option value="$PROJECT_DIR$/Assets/InputTester.cs" />
         <option value="$PROJECT_DIR$/Assets/PackMover.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/BetaCreature/HealthSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/BetaCreature/CreatureIntelligence.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/BetaCreature/IntelligenceInterface.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Prey/HealthSystemPrey.cs" />
         <option value="$PROJECT_DIR$/Assets/DetectPlayer.cs" />
@@ -75,23 +69,30 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/PackManager.cs" />
         <option value="$PROJECT_DIR$/Assets/ObjectsInstance.cs" />
         <option value="$PROJECT_DIR$/Assets/GeneratePrey.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/PackOrderer.cs" />
         <option value="$PROJECT_DIR$/Assets/CameraChanger.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/BetaCreature_Creator.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Prey/TracksCreatorOverTime.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/DebugScript.cs" />
-        <option value="$PROJECT_DIR$/Assets/CameraRotate.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CreatureMover.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/RessourceManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Managers/GeneratePrey.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/PreySniffer.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/Attack.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CharacterController/InputTester.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Prey/AiDetection.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Prey/PreyAiManager.cs" />
         <option value="$PROJECT_DIR$/Assets/AiSoundDetection.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Prey/FieldOfViewEditor.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/Attack.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/BetaCreature_Creator.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/PackOrderer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/PreySniffer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/RessourceManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/BetaCreature/CreatureIntelligence.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Common/HealthSysteme.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Managers/GeneratePrey.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Managers/PackManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Prey/AiSoundDetection.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Prey/PreyAiManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/DebugScript.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Prey/AiDetection.cs" />
+        <option value="$PROJECT_DIR$/Assets/TrackInfo.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Prey/TracksCreatorOverTime.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tracks/TrackRenderer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CreatureMover.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/FallAsleep.cs" />
+        <option value="$PROJECT_DIR$/Assets/CameraRotate.cs" />
+        <option value="$PROJECT_DIR$/Assets/ThridPersonCamera.cs" />
       </list>
     </option>
   </component>
@@ -102,6 +103,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="Discover.Launch.Via.Unity" value="true" />
+    <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -163,7 +165,17 @@
       <workItem from="1607468629553" duration="39000" />
       <workItem from="1607884799181" duration="2265000" />
       <workItem from="1607935921826" duration="69000" />
-      <workItem from="1607936123811" duration="2468000" />
+      <workItem from="1607936123811" duration="4584000" />
+      <workItem from="1607965027025" duration="572000" />
+      <workItem from="1607988860373" duration="758000" />
+      <workItem from="1608023677684" duration="1362000" />
+      <workItem from="1608056982369" duration="669000" />
+      <workItem from="1608210920802" duration="2183000" />
+      <workItem from="1608238891545" duration="3446000" />
+      <workItem from="1608284493309" duration="3301000" />
+      <workItem from="1608312459709" duration="1920000" />
+      <workItem from="1608542936182" duration="626000" />
+      <workItem from="1608546338484" duration="3207000" />
     </task>
     <task id="LOCAL-00001" summary="Camera system implémenté">
       <created>1606123669149</created>
@@ -263,7 +275,42 @@
       <option name="project" value="LOCAL" />
       <updated>1607895400454</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary=" 0.5.1.0 : Fix TrackRenderer trail">
+      <created>1607938636569</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1607938636569</updated>
+    </task>
+    <task id="LOCAL-00016" summary=" 0.5.1.1 : Ajout du sound detection">
+      <created>1607943786196</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1607943786196</updated>
+    </task>
+    <task id="LOCAL-00017" summary="0.6.0.0 : Add sprint mecanic">
+      <created>1608213047223</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1608213047223</updated>
+    </task>
+    <task id="LOCAL-00018" summary=" 0.5.2.0 : Bonne orientation de track renderer visual&#10; Ajustement sur la caméra">
+      <created>1608313373159</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1608313373160</updated>
+    </task>
+    <task id="LOCAL-00019" summary=" 0.6.1.0 : Ajout de feedback sur le sommeil, Ajout de signes pour le sprint, Augmentation de la vitesse de la caméra, Dépop du cône de traque">
+      <created>1608547842754</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1608547842754</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -298,7 +345,12 @@
     <MESSAGE value="Fix des spawn des proies,&#10;Clamp des valeur de faim et vie,&#10;Possible fix du trail qui ne dépop pas" />
     <MESSAGE value="Add flee state, field of view visualization for the AI&#10;Create visual detection for AI" />
     <MESSAGE value="Fix AI naviguation problems&#10;Add base mesh rendering for previsualization&#10;Fix navmesh" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix AI naviguation problems&#10;Add base mesh rendering for previsualization&#10;Fix navmesh" />
+    <MESSAGE value=" 0.5.1.0 : Fix TrackRenderer trail" />
+    <MESSAGE value=" 0.5.1.1 : Ajout du sound detection" />
+    <MESSAGE value="0.6.0.0 : Add sprint mecanic" />
+    <MESSAGE value=" 0.5.2.0 : Bonne orientation de track renderer visual&#10; Ajustement sur la caméra" />
+    <MESSAGE value=" 0.6.1.0 : Ajout de feedback sur le sommeil, Ajout de signes pour le sprint, Augmentation de la vitesse de la caméra, Dépop du cône de traque" />
+    <option name="LAST_COMMIT_MESSAGE" value=" 0.6.1.0 : Ajout de feedback sur le sommeil, Ajout de signes pour le sprint, Augmentation de la vitesse de la caméra, Dépop du cône de traque" />
   </component>
   <component name="WindowStateProjectService">
     <state x="184" y="126" key="MergeDialog" timestamp="1607896176207">
@@ -309,18 +361,18 @@
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="598" y="321" key="MultipleFileMergeDialog/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1607268519074" />
-    <state x="552" y="293" key="Vcs.Push.Dialog.v2" timestamp="1607896116624">
+    <state x="552" y="293" key="Vcs.Push.Dialog.v2" timestamp="1608547852605">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
-    <state x="552" y="293" key="Vcs.Push.Dialog.v2/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1607896116624" />
-    <state x="777" y="474" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607936125196">
+    <state x="552" y="293" key="Vcs.Push.Dialog.v2/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1608547852605" />
+    <state x="777" y="474" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607988875474">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
-    <state x="777" y="474" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1607936125196" />
-    <state x="732" y="274" key="git4idea.branch.GitSmartOperationDialog" timestamp="1607896184288">
+    <state x="777" y="474" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1607988875474" />
+    <state x="732" y="274" key="git4idea.branch.GitSmartOperationDialog" timestamp="1608046327945">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
-    <state x="732" y="274" key="git4idea.branch.GitSmartOperationDialog/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1607896184288" />
+    <state x="732" y="274" key="git4idea.branch.GitSmartOperationDialog/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1608046327945" />
     <state x="616" y="260" key="run.anything.popup" timestamp="1607376902331">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>

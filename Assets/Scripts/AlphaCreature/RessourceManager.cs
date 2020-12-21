@@ -65,6 +65,7 @@ public class RessourceManager : MonoBehaviour
     #endregion
 
     #region Resources Managing Functions
+    //Permet d'ajouter un montant d'une ressource
     public void GainRessource(Resource TryedResource, float amount)
     {
         switch (TryedResource)
@@ -96,6 +97,7 @@ public class RessourceManager : MonoBehaviour
         }
     }
 
+    //Permet de retirer un montant d'une ressource
     public void LooseRessource(Resource TryedResource, float amount)
     {
         switch (TryedResource)

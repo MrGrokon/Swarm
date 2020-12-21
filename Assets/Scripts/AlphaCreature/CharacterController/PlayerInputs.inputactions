@@ -78,7 +78,15 @@
                     "interactions": ""
                 },
                 {
-                    "name": "RT",
+                    "name": "LeftSprintButton",
+                    "type": "Button",
+                    "id": "4f322ce2-da05-49c4-bdc2-46ecfcf58a92",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "RightSprintButton",
                     "type": "Button",
                     "id": "d72abd5e-8a56-4ae4-8207-5105cef0fea9",
                     "expectedControlType": "Button",
@@ -177,7 +185,7 @@
                 {
                     "name": "negative",
                     "id": "a33fff0d-3aaf-465b-a9bf-7cba0582e103",
-                    "path": "<Gamepad>/leftShoulder",
+                    "path": "<Gamepad>/rightStick/right",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -188,7 +196,7 @@
                 {
                     "name": "positive",
                     "id": "23c2f44c-0c25-43c8-92ac-46991969b419",
-                    "path": "<Gamepad>/rightShoulder",
+                    "path": "<Gamepad>/rightStick/left",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -247,7 +255,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "RT",
+                    "action": "RightSprintButton",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -286,12 +294,12 @@
                 },
                 {
                     "name": "",
-                    "id": "41372747-730c-4f02-a85b-34e7e2a06407",
+                    "id": "30c90430-ce0a-40eb-bc66-933571017a1d",
                     "path": "<Gamepad>/leftTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "LT",
+                    "action": "LeftSprintButton",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

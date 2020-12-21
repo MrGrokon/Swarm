@@ -33,7 +33,7 @@ public class TracksCreatorOverTime : MonoBehaviour
         }
     #endregion
 
-    public GameObject GetTrackAtIndex(int _index){
+    public GameObject GetTrackAtIndex(int _index){ // Récupération d'une traçe selon un index donnée
         return PreyTracks[_index];
     }
 
@@ -43,11 +43,12 @@ public class TracksCreatorOverTime : MonoBehaviour
         _timeToWait = Random.Range(MinTimeToLeaveTrack, MaxTimeToLeaveTrack);
     }
 
-    private void CreateTrack()
+    private void CreateTrack() //Création d'une traçe
     {
-        GameObject _track = Instantiate(TrackPrefab, this.transform.position, Quaternion.identity);
+        GameObject _track = Instantiate(TrackPrefab, this.transform.position, transform.rotation);
         //_track.GetComponent<DetectPlayer>().prey = this.gameObject; deprecated
         PreyTracks.Add(_track);
+        
         _track.GetComponent<TrackRenderer>().MyTrackIndex = PreyTracks.IndexOf(_track);
         _track.GetComponent<TrackRenderer>().PreyRelated = this.gameObject;
     }

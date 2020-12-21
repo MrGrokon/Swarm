@@ -38,7 +38,7 @@ public class BetaCreature_Creator : MonoBehaviour
     }
     #endregion
 
-    private void CreateBeta()
+    private void CreateBeta() //Création d'un membre de la meute
     {
         RessourceManager _resources = GetComponent<RessourceManager>();
         if(_resources.Hunger - creatureCost > 0f && PackManager.packInstance.GetPackLenght() < maxPackMember){

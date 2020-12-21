@@ -91,7 +91,15 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""RT"",
+                    ""name"": ""LeftSprintButton"",
+                    ""type"": ""Button"",
+                    ""id"": ""4f322ce2-da05-49c4-bdc2-46ecfcf58a92"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""RightSprintButton"",
                     ""type"": ""Button"",
                     ""id"": ""d72abd5e-8a56-4ae4-8207-5105cef0fea9"",
                     ""expectedControlType"": ""Button"",
@@ -190,7 +198,7 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                 {
                     ""name"": ""negative"",
                     ""id"": ""a33fff0d-3aaf-465b-a9bf-7cba0582e103"",
-                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""path"": ""<Gamepad>/rightStick/right"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -201,7 +209,7 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                 {
                     ""name"": ""positive"",
                     ""id"": ""23c2f44c-0c25-43c8-92ac-46991969b419"",
-                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""path"": ""<Gamepad>/rightStick/left"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -260,7 +268,7 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""RT"",
+                    ""action"": ""RightSprintButton"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -299,12 +307,12 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""41372747-730c-4f02-a85b-34e7e2a06407"",
+                    ""id"": ""30c90430-ce0a-40eb-bc66-933571017a1d"",
                     ""path"": ""<Gamepad>/leftTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""LT"",
+                    ""action"": ""LeftSprintButton"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -336,8 +344,8 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
         m_Actions_CreateBeta = m_Actions.FindAction("CreateBeta", throwIfNotFound: true);
         m_Actions_FormationX = m_Actions.FindAction("FormationX", throwIfNotFound: true);
         m_Actions_FormationY = m_Actions.FindAction("FormationY", throwIfNotFound: true);
-        m_Actions_RT = m_Actions.FindAction("RT", throwIfNotFound: true);
-        m_Actions_LT = m_Actions.FindAction("LT", throwIfNotFound: true);
+        m_Actions_LeftSprintButton = m_Actions.FindAction("LeftSprintButton", throwIfNotFound: true);
+        m_Actions_RightSprintButton = m_Actions.FindAction("RightSprintButton", throwIfNotFound: true);
         m_Actions_Attack = m_Actions.FindAction("Attack", throwIfNotFound: true);
         m_Actions_ChangeCamera = m_Actions.FindAction("ChangeCamera", throwIfNotFound: true);
         m_Actions_Reset = m_Actions.FindAction("Reset", throwIfNotFound: true);
@@ -399,8 +407,8 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
     private readonly InputAction m_Actions_CreateBeta;
     private readonly InputAction m_Actions_FormationX;
     private readonly InputAction m_Actions_FormationY;
-    private readonly InputAction m_Actions_RT;
-    private readonly InputAction m_Actions_LT;
+    private readonly InputAction m_Actions_LeftSprintButton;
+    private readonly InputAction m_Actions_RightSprintButton;
     private readonly InputAction m_Actions_Attack;
     private readonly InputAction m_Actions_ChangeCamera;
     private readonly InputAction m_Actions_Reset;
@@ -417,8 +425,8 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
         public InputAction @CreateBeta => m_Wrapper.m_Actions_CreateBeta;
         public InputAction @FormationX => m_Wrapper.m_Actions_FormationX;
         public InputAction @FormationY => m_Wrapper.m_Actions_FormationY;
-        public InputAction @RT => m_Wrapper.m_Actions_RT;
-        public InputAction @LT => m_Wrapper.m_Actions_LT;
+        public InputAction @LeftSprintButton => m_Wrapper.m_Actions_LeftSprintButton;
+        public InputAction @RightSprintButton => m_Wrapper.m_Actions_RightSprintButton;
         public InputAction @Attack => m_Wrapper.m_Actions_Attack;
         public InputAction @ChangeCamera => m_Wrapper.m_Actions_ChangeCamera;
         public InputAction @Reset => m_Wrapper.m_Actions_Reset;
@@ -458,12 +466,12 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                 @FormationY.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnFormationY;
                 @FormationY.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnFormationY;
                 @FormationY.canceled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnFormationY;
-                @RT.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnRT;
-                @RT.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnRT;
-                @RT.canceled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnRT;
-                @LT.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnLT;
-                @LT.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnLT;
-                @LT.canceled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnLT;
+                @LeftSprintButton.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnLeftSprintButton;
+                @LeftSprintButton.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnLeftSprintButton;
+                @LeftSprintButton.canceled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnLeftSprintButton;
+                @RightSprintButton.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnRightSprintButton;
+                @RightSprintButton.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnRightSprintButton;
+                @RightSprintButton.canceled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnRightSprintButton;
                 @Attack.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnAttack;
                 @Attack.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnAttack;
                 @Attack.canceled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnAttack;
@@ -504,12 +512,12 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                 @FormationY.started += instance.OnFormationY;
                 @FormationY.performed += instance.OnFormationY;
                 @FormationY.canceled += instance.OnFormationY;
-                @RT.started += instance.OnRT;
-                @RT.performed += instance.OnRT;
-                @RT.canceled += instance.OnRT;
-                @LT.started += instance.OnLT;
-                @LT.performed += instance.OnLT;
-                @LT.canceled += instance.OnLT;
+                @LeftSprintButton.started += instance.OnLeftSprintButton;
+                @LeftSprintButton.performed += instance.OnLeftSprintButton;
+                @LeftSprintButton.canceled += instance.OnLeftSprintButton;
+                @RightSprintButton.started += instance.OnRightSprintButton;
+                @RightSprintButton.performed += instance.OnRightSprintButton;
+                @RightSprintButton.canceled += instance.OnRightSprintButton;
                 @Attack.started += instance.OnAttack;
                 @Attack.performed += instance.OnAttack;
                 @Attack.canceled += instance.OnAttack;
@@ -543,8 +551,8 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
         void OnCreateBeta(InputAction.CallbackContext context);
         void OnFormationX(InputAction.CallbackContext context);
         void OnFormationY(InputAction.CallbackContext context);
-        void OnRT(InputAction.CallbackContext context);
-        void OnLT(InputAction.CallbackContext context);
+        void OnLeftSprintButton(InputAction.CallbackContext context);
+        void OnRightSprintButton(InputAction.CallbackContext context);
         void OnAttack(InputAction.CallbackContext context);
         void OnChangeCamera(InputAction.CallbackContext context);
         void OnReset(InputAction.CallbackContext context);

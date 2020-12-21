@@ -45,7 +45,7 @@ public class PreyAiManager : MonoBehaviour
         }
         UpdateStates();
 
-        if (myDetector.FindVisibleTargets() || mySonorDetection.FindVisibleTargets())
+        if (myDetector.FindVisibleTargets() || mySonorDetection.FindVisibleTargets())  //Si je trouve une cible via l'un de mes deux senses
         {
             seePlayer = true;
             finishedMovementTask = true;
@@ -55,7 +55,7 @@ public class PreyAiManager : MonoBehaviour
         ManageTimer();
     }
 
-    private void SetNewRoamDestination()
+    private void SetNewRoamDestination() //Met en place une nouvelle position à atteindre quand je roam
     {
         if (finishedMovementTask)
         {
@@ -78,7 +78,7 @@ public class PreyAiManager : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private void Flee()
+    private void Flee() //Fuite
     {
         if (finishedMovementTask)
         {
@@ -118,7 +118,7 @@ public class PreyAiManager : MonoBehaviour
         aiState = newState;
     }
 
-    private void ManageTimer()
+    private void ManageTimer() //Gère les différents timers et variables qui diminuent sur le temps
     {
         if(fleeTime > 0 && aiState == States.Flee)
             fleeTime -= 1 * Time.deltaTime;

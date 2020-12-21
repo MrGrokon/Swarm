@@ -48,15 +48,19 @@ public class FallAsleep : MonoBehaviour
     }
     #endregion
 
-    public void Alpha_FallAsleep(){
+    public void Alpha_FallAsleep(){ //Effet de sommeil quand le joueur n'a plus de nourriture
         IsAsleep = true;
         //TODO: Disable the character controler
         _mover.enabled = false;
+        //Feedback
+        GetComponent<Renderer>().material.color = Color.black;
     }
-    public void Alpha_WakeUp(){
+    public void Alpha_WakeUp(){  //Réveil du joueur
         IsAsleep = false;
         TimePassedSinceAsleep = 0f;
         //TODO: Enable the character controler
         _mover.enabled = true;
+        //Feedback
+        GetComponent<Renderer>().material.color = Color.white;
     }
 }
