@@ -27,8 +27,9 @@ public class CameraRotate : MonoBehaviour
     {
         if (InputTester.inputInstance._playerInputs.Actions.RotateCamera.ReadValue<float>() != 0)
         {
-            transform.RotateAround(transform.parent.position, Vector3.up, cameraSpeed * InputTester.inputInstance._playerInputs.Actions.RotateCamera.ReadValue<float>() * Time.deltaTime);
-            print(InputTester.inputInstance._playerInputs.Actions.RotateCamera.ReadValue<float>());
+            transform.RotateAround(transform.parent.position, Vector3.up,
+                cameraSpeed * InputTester.inputInstance._playerInputs.Actions.RotateCamera.ReadValue<float>() *
+                Time.deltaTime);
         }
     }
 }
