@@ -365,6 +365,7 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
         m_Actions_FormationY = m_Actions.FindAction("FormationY", throwIfNotFound: true);
         m_Actions_LeftSprintButton = m_Actions.FindAction("LeftSprintButton", throwIfNotFound: true);
         m_Actions_RightSprintButton = m_Actions.FindAction("RightSprintButton", throwIfNotFound: true);
+        m_Actions_LT = m_Actions.FindAction("LT", throwIfNotFound: true);
         m_Actions_Attack = m_Actions.FindAction("Attack", throwIfNotFound: true);
         m_Actions_ChangeCamera = m_Actions.FindAction("ChangeCamera", throwIfNotFound: true);
         m_Actions_Reset = m_Actions.FindAction("Reset", throwIfNotFound: true);
@@ -429,6 +430,7 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
     private readonly InputAction m_Actions_FormationY;
     private readonly InputAction m_Actions_LeftSprintButton;
     private readonly InputAction m_Actions_RightSprintButton;
+    private readonly InputAction m_Actions_LT;
     private readonly InputAction m_Actions_Attack;
     private readonly InputAction m_Actions_ChangeCamera;
     private readonly InputAction m_Actions_Reset;
@@ -448,6 +450,7 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
         public InputAction @FormationY => m_Wrapper.m_Actions_FormationY;
         public InputAction @LeftSprintButton => m_Wrapper.m_Actions_LeftSprintButton;
         public InputAction @RightSprintButton => m_Wrapper.m_Actions_RightSprintButton;
+        public InputAction @LT => m_Wrapper.m_Actions_LT;
         public InputAction @Attack => m_Wrapper.m_Actions_Attack;
         public InputAction @ChangeCamera => m_Wrapper.m_Actions_ChangeCamera;
         public InputAction @Reset => m_Wrapper.m_Actions_Reset;
@@ -494,6 +497,9 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                 @RightSprintButton.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnRightSprintButton;
                 @RightSprintButton.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnRightSprintButton;
                 @RightSprintButton.canceled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnRightSprintButton;
+                @LT.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnLT;
+                @LT.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnLT;
+                @LT.canceled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnLT;
                 @Attack.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnAttack;
                 @Attack.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnAttack;
                 @Attack.canceled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnAttack;
@@ -543,6 +549,9 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                 @RightSprintButton.started += instance.OnRightSprintButton;
                 @RightSprintButton.performed += instance.OnRightSprintButton;
                 @RightSprintButton.canceled += instance.OnRightSprintButton;
+                @LT.started += instance.OnLT;
+                @LT.performed += instance.OnLT;
+                @LT.canceled += instance.OnLT;
                 @Attack.started += instance.OnAttack;
                 @Attack.performed += instance.OnAttack;
                 @Attack.canceled += instance.OnAttack;
@@ -581,6 +590,7 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
         void OnFormationY(InputAction.CallbackContext context);
         void OnLeftSprintButton(InputAction.CallbackContext context);
         void OnRightSprintButton(InputAction.CallbackContext context);
+        void OnLT(InputAction.CallbackContext context);
         void OnAttack(InputAction.CallbackContext context);
         void OnChangeCamera(InputAction.CallbackContext context);
         void OnReset(InputAction.CallbackContext context);

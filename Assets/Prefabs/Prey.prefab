@@ -127,13 +127,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c580a843f463c646821543fb2785c62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  finishedMovementTask: 1
-  aiState: 0
-  roamingDistance: 100
-  fleeDistance: 100
-  fleeMagnitude: 10
-  fleeTime: 0
-  maxFleeTime: 10
+  ReachingDistance: 1.5
+  MyState: 0
+  MyProfile: {fileID: 2296511828036664000, guid: 6fd61dbf2152c6040b830979bb0a0fbb,
+    type: 3}
 --- !u!195 &8128917941845414919
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -190,7 +187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 977fcb7d68ef6504b89567a7c936dffd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viewRadius: 30
+  startingViewRadius: 0
   viewAngle: 360
   targetMask:
     serializedVersion: 2
