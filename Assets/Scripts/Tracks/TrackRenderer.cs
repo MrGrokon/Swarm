@@ -11,7 +11,7 @@ public class TrackRenderer : MonoBehaviour
 
     [Header("Display Parameters")]
     public Gradient FreshnessGradient;
-    public float DistanceToPoint = 2f;
+    public float DistanceToPoint = 4f;
     [Range(1f, 10f)]
     public float TimeToBeDisplayed = 5f;
     private float TimePassed = 0f;
@@ -80,7 +80,6 @@ public class TrackRenderer : MonoBehaviour
         _Line.endColor = GetGradientColorOverFreshness();
         #endregion
         //TODO: Theo changes
-        DistanceToPoint = Vector3.Distance(transform.position, PositionTargeted);
         CreateVisualMesh();
     }
 
@@ -126,6 +125,10 @@ public class TrackRenderer : MonoBehaviour
         mesh.uv = uv;
         mesh.triangles = triangles;
 
+        Shader shader = Shader.Find("Standard");
+        Material material = new Material(shader);
+        material.color = GetGradientColorOverFreshness();
+
         if (!lastPrevisuMesh)
         {
             GameObject visuMesh = new GameObject("Visualization", typeof(MeshFilter), typeof(MeshRenderer));
@@ -134,6 +137,7 @@ public class TrackRenderer : MonoBehaviour
             visuMesh.transform.position = transform.position;
             visuMesh.transform.eulerAngles = new Vector3(0, this.transform.eulerAngles.y + 180, 0);
             visuMesh.transform.parent = this.transform;
+            visuMesh.GetComponent<Renderer>().material = material;
             lastPrevisuMesh = visuMesh;
         }
         else
@@ -145,6 +149,7 @@ public class TrackRenderer : MonoBehaviour
             lastPrevisuMesh.transform.eulerAngles = new Vector3(0, this.transform.eulerAngles.y + 180, 0);
             lastPrevisuMesh.transform.position = transform.position;
             lastPrevisuMesh.transform.parent = this.transform;
+            lastPrevisuMesh.GetComponent<Renderer>().material = material;
         }
         
         

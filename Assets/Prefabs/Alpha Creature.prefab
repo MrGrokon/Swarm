@@ -310,7 +310,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedMultiplier: 2
+  maxSpeedMultiplier: 0
+  multiplierAddedAtEachInput: 0
+  multiplierLosseOverTime: 0
   speed: 8
+  sprintState: 0
 --- !u!114 &8682247731385797725
 MonoBehaviour:
   m_ObjectHideFlags: 0

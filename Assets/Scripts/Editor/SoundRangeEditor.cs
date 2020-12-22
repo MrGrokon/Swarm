@@ -9,11 +9,11 @@ public class SoundRangeEditor : Editor
     {
         AiSoundDetection AD = (AiSoundDetection)target;
         Handles.color = Color.red;
-        Handles.DrawWireArc(AD.transform.position, Vector3.up, Vector3.forward, 360, AD.viewRadius);
+        Handles.DrawWireArc(AD.transform.position, Vector3.up, Vector3.forward, 360, AD.GetViewRadius());
         Vector3 viewAngleA = AD.DirFromAngle(-AD.viewAngle / 2, false);
         Vector3 viewAngleB = AD.DirFromAngle(AD.viewAngle / 2, false);
       
-        Handles.DrawLine(AD.transform.position, AD.transform.position + viewAngleA * AD.viewRadius);
-        Handles.DrawLine(AD.transform.position, AD.transform.position + viewAngleB * AD.viewRadius);
+        Handles.DrawLine(AD.transform.position, AD.transform.position + viewAngleA * AD.GetViewRadius());
+        Handles.DrawLine(AD.transform.position, AD.transform.position + viewAngleB * AD.GetViewRadius());
     }
 }
