@@ -16,7 +16,8 @@ public class AiSoundDetection : MonoBehaviour
 
     public Transform FindVisibleTargets() //Repérage des cibles à portée
     {
-        
+        viewRadius = viewRadius * (Objects.Instance.Alpha.GetComponent<NoiseEmitter>().noiseForce /
+                     Objects.Instance.Alpha.GetComponent<NoiseEmitter>().maxNoiseForce);
         targetsInViewRadius = Physics.OverlapSphere(transform.position, viewRadius, targetMask);
         if (targetsInViewRadius.Length > 0)
         {
@@ -32,7 +33,6 @@ public class AiSoundDetection : MonoBehaviour
                     {
                         validTarget = target;
                     }
-
                 }
             }
         }

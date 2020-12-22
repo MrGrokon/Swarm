@@ -19,11 +19,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e9a9fd44-a60f-4fbc-b03b-f25159acb4b3" name="Default Changelist" comment=" 0.6.1.0 : Ajout de feedback sur le sommeil, Ajout de signes pour le sprint, Augmentation de la vitesse de la caméra, Dépop du cône de traque">
+    <list default="true" id="e9a9fd44-a60f-4fbc-b03b-f25159acb4b3" name="Default Changelist" comment=" 0.6.2.0 : Réecriture de la caméra, suppression des tremblements lié a mouvements, Suppression de la création des bétas">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CameraRotate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CameraRotate.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Alpha Creature.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Alpha Creature.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Prey/AiSoundDetection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Prey/AiSoundDetection.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +46,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/TrackInfo.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/BetaCreature/IntelligenceInterface.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CreatureMover.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/NoiseEmitter.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.6.3/Runtime/Core/AxisState.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/AlphaCreature/PackOrderer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://F:/UnityProject/CsLike/CsLike/Assets/Scripts/BotTargeting.cs" root0="SKIP_HIGHLIGHTING" />
@@ -82,7 +84,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Common/HealthSysteme.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Managers/GeneratePrey.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Managers/PackManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Prey/AiSoundDetection.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Prey/PreyAiManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/DebugScript.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Prey/AiDetection.cs" />
@@ -93,6 +94,8 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/FallAsleep.cs" />
         <option value="$PROJECT_DIR$/Assets/CameraRotate.cs" />
         <option value="$PROJECT_DIR$/Assets/ThridPersonCamera.cs" />
+        <option value="$PROJECT_DIR$/Assets/NoiseEmitter.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Prey/AiSoundDetection.cs" />
       </list>
     </option>
   </component>
@@ -175,7 +178,8 @@
       <workItem from="1608284493309" duration="3301000" />
       <workItem from="1608312459709" duration="1920000" />
       <workItem from="1608542936182" duration="626000" />
-      <workItem from="1608546338484" duration="3207000" />
+      <workItem from="1608546338484" duration="5198000" />
+      <workItem from="1608630123941" duration="714000" />
     </task>
     <task id="LOCAL-00001" summary="Camera system implémenté">
       <created>1606123669149</created>
@@ -310,7 +314,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608547842754</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary=" 0.6.2.0 : Réecriture de la caméra, suppression des tremblements lié a mouvements, Suppression de la création des bétas">
+      <created>1608550546326</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1608550546326</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -350,7 +361,8 @@
     <MESSAGE value="0.6.0.0 : Add sprint mecanic" />
     <MESSAGE value=" 0.5.2.0 : Bonne orientation de track renderer visual&#10; Ajustement sur la caméra" />
     <MESSAGE value=" 0.6.1.0 : Ajout de feedback sur le sommeil, Ajout de signes pour le sprint, Augmentation de la vitesse de la caméra, Dépop du cône de traque" />
-    <option name="LAST_COMMIT_MESSAGE" value=" 0.6.1.0 : Ajout de feedback sur le sommeil, Ajout de signes pour le sprint, Augmentation de la vitesse de la caméra, Dépop du cône de traque" />
+    <MESSAGE value=" 0.6.2.0 : Réecriture de la caméra, suppression des tremblements lié a mouvements, Suppression de la création des bétas" />
+    <option name="LAST_COMMIT_MESSAGE" value=" 0.6.2.0 : Réecriture de la caméra, suppression des tremblements lié a mouvements, Suppression de la création des bétas" />
   </component>
   <component name="WindowStateProjectService">
     <state x="184" y="126" key="MergeDialog" timestamp="1607896176207">
@@ -361,10 +373,10 @@
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="598" y="321" key="MultipleFileMergeDialog/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1607268519074" />
-    <state x="552" y="293" key="Vcs.Push.Dialog.v2" timestamp="1608547852605">
+    <state x="552" y="293" key="Vcs.Push.Dialog.v2" timestamp="1608550548842">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
-    <state x="552" y="293" key="Vcs.Push.Dialog.v2/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1608547852605" />
+    <state x="552" y="293" key="Vcs.Push.Dialog.v2/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1608550548842" />
     <state x="777" y="474" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607988875474">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
