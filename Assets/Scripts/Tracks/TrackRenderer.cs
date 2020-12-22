@@ -80,7 +80,6 @@ public class TrackRenderer : MonoBehaviour
         _Line.endColor = GetGradientColorOverFreshness();
         #endregion
         //TODO: Theo changes
-        DistanceToPoint = Vector3.Distance(transform.position, PositionTargeted);
         CreateVisualMesh();
     }
 
