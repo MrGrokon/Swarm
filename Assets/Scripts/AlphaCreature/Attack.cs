@@ -30,6 +30,17 @@ public class Attack : MonoBehaviour
         }
     }
 
+    
+    //Fonction pour déclenché l'attaque via un autre script
+    public void DistantAttackCall(GameObject prey)
+    {
+        _ressource.GainRessource(RessourceManager.Resource.Hunger, 20f);
+        PackManager.packInstance.gameObject.GetComponent<GeneratePrey>().listOfPrey.Remove(prey);
+        prey.GetComponent<PreyAiManager>().Die();
+        //GetComponent<PreySniffer>().ResetTrackerValue();
+        
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.transform.CompareTag("Prey"))

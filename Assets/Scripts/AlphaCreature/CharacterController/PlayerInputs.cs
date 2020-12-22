@@ -129,6 +129,14 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Climb"",
+                    ""type"": ""Button"",
+                    ""id"": ""5e72a2dd-47ac-490f-895a-038ea3828592"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -307,6 +315,17 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                     ""action"": ""LeftSprintButton"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""19fda5a7-9271-4891-a1bb-75ec585a4f7c"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Climb"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -341,6 +360,7 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
         m_Actions_Attack = m_Actions.FindAction("Attack", throwIfNotFound: true);
         m_Actions_ChangeCamera = m_Actions.FindAction("ChangeCamera", throwIfNotFound: true);
         m_Actions_Reset = m_Actions.FindAction("Reset", throwIfNotFound: true);
+        m_Actions_Climb = m_Actions.FindAction("Climb", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -404,6 +424,7 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
     private readonly InputAction m_Actions_Attack;
     private readonly InputAction m_Actions_ChangeCamera;
     private readonly InputAction m_Actions_Reset;
+    private readonly InputAction m_Actions_Climb;
     public struct ActionsActions
     {
         private @PlayerInputs m_Wrapper;
@@ -422,6 +443,7 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
         public InputAction @Attack => m_Wrapper.m_Actions_Attack;
         public InputAction @ChangeCamera => m_Wrapper.m_Actions_ChangeCamera;
         public InputAction @Reset => m_Wrapper.m_Actions_Reset;
+        public InputAction @Climb => m_Wrapper.m_Actions_Climb;
         public InputActionMap Get() { return m_Wrapper.m_Actions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -473,6 +495,9 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                 @Reset.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnReset;
                 @Reset.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnReset;
                 @Reset.canceled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnReset;
+                @Climb.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnClimb;
+                @Climb.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnClimb;
+                @Climb.canceled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnClimb;
             }
             m_Wrapper.m_ActionsActionsCallbackInterface = instance;
             if (instance != null)
@@ -519,6 +544,9 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                 @Reset.started += instance.OnReset;
                 @Reset.performed += instance.OnReset;
                 @Reset.canceled += instance.OnReset;
+                @Climb.started += instance.OnClimb;
+                @Climb.performed += instance.OnClimb;
+                @Climb.canceled += instance.OnClimb;
             }
         }
     }
@@ -548,5 +576,6 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
         void OnAttack(InputAction.CallbackContext context);
         void OnChangeCamera(InputAction.CallbackContext context);
         void OnReset(InputAction.CallbackContext context);
+        void OnClimb(InputAction.CallbackContext context);
     }
 }
