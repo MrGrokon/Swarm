@@ -6,27 +6,36 @@ public class CreatureMover : MonoBehaviour
 {
     private Rigidbody rb;
 
-    [SerializeField] private float speedMultiplier;
-    [SerializeField] private float maxSpeedMultiplier;
+    public float speedMultiplier;
+    public float maxSpeedMultiplier;
     [SerializeField] private float multiplierAddedAtEachInput;
     [SerializeField] private float multiplierLosseOverTime;
-    [SerializeField] private float speed;
+    public float speed;
+    [SerializeField] private float acceleration;
+    public float maxSpeed;
+    private Vector3 actualDirection;
 
     [SerializeField] private int sprintState;
     // Start is called before the first frame update
     void Start()
     {
+        speed = 0;
         rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        Move(InputTester.inputInstance.direction);
         if (InputTester.inputInstance.direction != Vector3.zero)
         {
-            Move(InputTester.inputInstance.direction);
+            speed += acceleration * Time.deltaTime;
         }
-
+        else
+        {
+            speed -= acceleration * Time.deltaTime;
+        }
+        speed = Mathf.Clamp(speed, 0, maxSpeed);
         if (InputTester.inputInstance._playerInputs.Actions.RightSprintButton.ReadValue<float>() != 0 && sprintState == 1)
         {
             SprintStateManager();
@@ -43,7 +52,11 @@ public class CreatureMover : MonoBehaviour
 
     public void Move(Vector3 direction)  //Player Movement
     {
-        
+        if (InputTester.inputInstance.direction != Vector3.zero)
+        {
+            actualDirection = direction;
+        }
+
         //Directions de la caméra
         Vector3 fwdCameraDirection = new Vector3(Camera.main.transform.forward.x, 0, Camera.main.transform.forward.z);
         Vector3 rgtCameraDirection = new Vector3(Camera.main.transform.right.x, 0, Camera.main.transform.right.z); 
@@ -52,14 +65,14 @@ public class CreatureMover : MonoBehaviour
 
         #region movementRegion
 
-        if (InputTester.inputInstance.direction.z != 0)
+        if (actualDirection.z != 0)
         {
-            rb.transform.position += fwdCameraDirection * InputTester.inputInstance.direction.z * speed * speedMultiplier * Time.fixedDeltaTime;
+            rb.transform.position += fwdCameraDirection * actualDirection.z * speed * speedMultiplier * Time.fixedDeltaTime;
         }
 
-        if (InputTester.inputInstance.direction.x != 0)
+        if (actualDirection.x != 0)
         {
-            rb.transform.position += rgtCameraDirection * InputTester.inputInstance.direction.x * speed * speedMultiplier * Time.fixedDeltaTime;
+            rb.transform.position += rgtCameraDirection * actualDirection.x * speed * speedMultiplier * Time.fixedDeltaTime;
         }
         
         if (speedMultiplier < 1.2f)
