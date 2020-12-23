@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class CreatureMover : MonoBehaviour
 {
-    private Rigidbody rb;
+    private Rigidbody _rb;
 
     public float speedMultiplier;
     public float maxSpeedMultiplier;
@@ -17,15 +17,15 @@ public class CreatureMover : MonoBehaviour
     private Vector3 actualDirection;
 
     [SerializeField] private int sprintState;
-    // Start is called before the first frame update
+
+    #region Unity Functions
     void Start()
     {
         speed = 0;
-        rb = GetComponent<Rigidbody>();
-        
+        _rb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
+    
     void FixedUpdate()
     {
         var gamepad = Gamepad.current;
@@ -51,6 +51,7 @@ public class CreatureMover : MonoBehaviour
         speedMultiplier = Mathf.Clamp(speedMultiplier, 1, maxSpeedMultiplier);
 
     }
+    #endregion
 
     public void Move(Vector3 direction)  //Player Movement
     {
@@ -69,12 +70,12 @@ public class CreatureMover : MonoBehaviour
 
         if (actualDirection.z != 0)
         {
-            rb.transform.position += fwdCameraDirection * actualDirection.z * speed * speedMultiplier * Time.fixedDeltaTime;
+            _rb.transform.position += fwdCameraDirection * actualDirection.z * speed * speedMultiplier * Time.fixedDeltaTime;
         }
 
         if (actualDirection.x != 0)
         {
-            rb.transform.position += rgtCameraDirection * actualDirection.x * speed * speedMultiplier * Time.fixedDeltaTime;
+            _rb.transform.position += rgtCameraDirection * actualDirection.x * speed * speedMultiplier * Time.fixedDeltaTime;
         }
         
         if (speedMultiplier < 1.2f)
@@ -102,7 +103,6 @@ public class CreatureMover : MonoBehaviour
                 sprintState = 1;
                 GetComponent<Renderer>().material.color = Color.green;
                 break;
-        }
-
+        } 
     }
 }

@@ -102,6 +102,14 @@
                     "interactions": ""
                 },
                 {
+                    "name": "LT",
+                    "type": "Button",
+                    "id": "e4311cd1-5eb5-4912-ab45-9ea581361d67",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
                     "name": "Attack",
                     "type": "Button",
                     "id": "c473b79d-657b-427a-ac0e-00df27d82814",

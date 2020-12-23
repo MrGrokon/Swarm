@@ -6,69 +6,149 @@ using UnityEngine.AI;
 
 public class PreyAiManager : MonoBehaviour
 {
-    [SerializeField] private bool finishedMovementTask = true;
-
-    private NavMeshAgent _nm_Agent;
-
-    public enum States
+    public enum PreyStates
     {
         Roam,
+        LookingForWater,
+        LookingForFood,
+        Waiting,
         Flee
     }
 
-    [SerializeField] private States aiState;
+    [Header("Basic AI Parameters")]
+    [Range(1f, 3f)]
+    [SerializeField] private float ReachingDistance = 1.5f; 
+    public PreyStates MyState;
+    [SerializeField] PreyProfile MyProfile;
 
-    [SerializeField] private float roamingDistance;
-    [SerializeField] private float fleeDistance;
-    [SerializeField] private float fleeMagnitude;
-
-    private bool seePlayer;
-    [SerializeField] private float fleeTime;
-    [SerializeField] private float maxFleeTime;
-
+    private NavMeshAgent _nm_Agent;
     private AiDetection myDetector;
     private AiSoundDetection mySonorDetection;
-    void Start()
+    private AbstractedRessourcesManager _abs_Resc_Manager;
+
+    [Range(1f, 10f)]
+    [SerializeField] private float TimeToWaitForAbstractedRessources = 3f;
+    private float _timePassed = 0f;
+
+    #region Unity Fonction
+    private void Awake()
     {
-        _nm_Agent = GetComponent<NavMeshAgent>();
-        myDetector = GetComponent<AiDetection>();
-        mySonorDetection = GetComponent<AiSoundDetection>();
+        _nm_Agent = this.GetComponent<NavMeshAgent>();
+        myDetector = this.GetComponent<AiDetection>();
+        mySonorDetection = this.GetComponent<AiSoundDetection>();
+        _abs_Resc_Manager = this.GetComponent<AbstractedRessourcesManager>();
+        if(_abs_Resc_Manager == null){
+            Debug.Log("AbstractedRessourcesManager not found");
+        }
+        if(MyProfile == null){
+            Debug.Log("Critical Error: Prey Profile not found");
+        }
+        else{
+            ChangeState(PreyStates.Roam);
+            //normalement change_Nma_Properties() est déja appeler dans changeState()
+            Change_NMA_Properties(PreyStates.Roam);
+        }
+        
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        Debug.DrawRay(transform.position, (Objects.Instance.Alpha.transform.position - transform.position)*-1, Color.blue);
-        if (Vector3.Distance(transform.position, _nm_Agent.destination) <= 2f)
-        {
-            finishedMovementTask = true;
+        #region State Debbuging
+        if(MyState == PreyStates.Flee){
+            Debug.DrawLine(this.transform.position, _nm_Agent.destination, Color.red);
         }
-        UpdateStates();
+        else if(MyState == PreyStates.LookingForWater || MyState == PreyStates.LookingForFood ){
+            Debug.DrawLine(this.transform.position, _nm_Agent.destination, Color.green);
+        }
+        else if(MyState == PreyStates.Roam){
+            Debug.DrawLine(this.transform.position, _nm_Agent.destination, Color.blue);
+        }
+        #endregion
 
-        if (myDetector.FindVisibleTargets() || mySonorDetection.FindVisibleTargets())  //Si je trouve une cible via l'un de mes deux senses
-        {
-            seePlayer = true;
-            finishedMovementTask = true;
-            switchStates(States.Flee);
-            fleeTime = maxFleeTime;
+        if(_nm_Agent.remainingDistance <= ReachingDistance){
+            Debug.Log("Prey reached his destination");
+            //Do things when i reach my Position
+            switch(MyState){
+                case PreyStates.Flee:
+                //TODO: passer en Mode Hide quelques secondes si je le joueur n'est plus a proximité de lui
+                _nm_Agent.SetDestination(GetRandomRoamingPosition());
+                ChangeState(PreyStates.Roam);
+                break;
+
+                case PreyStates.LookingForWater:
+                //TODO: rester quelques seconde en position le temps de remplir ses ressources
+                _abs_Resc_Manager.RestoreRessources("Water");
+                _nm_Agent.SetDestination(GetRandomRoamingPosition());
+                ChangeState(PreyStates.Roam);
+                break;
+                
+                case PreyStates.Roam:
+                //TODO: générer proproment un nouveau point de roaming, si possible non randomS
+                _nm_Agent.SetDestination(GetRandomRoamingPosition());
+                ChangeState(PreyStates.Roam);
+                break;
+            }
         }
-        ManageTimer();
+
+        if (myDetector.FindVisibleTargets() || mySonorDetection.FindVisibleTargets())
+        {
+            //If i found an Enemy
+            Debug.Log("Prey spot the player");
+
+            //TODO: Test au moment de la detection, selon les behavior a mettre en place:
+            //  -chercher à se cacher
+            //  -fuire vers le reste de la meute
+            //  -...
+
+            ChangeState(PreyStates.Flee);
+            //ce vector pointe parfois dans la direction du joueur, ce qui implique que le joueur peu la toucher sur sont chemin de fuite
+            Vector3 FleeMotion = (Objects.Instance.Alpha.transform.position - transform.position)*-1;
+            _nm_Agent.SetDestination(FleeMotion);
+        }
+    }
+    #endregion
+
+    public void ChangeState(PreyStates _state){
+        if(MyState != _state){
+            Debug.Log("ChangeState to " + _state);
+            MyState = _state;
+            Change_NMA_Properties(_state);
+
+        }
+    }
+    
+    public void CheckOutFor(string _ressources){
+        switch (_ressources){
+            case "Food":
+                ChangeState(PreyStates.Roam);
+                //ChangeState(PreyStates.LookingForSomething);
+                //_nm_Agent.SetDestination(Objects.Instance.GetCloserRessources(Objects.ObjectType.FoodSource, this.gameObject));
+                //_nm_Agent.SetDestination(Objects.Instance.)
+            break;
+
+            case "Water":
+                ChangeState(PreyStates.LookingForWater);
+                _nm_Agent.SetDestination(Objects.Instance.GetCloserRessources(Objects.ObjectType.WaterSource, this.gameObject));
+                //Set the destination of my prey to the closer WaterSource
+            break;
+
+            default:
+            Debug.Log("CheckOutFor() -> parameter wrong or incoherent");
+            break;
+        }
     }
 
-    private void SetNewRoamDestination() //Met en place une nouvelle position à atteindre quand je roam
-    {
-        if (finishedMovementTask)
-        {
-            Vector3 randomDestination = Random.insideUnitSphere * roamingDistance + transform.position;
-            NavMeshHit hit;
-            NavMesh.SamplePosition(randomDestination, out hit, roamingDistance, 1);
-            _nm_Agent.SetDestination(hit.position);
-            finishedMovementTask = false;
+    public bool IsAlreadyLooking(){
+        if(MyState == PreyStates.LookingForWater || MyState == PreyStates.LookingForFood){
+            return true;
         }
+        return false;
     }
 
     public void Die()
     {
+        //Destroy all tracks when the prey die
+        //TODO: must be connected later to the HealthSysteme.
         foreach (var track in GetComponent<TracksCreatorOverTime>().PreyTracks)
         {
             Destroy(track);
@@ -77,56 +157,23 @@ public class PreyAiManager : MonoBehaviour
         GetComponent<TracksCreatorOverTime>().PreyTracks.Clear();
         Destroy(gameObject);
     }
+    
+    #region Low Level Functions
 
-    private void Flee() //Fuite
-    {
-        if (finishedMovementTask)
-        {
-            Vector3 oppositeDirection = (Objects.Instance.Alpha.transform.position - transform.position)*-1;
-            Vector3 fleePosition = oppositeDirection * fleeMagnitude;
-            transform.LookAt(fleePosition);
-            NavMeshHit hit;
-            if (NavMesh.SamplePosition(fleePosition, out hit, fleeDistance, 1))
-            {
-                NavMesh.SamplePosition(fleePosition, out hit, fleeDistance, 1);
-            }
-            else
-            {
-                Vector3 randomDestination = Random.insideUnitSphere * fleeDistance + transform.position;
-                NavMesh.SamplePosition(randomDestination, out hit, roamingDistance, 1);
-            }
-            _nm_Agent.SetDestination(hit.position);
-            finishedMovementTask = false; 
+    private Vector3 GetRandomRoamingPosition(){
+        //TODO: get a random position on the walkable NavMesh
+        return Random.insideUnitSphere * 10f + this.transform.position;
+    }
+
+    private void Change_NMA_Properties(PreyStates _state){
+        if(_state == PreyStates.Flee){
+            _nm_Agent.speed = MyProfile.PreySpeed * MyProfile.SprintSpeedMultiplier;
+            _nm_Agent.acceleration = MyProfile.PreyAcceleraration * MyProfile.SprintSpeedMultiplier;
+        }
+        else{
+            _nm_Agent.speed = MyProfile.PreySpeed ;
+            _nm_Agent.acceleration = MyProfile.PreyAcceleraration;
         }
     }
-
-    private void UpdateStates()
-    {
-        switch (aiState)
-        {
-            case States.Roam:
-                    SetNewRoamDestination(); 
-                break;
-            case States.Flee:
-                    Flee();
-                break;
-        }
-    }
-
-    private void switchStates(States newState)
-    {
-        aiState = newState;
-    }
-
-    private void ManageTimer() //Gère les différents timers et variables qui diminuent sur le temps
-    {
-        if(fleeTime > 0 && aiState == States.Flee)
-            fleeTime -= 1 * Time.deltaTime;
-        else if(fleeTime <= 0 && aiState == States.Flee)
-        {
-            seePlayer = false;
-            finishedMovementTask = true;
-            switchStates(States.Roam);
-        }
-    }
+    #endregion
 }
