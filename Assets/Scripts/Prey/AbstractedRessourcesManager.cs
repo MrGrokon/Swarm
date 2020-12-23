@@ -6,9 +6,10 @@ public class AbstractedRessourcesManager : MonoBehaviour
 {
     [SerializeField] private float RessourcesLosePerSeconds = 1f;
     private float MaxLevelRessources = 100f;
-    private float FoodLevel, ThirstLevel;
+    public float FoodLevel, ThirstLevel;
     private PreyAiManager AI_Brain;
 
+    #region Unity Functions
     private void Awake() {
         AI_Brain = this.GetComponent<PreyAiManager>();
         FoodLevel = SetRandomRessourceLevel();
@@ -37,9 +38,24 @@ public class AbstractedRessourcesManager : MonoBehaviour
                 ThirstLevel = MaxLevelRessources;
             }
         }
-        #endregion
-        
-        
+        #endregion 
+    }
+    #endregion
+
+    public void RestoreRessources(string _rsc){
+        switch(_rsc){
+            case "Food":
+            FoodLevel = MaxLevelRessources;
+            break;
+
+            case "Water":
+                ThirstLevel = MaxLevelRessources;
+            break;
+
+            default:
+            Debug.Log("RestoreRessources() parrametter incoherant");
+            break;
+        }
     }
 
     #region Low Level Functions

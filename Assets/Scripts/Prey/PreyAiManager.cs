@@ -9,11 +9,13 @@ public class PreyAiManager : MonoBehaviour
     public enum PreyStates
     {
         Roam,
-        LookingForSomething,
+        LookingForWater,
+        LookingForFood,
+        Waiting,
         Flee
     }
-    [Header("Basic AI Parameters")]
 
+    [Header("Basic AI Parameters")]
     [Range(1f, 3f)]
     [SerializeField] private float ReachingDistance = 1.5f; 
     public PreyStates MyState;
@@ -22,35 +24,66 @@ public class PreyAiManager : MonoBehaviour
     private NavMeshAgent _nm_Agent;
     private AiDetection myDetector;
     private AiSoundDetection mySonorDetection;
+    private AbstractedRessourcesManager _abs_Resc_Manager;
 
+    [Range(1f, 10f)]
+    [SerializeField] private float TimeToWaitForAbstractedRessources = 3f;
+    private float _timePassed = 0f;
+
+    #region Unity Fonction
     private void Awake()
     {
-        _nm_Agent = GetComponent<NavMeshAgent>();
-        myDetector = GetComponent<AiDetection>();
-        mySonorDetection = GetComponent<AiSoundDetection>();
+        _nm_Agent = this.GetComponent<NavMeshAgent>();
+        myDetector = this.GetComponent<AiDetection>();
+        mySonorDetection = this.GetComponent<AiSoundDetection>();
+        _abs_Resc_Manager = this.GetComponent<AbstractedRessourcesManager>();
+        if(_abs_Resc_Manager == null){
+            Debug.Log("AbstractedRessourcesManager not found");
+        }
         if(MyProfile == null){
             Debug.Log("Critical Error: Prey Profile not found");
         }
-        ChangeState(PreyStates.Roam);
+        else{
+            ChangeState(PreyStates.Roam);
+            //normalement change_Nma_Properties() est déja appeler dans changeState()
+            Change_NMA_Properties(PreyStates.Roam);
+        }
+        
     }
 
     private void Update()
     {
+        #region State Debbuging
+        if(MyState == PreyStates.Flee){
+            Debug.DrawLine(this.transform.position, _nm_Agent.destination, Color.red);
+        }
+        else if(MyState == PreyStates.LookingForWater || MyState == PreyStates.LookingForFood ){
+            Debug.DrawLine(this.transform.position, _nm_Agent.destination, Color.green);
+        }
+        else if(MyState == PreyStates.Roam){
+            Debug.DrawLine(this.transform.position, _nm_Agent.destination, Color.blue);
+        }
+        #endregion
+
         if(_nm_Agent.remainingDistance <= ReachingDistance){
             Debug.Log("Prey reached his destination");
             //Do things when i reach my Position
             switch(MyState){
                 case PreyStates.Flee:
+                //TODO: passer en Mode Hide quelques secondes si je le joueur n'est plus a proximité de lui
                 _nm_Agent.SetDestination(GetRandomRoamingPosition());
                 ChangeState(PreyStates.Roam);
                 break;
 
-                case PreyStates.LookingForSomething:
+                case PreyStates.LookingForWater:
+                //TODO: rester quelques seconde en position le temps de remplir ses ressources
+                _abs_Resc_Manager.RestoreRessources("Water");
                 _nm_Agent.SetDestination(GetRandomRoamingPosition());
                 ChangeState(PreyStates.Roam);
                 break;
                 
                 case PreyStates.Roam:
+                //TODO: générer proproment un nouveau point de roaming, si possible non randomS
                 _nm_Agent.SetDestination(GetRandomRoamingPosition());
                 ChangeState(PreyStates.Roam);
                 break;
@@ -61,15 +94,24 @@ public class PreyAiManager : MonoBehaviour
         {
             //If i found an Enemy
             Debug.Log("Prey spot the player");
+
+            //TODO: Test au moment de la detection, selon les behavior a mettre en place:
+            //  -chercher à se cacher
+            //  -fuire vers le reste de la meute
+            //  -...
+
             ChangeState(PreyStates.Flee);
+            //ce vector pointe parfois dans la direction du joueur, ce qui implique que le joueur peu la toucher sur sont chemin de fuite
             Vector3 FleeMotion = (Objects.Instance.Alpha.transform.position - transform.position)*-1;
             _nm_Agent.SetDestination(FleeMotion);
         }
     }
+    #endregion
 
     public void ChangeState(PreyStates _state){
         if(MyState != _state){
             Debug.Log("ChangeState to " + _state);
+            MyState = _state;
             Change_NMA_Properties(_state);
 
         }
@@ -78,13 +120,14 @@ public class PreyAiManager : MonoBehaviour
     public void CheckOutFor(string _ressources){
         switch (_ressources){
             case "Food":
-                ChangeState(PreyStates.LookingForSomething);
-                _nm_Agent.SetDestination(Objects.Instance.GetCloserRessources(Objects.ObjectType.FoodSource, this.gameObject));
+                ChangeState(PreyStates.Roam);
+                //ChangeState(PreyStates.LookingForSomething);
+                //_nm_Agent.SetDestination(Objects.Instance.GetCloserRessources(Objects.ObjectType.FoodSource, this.gameObject));
                 //_nm_Agent.SetDestination(Objects.Instance.)
             break;
 
             case "Water":
-                ChangeState(PreyStates.LookingForSomething);
+                ChangeState(PreyStates.LookingForWater);
                 _nm_Agent.SetDestination(Objects.Instance.GetCloserRessources(Objects.ObjectType.WaterSource, this.gameObject));
                 //Set the destination of my prey to the closer WaterSource
             break;
@@ -96,7 +139,7 @@ public class PreyAiManager : MonoBehaviour
     }
 
     public bool IsAlreadyLooking(){
-        if(MyState == PreyStates.LookingForSomething){
+        if(MyState == PreyStates.LookingForWater || MyState == PreyStates.LookingForFood){
             return true;
         }
         return false;
@@ -124,12 +167,12 @@ public class PreyAiManager : MonoBehaviour
 
     private void Change_NMA_Properties(PreyStates _state){
         if(_state == PreyStates.Flee){
-            _nm_Agent.speed = MyProfile.PreySpeed;
-            _nm_Agent.acceleration = MyProfile.PreyAcceleraration;
-        }
-        else{
             _nm_Agent.speed = MyProfile.PreySpeed * MyProfile.SprintSpeedMultiplier;
             _nm_Agent.acceleration = MyProfile.PreyAcceleraration * MyProfile.SprintSpeedMultiplier;
+        }
+        else{
+            _nm_Agent.speed = MyProfile.PreySpeed ;
+            _nm_Agent.acceleration = MyProfile.PreyAcceleraration;
         }
     }
     #endregion
