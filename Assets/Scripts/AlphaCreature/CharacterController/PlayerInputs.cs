@@ -51,9 +51,17 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""RotateCamera"",
+                    ""name"": ""RotateCameraY"",
                     ""type"": ""Value"",
                     ""id"": ""30eb780b-7b1c-434f-9c28-d242e5f7c916"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""RotateCameraX"",
+                    ""type"": ""Value"",
+                    ""id"": ""31a3c659-2a3e-47bb-8825-25983401572a"",
                     ""expectedControlType"": ""Axis"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -191,7 +199,7 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""RotateCamera"",
+                    ""action"": ""RotateCameraY"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
@@ -202,7 +210,7 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""RotateCamera"",
+                    ""action"": ""RotateCameraY"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -213,7 +221,7 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""RotateCamera"",
+                    ""action"": ""RotateCameraY"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -326,6 +334,17 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                     ""action"": ""Climb"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""308ffd7d-04aa-4530-859b-46950d03ab63"",
+                    ""path"": ""<Gamepad>/rightStick/y"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RotateCameraX"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -350,7 +369,8 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
         m_Actions_MoveFB = m_Actions.FindAction("Move F/B", throwIfNotFound: true);
         m_Actions_BridgeRL = m_Actions.FindAction("Bridge R/L", throwIfNotFound: true);
         m_Actions_BridgeFB = m_Actions.FindAction("Bridge F/B", throwIfNotFound: true);
-        m_Actions_RotateCamera = m_Actions.FindAction("RotateCamera", throwIfNotFound: true);
+        m_Actions_RotateCameraY = m_Actions.FindAction("RotateCameraY", throwIfNotFound: true);
+        m_Actions_RotateCameraX = m_Actions.FindAction("RotateCameraX", throwIfNotFound: true);
         m_Actions_GetPrey = m_Actions.FindAction("GetPrey", throwIfNotFound: true);
         m_Actions_CreateBeta = m_Actions.FindAction("CreateBeta", throwIfNotFound: true);
         m_Actions_FormationX = m_Actions.FindAction("FormationX", throwIfNotFound: true);
@@ -414,7 +434,8 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
     private readonly InputAction m_Actions_MoveFB;
     private readonly InputAction m_Actions_BridgeRL;
     private readonly InputAction m_Actions_BridgeFB;
-    private readonly InputAction m_Actions_RotateCamera;
+    private readonly InputAction m_Actions_RotateCameraY;
+    private readonly InputAction m_Actions_RotateCameraX;
     private readonly InputAction m_Actions_GetPrey;
     private readonly InputAction m_Actions_CreateBeta;
     private readonly InputAction m_Actions_FormationX;
@@ -433,7 +454,8 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
         public InputAction @MoveFB => m_Wrapper.m_Actions_MoveFB;
         public InputAction @BridgeRL => m_Wrapper.m_Actions_BridgeRL;
         public InputAction @BridgeFB => m_Wrapper.m_Actions_BridgeFB;
-        public InputAction @RotateCamera => m_Wrapper.m_Actions_RotateCamera;
+        public InputAction @RotateCameraY => m_Wrapper.m_Actions_RotateCameraY;
+        public InputAction @RotateCameraX => m_Wrapper.m_Actions_RotateCameraX;
         public InputAction @GetPrey => m_Wrapper.m_Actions_GetPrey;
         public InputAction @CreateBeta => m_Wrapper.m_Actions_CreateBeta;
         public InputAction @FormationX => m_Wrapper.m_Actions_FormationX;
@@ -465,9 +487,12 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                 @BridgeFB.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnBridgeFB;
                 @BridgeFB.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnBridgeFB;
                 @BridgeFB.canceled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnBridgeFB;
-                @RotateCamera.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnRotateCamera;
-                @RotateCamera.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnRotateCamera;
-                @RotateCamera.canceled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnRotateCamera;
+                @RotateCameraY.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnRotateCameraY;
+                @RotateCameraY.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnRotateCameraY;
+                @RotateCameraY.canceled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnRotateCameraY;
+                @RotateCameraX.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnRotateCameraX;
+                @RotateCameraX.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnRotateCameraX;
+                @RotateCameraX.canceled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnRotateCameraX;
                 @GetPrey.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnGetPrey;
                 @GetPrey.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnGetPrey;
                 @GetPrey.canceled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnGetPrey;
@@ -514,9 +539,12 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                 @BridgeFB.started += instance.OnBridgeFB;
                 @BridgeFB.performed += instance.OnBridgeFB;
                 @BridgeFB.canceled += instance.OnBridgeFB;
-                @RotateCamera.started += instance.OnRotateCamera;
-                @RotateCamera.performed += instance.OnRotateCamera;
-                @RotateCamera.canceled += instance.OnRotateCamera;
+                @RotateCameraY.started += instance.OnRotateCameraY;
+                @RotateCameraY.performed += instance.OnRotateCameraY;
+                @RotateCameraY.canceled += instance.OnRotateCameraY;
+                @RotateCameraX.started += instance.OnRotateCameraX;
+                @RotateCameraX.performed += instance.OnRotateCameraX;
+                @RotateCameraX.canceled += instance.OnRotateCameraX;
                 @GetPrey.started += instance.OnGetPrey;
                 @GetPrey.performed += instance.OnGetPrey;
                 @GetPrey.canceled += instance.OnGetPrey;
@@ -566,7 +594,8 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
         void OnMoveFB(InputAction.CallbackContext context);
         void OnBridgeRL(InputAction.CallbackContext context);
         void OnBridgeFB(InputAction.CallbackContext context);
-        void OnRotateCamera(InputAction.CallbackContext context);
+        void OnRotateCameraY(InputAction.CallbackContext context);
+        void OnRotateCameraX(InputAction.CallbackContext context);
         void OnGetPrey(InputAction.CallbackContext context);
         void OnCreateBeta(InputAction.CallbackContext context);
         void OnFormationX(InputAction.CallbackContext context);

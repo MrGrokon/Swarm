@@ -7,21 +7,23 @@
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="CameraRotate.cs" t="Include" />
-        <e p="NoiseEmitter.cs" t="Include" />
+        <e p="ClimbableTree.cs" t="Include" />
         <e p="Scripts" t="Include">
           <e p="AlphaCreature" t="Include">
             <e p="Attack.cs" t="Include" />
             <e p="BetaCreature_Creator.cs" t="Include" />
+            <e p="CameraRotate.cs" t="Include" />
             <e p="CharacterController" t="Include">
               <e p="InputTester.cs" t="Include" />
               <e p="PlayerInputs.cs" t="Include" />
             </e>
             <e p="CreatureMover.cs" t="Include" />
             <e p="FallAsleep.cs" t="Include" />
+            <e p="NoiseEmitter.cs" t="Include" />
             <e p="PackOrderer.cs" t="Include" />
             <e p="PreySniffer.cs" t="Include" />
             <e p="RessourceManager.cs" t="Include" />
+            <e p="ThridPersonCamera.cs" t="Include" />
           </e>
           <e p="BetaCreature" t="Include">
             <e p="CreatureIntelligence.cs" t="Include" />
@@ -58,7 +60,6 @@
             <e p="UI_Bar_FollowRessource.cs" t="Include" />
           </e>
         </e>
-        <e p="ThridPersonCamera.cs" t="Include" />
         <e p="TrackInfo.cs" t="Include" />
       </e>
       <e p="obj" t="ExcludeRecursive" />

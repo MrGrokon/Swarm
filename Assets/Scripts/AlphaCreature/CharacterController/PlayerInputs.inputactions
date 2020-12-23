@@ -38,9 +38,17 @@
                     "interactions": ""
                 },
                 {
-                    "name": "RotateCamera",
+                    "name": "RotateCameraY",
                     "type": "Value",
                     "id": "30eb780b-7b1c-434f-9c28-d242e5f7c916",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "RotateCameraX",
+                    "type": "Value",
+                    "id": "31a3c659-2a3e-47bb-8825-25983401572a",
                     "expectedControlType": "Axis",
                     "processors": "",
                     "interactions": ""
@@ -178,7 +186,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "RotateCamera",
+                    "action": "RotateCameraY",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
@@ -189,7 +197,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "RotateCamera",
+                    "action": "RotateCameraY",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -200,7 +208,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "RotateCamera",
+                    "action": "RotateCameraY",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -311,6 +319,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Climb",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "308ffd7d-04aa-4530-859b-46950d03ab63",
+                    "path": "<Gamepad>/rightStick/y",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RotateCameraX",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
