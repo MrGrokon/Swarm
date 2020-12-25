@@ -25,6 +25,8 @@ public class PreyAiManager : MonoBehaviour
     private AiDetection myDetector;
     private AiSoundDetection mySonorDetection;
     private AbstractedRessourcesManager _abs_Resc_Manager;
+    private Animator _animator;
+    private ParticleSystem Dust_PS;
 
     [Range(1f, 10f)]
     [SerializeField] private float TimeToWaitForAbstractedRessources = 3f;
@@ -37,6 +39,15 @@ public class PreyAiManager : MonoBehaviour
         myDetector = this.GetComponent<AiDetection>();
         mySonorDetection = this.GetComponent<AiSoundDetection>();
         _abs_Resc_Manager = this.GetComponent<AbstractedRessourcesManager>();
+        _animator = this.GetComponent<Animator>();
+        Dust_PS = this.GetComponentInChildren<ParticleSystem>();
+
+        if(Dust_PS != null){
+            Dust_PS.Stop();
+        }
+        else{
+            Debug.Log("DustParticule not found");
+        }
         if(_abs_Resc_Manager == null){
             Debug.Log("AbstractedRessourcesManager not found");
         }
@@ -72,6 +83,8 @@ public class PreyAiManager : MonoBehaviour
                 case PreyStates.Flee:
                 //TODO: passer en Mode Hide quelques secondes si je le joueur n'est plus a proximité de lui
                 _nm_Agent.SetDestination(GetRandomRoamingPosition());
+                _animator.SetBool("IsRunning", false);
+                Dust_PS.Stop();
                 ChangeState(PreyStates.Roam);
                 break;
 
@@ -100,6 +113,8 @@ public class PreyAiManager : MonoBehaviour
             //  -fuire vers le reste de la meute
             //  -...
 
+            _animator.SetBool("IsRunning", true);
+            Dust_PS.Play();
             ChangeState(PreyStates.Flee);
             //ce vector pointe parfois dans la direction du joueur, ce qui implique que le joueur peu la toucher sur sont chemin de fuite
             Vector3 FleeMotion = (Objects.Instance.Alpha.transform.position - transform.position)*-1;
