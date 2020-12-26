@@ -180,39 +180,6 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "1D Axis",
-                    "id": "f03f78fc-c719-4f3e-affe-86f2c4b08529",
-                    "path": "1DAxis",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "RotateCameraY",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "negative",
-                    "id": "a33fff0d-3aaf-465b-a9bf-7cba0582e103",
-                    "path": "<Gamepad>/rightStick/right",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "RotateCameraY",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "positive",
-                    "id": "23c2f44c-0c25-43c8-92ac-46991969b419",
-                    "path": "<Gamepad>/rightStick/left",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "RotateCameraY",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
                     "name": "",
                     "id": "f0833c3a-0ae1-45d0-9e2a-0293aca22ec2",
                     "path": "<Gamepad>/buttonSouth",
@@ -330,6 +297,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "RotateCameraX",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b146c8e8-5ec7-48a3-af6f-88f863815362",
+                    "path": "<Gamepad>/rightStick/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RotateCameraY",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
