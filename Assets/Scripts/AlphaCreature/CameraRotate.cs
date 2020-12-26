@@ -39,13 +39,13 @@ public class CameraRotate : MonoBehaviour
                 Time.deltaTime);
         }
 
-        /*if (InputTester.inputInstance._playerInputs.Actions.RotateCameraX.ReadValue<float>() != 0)
+        if (InputTester.inputInstance._playerInputs.Actions.RotateCameraX.ReadValue<float>() != 0)
         {
-            transform.RotateAround(transform.parent.position, Vector3.right,
-                cameraSpeed * InputTester.inputInstance._playerInputs.Actions.RotateCameraY.ReadValue<float>() *
+            transform.RotateAround(transform.parent.position, transform.right,
+                cameraSpeed * InputTester.inputInstance._playerInputs.Actions.RotateCameraX.ReadValue<float>() *
                 Time.deltaTime);
-            actualX += cameraSpeed * InputTester.inputInstance._playerInputs.Actions.RotateCameraY.ReadValue<float>() *
+            actualX += cameraSpeed * InputTester.inputInstance._playerInputs.Actions.RotateCameraX.ReadValue<float>() *
                        Time.deltaTime;
-        }*/
+        }
     }
 }
