@@ -117,7 +117,7 @@ public class PreyAiManager : MonoBehaviour
             Dust_PS.Play();
             ChangeState(PreyStates.Flee);
             //ce vector pointe parfois dans la direction du joueur, ce qui implique que le joueur peu la toucher sur sont chemin de fuite
-            Vector3 FleeMotion = (Objects.Instance.Alpha.transform.position - transform.position)*-1;
+            Vector3 FleeMotion = (Objects.Instance.Alpha.transform.position - this.transform.position) * -1;
             _nm_Agent.SetDestination(FleeMotion);
         }
     }
@@ -177,7 +177,11 @@ public class PreyAiManager : MonoBehaviour
 
     private Vector3 GetRandomRoamingPosition(){
         //TODO: get a random position on the walkable NavMesh
-        return Random.insideUnitSphere * 10f + this.transform.position;
+        Vector3 _randomPos = Random.insideUnitSphere * 10f + this.transform.position;
+        NavMeshHit _hit;
+        NavMesh.SamplePosition(_randomPos, out _hit, Mathf.Infinity, 1); // 1 == au mask d'area Walkable du navMash
+        return _hit.position;
+    
     }
 
     private void Change_NMA_Properties(PreyStates _state){
