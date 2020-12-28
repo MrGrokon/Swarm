@@ -16,6 +16,8 @@ public class CameraRotate : MonoBehaviour
     [SerializeField] private float minX;
 
     [SerializeField] private float actualX;
+    private Vector3 rotation;
+    
     // Start is called before the first frame update
     void Awake()
     {
@@ -34,18 +36,19 @@ public class CameraRotate : MonoBehaviour
     {
         if (InputTester.inputInstance._playerInputs.Actions.RotateCameraY.ReadValue<float>() != 0)
         {
-            transform.RotateAround(transform.parent.position, Vector3.up,
+            transform.RotateAround(transform.parent.position, transform.parent.up,
                 cameraSpeed * InputTester.inputInstance._playerInputs.Actions.RotateCameraY.ReadValue<float>() *
                 Time.deltaTime);
         }
 
         if (InputTester.inputInstance._playerInputs.Actions.RotateCameraX.ReadValue<float>() != 0)
         {
-            transform.RotateAround(transform.parent.position, transform.right,
-                cameraSpeed * InputTester.inputInstance._playerInputs.Actions.RotateCameraX.ReadValue<float>() *
-                Time.deltaTime);
-            actualX += cameraSpeed * InputTester.inputInstance._playerInputs.Actions.RotateCameraX.ReadValue<float>() *
-                       Time.deltaTime;
+            rotation += transform.parent.right * InputTester.inputInstance._playerInputs.Actions.RotateCameraX.ReadValue<float>() * cameraSpeed * Time.deltaTime;
+            rotation.x = Mathf.Clamp(rotation.x, minX, maxX);
+        
+            transform.localEulerAngles = new Vector3(rotation.x, transform.localEulerAngles.y, transform.localEulerAngles.z);
         }
+
+        
     }
 }
