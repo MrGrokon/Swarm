@@ -7,7 +7,31 @@
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="LookAt.cs" t="Include" />
+        <e p="nTools" t="Include">
+          <e p="PrefabPainter" t="Include">
+            <e p="Docs" t="Include">
+              <e p="changelog.txt" t="Include" />
+            </e>
+            <e p="Presets" t="Include">
+              <e p="Decal Along Stroke.xml" t="Include" />
+              <e p="Decal Footsteps.xml" t="Include" />
+              <e p="Decal.xml" t="Include" />
+              <e p="Random.xml" t="Include" />
+              <e p="Stones.xml" t="Include" />
+              <e p="Tree Multibrush.xml" t="Include" />
+              <e p="Tree.xml" t="Include" />
+            </e>
+            <e p="Scripts" t="Include">
+              <e p="Editor" t="Include">
+                <e p="PrafabPainterGUI.cs" t="Include" />
+                <e p="PrefabPainter.cs" t="Include" />
+              </e>
+              <e p="PrefabPainterSceneSettings.cs" t="Include" />
+              <e p="PrefabPainterSettings.cs" t="Include" />
+              <e p="Utility.cs" t="Include" />
+            </e>
+          </e>
+        </e>
         <e p="Scripts" t="Include">
           <e p="AlphaCreature" t="Include">
             <e p="Attack.cs" t="Include" />
@@ -38,7 +62,6 @@
           <e p="DeprecatedScripts" t="Include">
             <e p="DetectPlayer.cs" t="Include" />
           </e>
-          <e p="DestroyTrackOverTime.cs" t="Include" />
           <e p="Editor" t="Include">
             <e p="FieldOfViewEditor.cs" t="Include" />
             <e p="SoundRangeEditor.cs" t="Include" />
@@ -55,12 +78,14 @@
             <e p="AbstractedRessourcesManager.cs" t="Include" />
             <e p="AiDetection.cs" t="Include" />
             <e p="AiSoundDetection.cs" t="Include" />
+            <e p="BasicPrey.cs" t="Include" />
             <e p="PreyAiManager.cs" t="Include" />
             <e p="PreyProfile.cs" t="Include" />
             <e p="TracksCreatorOverTime.cs" t="Include" />
           </e>
-          <e p="TrackInfo.cs" t="Include" />
           <e p="Tracks" t="Include">
+            <e p="DestroyTrackOverTime.cs" t="Include" />
+            <e p="TrackInfo.cs" t="Include" />
             <e p="TrackRenderer.cs" t="Include" />
           </e>
           <e p="UI" t="Include">
