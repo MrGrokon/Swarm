@@ -19,11 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e9a9fd44-a60f-4fbc-b03b-f25159acb4b3" name="Default Changelist" comment=" 1.0.0.0 : Ajout d'un émetteur de son sur le joueur, changement de la détection du son par les proies, ajout des éléments de LD suivant : hautes-herbes, rochers">
+    <list default="true" id="e9a9fd44-a60f-4fbc-b03b-f25159acb4b3" name="Default Changelist" comment=" 1.0.1.4 : Ajout de la rotation de la caméra sur l'axe X">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CameraRotate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CameraRotate.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CharacterController/PlayerInputs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CharacterController/PlayerInputs.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CharacterController/PlayerInputs.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CharacterController/PlayerInputs.inputactions" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +32,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Branch_PA" />
+        <entry key="$PROJECT_DIR$" value="ThéoBranch" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -46,6 +45,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/BetaCreature/IntelligenceInterface.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.6.3/Runtime/Core/AxisState.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/AlphaCreature/PackOrderer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../MiniBr/Behind The Line/Assets/Scripts/MouseLook.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://F:/UnityProject/CsLike/CsLike/Assets/Scripts/BotTargeting.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -95,6 +95,7 @@
         <option value="$PROJECT_DIR$/Assets/ClimbableTree.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tracks/TrackRenderer.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CreatureMover.cs" />
+        <option value="$PROJECT_DIR$/Assets/DestroyTrackOverTime.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CameraRotate.cs" />
       </list>
     </option>
@@ -188,6 +189,8 @@
       <workItem from="1608733177957" duration="3444000" />
       <workItem from="1609003939405" duration="37000" />
       <workItem from="1609011589673" duration="659000" />
+      <workItem from="1609085077854" duration="1671000" />
+      <workItem from="1609155798941" duration="1397000" />
     </task>
     <task id="LOCAL-00001" summary="Camera system implémenté">
       <created>1606123669149</created>
@@ -343,7 +346,21 @@
       <option name="project" value="LOCAL" />
       <updated>1608647065742</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Meta manquant">
+      <created>1609085281826</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1609085281826</updated>
+    </task>
+    <task id="LOCAL-00024" summary="1.0.6.0 : Ajout des suppression des tracks over the time">
+      <created>1609086209269</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1609086209269</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -386,7 +403,10 @@
     <MESSAGE value=" 0.6.2.0 : Réecriture de la caméra, suppression des tremblements lié a mouvements, Suppression de la création des bétas" />
     <MESSAGE value=" 1.0.0.0 : Ajout d'un émetteur de son sur le joueur, changement de la détection du son par les proies, ajout des éléments de LD suivant : hautes-herbes, rochers" />
     <MESSAGE value="1.0.0.0b : Ajout de l'arbre grimpable ainsi que la possibilité d'attaquer depuis ce dernier, Ajout de la couleur de fraicheur de la traçe (nécessitera un petit fix sur la couleur), Changement du scripts d'attaque pour qu'un script extérieur puisse invoquer l'attaque du joueur, Ajout d'une touche de grimpe pour le joueur'" />
-    <option name="LAST_COMMIT_MESSAGE" value="1.0.0.0b : Ajout de l'arbre grimpable ainsi que la possibilité d'attaquer depuis ce dernier, Ajout de la couleur de fraicheur de la traçe (nécessitera un petit fix sur la couleur), Changement du scripts d'attaque pour qu'un script extérieur puisse invoquer l'attaque du joueur, Ajout d'une touche de grimpe pour le joueur'" />
+    <MESSAGE value=" 1.0.1.4 : Ajout de la rotation de la caméra sur l'axe X" />
+    <MESSAGE value="Meta manquant" />
+    <MESSAGE value="1.0.6.0 : Ajout des suppression des tracks over the time" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.0.6.0 : Ajout des suppression des tracks over the time" />
   </component>
   <component name="WindowStateProjectService">
     <state x="184" y="126" key="MergeDialog" timestamp="1607896176207">
@@ -397,10 +417,10 @@
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="598" y="321" key="MultipleFileMergeDialog/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1607268519074" />
-    <state x="552" y="293" key="Vcs.Push.Dialog.v2" timestamp="1609003959305">
+    <state x="552" y="293" key="Vcs.Push.Dialog.v2" timestamp="1609086264820">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
-    <state x="552" y="293" key="Vcs.Push.Dialog.v2/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1609003959305" />
+    <state x="552" y="293" key="Vcs.Push.Dialog.v2/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1609086264820" />
     <state x="777" y="474" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607988875474">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
