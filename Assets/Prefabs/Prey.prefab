@@ -93,12 +93,12 @@ GameObject:
   - component: {fileID: 1853304259910867412}
   - component: {fileID: 4664549324402317925}
   - component: {fileID: 1900186649020025721}
-  - component: {fileID: 7339573845739339711}
   - component: {fileID: 8128917941845414919}
   - component: {fileID: 6394319303653858047}
   - component: {fileID: 6040251906363349308}
   - component: {fileID: 9078144590713663007}
   - component: {fileID: -1855441763366619793}
+  - component: {fileID: -7425912678644063657}
   m_Layer: 10
   m_Name: Prey
   m_TagString: Prey
@@ -167,23 +167,6 @@ MonoBehaviour:
   MinTimeToLeaveTrack: 5
   MaxTimeToLeaveTrack: 5
   PreyTracks: []
---- !u!114 &7339573845739339711
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1853304259910867415}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c580a843f463c646821543fb2785c62, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ReachingDistance: 1.5
-  MyState: 0
-  MyProfile: {fileID: 2296511828036664000, guid: 6fd61dbf2152c6040b830979bb0a0fbb,
-    type: 3}
-  TimeToWaitForAbstractedRessources: 3
 --- !u!195 &8128917941845414919
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -308,6 +291,30 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &-7425912678644063657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1853304259910867415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdf8cc8dec58a71408c4dc6b01fb8c85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ReachingDistance: 1.5
+  MyState: 0
+  MyProfile: {fileID: 2296511828036664000, guid: 6fd61dbf2152c6040b830979bb0a0fbb,
+    type: 3}
+  _nm_Agent: {fileID: 0}
+  myDetector: {fileID: 0}
+  mySonorDetection: {fileID: 0}
+  _abs_Resc_Manager: {fileID: 0}
+  _animator: {fileID: 0}
+  Dust_PS: {fileID: 0}
+  TimeToWaitForAbstractedRessources: 3
+  _timePassed: 0
 --- !u!1 &2033578018791067581
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,7 +11,7 @@ public class AbstractedRessourcesManager : MonoBehaviour
 
     #region Unity Functions
     private void Awake() {
-        AI_Brain = this.GetComponent<PreyAiManager>();
+        AI_Brain = this.GetComponent(typeof(PreyAiManager)) as PreyAiManager;
         FoodLevel = SetRandomRessourceLevel();
         ThirstLevel = SetRandomRessourceLevel();
     }

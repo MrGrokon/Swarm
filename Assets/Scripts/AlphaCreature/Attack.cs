@@ -21,10 +21,12 @@ public class Attack : MonoBehaviour
         {
             foreach (var obj in PreyInTrigger)
             {
-                PreyInTrigger.Remove(obj);
+                
                 _ressource.GainRessource(RessourceManager.Resource.Hunger, 20f);
+                PreyAiManager actualManager = obj.GetComponent(typeof(PreyAiManager)) as PreyAiManager;
+                actualManager.Die();
                 PackManager.packInstance.gameObject.GetComponent<GeneratePrey>().listOfPrey.Remove(obj);
-                obj.GetComponent<PreyAiManager>().Die();
+                PreyInTrigger.Remove(obj);
                 //GetComponent<PreySniffer>().ResetTrackerValue();
             }
         }
