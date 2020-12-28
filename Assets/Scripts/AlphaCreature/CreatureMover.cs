@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class CreatureMover : MonoBehaviour
 {
@@ -27,6 +28,7 @@ public class CreatureMover : MonoBehaviour
     
     void FixedUpdate()
     {
+        var gamepad = Gamepad.current;
         Move(InputTester.inputInstance.direction);
         if (InputTester.inputInstance.direction != Vector3.zero)
         {
@@ -37,14 +39,13 @@ public class CreatureMover : MonoBehaviour
             speed -= acceleration * Time.deltaTime;
         }
         speed = Mathf.Clamp(speed, 0, maxSpeed);
-        if (InputTester.inputInstance._playerInputs.Actions.RightSprintButton.ReadValue<float>() != 0 && sprintState == 1)
+        if (gamepad.rightTrigger.wasPressedThisFrame && sprintState == 1)
         {
             SprintStateManager();
         }
-        else if (InputTester.inputInstance._playerInputs.Actions.LeftSprintButton.ReadValue<float>() != 0 && sprintState == 2)
-        {
+            
+        else if(gamepad.leftTrigger.wasPressedThisFrame && sprintState == 2)
             SprintStateManager();
-        }
 
         speedMultiplier -= multiplierLosseOverTime * Time.deltaTime;
         speedMultiplier = Mathf.Clamp(speedMultiplier, 1, maxSpeedMultiplier);
@@ -89,6 +90,7 @@ public class CreatureMover : MonoBehaviour
 
     private void SprintStateManager()
     {
+        print("1");
         switch (sprintState)
         {
             case 1:

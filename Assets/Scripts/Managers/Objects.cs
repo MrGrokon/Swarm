@@ -9,8 +9,8 @@ public class Objects : MonoBehaviour
     public enum ObjectType{ WaterSource, FoodSource};
 
     public GameObject Alpha;
-    public List<GameObject> WaterSource = new List<GameObject>();
-    public List<GameObject> FoodSource = new List<GameObject>();
+    public List<GameObject> WaterSources = new List<GameObject>();
+    public List<GameObject> FoodSources = new List<GameObject>();
 
     private void Awake() {
         #region Singleton Instance
@@ -37,14 +37,14 @@ public class Objects : MonoBehaviour
         switch (_type)
         {
             case ObjectType.FoodSource:
-                if(FoodSource.Contains(_object) == false){
-                    FoodSource.Add(_object);
+                if(FoodSources.Contains(_object) == false){
+                    FoodSources.Add(_object);
                 }
             break;
 
             case ObjectType.WaterSource:
-                if(WaterSource.Contains(_object) == false){
-                    WaterSource.Add(_object);
+                if(WaterSources.Contains(_object) == false){
+                    WaterSources.Add(_object);
                 }
             break;
             
@@ -57,16 +57,17 @@ public class Objects : MonoBehaviour
     public Vector3 GetCloserRessources(ObjectType _type, GameObject CloserTo){
         switch(_type){
             case ObjectType.FoodSource:
-            if(FoodSource.Count > 0){
-                FoodSource.OrderBy(x => Vector3.Distance(CloserTo.transform.position, x.transform.position));
-                return FoodSource[0].transform.position;
+            if(FoodSources.Count > 0){
+                GameObject[] _tempsFoodSources = FoodSources.OrderBy(x => Vector3.Distance(x.transform.position, CloserTo.transform.position)).ToArray<GameObject>();
+                return _tempsFoodSources[0].transform.position;
             }
             break;
 
             case ObjectType.WaterSource:
-            if(WaterSource.Count > 0){
-                WaterSource.OrderBy(x => Vector3.Distance(CloserTo.transform.position, x.transform.position));
-                return WaterSource[0].transform.position;
+            if(WaterSources.Count > 0){
+
+                GameObject[] _tempsWaterSources = WaterSources.OrderBy(x => Vector3.Distance(x.transform.position, CloserTo.transform.position)).ToArray<GameObject>();
+                return _tempsWaterSources[0].transform.position;
             }
             break;
         }
