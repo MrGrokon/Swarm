@@ -19,10 +19,26 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e9a9fd44-a60f-4fbc-b03b-f25159acb4b3" name="Default Changelist" comment=" 1.0.1.4 : Ajout de la rotation de la caméra sur l'axe X">
+    <list default="true" id="e9a9fd44-a60f-4fbc-b03b-f25159acb4b3" name="Default Changelist" comment=" 1.0.6.2 : (Rectification) Clamp de la caméra sur l'axe X">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CameraRotate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CameraRotate.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ClimbableTree.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ClimbableTree.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DestroyTrackOverTime.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DestroyTrackOverTime.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Alpha Creature.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Alpha Creature.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Prey.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Prey.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Track.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Track.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CharacterController/PlayerInputs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CharacterController/PlayerInputs.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CharacterController/PlayerInputs.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CharacterController/PlayerInputs.inputactions" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/ThridPersonCamera.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/ThridPersonCamera.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DebugScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DebugScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Prey/TracksCreatorOverTime.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Prey/TracksCreatorOverTime.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tracks/TrackRenderer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tracks/TrackRenderer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TrackInfo.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TrackInfo.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,21 +48,23 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="ThéoBranch" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/GeneratePrey.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/TrackInfo.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://F:/UnityProject/CsLike/CsLike/Assets/Scripts/BotDetection.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CreatureMover.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/BetaCreature/IntelligenceInterface.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Théo/Documents/GitHub/Swarm/Swarm/Assets/Prefabs/Alpha Creature.prefab" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.6.3/Runtime/Core/AxisState.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/AlphaCreature/PackOrderer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../MiniBr/Behind The Line/Assets/Scripts/MouseLook.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://F:/UnityProject/CsLike/CsLike/Assets/Scripts/BotTargeting.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/LookAt.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/AlphaCreature/Targeting.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -80,11 +98,8 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Common/HealthSysteme.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Managers/GeneratePrey.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Managers/PackManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Prey/PreyAiManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/DebugScript.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Prey/AiDetection.cs" />
         <option value="$PROJECT_DIR$/Assets/TrackInfo.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Prey/TracksCreatorOverTime.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/FallAsleep.cs" />
         <option value="$PROJECT_DIR$/Assets/CameraRotate.cs" />
         <option value="$PROJECT_DIR$/Assets/ThridPersonCamera.cs" />
@@ -93,10 +108,16 @@
         <option value="$PROJECT_DIR$/Assets/NoiseEmitter.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/Attack.cs" />
         <option value="$PROJECT_DIR$/Assets/ClimbableTree.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Tracks/TrackRenderer.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CreatureMover.cs" />
         <option value="$PROJECT_DIR$/Assets/DestroyTrackOverTime.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CameraRotate.cs" />
+        <option value="$PROJECT_DIR$/Assets/LookAt.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Prey/TracksCreatorOverTime.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Tracks/TrackRenderer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Prey/PreyAiManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/ThridPersonCamera.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/DebugScript.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/Targeting.cs" />
       </list>
     </option>
   </component>
@@ -360,7 +381,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609086209269</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary=" 1.0.6.2 : (Rectification) Clamp de la caméra sur l'axe X">
+      <created>1609157412035</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1609157412035</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -381,7 +409,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Camera system implémenté" />
     <MESSAGE value="Merge du main dans le bridge" />
     <MESSAGE value="Base CHasse" />
     <MESSAGE value="Tout les scripts implémentés comme convenu dans le flow chart" />
@@ -406,7 +433,8 @@
     <MESSAGE value=" 1.0.1.4 : Ajout de la rotation de la caméra sur l'axe X" />
     <MESSAGE value="Meta manquant" />
     <MESSAGE value="1.0.6.0 : Ajout des suppression des tracks over the time" />
-    <option name="LAST_COMMIT_MESSAGE" value="1.0.6.0 : Ajout des suppression des tracks over the time" />
+    <MESSAGE value=" 1.0.6.2 : (Rectification) Clamp de la caméra sur l'axe X" />
+    <option name="LAST_COMMIT_MESSAGE" value=" 1.0.6.2 : (Rectification) Clamp de la caméra sur l'axe X" />
   </component>
   <component name="WindowStateProjectService">
     <state x="184" y="126" key="MergeDialog" timestamp="1607896176207">
@@ -417,10 +445,10 @@
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="598" y="321" key="MultipleFileMergeDialog/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1607268519074" />
-    <state x="552" y="293" key="Vcs.Push.Dialog.v2" timestamp="1609086264820">
+    <state x="552" y="293" key="Vcs.Push.Dialog.v2" timestamp="1609157449656">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
-    <state x="552" y="293" key="Vcs.Push.Dialog.v2/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1609086264820" />
+    <state x="552" y="293" key="Vcs.Push.Dialog.v2/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1609157449656" />
     <state x="777" y="474" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607988875474">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
@@ -429,9 +457,9 @@
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="732" y="274" key="git4idea.branch.GitSmartOperationDialog/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1608046327945" />
-    <state x="616" y="260" key="run.anything.popup" timestamp="1607376902331">
+    <state x="616" y="260" key="run.anything.popup" timestamp="1609174409132">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
-    <state x="616" y="260" key="run.anything.popup/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1607376902331" />
+    <state x="616" y="260" key="run.anything.popup/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1609174409132" />
   </component>
 </project>

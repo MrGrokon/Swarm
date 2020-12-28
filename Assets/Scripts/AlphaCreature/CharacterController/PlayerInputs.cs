@@ -35,22 +35,6 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""Bridge R/L"",
-                    ""type"": ""Value"",
-                    ""id"": ""57bc3603-7e8e-4bca-bd26-5f930e58a9fe"",
-                    ""expectedControlType"": ""Axis"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                },
-                {
-                    ""name"": ""Bridge F/B"",
-                    ""type"": ""Value"",
-                    ""id"": ""92737d9d-605a-4bc8-ab84-84cdf834ba80"",
-                    ""expectedControlType"": ""Axis"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                },
-                {
                     ""name"": ""RotateCameraY"",
                     ""type"": ""Value"",
                     ""id"": ""30eb780b-7b1c-434f-9c28-d242e5f7c916"",
@@ -115,25 +99,9 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""LT"",
-                    ""type"": ""Button"",
-                    ""id"": ""e4311cd1-5eb5-4912-ab45-9ea581361d67"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                },
-                {
                     ""name"": ""Attack"",
                     ""type"": ""Button"",
                     ""id"": ""c473b79d-657b-427a-ac0e-00df27d82814"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                },
-                {
-                    ""name"": ""ChangeCamera"",
-                    ""type"": ""Button"",
-                    ""id"": ""2974958f-a61a-41b2-8639-a3f581254474"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -150,6 +118,22 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                     ""name"": ""Climb"",
                     ""type"": ""Button"",
                     ""id"": ""5e72a2dd-47ac-490f-895a-038ea3828592"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Targeting"",
+                    ""type"": ""Button"",
+                    ""id"": ""39aca463-fc6b-4b62-b347-2011029bb249"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""SwitchTarget"",
+                    ""type"": ""Button"",
+                    ""id"": ""c4e5bc7b-6e62-415c-996c-6da3bb139e35"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -175,28 +159,6 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
                     ""action"": ""Move F/B"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""8dbfd0dc-38ce-49f3-b9ad-64b921f6af14"",
-                    ""path"": ""<Gamepad>/rightStick/x"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Bridge R/L"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""1911c0d5-9ce5-4416-b362-016d18b49a18"",
-                    ""path"": ""<Gamepad>/rightStick/y"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Bridge F/B"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -268,17 +230,6 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""a43ca5b8-b82d-4776-b0b4-96d6fe8f8650"",
-                    ""path"": ""<Gamepad>/rightStickPress"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ChangeCamera"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""2f89821a-c720-4058-bc68-0b9c2366b9e6"",
                     ""path"": ""<Gamepad>/start"",
                     ""interactions"": """",
@@ -331,6 +282,50 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                     ""action"": ""RotateCameraY"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5e769711-77b3-4789-8748-b3983b0b2286"",
+                    ""path"": ""<Gamepad>/rightStickPress"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Targeting"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""6bd43141-14d1-48c8-8a40-6500b5ae0cbe"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SwitchTarget"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""21fedbcb-e8aa-495f-b262-a44b29b54842"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SwitchTarget"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""7cee88f8-c028-48b4-a504-d37b7a2964b3"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SwitchTarget"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -353,8 +348,6 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
         m_Actions = asset.FindActionMap("Actions", throwIfNotFound: true);
         m_Actions_MoveRL = m_Actions.FindAction("Move R/L", throwIfNotFound: true);
         m_Actions_MoveFB = m_Actions.FindAction("Move F/B", throwIfNotFound: true);
-        m_Actions_BridgeRL = m_Actions.FindAction("Bridge R/L", throwIfNotFound: true);
-        m_Actions_BridgeFB = m_Actions.FindAction("Bridge F/B", throwIfNotFound: true);
         m_Actions_RotateCameraY = m_Actions.FindAction("RotateCameraY", throwIfNotFound: true);
         m_Actions_RotateCameraX = m_Actions.FindAction("RotateCameraX", throwIfNotFound: true);
         m_Actions_GetPrey = m_Actions.FindAction("GetPrey", throwIfNotFound: true);
@@ -363,11 +356,11 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
         m_Actions_FormationY = m_Actions.FindAction("FormationY", throwIfNotFound: true);
         m_Actions_LeftSprintButton = m_Actions.FindAction("LeftSprintButton", throwIfNotFound: true);
         m_Actions_RightSprintButton = m_Actions.FindAction("RightSprintButton", throwIfNotFound: true);
-        m_Actions_LT = m_Actions.FindAction("LT", throwIfNotFound: true);
         m_Actions_Attack = m_Actions.FindAction("Attack", throwIfNotFound: true);
-        m_Actions_ChangeCamera = m_Actions.FindAction("ChangeCamera", throwIfNotFound: true);
         m_Actions_Reset = m_Actions.FindAction("Reset", throwIfNotFound: true);
         m_Actions_Climb = m_Actions.FindAction("Climb", throwIfNotFound: true);
+        m_Actions_Targeting = m_Actions.FindAction("Targeting", throwIfNotFound: true);
+        m_Actions_SwitchTarget = m_Actions.FindAction("SwitchTarget", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -419,8 +412,6 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
     private IActionsActions m_ActionsActionsCallbackInterface;
     private readonly InputAction m_Actions_MoveRL;
     private readonly InputAction m_Actions_MoveFB;
-    private readonly InputAction m_Actions_BridgeRL;
-    private readonly InputAction m_Actions_BridgeFB;
     private readonly InputAction m_Actions_RotateCameraY;
     private readonly InputAction m_Actions_RotateCameraX;
     private readonly InputAction m_Actions_GetPrey;
@@ -429,19 +420,17 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
     private readonly InputAction m_Actions_FormationY;
     private readonly InputAction m_Actions_LeftSprintButton;
     private readonly InputAction m_Actions_RightSprintButton;
-    private readonly InputAction m_Actions_LT;
     private readonly InputAction m_Actions_Attack;
-    private readonly InputAction m_Actions_ChangeCamera;
     private readonly InputAction m_Actions_Reset;
     private readonly InputAction m_Actions_Climb;
+    private readonly InputAction m_Actions_Targeting;
+    private readonly InputAction m_Actions_SwitchTarget;
     public struct ActionsActions
     {
         private @PlayerInputs m_Wrapper;
         public ActionsActions(@PlayerInputs wrapper) { m_Wrapper = wrapper; }
         public InputAction @MoveRL => m_Wrapper.m_Actions_MoveRL;
         public InputAction @MoveFB => m_Wrapper.m_Actions_MoveFB;
-        public InputAction @BridgeRL => m_Wrapper.m_Actions_BridgeRL;
-        public InputAction @BridgeFB => m_Wrapper.m_Actions_BridgeFB;
         public InputAction @RotateCameraY => m_Wrapper.m_Actions_RotateCameraY;
         public InputAction @RotateCameraX => m_Wrapper.m_Actions_RotateCameraX;
         public InputAction @GetPrey => m_Wrapper.m_Actions_GetPrey;
@@ -450,11 +439,11 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
         public InputAction @FormationY => m_Wrapper.m_Actions_FormationY;
         public InputAction @LeftSprintButton => m_Wrapper.m_Actions_LeftSprintButton;
         public InputAction @RightSprintButton => m_Wrapper.m_Actions_RightSprintButton;
-        public InputAction @LT => m_Wrapper.m_Actions_LT;
         public InputAction @Attack => m_Wrapper.m_Actions_Attack;
-        public InputAction @ChangeCamera => m_Wrapper.m_Actions_ChangeCamera;
         public InputAction @Reset => m_Wrapper.m_Actions_Reset;
         public InputAction @Climb => m_Wrapper.m_Actions_Climb;
+        public InputAction @Targeting => m_Wrapper.m_Actions_Targeting;
+        public InputAction @SwitchTarget => m_Wrapper.m_Actions_SwitchTarget;
         public InputActionMap Get() { return m_Wrapper.m_Actions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -470,12 +459,6 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                 @MoveFB.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnMoveFB;
                 @MoveFB.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnMoveFB;
                 @MoveFB.canceled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnMoveFB;
-                @BridgeRL.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnBridgeRL;
-                @BridgeRL.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnBridgeRL;
-                @BridgeRL.canceled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnBridgeRL;
-                @BridgeFB.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnBridgeFB;
-                @BridgeFB.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnBridgeFB;
-                @BridgeFB.canceled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnBridgeFB;
                 @RotateCameraY.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnRotateCameraY;
                 @RotateCameraY.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnRotateCameraY;
                 @RotateCameraY.canceled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnRotateCameraY;
@@ -500,21 +483,21 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                 @RightSprintButton.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnRightSprintButton;
                 @RightSprintButton.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnRightSprintButton;
                 @RightSprintButton.canceled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnRightSprintButton;
-                @LT.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnLT;
-                @LT.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnLT;
-                @LT.canceled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnLT;
                 @Attack.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnAttack;
                 @Attack.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnAttack;
                 @Attack.canceled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnAttack;
-                @ChangeCamera.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnChangeCamera;
-                @ChangeCamera.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnChangeCamera;
-                @ChangeCamera.canceled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnChangeCamera;
                 @Reset.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnReset;
                 @Reset.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnReset;
                 @Reset.canceled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnReset;
                 @Climb.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnClimb;
                 @Climb.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnClimb;
                 @Climb.canceled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnClimb;
+                @Targeting.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnTargeting;
+                @Targeting.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnTargeting;
+                @Targeting.canceled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnTargeting;
+                @SwitchTarget.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnSwitchTarget;
+                @SwitchTarget.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnSwitchTarget;
+                @SwitchTarget.canceled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnSwitchTarget;
             }
             m_Wrapper.m_ActionsActionsCallbackInterface = instance;
             if (instance != null)
@@ -525,12 +508,6 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                 @MoveFB.started += instance.OnMoveFB;
                 @MoveFB.performed += instance.OnMoveFB;
                 @MoveFB.canceled += instance.OnMoveFB;
-                @BridgeRL.started += instance.OnBridgeRL;
-                @BridgeRL.performed += instance.OnBridgeRL;
-                @BridgeRL.canceled += instance.OnBridgeRL;
-                @BridgeFB.started += instance.OnBridgeFB;
-                @BridgeFB.performed += instance.OnBridgeFB;
-                @BridgeFB.canceled += instance.OnBridgeFB;
                 @RotateCameraY.started += instance.OnRotateCameraY;
                 @RotateCameraY.performed += instance.OnRotateCameraY;
                 @RotateCameraY.canceled += instance.OnRotateCameraY;
@@ -555,21 +532,21 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                 @RightSprintButton.started += instance.OnRightSprintButton;
                 @RightSprintButton.performed += instance.OnRightSprintButton;
                 @RightSprintButton.canceled += instance.OnRightSprintButton;
-                @LT.started += instance.OnLT;
-                @LT.performed += instance.OnLT;
-                @LT.canceled += instance.OnLT;
                 @Attack.started += instance.OnAttack;
                 @Attack.performed += instance.OnAttack;
                 @Attack.canceled += instance.OnAttack;
-                @ChangeCamera.started += instance.OnChangeCamera;
-                @ChangeCamera.performed += instance.OnChangeCamera;
-                @ChangeCamera.canceled += instance.OnChangeCamera;
                 @Reset.started += instance.OnReset;
                 @Reset.performed += instance.OnReset;
                 @Reset.canceled += instance.OnReset;
                 @Climb.started += instance.OnClimb;
                 @Climb.performed += instance.OnClimb;
                 @Climb.canceled += instance.OnClimb;
+                @Targeting.started += instance.OnTargeting;
+                @Targeting.performed += instance.OnTargeting;
+                @Targeting.canceled += instance.OnTargeting;
+                @SwitchTarget.started += instance.OnSwitchTarget;
+                @SwitchTarget.performed += instance.OnSwitchTarget;
+                @SwitchTarget.canceled += instance.OnSwitchTarget;
             }
         }
     }
@@ -587,8 +564,6 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
     {
         void OnMoveRL(InputAction.CallbackContext context);
         void OnMoveFB(InputAction.CallbackContext context);
-        void OnBridgeRL(InputAction.CallbackContext context);
-        void OnBridgeFB(InputAction.CallbackContext context);
         void OnRotateCameraY(InputAction.CallbackContext context);
         void OnRotateCameraX(InputAction.CallbackContext context);
         void OnGetPrey(InputAction.CallbackContext context);
@@ -597,10 +572,10 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
         void OnFormationY(InputAction.CallbackContext context);
         void OnLeftSprintButton(InputAction.CallbackContext context);
         void OnRightSprintButton(InputAction.CallbackContext context);
-        void OnLT(InputAction.CallbackContext context);
         void OnAttack(InputAction.CallbackContext context);
-        void OnChangeCamera(InputAction.CallbackContext context);
         void OnReset(InputAction.CallbackContext context);
         void OnClimb(InputAction.CallbackContext context);
+        void OnTargeting(InputAction.CallbackContext context);
+        void OnSwitchTarget(InputAction.CallbackContext context);
     }
 }

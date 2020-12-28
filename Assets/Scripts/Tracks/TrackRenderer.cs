@@ -103,18 +103,18 @@ public class TrackRenderer : MonoBehaviour
         Vector2[] uv = new Vector2[3];
         int[] triangles = new int[3];
 
-        AngleA = GetComponent<TrackInfo>().DirFromAngle(-GetComponent<TrackInfo>().actualAngle / 2, true);
+        AngleA = GetComponent<TrackInfo>().DirFromAngle(GetComponent<TrackInfo>().actualAngle / 2, true);
         AngleB = new Vector3(-AngleA.x, AngleA.y, AngleA.z);
         
         
         vertices[0] = new Vector3(0,0);
-        vertices[1] = AngleA * DistanceToPoint;
-        vertices[2] = AngleB * DistanceToPoint;
+        vertices[1] = AngleA * -DistanceToPoint;
+        vertices[2] = AngleB * -DistanceToPoint;
         
 
         uv[0] = new Vector3(0,1);
-        uv[1] = AngleA * DistanceToPoint;
-        uv[2] = AngleB * DistanceToPoint;
+        uv[1] = AngleA * -DistanceToPoint;
+        uv[2] = AngleB * -DistanceToPoint;
 
         triangles[0] = 0;
         triangles[1] = 1;
@@ -152,19 +152,7 @@ public class TrackRenderer : MonoBehaviour
             lastPrevisuMesh.GetComponent<Renderer>().material = material;
         }
         
-        
-
+        lastPrevisuMesh.transform.LookAt(GetNextTrack());
     }
 
-    private void OnDrawGizmos()
-    {
-        AngleA = GetComponent<TrackInfo>().DirFromAngle(-GetComponent<TrackInfo>().actualAngle / 2, false);
-        //AngleB = GetComponent<TrackInfo>().DirFromAngle(GetComponent<TrackInfo>().actualAngle / 2, false);
-        AngleB = new Vector3(-AngleA.x, AngleA.y, AngleA.z);
-        Gizmos.color = Color.blue;
-        Gizmos.DrawWireSphere(transform.position + AngleA * DistanceToPoint, 1f);
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position + AngleB * DistanceToPoint, 1f);
-        
-    }
 }
