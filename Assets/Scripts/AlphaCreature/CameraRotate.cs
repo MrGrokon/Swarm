@@ -14,8 +14,9 @@ public class CameraRotate : MonoBehaviour
     [SerializeField] private float maxX;
 
     [SerializeField] private float minX;
-
-    [SerializeField] private float actualX;
+    [SerializeField] private bool inversedControl = false;
+    
+    private int controlDirection = -1;
     private Vector3 rotation;
     
     // Start is called before the first frame update
@@ -37,7 +38,7 @@ public class CameraRotate : MonoBehaviour
         if (InputTester.inputInstance._playerInputs.Actions.RotateCameraY.ReadValue<float>() != 0)
         {
             transform.RotateAround(transform.parent.position, transform.parent.up,
-                cameraSpeed * InputTester.inputInstance._playerInputs.Actions.RotateCameraY.ReadValue<float>() *
+                cameraSpeed * InputTester.inputInstance._playerInputs.Actions.RotateCameraY.ReadValue<float>() * controlDirection * 
                 Time.deltaTime);
         }
 
@@ -49,6 +50,18 @@ public class CameraRotate : MonoBehaviour
             transform.localEulerAngles = new Vector3(rotation.x, transform.localEulerAngles.y, transform.localEulerAngles.z);
         }
 
-        
+        ManageControlDirection();
+    }
+
+    private void ManageControlDirection()
+    {
+        if (inversedControl)
+        {
+            controlDirection = 1;
+        }
+        else
+        {
+            controlDirection = -1;
+        }
     }
 }

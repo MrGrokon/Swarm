@@ -24,9 +24,9 @@ public class Attack : MonoBehaviour
                 
                 _ressource.GainRessource(RessourceManager.Resource.Hunger, 20f);
                 PreyAiManager actualManager = obj.GetComponent(typeof(PreyAiManager)) as PreyAiManager;
-                actualManager.Die();
                 PackManager.packInstance.gameObject.GetComponent<GeneratePrey>().listOfPrey.Remove(obj);
                 PreyInTrigger.Remove(obj);
+                actualManager.Die();
                 //GetComponent<PreySniffer>().ResetTrackerValue();
             }
         }
