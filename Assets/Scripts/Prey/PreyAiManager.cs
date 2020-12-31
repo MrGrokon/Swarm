@@ -12,7 +12,8 @@ public class PreyAiManager : MonoBehaviour
         LookingForWater,
         LookingForFood,
         Waiting,
-        Flee
+        Flee,
+        Scan
     }
     
     [Header("Basic AI Parameters")]
@@ -27,6 +28,7 @@ public class PreyAiManager : MonoBehaviour
     public AbstractedRessourcesManager _abs_Resc_Manager;
     public Animator _animator;
     public ParticleSystem Dust_PS;
+    public bool takeDammage;
 
     [Range(1f, 10f)]
     public float TimeToWaitForAbstractedRessources = 3f;

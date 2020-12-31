@@ -98,10 +98,10 @@ GameObject:
   - component: {fileID: 6040251906363349308}
   - component: {fileID: 9078144590713663007}
   - component: {fileID: -1855441763366619793}
-  - component: {fileID: -7425912678644063657}
-  - component: {fileID: 7376011113714017504}
+  - component: {fileID: 2915028694501722527}
+  - component: {fileID: -5700039634222997207}
   m_Layer: 10
-  m_Name: Prey
+  m_Name: Robuste
   m_TagString: Prey
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -178,7 +178,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 5
+  m_Speed: 5.33
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -292,7 +292,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &-7425912678644063657
+--- !u!114 &2915028694501722527
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -301,7 +301,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 1853304259910867415}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdf8cc8dec58a71408c4dc6b01fb8c85, type: 3}
+  m_Script: {fileID: 11500000, guid: 8b2f9478bf008844ab7c31302d0ac75b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifePoint: 2
+--- !u!114 &-5700039634222997207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1853304259910867415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fef1f4631e85054993e69b8973b2529, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ReachingDistance: 1.5
@@ -317,19 +330,6 @@ MonoBehaviour:
   takeDammage: 0
   TimeToWaitForAbstractedRessources: 3
   _timePassed: 0
---- !u!114 &7376011113714017504
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1853304259910867415}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b2f9478bf008844ab7c31302d0ac75b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lifePoint: 0
 --- !u!1 &2033578018791067581
 GameObject:
   m_ObjectHideFlags: 0

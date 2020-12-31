@@ -32,6 +32,7 @@
             </e>
           </e>
         </e>
+        <e p="PreyLife.cs" t="Include" />
         <e p="Scripts" t="Include">
           <e p="AlphaCreature" t="Include">
             <e p="Attack.cs" t="Include" />
@@ -79,8 +80,11 @@
             <e p="AiDetection.cs" t="Include" />
             <e p="AiSoundDetection.cs" t="Include" />
             <e p="BasicPrey.cs" t="Include" />
+            <e p="Craintive.cs" t="Include" />
             <e p="PreyAiManager.cs" t="Include" />
             <e p="PreyProfile.cs" t="Include" />
+            <e p="Robuste.cs" t="Include" />
+            <e p="Terrier.cs" t="Include" />
             <e p="TracksCreatorOverTime.cs" t="Include" />
           </e>
           <e p="Tracks" t="Include">
