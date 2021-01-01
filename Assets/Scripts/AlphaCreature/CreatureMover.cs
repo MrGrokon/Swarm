@@ -58,7 +58,7 @@ public class CreatureMover : MonoBehaviour
         if (InputTester.inputInstance.direction != Vector3.zero)
         {
             actualDirection = direction;
-            transform.rotation = Quaternion.LookRotation(Camera.main.transform.forward);
+            transform.rotation = Quaternion.LookRotation(new Vector3(Camera.main.transform.forward.x,0, Camera.main.transform.forward.z));
         }
 
         

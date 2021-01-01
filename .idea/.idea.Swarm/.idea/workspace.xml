@@ -19,25 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e9a9fd44-a60f-4fbc-b03b-f25159acb4b3" name="Default Changelist" comment="1.1.0.0 : Ajout des IA de types : Robuste, Terrier, Rapide et Craintive; Commencement du remaniement de l'attaque">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/contentModel.xml" afterDir="false" />
+    <list default="true" id="e9a9fd44-a60f-4fbc-b03b-f25159acb4b3" name="Default Changelist" comment="1.1.1.0 : Modification de l'attaque (ajout de l'attaque lourde/dash), Début de changement de la gestion de la caméra poour se concorder avec l'attaque, Ajout d'un système pour que les IA recoivent les dommages, création des prefabs de chaque IA, Ajout d'un script éditeur pour voir le range d'attaque du joueur">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Alpha Creature.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Alpha Creature.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Craintive.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Craintive.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Fast.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Fast.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Prey.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Prey.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Robuste.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Robuste.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Terrier.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Terrier.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PreyLife.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PreyLife.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/Attack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/Attack.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CameraRotate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CameraRotate.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CharacterController/PlayerInputs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CharacterController/PlayerInputs.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CharacterController/PlayerInputs.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CharacterController/PlayerInputs.inputactions" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CreatureMover.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CreatureMover.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/ThridPersonCamera.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/ThridPersonCamera.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -219,6 +205,8 @@
       <workItem from="1609257562017" duration="318000" />
       <workItem from="1609519335710" duration="8380000" />
       <workItem from="1609535183238" duration="2239000" />
+      <workItem from="1609537610272" duration="114000" />
+      <workItem from="1609542465351" duration="1202000" />
     </task>
     <task id="LOCAL-00001" summary="Camera system implémenté">
       <created>1606123669149</created>
@@ -402,7 +390,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609426926414</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="1.1.1.0 : Modification de l'attaque (ajout de l'attaque lourde/dash), Début de changement de la gestion de la caméra poour se concorder avec l'attaque, Ajout d'un système pour que les IA recoivent les dommages, création des prefabs de chaque IA, Ajout d'un script éditeur pour voir le range d'attaque du joueur">
+      <created>1609537703794</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1609537703794</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -423,7 +418,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Base CHasse" />
     <MESSAGE value="Tout les scripts implémentés comme convenu dans le flow chart" />
     <MESSAGE value="Ajout des inputs" />
     <MESSAGE value="Reformation du maib" />
@@ -448,7 +442,8 @@
     <MESSAGE value="1.0.6.0 : Ajout des suppression des tracks over the time" />
     <MESSAGE value=" 1.0.6.2 : (Rectification) Clamp de la caméra sur l'axe X" />
     <MESSAGE value="1.1.0.0 : Ajout des IA de types : Robuste, Terrier, Rapide et Craintive; Commencement du remaniement de l'attaque" />
-    <option name="LAST_COMMIT_MESSAGE" value="1.1.0.0 : Ajout des IA de types : Robuste, Terrier, Rapide et Craintive; Commencement du remaniement de l'attaque" />
+    <MESSAGE value="1.1.1.0 : Modification de l'attaque (ajout de l'attaque lourde/dash), Début de changement de la gestion de la caméra poour se concorder avec l'attaque, Ajout d'un système pour que les IA recoivent les dommages, création des prefabs de chaque IA, Ajout d'un script éditeur pour voir le range d'attaque du joueur" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.1.1.0 : Modification de l'attaque (ajout de l'attaque lourde/dash), Début de changement de la gestion de la caméra poour se concorder avec l'attaque, Ajout d'un système pour que les IA recoivent les dommages, création des prefabs de chaque IA, Ajout d'un script éditeur pour voir le range d'attaque du joueur" />
   </component>
   <component name="WindowStateProjectService">
     <state x="184" y="126" key="MergeDialog" timestamp="1609522710548">
@@ -463,10 +458,10 @@
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="92" y="132" width="1736" height="856" key="VCS.FileHistoryDialog/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1609519868736" />
-    <state x="552" y="293" key="Vcs.Push.Dialog.v2" timestamp="1609426930478">
+    <state x="552" y="293" key="Vcs.Push.Dialog.v2" timestamp="1609537712003">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
-    <state x="552" y="293" key="Vcs.Push.Dialog.v2/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1609426930478" />
+    <state x="552" y="293" key="Vcs.Push.Dialog.v2/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1609537712003" />
     <state x="777" y="474" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1609252396090">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>

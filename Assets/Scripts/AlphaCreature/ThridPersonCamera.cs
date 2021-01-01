@@ -17,7 +17,7 @@ public class ThridPersonCamera : MonoBehaviour
 
     public Transform targetToLook;
 
-    [SerializeField] private Vector3 offset;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -28,10 +28,10 @@ public class ThridPersonCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (targetToLook)
+        /*if (targetToLook)
         {
-            transform.parent.position = targetToLook.position + offset;
-        }
+            transform.position = targetToLook.position + (targetToLook.transform.right * offset.x) + (-targetToLook.transform.forward * offset.z);
+        }*/
         Vector3 desiredCameraPos = transform.parent.TransformPoint(dollyDir * maxDistance);
         RaycastHit hit;
         if (Physics.Linecast(transform.parent.position, desiredCameraPos, out hit))

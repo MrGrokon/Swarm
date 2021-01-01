@@ -20,10 +20,13 @@ public class CameraRotate : MonoBehaviour
     private Vector3 rotation;
 
     [SerializeField] private GameObject Follow;
+    [SerializeField] private Vector3 offset;
+    private GameObject PlayerRef;
 
     // Start is called before the first frame update
     void Awake()
     {
+        PlayerRef = Objects.Instance.Alpha;
         if (cameraInstance == null)
         {
             cameraInstance = this;
@@ -37,20 +40,18 @@ public class CameraRotate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = Follow.transform.position;
-        transform.rotation = Follow.transform.rotation;
+        transform.position = PlayerRef.transform.position + (PlayerRef.transform.right * offset.x) + PlayerRef.transform.up * offset.y + (-PlayerRef.transform.forward * offset.z);
         if (InputTester.inputInstance._playerInputs.Actions.RotateCameraY.ReadValue<float>() != 0)
         {
-            /*Follow.transform.RotateAround(Objects.Instance.Alpha.transform.position, transform.up,
-                cameraSpeed * InputTester.inputInstance._playerInputs.Actions.RotateCameraY.ReadValue<float>() * controlDirection * 
-                Time.deltaTime);*/
+            PlayerRef.transform.eulerAngles += transform.up * cameraSpeed * InputTester.inputInstance._playerInputs.Actions.RotateCameraY.ReadValue<float>() * controlDirection *
+                                               Time.deltaTime;
             transform.eulerAngles += transform.up * cameraSpeed * InputTester.inputInstance._playerInputs.Actions.RotateCameraY.ReadValue<float>() * controlDirection *
                                          Time.deltaTime;
         }
 
         if (InputTester.inputInstance._playerInputs.Actions.RotateCameraX.ReadValue<float>() != 0)
         {
-            rotation += transform.parent.right * InputTester.inputInstance._playerInputs.Actions.RotateCameraX.ReadValue<float>() * cameraSpeed * Time.deltaTime;
+            rotation += transform.right * InputTester.inputInstance._playerInputs.Actions.RotateCameraX.ReadValue<float>() * cameraSpeed * Time.deltaTime;
             rotation.x = Mathf.Clamp(rotation.x, minX, maxX);
         
             transform.localEulerAngles = new Vector3(rotation.x, transform.localEulerAngles.y, transform.localEulerAngles.z);
