@@ -16,6 +16,8 @@ public class ThridPersonCamera : MonoBehaviour
     [SerializeField] private float smooth;
 
     public Transform targetToLook;
+
+    [SerializeField] private Vector3 offset;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,7 +30,7 @@ public class ThridPersonCamera : MonoBehaviour
     {
         if (targetToLook)
         {
-            transform.parent.LookAt(targetToLook);
+            transform.parent.position = targetToLook.position + offset;
         }
         Vector3 desiredCameraPos = transform.parent.TransformPoint(dollyDir * maxDistance);
         RaycastHit hit;

@@ -104,7 +104,7 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                     ""id"": ""c473b79d-657b-427a-ac0e-00df27d82814"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """"
+                    ""interactions"": ""Hold""
                 },
                 {
                     ""name"": ""Reset"",

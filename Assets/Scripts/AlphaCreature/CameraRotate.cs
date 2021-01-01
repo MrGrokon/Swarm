@@ -18,7 +18,9 @@ public class CameraRotate : MonoBehaviour
     
     private int controlDirection = -1;
     private Vector3 rotation;
-    
+
+    [SerializeField] private GameObject Follow;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -35,11 +37,15 @@ public class CameraRotate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        transform.position = Follow.transform.position;
+        transform.rotation = Follow.transform.rotation;
         if (InputTester.inputInstance._playerInputs.Actions.RotateCameraY.ReadValue<float>() != 0)
         {
-            transform.RotateAround(transform.parent.position, transform.parent.up,
+            /*Follow.transform.RotateAround(Objects.Instance.Alpha.transform.position, transform.up,
                 cameraSpeed * InputTester.inputInstance._playerInputs.Actions.RotateCameraY.ReadValue<float>() * controlDirection * 
-                Time.deltaTime);
+                Time.deltaTime);*/
+            transform.eulerAngles += transform.up * cameraSpeed * InputTester.inputInstance._playerInputs.Actions.RotateCameraY.ReadValue<float>() * controlDirection *
+                                         Time.deltaTime;
         }
 
         if (InputTester.inputInstance._playerInputs.Actions.RotateCameraX.ReadValue<float>() != 0)
@@ -49,7 +55,6 @@ public class CameraRotate : MonoBehaviour
         
             transform.localEulerAngles = new Vector3(rotation.x, transform.localEulerAngles.y, transform.localEulerAngles.z);
         }
-
         ManageControlDirection();
     }
 

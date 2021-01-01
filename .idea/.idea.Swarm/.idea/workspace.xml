@@ -19,12 +19,25 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e9a9fd44-a60f-4fbc-b03b-f25159acb4b3" name="Default Changelist" comment="1.0.9.1 : Correction de l'héritage (tuer provoque une erreur mais sans conséquence apparente sur le jeu)">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Checkout_at_22_12_2020_12_01_[Default_Changelist]/shelved.patch" beforeDir="false" />
+    <list default="true" id="e9a9fd44-a60f-4fbc-b03b-f25159acb4b3" name="Default Changelist" comment="1.1.0.0 : Ajout des IA de types : Robuste, Terrier, Rapide et Craintive; Commencement du remaniement de l'attaque">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Alpha Creature.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Alpha Creature.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Craintive.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Craintive.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Fast.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Fast.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Prey.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Prey.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Robuste.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Robuste.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Terrier.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Terrier.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PreyLife.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PreyLife.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/Attack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/Attack.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CameraRotate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CameraRotate.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CharacterController/PlayerInputs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CharacterController/PlayerInputs.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CharacterController/PlayerInputs.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CharacterController/PlayerInputs.inputactions" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CreatureMover.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CreatureMover.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/ThridPersonCamera.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/ThridPersonCamera.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +47,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="ThéoBranch" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -50,12 +63,12 @@
     <setting file="file://$PROJECT_DIR$/../../MiniBr/Behind The Line/Assets/Scripts/MouseLook.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://F:/UnityProject/CsLike/CsLike/Assets/Scripts/BotTargeting.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Prey/BasicPrey.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Prey/PreyLife.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.0.0/InputSystem/Utilities/DelegateHelpers.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/CameraManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/CreatureBehavior/CreatureMover.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CameraManager/CameraManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CreatureBehavior/ActionManaging/CreatureAction_Interface.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CreatureBehavior/CreatureCross.cs" />
@@ -92,18 +105,20 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Editor/SoundRangeEditor.cs" />
         <option value="$PROJECT_DIR$/Assets/NoiseEmitter.cs" />
         <option value="$PROJECT_DIR$/Assets/ClimbableTree.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CreatureMover.cs" />
         <option value="$PROJECT_DIR$/Assets/DestroyTrackOverTime.cs" />
         <option value="$PROJECT_DIR$/Assets/LookAt.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Prey/TracksCreatorOverTime.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tracks/TrackRenderer.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/ThridPersonCamera.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/DebugScript.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/Targeting.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Prey/AIsystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/Attack.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Prey/PreyAiManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Prey/BasicPrey.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Prey/PreyLife.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Editor/PlayerFieldOfView.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/Attack.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CreatureMover.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/ThridPersonCamera.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CameraRotate.cs" />
       </list>
     </option>
@@ -202,6 +217,8 @@
       <workItem from="1609252366755" duration="1000" />
       <workItem from="1609252393266" duration="17000" />
       <workItem from="1609257562017" duration="318000" />
+      <workItem from="1609519335710" duration="8380000" />
+      <workItem from="1609535183238" duration="2239000" />
     </task>
     <task id="LOCAL-00001" summary="Camera system implémenté">
       <created>1606123669149</created>
@@ -378,7 +395,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609157412035</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="1.1.0.0 : Ajout des IA de types : Robuste, Terrier, Rapide et Craintive; Commencement du remaniement de l'attaque">
+      <created>1609426926414</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1609426926414</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -399,7 +423,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Merge du main dans le bridge" />
     <MESSAGE value="Base CHasse" />
     <MESSAGE value="Tout les scripts implémentés comme convenu dans le flow chart" />
     <MESSAGE value="Ajout des inputs" />
@@ -424,29 +447,34 @@
     <MESSAGE value="Meta manquant" />
     <MESSAGE value="1.0.6.0 : Ajout des suppression des tracks over the time" />
     <MESSAGE value=" 1.0.6.2 : (Rectification) Clamp de la caméra sur l'axe X" />
-    <option name="LAST_COMMIT_MESSAGE" value=" 1.0.6.2 : (Rectification) Clamp de la caméra sur l'axe X" />
+    <MESSAGE value="1.1.0.0 : Ajout des IA de types : Robuste, Terrier, Rapide et Craintive; Commencement du remaniement de l'attaque" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.1.0.0 : Ajout des IA de types : Robuste, Terrier, Rapide et Craintive; Commencement du remaniement de l'attaque" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="184" y="126" key="MergeDialog" timestamp="1607896176207">
+    <state x="184" y="126" key="MergeDialog" timestamp="1609522710548">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
-    <state x="184" y="126" key="MergeDialog/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1607896176207" />
+    <state x="184" y="126" key="MergeDialog/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1609522710548" />
     <state x="598" y="321" key="MultipleFileMergeDialog" timestamp="1607268519074">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="598" y="321" key="MultipleFileMergeDialog/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1607268519074" />
-    <state x="552" y="293" key="Vcs.Push.Dialog.v2" timestamp="1609252407961">
+    <state x="92" y="132" width="1736" height="856" key="VCS.FileHistoryDialog" timestamp="1609519868736">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
-    <state x="552" y="293" key="Vcs.Push.Dialog.v2/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1609252407961" />
+    <state x="92" y="132" width="1736" height="856" key="VCS.FileHistoryDialog/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1609519868736" />
+    <state x="552" y="293" key="Vcs.Push.Dialog.v2" timestamp="1609426930478">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state x="552" y="293" key="Vcs.Push.Dialog.v2/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1609426930478" />
     <state x="777" y="474" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1609252396090">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="777" y="474" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1609252396090" />
-    <state x="732" y="274" key="git4idea.branch.GitSmartOperationDialog" timestamp="1608046327945">
+    <state x="732" y="274" key="git4idea.branch.GitSmartOperationDialog" timestamp="1609522696634">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
-    <state x="732" y="274" key="git4idea.branch.GitSmartOperationDialog/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1608046327945" />
+    <state x="732" y="274" key="git4idea.branch.GitSmartOperationDialog/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1609522696634" />
     <state x="616" y="260" key="run.anything.popup" timestamp="1609174409132">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>

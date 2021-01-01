@@ -99,9 +99,9 @@ GameObject:
   - component: {fileID: 9078144590713663007}
   - component: {fileID: -1855441763366619793}
   - component: {fileID: -7425912678644063657}
-  - component: {fileID: 7376011113714017504}
+  - component: {fileID: 4415975404590295466}
   m_Layer: 10
-  m_Name: Prey
+  m_Name: Terrier
   m_TagString: Prey
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -317,7 +317,7 @@ MonoBehaviour:
   takeDammage: 0
   TimeToWaitForAbstractedRessources: 3
   _timePassed: 0
---- !u!114 &7376011113714017504
+--- !u!114 &4415975404590295466
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -326,10 +326,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1853304259910867415}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b2f9478bf008844ab7c31302d0ac75b, type: 3}
+  m_Script: {fileID: 11500000, guid: 7dd9752cd0f842040afa5353be72a07a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifePoint: 0
+  lifePoint: 1
 --- !u!1 &2033578018791067581
 GameObject:
   m_ObjectHideFlags: 0

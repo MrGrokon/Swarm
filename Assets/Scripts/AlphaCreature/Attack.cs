@@ -6,33 +6,70 @@ using UnityEngine;
 public class Attack : MonoBehaviour
 {
 
-    [SerializeField] private List<GameObject> PreyInTrigger;
+    [SerializeField] private Collider[] targetsInViewRadius;
 
     private RessourceManager _ressource;
 
-    private void Start() {
+    [Header("Attack Parameter")] public float viewRadius;
+    [Range(0, 360)] public float viewAngle;
+
+    public LayerMask targetMask;
+    public Transform validTarget;
+
+    public LayerMask obstacleMask;
+    [SerializeField] private float dashJumpHeight;
+
+    public float holdTime;
+    [SerializeField] private float holdTimeToHeavyAttack;
+
+    [Header("Cooldowns")] 
+    [SerializeField] private float lightAttackCooldown;
+
+    [SerializeField] private float heavyAttackCooldown;
+    [SerializeField] private float actualLightAttackCooldown;
+
+    [SerializeField] private float actualHeavyAttackCooldown;
+    
+    
+
+    private void Start()
+    {
         _ressource = this.GetComponent<RessourceManager>();
+        actualHeavyAttackCooldown = heavyAttackCooldown;
+        actualLightAttackCooldown = lightAttackCooldown;
     }
 
     #region Unity Function
+
     void Update()
     {
-        if (InputTester.inputInstance._playerInputs.Actions.Attack.triggered)
+        AttackDetection();
+        if (InputTester.inputInstance._playerInputs.Actions.Attack.ReadValue<float>() > 0)
         {
-            foreach (var obj in PreyInTrigger)
+            holdTime += 1 * Time.deltaTime;
+            if (holdTime >= holdTimeToHeavyAttack && actualHeavyAttackCooldown <= 0)
             {
-                
-                _ressource.GainRessource(RessourceManager.Resource.Hunger, 20f);
-                PreyAiManager actualManager = obj.GetComponent(typeof(PreyAiManager)) as PreyAiManager;
-                PackManager.packInstance.gameObject.GetComponent<GeneratePrey>().listOfPrey.Remove(obj);
-                PreyInTrigger.Remove(obj);
-                actualManager.Die();
-                //GetComponent<PreySniffer>().ResetTrackerValue();
+                print("Heavy Attack");
+                ApplyAttack("Heavy");
+                actualHeavyAttackCooldown = heavyAttackCooldown;
+                holdTime = 0;
             }
         }
+        else
+        {
+            if (holdTime < holdTimeToHeavyAttack && holdTime > 0 && actualLightAttackCooldown <= 0)
+            {
+                print("Light Attack");
+                ApplyAttack("Light");
+                actualLightAttackCooldown = lightAttackCooldown;
+            }
+            holdTime = 0;
+        }
+
+        CooldownManager();
     }
 
-    
+
     //Fonction pour déclenché l'attaque via un autre script
     public void DistantAttackCall(GameObject prey)
     {
@@ -40,22 +77,102 @@ public class Attack : MonoBehaviour
         PackManager.packInstance.gameObject.GetComponent<GeneratePrey>().listOfPrey.Remove(prey);
         prey.GetComponent<PreyAiManager>().Die();
         //GetComponent<PreySniffer>().ResetTrackerValue();
-        
+
     }
 
-    private void OnTriggerEnter(Collider other)
+    private Transform AttackDetection()
     {
-        if (other.transform.CompareTag("Prey"))
+        
+        targetsInViewRadius = Physics.OverlapSphere(transform.position, viewRadius, targetMask);
+        if (targetsInViewRadius.Length > 0)
         {
-            PreyInTrigger.Add(other.transform.gameObject);
+            for (int i = 0; i < targetsInViewRadius.Length; i++)
+            {
+                Transform target = targetsInViewRadius[i].transform;
+                Vector3 dirToTarget = (target.position - transform.position).normalized;
+
+                if (Vector3.Angle(transform.forward, dirToTarget) < viewAngle / 2)
+                {
+                    float dstToTarget = Vector3.Distance(transform.position, target.position);
+                    if (!Physics.Raycast(transform.position, dirToTarget, dstToTarget, obstacleMask))
+                    {
+                        validTarget = target;
+                    }
+
+                }
+            }
         }
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.transform.CompareTag("Prey"))
+        else
         {
-            PreyInTrigger.Remove(other.transform.gameObject);
+            validTarget =  null;
         }
+
+        return validTarget;
     }
     #endregion
+
+    private void ApplyLightDammage(Transform obj)
+    {
+        if (obj)
+        {
+            _ressource.GainRessource(RessourceManager.Resource.Hunger, 20f);
+            PackManager.packInstance.gameObject.GetComponent<GeneratePrey>().listOfPrey.Remove(obj.gameObject);
+            obj.GetComponent<PreyLife>().ApplyDammage(1);
+            //GetComponent<PreySniffer>().ResetTrackerValue();
+        }
+       
+    }
+
+    private void ApplyAttack(string attackType)
+    {
+        if(attackType == "light")
+            ApplyLightDammage(AttackDetection());
+        else
+        {
+            HeavyAttack(AttackDetection());
+        }
+    }
+
+    private void HeavyAttack(Transform obj)
+    {
+        if (obj)
+        {
+            _ressource.GainRessource(RessourceManager.Resource.Hunger, 20f);
+            PackManager.packInstance.gameObject.GetComponent<GeneratePrey>().listOfPrey.Remove(obj.gameObject);
+
+            Vector3 distance = obj.transform.position - Objects.Instance.Alpha.transform.position;
+        
+            float gravity = Physics.gravity.magnitude;
+            float initialVelocity = CalculateJumpSpeed(dashJumpHeight, gravity);
+
+            GetComponent<Rigidbody>().AddForce(initialVelocity * distance, ForceMode.Impulse);
+            obj.GetComponent<PreyLife>().InstantKill(); 
+        }
+    }
+    
+    private float CalculateJumpSpeed(float jumpHeight, float gravity)
+    {
+        return Mathf.Sqrt(2 * jumpHeight * gravity);
+    }
+
+    private void CooldownManager()
+    {
+        actualLightAttackCooldown -= 1 * Time.deltaTime;
+        actualHeavyAttackCooldown -= 1 * Time.deltaTime;
+    }
+
+
+    #region EditorFunction
+
+    public Vector3 DirFromAngle(float angleInDegrees, bool angleIsGlobal)  //Créer une direction depuis un angle, uniquement utilisée dans les scripts éditeur
+    {
+        if (!angleIsGlobal)
+        {
+            angleInDegrees += transform.eulerAngles.y;
+        }
+        return new Vector3(Mathf.Sin(angleInDegrees * Mathf.Deg2Rad), 0,Mathf.Cos(angleInDegrees * Mathf.Deg2Rad));
+    }
+
+    #endregion
+    
 }
