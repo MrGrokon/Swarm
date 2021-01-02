@@ -90,9 +90,6 @@ public class Terrier : PreyAiManager
             _animator.SetBool("IsRunning", true);
             Dust_PS.Play();
             ChangeState(PreyStates.Flee);
-            //ce vector pointe parfois dans la direction du joueur, ce qui implique que le joueur peu la toucher sur sont chemin de fuite
-            Vector3 FleeMotion = (Objects.Instance.Alpha.transform.position - this.transform.position) * -1;
-            _nm_Agent.SetDestination(FleeMotion);
         }
     }
     #endregion

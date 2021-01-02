@@ -49,7 +49,7 @@ public class Attack : MonoBehaviour
             holdTime += 1 * Time.deltaTime;
             if (holdTime >= holdTimeToHeavyAttack && actualHeavyAttackCooldown <= 0)
             {
-                print("Heavy Attack");
+                
                 ApplyAttack("Heavy");
                 actualHeavyAttackCooldown = heavyAttackCooldown;
                 holdTime = 0;
@@ -59,7 +59,7 @@ public class Attack : MonoBehaviour
         {
             if (holdTime < holdTimeToHeavyAttack && holdTime > 0 && actualLightAttackCooldown <= 0)
             {
-                print("Light Attack");
+                
                 ApplyAttack("Light");
                 actualLightAttackCooldown = lightAttackCooldown;
             }
@@ -113,6 +113,7 @@ public class Attack : MonoBehaviour
 
     private void ApplyLightDammage(Transform obj)
     {
+        print("Light Attack");
         if (obj)
         {
             _ressource.GainRessource(RessourceManager.Resource.Hunger, 20f);
@@ -125,7 +126,7 @@ public class Attack : MonoBehaviour
 
     private void ApplyAttack(string attackType)
     {
-        if(attackType == "light")
+        if(attackType == "Light")
             ApplyLightDammage(AttackDetection());
         else
         {
@@ -135,17 +136,12 @@ public class Attack : MonoBehaviour
 
     private void HeavyAttack(Transform obj)
     {
+        print("Heavy Attack");
         if (obj)
         {
             _ressource.GainRessource(RessourceManager.Resource.Hunger, 20f);
             PackManager.packInstance.gameObject.GetComponent<GeneratePrey>().listOfPrey.Remove(obj.gameObject);
-
-            Vector3 distance = obj.transform.position - Objects.Instance.Alpha.transform.position;
-        
-            float gravity = Physics.gravity.magnitude;
-            float initialVelocity = CalculateJumpSpeed(dashJumpHeight, gravity);
-
-            GetComponent<Rigidbody>().AddForce(initialVelocity * distance, ForceMode.Impulse);
+            GetComponent<Rigidbody>().MovePosition(obj.transform.position);
             obj.GetComponent<PreyLife>().InstantKill(); 
         }
     }

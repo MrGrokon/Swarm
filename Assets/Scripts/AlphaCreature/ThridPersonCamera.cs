@@ -17,6 +17,7 @@ public class ThridPersonCamera : MonoBehaviour
 
     public Transform targetToLook;
 
+
     
     // Start is called before the first frame update
     void Start()
@@ -45,4 +46,5 @@ public class ThridPersonCamera : MonoBehaviour
 
         transform.localPosition = Vector3.Lerp(transform.localPosition, dollyDir * distance, Time.deltaTime * smooth);
     }
+
 }

@@ -74,19 +74,14 @@ public class Craintive : PreyAiManager
                 
                 case PreyStates.Roam:
                 //TODO: générer proproment un nouveau point de roaming, si possible non randomS
-                if (_nm_Agent.destination != transform.position)
-                {
-                    _nm_Agent.isStopped = false;
-                }
-                else
-                {
+                
                     _nm_Agent.SetDestination(GetRandomRoamingPosition()); 
-                }
+                
                 ChangeState(PreyStates.Roam);
                 break;
                 
                 case PreyStates.Scan:
-                    transform.Rotate(Vector3.up * (360 / scanTime));
+                    transform.Rotate(Vector3.up * (360 / scanTime) * Time.deltaTime);
                     break;
             }
         }
@@ -175,6 +170,7 @@ public class Craintive : PreyAiManager
     IEnumerator ScanWait(int scanTime)
     {
         yield return new WaitForSeconds(scanTime);
+        _nm_Agent.isStopped = false;
         ChangeState(PreyStates.Roam);
     }
     

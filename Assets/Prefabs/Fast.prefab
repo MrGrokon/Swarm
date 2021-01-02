@@ -165,8 +165,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TrackPrefab: {fileID: 2622212310027546019, guid: 231e5a63cde58af49aaa0fa98bd94fa5,
     type: 3}
-  MinTimeToLeaveTrack: 5
-  MaxTimeToLeaveTrack: 5
+  MinTimeToLeaveTrack: 15
+  MaxTimeToLeaveTrack: 60
   PreyTracks: []
 --- !u!195 &8128917941845414919
 NavMeshAgent:
@@ -306,7 +306,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ReachingDistance: 1.5
   MyState: 0
-  MyProfile: {fileID: 2296511828036664000, guid: 6fd61dbf2152c6040b830979bb0a0fbb,
+  MyProfile: {fileID: 2296511828036664000, guid: 583f825c3fdc5624bb05772a07175cfa,
     type: 3}
   _nm_Agent: {fileID: 0}
   myDetector: {fileID: 0}

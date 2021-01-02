@@ -19,11 +19,20 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e9a9fd44-a60f-4fbc-b03b-f25159acb4b3" name="Default Changelist" comment="1.1.1.0 : Modification de l'attaque (ajout de l'attaque lourde/dash), Début de changement de la gestion de la caméra poour se concorder avec l'attaque, Ajout d'un système pour que les IA recoivent les dommages, création des prefabs de chaque IA, Ajout d'un script éditeur pour voir le range d'attaque du joueur">
+    <list default="true" id="e9a9fd44-a60f-4fbc-b03b-f25159acb4b3" name="Default Changelist" comment="1.1.2.0 : Finalisation de la refonte de la caméra">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Alpha Creature.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Alpha Creature.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Craintive.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Craintive.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Fast.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Fast.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Prey.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Prey.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Robuste.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Robuste.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Terrier.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Terrier.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/Attack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/Attack.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CameraRotate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CameraRotate.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/ThridPersonCamera.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/ThridPersonCamera.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Prey/Craintive.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Prey/Craintive.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Prey/Terrier.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Prey/Terrier.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,8 +64,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/CameraManager/CameraManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/CreatureBehavior/ActionManaging/CreatureAction_Interface.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CreatureBehavior/CreatureCross.cs" />
         <option value="$PROJECT_DIR$/Assets/InputTester.cs" />
         <option value="$PROJECT_DIR$/Assets/PackMover.cs" />
@@ -102,10 +109,12 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Prey/BasicPrey.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Prey/PreyLife.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Editor/PlayerFieldOfView.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/Attack.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CreatureMover.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/ThridPersonCamera.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/Attack.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CameraRotate.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/ThridPersonCamera.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Prey/Craintive.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Prey/Terrier.cs" />
       </list>
     </option>
   </component>
@@ -207,6 +216,9 @@
       <workItem from="1609535183238" duration="2239000" />
       <workItem from="1609537610272" duration="114000" />
       <workItem from="1609542465351" duration="1202000" />
+      <workItem from="1609544056538" duration="105000" />
+      <workItem from="1609546693252" duration="750000" />
+      <workItem from="1609591600886" duration="4693000" />
     </task>
     <task id="LOCAL-00001" summary="Camera system implémenté">
       <created>1606123669149</created>
@@ -454,6 +466,10 @@
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="598" y="321" key="MultipleFileMergeDialog/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1607268519074" />
+    <state x="670" y="238" key="RiderGenerateDialog" timestamp="1609593297449">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state x="670" y="238" key="RiderGenerateDialog/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1609593297449" />
     <state x="92" y="132" width="1736" height="856" key="VCS.FileHistoryDialog" timestamp="1609519868736">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>

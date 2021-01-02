@@ -9,24 +9,23 @@ public class CameraRotate : MonoBehaviour
 
     public static CameraRotate cameraInstance;
 
-    [SerializeField] private float cameraSpeed;
+    public float cameraSpeed;
 
-    [SerializeField] private float maxX;
-
-    [SerializeField] private float minX;
+    
     [SerializeField] private bool inversedControl = false;
     
     private int controlDirection = -1;
-    private Vector3 rotation;
+   
 
-    [SerializeField] private GameObject Follow;
     [SerializeField] private Vector3 offset;
-    private GameObject PlayerRef;
+    public GameObject PlayerRef;
+    public Vector2 rotation;
 
     // Start is called before the first frame update
     void Awake()
     {
-        PlayerRef = Objects.Instance.Alpha;
+        
+        
         if (cameraInstance == null)
         {
             cameraInstance = this;
@@ -35,27 +34,18 @@ public class CameraRotate : MonoBehaviour
         {
             Destroy(this);
         }
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position = PlayerRef.transform.position + (PlayerRef.transform.right * offset.x) + PlayerRef.transform.up * offset.y + (-PlayerRef.transform.forward * offset.z);
-        if (InputTester.inputInstance._playerInputs.Actions.RotateCameraY.ReadValue<float>() != 0)
-        {
-            PlayerRef.transform.eulerAngles += transform.up * cameraSpeed * InputTester.inputInstance._playerInputs.Actions.RotateCameraY.ReadValue<float>() * controlDirection *
-                                               Time.deltaTime;
-            transform.eulerAngles += transform.up * cameraSpeed * InputTester.inputInstance._playerInputs.Actions.RotateCameraY.ReadValue<float>() * controlDirection *
-                                         Time.deltaTime;
-        }
-
-        if (InputTester.inputInstance._playerInputs.Actions.RotateCameraX.ReadValue<float>() != 0)
-        {
-            rotation += transform.right * InputTester.inputInstance._playerInputs.Actions.RotateCameraX.ReadValue<float>() * cameraSpeed * Time.deltaTime;
-            rotation.x = Mathf.Clamp(rotation.x, minX, maxX);
         
-            transform.localEulerAngles = new Vector3(rotation.x, transform.localEulerAngles.y, transform.localEulerAngles.z);
-        }
+        this.enabled = true;
+        PlayerRef = Objects.Instance.Alpha;
+        CameraMovement();
+        
+        
         ManageControlDirection();
     }
 
@@ -69,5 +59,17 @@ public class CameraRotate : MonoBehaviour
         {
             controlDirection = -1;
         }
+    }
+
+    private void CameraMovement()
+    {
+        transform.position = PlayerRef.transform.position + (PlayerRef.transform.right * offset.x) + PlayerRef.transform.up * offset.y + (-PlayerRef.transform.forward * offset.z);
+
+        rotation.x += InputTester.inputInstance._playerInputs.Actions.RotateCameraX.ReadValue<float>() * cameraSpeed * Time.deltaTime * controlDirection;
+        rotation.y -= InputTester.inputInstance._playerInputs.Actions.RotateCameraY.ReadValue<float>() * cameraSpeed * Time.deltaTime * controlDirection;
+        rotation.x = Mathf.Clamp(rotation.x, -35, 60);
+
+        PlayerRef.transform.rotation = Quaternion.Euler(0, rotation.y, 0);
+        transform.rotation = Quaternion.Euler(rotation.x, rotation.y, 0);
     }
 }

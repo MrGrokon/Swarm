@@ -165,8 +165,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TrackPrefab: {fileID: 2622212310027546019, guid: 231e5a63cde58af49aaa0fa98bd94fa5,
     type: 3}
-  MinTimeToLeaveTrack: 5
-  MaxTimeToLeaveTrack: 5
+  MinTimeToLeaveTrack: 15
+  MaxTimeToLeaveTrack: 60
   PreyTracks: []
 --- !u!195 &8128917941845414919
 NavMeshAgent:
