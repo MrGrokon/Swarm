@@ -48,14 +48,12 @@ public class Targeting : MonoBehaviour
             if (isTargeting)
             {
                 target = FindNearestTarget();
-                GetComponentInChildren<ThridPersonCamera>().targetToLook = FindNearestTarget();
-                GetComponentInChildren<CameraRotate>().enabled = false;
-                
+                Camera.main.GetComponent<ThridPersonCamera>().targetToLook = FindNearestTarget();
+
             }
             else
             {
-                GetComponentInChildren<ThridPersonCamera>().targetToLook = null;
-                GetComponentInChildren<CameraRotate>().enabled = true;
+                Camera.main.GetComponent<ThridPersonCamera>().targetToLook = null;
                 target = null;
             }
         }

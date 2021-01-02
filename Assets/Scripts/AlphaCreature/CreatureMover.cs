@@ -67,12 +67,12 @@ public class CreatureMover : MonoBehaviour
 
         if (actualDirection.z != 0)
         {
-            _rb.transform.position += transform.forward * actualDirection.z * speed * speedMultiplier * Time.fixedDeltaTime;
+            _rb.transform.position += Camera.main.transform.forward * actualDirection.z * speed * speedMultiplier * Time.fixedDeltaTime;
         }
 
         if (actualDirection.x != 0)
         {
-            _rb.transform.position += transform.right * actualDirection.x * speed * speedMultiplier * Time.fixedDeltaTime;
+            _rb.transform.position += Camera.main.transform.right * actualDirection.x * speed * speedMultiplier * Time.fixedDeltaTime;
         }
         
         if (speedMultiplier < 1.2f)

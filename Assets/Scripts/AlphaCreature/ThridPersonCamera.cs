@@ -29,10 +29,14 @@ public class ThridPersonCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*if (targetToLook)
+        if (targetToLook)
         {
-            transform.position = targetToLook.position + (targetToLook.transform.right * offset.x) + (-targetToLook.transform.forward * offset.z);
-        }*/
+            transform.LookAt(targetToLook);
+        }
+        else
+        {
+            transform.LookAt(transform.parent);
+        }
         Vector3 desiredCameraPos = transform.parent.TransformPoint(dollyDir * maxDistance);
         RaycastHit hit;
         if (Physics.Linecast(transform.parent.position, desiredCameraPos, out hit))

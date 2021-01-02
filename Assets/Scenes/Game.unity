@@ -1620,12 +1620,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 8082260680867104869}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &8082260680867104871 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 937554361475634619, guid: b8ca2ec5494f96e468e120b752962fe1,
-    type: 3}
-  m_PrefabInstance: {fileID: 8082260680867104869}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &9171322782406082694
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1707,7 +1701,7 @@ PrefabInstance:
         type: 3}
       propertyPath: targetToLook
       value: 
-      objectReference: {fileID: 8082260680867104871}
+      objectReference: {fileID: 0}
     - target: {fileID: 9171322782753937895, guid: c342d158cf9a3a54f8aa5a40ab3bb016,
         type: 3}
       propertyPath: maxX
