@@ -7,25 +7,54 @@
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="CameraRotate.cs" t="Include" />
+        <e p="nTools" t="Include">
+          <e p="PrefabPainter" t="Include">
+            <e p="Docs" t="Include">
+              <e p="changelog.txt" t="Include" />
+            </e>
+            <e p="Presets" t="Include">
+              <e p="Decal Along Stroke.xml" t="Include" />
+              <e p="Decal Footsteps.xml" t="Include" />
+              <e p="Decal.xml" t="Include" />
+              <e p="Random.xml" t="Include" />
+              <e p="Stones.xml" t="Include" />
+              <e p="Tree Multibrush.xml" t="Include" />
+              <e p="Tree.xml" t="Include" />
+            </e>
+            <e p="Scripts" t="Include">
+              <e p="Editor" t="Include">
+                <e p="PrafabPainterGUI.cs" t="Include" />
+                <e p="PrefabPainter.cs" t="Include" />
+              </e>
+              <e p="PrefabPainterSceneSettings.cs" t="Include" />
+              <e p="PrefabPainterSettings.cs" t="Include" />
+              <e p="Utility.cs" t="Include" />
+            </e>
+          </e>
+        </e>
         <e p="Scripts" t="Include">
           <e p="AlphaCreature" t="Include">
             <e p="Attack.cs" t="Include" />
             <e p="BetaCreature_Creator.cs" t="Include" />
+            <e p="CameraRotate.cs" t="Include" />
             <e p="CharacterController" t="Include">
               <e p="InputTester.cs" t="Include" />
               <e p="PlayerInputs.cs" t="Include" />
             </e>
             <e p="CreatureMover.cs" t="Include" />
             <e p="FallAsleep.cs" t="Include" />
+            <e p="NoiseEmitter.cs" t="Include" />
             <e p="PackOrderer.cs" t="Include" />
             <e p="PreySniffer.cs" t="Include" />
             <e p="RessourceManager.cs" t="Include" />
+            <e p="Targeting.cs" t="Include" />
+            <e p="ThridPersonCamera.cs" t="Include" />
           </e>
           <e p="BetaCreature" t="Include">
             <e p="CreatureIntelligence.cs" t="Include" />
             <e p="IntelligenceInterface.cs" t="Include" />
           </e>
+          <e p="ClimbableTree.cs" t="Include" />
           <e p="Common" t="Include">
             <e p="HealthSysteme.cs" t="Include" />
           </e>
@@ -35,29 +64,39 @@
           </e>
           <e p="Editor" t="Include">
             <e p="FieldOfViewEditor.cs" t="Include" />
+            <e p="PlayerFieldOfView.cs" t="Include" />
             <e p="SoundRangeEditor.cs" t="Include" />
           </e>
           <e p="Managers" t="Include">
             <e p="GeneratePrey.cs" t="Include" />
             <e p="Objects.cs" t="Include" />
             <e p="PackManager.cs" t="Include" />
+            <e p="SetObjectDynamicaly.cs" t="Include" />
             <e p="StartAsChildOf.cs" t="Include" />
           </e>
           <e p="PackMover.cs" t="Include" />
           <e p="Prey" t="Include">
+            <e p="AbstractedRessourcesManager.cs" t="Include" />
             <e p="AiDetection.cs" t="Include" />
             <e p="AiSoundDetection.cs" t="Include" />
+            <e p="BasicPrey.cs" t="Include" />
+            <e p="Craintive.cs" t="Include" />
             <e p="PreyAiManager.cs" t="Include" />
+            <e p="PreyLife.cs" t="Include" />
+            <e p="PreyProfile.cs" t="Include" />
+            <e p="Robuste.cs" t="Include" />
+            <e p="Terrier.cs" t="Include" />
             <e p="TracksCreatorOverTime.cs" t="Include" />
           </e>
           <e p="Tracks" t="Include">
+            <e p="DestroyTrackOverTime.cs" t="Include" />
+            <e p="TrackInfo.cs" t="Include" />
             <e p="TrackRenderer.cs" t="Include" />
           </e>
           <e p="UI" t="Include">
             <e p="UI_Bar_FollowRessource.cs" t="Include" />
           </e>
         </e>
-        <e p="TrackInfo.cs" t="Include" />
       </e>
       <e p="obj" t="ExcludeRecursive" />
       <e p="Packages" t="ExcludeRecursive" />

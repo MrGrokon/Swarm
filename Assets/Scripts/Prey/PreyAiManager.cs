@@ -6,127 +6,47 @@ using UnityEngine.AI;
 
 public class PreyAiManager : MonoBehaviour
 {
-    [SerializeField] private bool finishedMovementTask = true;
-
-    private NavMeshAgent _nm_Agent;
-
-    public enum States
+    public enum PreyStates
     {
         Roam,
-        Flee
+        LookingForWater,
+        LookingForFood,
+        Waiting,
+        Flee,
+        Scan
     }
+    
+    [Header("Basic AI Parameters")]
+    [Range(1f, 3f)]
+    public float ReachingDistance = 1.5f; 
+    public PreyStates MyState;
+    public PreyProfile MyProfile;
 
-    [SerializeField] private States aiState;
+    public NavMeshAgent _nm_Agent;
+    public AiDetection myDetector;
+    public AiSoundDetection mySonorDetection;
+    public AbstractedRessourcesManager _abs_Resc_Manager;
+    public Animator _animator;
+    public ParticleSystem Dust_PS;
+    public bool takeDammage;
 
-    [SerializeField] private float roamingDistance;
-    [SerializeField] private float fleeDistance;
-    [SerializeField] private float fleeMagnitude;
+    [Range(1f, 10f)]
+    public float TimeToWaitForAbstractedRessources = 3f;
+    public float _timePassed = 0f;
 
-    private bool seePlayer;
-    [SerializeField] private float fleeTime;
-    [SerializeField] private float maxFleeTime;
-
-    private AiDetection myDetector;
-    private AiSoundDetection mySonorDetection;
-    void Start()
+    public virtual void Die()
     {
-        _nm_Agent = GetComponent<NavMeshAgent>();
-        myDetector = GetComponent<AiDetection>();
-        mySonorDetection = GetComponent<AiSoundDetection>();
+        
     }
 
-    // Update is called once per frame
-    void Update()
+    public virtual bool IsAlreadyLooking()
     {
-        Debug.DrawRay(transform.position, (Objects.Instance.Alpha.transform.position - transform.position)*-1, Color.blue);
-        if (Vector3.Distance(transform.position, _nm_Agent.destination) <= 2f)
-        {
-            finishedMovementTask = true;
-        }
-        UpdateStates();
-
-        if (myDetector.FindVisibleTargets() || mySonorDetection.FindVisibleTargets())  //Si je trouve une cible via l'un de mes deux senses
-        {
-            seePlayer = true;
-            finishedMovementTask = true;
-            switchStates(States.Flee);
-            fleeTime = maxFleeTime;
-        }
-        ManageTimer();
+        return false;
     }
 
-    private void SetNewRoamDestination() //Met en place une nouvelle position à atteindre quand je roam
+    public virtual void CheckOutFor(string type)
     {
-        if (finishedMovementTask)
-        {
-            Vector3 randomDestination = Random.insideUnitSphere * roamingDistance + transform.position;
-            NavMeshHit hit;
-            NavMesh.SamplePosition(randomDestination, out hit, roamingDistance, 1);
-            _nm_Agent.SetDestination(hit.position);
-            finishedMovementTask = false;
-        }
+        
     }
-
-    public void Die()
-    {
-        foreach (var track in GetComponent<TracksCreatorOverTime>().PreyTracks)
-        {
-            Destroy(track);
-        }
-
-        GetComponent<TracksCreatorOverTime>().PreyTracks.Clear();
-        Destroy(gameObject);
-    }
-
-    private void Flee() //Fuite
-    {
-        if (finishedMovementTask)
-        {
-            Vector3 oppositeDirection = (Objects.Instance.Alpha.transform.position - transform.position)*-1;
-            Vector3 fleePosition = oppositeDirection * fleeMagnitude;
-            transform.LookAt(fleePosition);
-            NavMeshHit hit;
-            if (NavMesh.SamplePosition(fleePosition, out hit, fleeDistance, 1))
-            {
-                NavMesh.SamplePosition(fleePosition, out hit, fleeDistance, 1);
-            }
-            else
-            {
-                Vector3 randomDestination = Random.insideUnitSphere * fleeDistance + transform.position;
-                NavMesh.SamplePosition(randomDestination, out hit, roamingDistance, 1);
-            }
-            _nm_Agent.SetDestination(hit.position);
-            finishedMovementTask = false; 
-        }
-    }
-
-    private void UpdateStates()
-    {
-        switch (aiState)
-        {
-            case States.Roam:
-                    SetNewRoamDestination(); 
-                break;
-            case States.Flee:
-                    Flee();
-                break;
-        }
-    }
-
-    private void switchStates(States newState)
-    {
-        aiState = newState;
-    }
-
-    private void ManageTimer() //Gère les différents timers et variables qui diminuent sur le temps
-    {
-        if(fleeTime > 0 && aiState == States.Flee)
-            fleeTime -= 1 * Time.deltaTime;
-        else if(fleeTime <= 0 && aiState == States.Flee)
-        {
-            seePlayer = false;
-            finishedMovementTask = true;
-            switchStates(States.Roam);
-        }
-    }
+    
 }

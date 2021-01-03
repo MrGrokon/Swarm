@@ -19,21 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c6abf06f-f4fa-43c5-92bf-2dd635574878" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Checkout_at_13_12_2020_20_32__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Checkout_at_13_12_2020_20_32__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Checkout_at_13_12_2020_22_49__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Checkout_at_13_12_2020_22_49__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Merge_at_13_12_2020_20_32__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Merge_at_13_12_2020_20_32__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Merge_at_13_12_2020_20_33__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Merge_at_13_12_2020_20_33__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Merge_at_13_12_2020_20_33__Default_Changelist_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Merge_at_13_12_2020_20_33__Default_Changelist_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Merge_at_13_12_2020_22_49__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Merge_at_13_12_2020_22_49__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Update_at_14_12_2020_09_52__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Update_at_14_12_2020_09_52__Default_Changelist_.xml" afterDir="false" />
+    <list default="true" id="e9a9fd44-a60f-4fbc-b03b-f25159acb4b3" name="Default Changelist" comment="1.1.2.0 : Finalisation de la refonte de la caméra">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CameraRotate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CameraRotate.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Alpha Creature.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Alpha Creature.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CharacterController/PlayerInputs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CharacterController/PlayerInputs.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CharacterController/PlayerInputs.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CharacterController/PlayerInputs.inputactions" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CreatureMover.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CreatureMover.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/Targeting.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/Targeting.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/ThridPersonCamera.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/ThridPersonCamera.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,31 +33,29 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="ThéoBranch" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CharacterController/PlayerInputs.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/TrackInfo.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/CameraRotate.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/BetaCreature/IntelligenceInterface.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/AlphaCreature/PackOrderer.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CreatureMover.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.6.3/Runtime/Core/AxisState.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/GeneratePrey.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.0.0/InputSystem/Actions/InputActionState.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scenes/Game.unity" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CharacterController/InputTester.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/AlphaCreature/Targeting.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://F:/UnityProject/CsLike/CsLike/Assets/Scripts/BotDetection.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CreatureMover.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/BetaCreature/IntelligenceInterface.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.6.3/Runtime/Core/AxisState.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/AlphaCreature/PackOrderer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../MiniBr/Behind The Line/Assets/Scripts/MouseLook.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://F:/UnityProject/CsLike/CsLike/Assets/Scripts/BotTargeting.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Prey/BasicPrey.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Prey/PreyLife.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.0.0/InputSystem/Utilities/DelegateHelpers.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/CameraManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/CreatureBehavior/CreatureMover.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/CameraManager/CameraManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/CreatureBehavior/ActionManaging/CreatureAction_Interface.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CreatureBehavior/CreatureCross.cs" />
         <option value="$PROJECT_DIR$/Assets/InputTester.cs" />
         <option value="$PROJECT_DIR$/Assets/PackMover.cs" />
@@ -85,10 +73,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CharacterController/InputTester.cs" />
         <option value="$PROJECT_DIR$/Assets/AiSoundDetection.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Prey/FieldOfViewEditor.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/Attack.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/BetaCreature_Creator.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CreatureMover.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/FallAsleep.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/PackOrderer.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/PreySniffer.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/RessourceManager.cs" />
@@ -96,24 +81,46 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Common/HealthSysteme.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Managers/GeneratePrey.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Managers/PackManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Prey/AiSoundDetection.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Prey/PreyAiManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Prey/TracksCreatorOverTime.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/DebugScript.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Prey/AiDetection.cs" />
         <option value="$PROJECT_DIR$/Assets/TrackInfo.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Tracks/TrackRenderer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/FallAsleep.cs" />
         <option value="$PROJECT_DIR$/Assets/CameraRotate.cs" />
+        <option value="$PROJECT_DIR$/Assets/ThridPersonCamera.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Prey/AiSoundDetection.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Editor/SoundRangeEditor.cs" />
+        <option value="$PROJECT_DIR$/Assets/NoiseEmitter.cs" />
+        <option value="$PROJECT_DIR$/Assets/ClimbableTree.cs" />
+        <option value="$PROJECT_DIR$/Assets/DestroyTrackOverTime.cs" />
+        <option value="$PROJECT_DIR$/Assets/LookAt.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Prey/TracksCreatorOverTime.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Tracks/TrackRenderer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/DebugScript.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Prey/AIsystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Prey/PreyAiManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Prey/BasicPrey.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Prey/PreyLife.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Editor/PlayerFieldOfView.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CameraRotate.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Prey/Craintive.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Prey/Terrier.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/Attack.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/Targeting.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/ThridPersonCamera.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CreatureMover.cs" />
       </list>
     </option>
   </component>
   <component name="ProjectId" id="1kgWRL9xhW13eBvb9G63GM0hhKZ" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="Discover.Launch.Via.Unity" value="true" />
+    <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -125,18 +132,6 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="$USER_HOME$/Desktop/Chasse 0.2\Proto_Swarm.exe" />
@@ -144,29 +139,28 @@
       <option name="WORKING_DIRECTORY" value="C:\Users\Théo\Desktop\Chasse 0.2" />
       <option name="PASS_PARENT_ENVS" value="1" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
-      <option name="USE_MONO" value="0" />
-      <option name="RUNTIME_ARGUMENTS" value="" />
       <method v="2" />
     </configuration>
     <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
-      <option name="userSelectedPid" value="false" />
+      <option name="selectedOptions">
+        <set />
+      </option>
       <method v="2" />
     </configuration>
     <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
-      <option name="userSelectedPid" value="false" />
+      <option name="selectedOptions">
+        <set />
+      </option>
       <method v="2" />
     </configuration>
   </component>
-  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
-  <component name="SvnConfiguration">
-    <configuration />
-  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="e9a9fd44-a60f-4fbc-b03b-f25159acb4b3" name="Default Changelist" comment="" />
@@ -192,6 +186,32 @@
       <workItem from="1607965027025" duration="572000" />
       <workItem from="1607988860373" duration="758000" />
       <workItem from="1608023677684" duration="1362000" />
+      <workItem from="1608056982369" duration="669000" />
+      <workItem from="1608210920802" duration="2183000" />
+      <workItem from="1608238891545" duration="3446000" />
+      <workItem from="1608284493309" duration="3301000" />
+      <workItem from="1608312459709" duration="1920000" />
+      <workItem from="1608542936182" duration="626000" />
+      <workItem from="1608546338484" duration="5198000" />
+      <workItem from="1608630123941" duration="714000" />
+      <workItem from="1608634938235" duration="16000" />
+      <workItem from="1608643233642" duration="3974000" />
+      <workItem from="1608733177957" duration="3444000" />
+      <workItem from="1609003939405" duration="37000" />
+      <workItem from="1609011589673" duration="659000" />
+      <workItem from="1609085077854" duration="1671000" />
+      <workItem from="1609155798941" duration="1397000" />
+      <workItem from="1609252366755" duration="1000" />
+      <workItem from="1609252393266" duration="17000" />
+      <workItem from="1609257562017" duration="318000" />
+      <workItem from="1609519335710" duration="8380000" />
+      <workItem from="1609535183238" duration="2239000" />
+      <workItem from="1609537610272" duration="114000" />
+      <workItem from="1609542465351" duration="1202000" />
+      <workItem from="1609544056538" duration="105000" />
+      <workItem from="1609546693252" duration="750000" />
+      <workItem from="1609591600886" duration="5083000" />
+      <workItem from="1609598730331" duration="789000" />
     </task>
     <task id="LOCAL-00001" summary="Camera system implémenté">
       <created>1606123669149</created>
@@ -305,7 +325,91 @@
       <option name="project" value="LOCAL" />
       <updated>1607943786196</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="0.6.0.0 : Add sprint mecanic">
+      <created>1608213047223</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1608213047223</updated>
+    </task>
+    <task id="LOCAL-00018" summary=" 0.5.2.0 : Bonne orientation de track renderer visual&#10; Ajustement sur la caméra">
+      <created>1608313373159</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1608313373160</updated>
+    </task>
+    <task id="LOCAL-00019" summary=" 0.6.1.0 : Ajout de feedback sur le sommeil, Ajout de signes pour le sprint, Augmentation de la vitesse de la caméra, Dépop du cône de traque">
+      <created>1608547842754</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1608547842754</updated>
+    </task>
+    <task id="LOCAL-00020" summary=" 0.6.2.0 : Réecriture de la caméra, suppression des tremblements lié a mouvements, Suppression de la création des bétas">
+      <created>1608550546326</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1608550546326</updated>
+    </task>
+    <task id="LOCAL-00021" summary=" 1.0.0.0 : Ajout d'un émetteur de son sur le joueur, changement de la détection du son par les proies, ajout des éléments de LD suivant : hautes-herbes, rochers">
+      <created>1608633613816</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1608633613816</updated>
+    </task>
+    <task id="LOCAL-00022" summary="1.0.0.0b : Ajout de l'arbre grimpable ainsi que la possibilité d'attaquer depuis ce dernier, Ajout de la couleur de fraicheur de la traçe (nécessitera un petit fix sur la couleur), Changement du scripts d'attaque pour qu'un script extérieur puisse invoquer l'attaque du joueur, Ajout d'une touche de grimpe pour le joueur'">
+      <created>1608647065742</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1608647065742</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Meta manquant">
+      <created>1609085281826</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1609085281826</updated>
+    </task>
+    <task id="LOCAL-00024" summary="1.0.6.0 : Ajout des suppression des tracks over the time">
+      <created>1609086209269</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1609086209269</updated>
+    </task>
+    <task id="LOCAL-00025" summary=" 1.0.6.2 : (Rectification) Clamp de la caméra sur l'axe X">
+      <created>1609157412035</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1609157412035</updated>
+    </task>
+    <task id="LOCAL-00026" summary="1.1.0.0 : Ajout des IA de types : Robuste, Terrier, Rapide et Craintive; Commencement du remaniement de l'attaque">
+      <created>1609426926414</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1609426926414</updated>
+    </task>
+    <task id="LOCAL-00027" summary="1.1.1.0 : Modification de l'attaque (ajout de l'attaque lourde/dash), Début de changement de la gestion de la caméra poour se concorder avec l'attaque, Ajout d'un système pour que les IA recoivent les dommages, création des prefabs de chaque IA, Ajout d'un script éditeur pour voir le range d'attaque du joueur">
+      <created>1609537703794</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1609537703794</updated>
+    </task>
+    <task id="LOCAL-00028" summary="1.1.3.0 : Fix du bug de rotation X sur la caméra, Ajustement des paramètres des IA selon la documentation, Création des profiles d'IA pour chacune d'entre elles, Correction de bug sur le comportement du terrier et de la craintive, Correction du bug qui faisait que l'attaque rapide n'était pas possible, Correction partielle de l'attaque lourde qui faisait que le joueur était propulsé">
+      <created>1609598693750</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1609598693750</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -318,19 +422,14 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Camera system implémenté" />
-    <MESSAGE value="Merge du main dans le bridge" />
-    <MESSAGE value="Base CHasse" />
-    <MESSAGE value="Tout les scripts implémentés comme convenu dans le flow chart" />
     <MESSAGE value="Ajout des inputs" />
     <MESSAGE value="Reformation du maib" />
     <MESSAGE value="Correctif sur la formation" />
@@ -343,32 +442,53 @@
     <MESSAGE value="Fix AI naviguation problems&#10;Add base mesh rendering for previsualization&#10;Fix navmesh" />
     <MESSAGE value=" 0.5.1.0 : Fix TrackRenderer trail" />
     <MESSAGE value=" 0.5.1.1 : Ajout du sound detection" />
-    <option name="LAST_COMMIT_MESSAGE" value=" 0.5.1.1 : Ajout du sound detection" />
+    <MESSAGE value="0.6.0.0 : Add sprint mecanic" />
+    <MESSAGE value=" 0.5.2.0 : Bonne orientation de track renderer visual&#10; Ajustement sur la caméra" />
+    <MESSAGE value=" 0.6.1.0 : Ajout de feedback sur le sommeil, Ajout de signes pour le sprint, Augmentation de la vitesse de la caméra, Dépop du cône de traque" />
+    <MESSAGE value=" 0.6.2.0 : Réecriture de la caméra, suppression des tremblements lié a mouvements, Suppression de la création des bétas" />
+    <MESSAGE value=" 1.0.0.0 : Ajout d'un émetteur de son sur le joueur, changement de la détection du son par les proies, ajout des éléments de LD suivant : hautes-herbes, rochers" />
+    <MESSAGE value="1.0.0.0b : Ajout de l'arbre grimpable ainsi que la possibilité d'attaquer depuis ce dernier, Ajout de la couleur de fraicheur de la traçe (nécessitera un petit fix sur la couleur), Changement du scripts d'attaque pour qu'un script extérieur puisse invoquer l'attaque du joueur, Ajout d'une touche de grimpe pour le joueur'" />
+    <MESSAGE value=" 1.0.1.4 : Ajout de la rotation de la caméra sur l'axe X" />
+    <MESSAGE value="Meta manquant" />
+    <MESSAGE value="1.0.6.0 : Ajout des suppression des tracks over the time" />
+    <MESSAGE value=" 1.0.6.2 : (Rectification) Clamp de la caméra sur l'axe X" />
+    <MESSAGE value="1.1.0.0 : Ajout des IA de types : Robuste, Terrier, Rapide et Craintive; Commencement du remaniement de l'attaque" />
+    <MESSAGE value="1.1.1.0 : Modification de l'attaque (ajout de l'attaque lourde/dash), Début de changement de la gestion de la caméra poour se concorder avec l'attaque, Ajout d'un système pour que les IA recoivent les dommages, création des prefabs de chaque IA, Ajout d'un script éditeur pour voir le range d'attaque du joueur" />
+    <MESSAGE value="1.1.3.0 : Fix du bug de rotation X sur la caméra, Ajustement des paramètres des IA selon la documentation, Création des profiles d'IA pour chacune d'entre elles, Correction de bug sur le comportement du terrier et de la craintive, Correction du bug qui faisait que l'attaque rapide n'était pas possible, Correction partielle de l'attaque lourde qui faisait que le joueur était propulsé" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.1.3.0 : Fix du bug de rotation X sur la caméra, Ajustement des paramètres des IA selon la documentation, Création des profiles d'IA pour chacune d'entre elles, Correction de bug sur le comportement du terrier et de la craintive, Correction du bug qui faisait que l'attaque rapide n'était pas possible, Correction partielle de l'attaque lourde qui faisait que le joueur était propulsé" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="184" y="126" key="MergeDialog" timestamp="1607896176207">
+    <state x="184" y="126" key="MergeDialog" timestamp="1609598787669">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
-    <state x="184" y="126" key="MergeDialog/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1607896176207" />
+    <state x="184" y="126" key="MergeDialog/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1609598787669" />
     <state x="598" y="321" key="MultipleFileMergeDialog" timestamp="1607268519074">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="598" y="321" key="MultipleFileMergeDialog/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1607268519074" />
-    <state x="552" y="293" key="Vcs.Push.Dialog.v2" timestamp="1607943788679">
+    <state x="670" y="238" key="RiderGenerateDialog" timestamp="1609593297449">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
-    <state x="552" y="293" key="Vcs.Push.Dialog.v2/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1607943788679" />
-    <state x="777" y="474" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607988875474">
+    <state x="670" y="238" key="RiderGenerateDialog/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1609593297449" />
+    <state x="92" y="132" width="1736" height="856" key="VCS.FileHistoryDialog" timestamp="1609519868736">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
-    <state x="777" y="474" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1607988875474" />
-    <state x="732" y="274" key="git4idea.branch.GitSmartOperationDialog" timestamp="1608038834939">
+    <state x="92" y="132" width="1736" height="856" key="VCS.FileHistoryDialog/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1609519868736" />
+    <state x="552" y="293" key="Vcs.Push.Dialog.v2" timestamp="1609598814787">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
-    <state x="732" y="274" key="git4idea.branch.GitSmartOperationDialog/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1608038834939" />
-    <state x="616" y="260" key="run.anything.popup" timestamp="1607376902331">
+    <state x="552" y="293" key="Vcs.Push.Dialog.v2/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1609598814787" />
+    <state x="777" y="474" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1609598822566">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
-    <state x="616" y="260" key="run.anything.popup/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1607376902331" />
+    <state x="777" y="474" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1609598822566" />
+    <state x="732" y="274" key="git4idea.branch.GitSmartOperationDialog" timestamp="1609598784382">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state x="732" y="274" key="git4idea.branch.GitSmartOperationDialog/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1609598784382" />
+    <state x="616" y="260" key="run.anything.popup" timestamp="1609174409132">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state x="616" y="260" key="run.anything.popup/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1609174409132" />
   </component>
 </project>

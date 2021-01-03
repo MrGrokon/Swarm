@@ -22,26 +22,18 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Bridge R/L",
-                    "type": "Value",
-                    "id": "57bc3603-7e8e-4bca-bd26-5f930e58a9fe",
-                    "expectedControlType": "Axis",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
-                    "name": "Bridge F/B",
-                    "type": "Value",
-                    "id": "92737d9d-605a-4bc8-ab84-84cdf834ba80",
-                    "expectedControlType": "Axis",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
-                    "name": "RotateCamera",
+                    "name": "RotateCameraY",
                     "type": "Value",
                     "id": "30eb780b-7b1c-434f-9c28-d242e5f7c916",
-                    "expectedControlType": "Vector2",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "RotateCameraX",
+                    "type": "Value",
+                    "id": "31a3c659-2a3e-47bb-8825-25983401572a",
+                    "expectedControlType": "Axis",
                     "processors": "",
                     "interactions": ""
                 },
@@ -78,7 +70,15 @@
                     "interactions": ""
                 },
                 {
-                    "name": "MovementMode",
+                    "name": "LeftSprintButton",
+                    "type": "Button",
+                    "id": "4f322ce2-da05-49c4-bdc2-46ecfcf58a92",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "RightSprintButton",
                     "type": "Button",
                     "id": "d72abd5e-8a56-4ae4-8207-5105cef0fea9",
                     "expectedControlType": "Button",
@@ -91,20 +91,36 @@
                     "id": "c473b79d-657b-427a-ac0e-00df27d82814",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
-                },
-                {
-                    "name": "ChangeCamera",
-                    "type": "Button",
-                    "id": "2974958f-a61a-41b2-8639-a3f581254474",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
+                    "interactions": "Hold"
                 },
                 {
                     "name": "Reset",
                     "type": "Button",
                     "id": "a4772163-e23c-4861-9b01-cdf58e9dc673",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Climb",
+                    "type": "Button",
+                    "id": "5e72a2dd-47ac-490f-895a-038ea3828592",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Targeting",
+                    "type": "Button",
+                    "id": "39aca463-fc6b-4b62-b347-2011029bb249",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "SwitchTarget",
+                    "type": "Button",
+                    "id": "c4e5bc7b-6e62-415c-996c-6da3bb139e35",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -130,28 +146,6 @@
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "Move F/B",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "8dbfd0dc-38ce-49f3-b9ad-64b921f6af14",
-                    "path": "<Gamepad>/rightStick/x",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Bridge R/L",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "1911c0d5-9ce5-4416-b362-016d18b49a18",
-                    "path": "<Gamepad>/rightStick/y",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Bridge F/B",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -206,7 +200,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "MovementMode",
+                    "action": "RightSprintButton",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -223,17 +217,6 @@
                 },
                 {
                     "name": "",
-                    "id": "a43ca5b8-b82d-4776-b0b4-96d6fe8f8650",
-                    "path": "<Gamepad>/rightStickPress",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "ChangeCamera",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "2f89821a-c720-4058-bc68-0b9c2366b9e6",
                     "path": "<Gamepad>/start",
                     "interactions": "",
@@ -245,14 +228,91 @@
                 },
                 {
                     "name": "",
-                    "id": "3dbb9399-c740-4048-bb1c-7d564c5f6577",
-                    "path": "<Gamepad>/rightStick",
+                    "id": "30c90430-ce0a-40eb-bc66-933571017a1d",
+                    "path": "<Gamepad>/leftTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "RotateCamera",
+                    "action": "LeftSprintButton",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "19fda5a7-9271-4891-a1bb-75ec585a4f7c",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Climb",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "308ffd7d-04aa-4530-859b-46950d03ab63",
+                    "path": "<Gamepad>/rightStick/y",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RotateCameraX",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b146c8e8-5ec7-48a3-af6f-88f863815362",
+                    "path": "<Gamepad>/rightStick/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RotateCameraY",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5e769711-77b3-4789-8748-b3983b0b2286",
+                    "path": "<Gamepad>/rightStickPress",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Targeting",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "1D Axis",
+                    "id": "6bd43141-14d1-48c8-8a40-6500b5ae0cbe",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SwitchTarget",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "21fedbcb-e8aa-495f-b262-a44b29b54842",
+                    "path": "<Gamepad>/leftShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SwitchTarget",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "7cee88f8-c028-48b4-a504-d37b7a2964b3",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SwitchTarget",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 }
             ]
         }

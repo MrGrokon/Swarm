@@ -45,9 +45,10 @@ public class TracksCreatorOverTime : MonoBehaviour
 
     private void CreateTrack() //Création d'une traçe
     {
-        GameObject _track = Instantiate(TrackPrefab, this.transform.position, Quaternion.identity);
+        GameObject _track = Instantiate(TrackPrefab, this.transform.position, transform.rotation);
         //_track.GetComponent<DetectPlayer>().prey = this.gameObject; deprecated
         PreyTracks.Add(_track);
+        
         _track.GetComponent<TrackRenderer>().MyTrackIndex = PreyTracks.IndexOf(_track);
         _track.GetComponent<TrackRenderer>().PreyRelated = this.gameObject;
     }
@@ -57,4 +58,6 @@ public class TracksCreatorOverTime : MonoBehaviour
             Destroy(track);
         }
     }
+
+    
 }

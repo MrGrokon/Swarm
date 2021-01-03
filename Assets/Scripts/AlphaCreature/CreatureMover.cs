@@ -1,63 +1,105 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class CreatureMover : MonoBehaviour
 {
-    private Rigidbody rb;
+    private Rigidbody _rb;
 
-    [SerializeField] private float speedMultiplier;
+    public float speedMultiplier;
+    public float maxSpeedMultiplier;
+    [SerializeField] private float multiplierAddedAtEachInput;
+    [SerializeField] private float multiplierLosseOverTime;
+    public float speed;
+    [SerializeField] private float acceleration;
+    public float maxSpeed;
+    private Vector3 actualDirection;
 
-    [SerializeField] private float speed;
-    // Start is called before the first frame update
+    [SerializeField] private int sprintState;
+
+    #region Unity Functions
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        speed = 0;
+        _rb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
+    
     void FixedUpdate()
     {
+        var gamepad = Gamepad.current;
+        Move(InputTester.inputInstance.direction);
         if (InputTester.inputInstance.direction != Vector3.zero)
         {
-            Move(InputTester.inputInstance.direction);
+            speed += acceleration * Time.deltaTime;
         }
-        
+        else
+        {
+            speed -= acceleration * Time.deltaTime;
+        }
+        speed = Mathf.Clamp(speed, 0, maxSpeed);
+        if (gamepad.rightTrigger.wasPressedThisFrame && sprintState == 1)
+        {
+            SprintStateManager();
+        }
+            
+        else if(gamepad.leftTrigger.wasPressedThisFrame && sprintState == 2)
+            SprintStateManager();
+
+        speedMultiplier -= multiplierLosseOverTime * Time.deltaTime;
+        speedMultiplier = Mathf.Clamp(speedMultiplier, 1, maxSpeedMultiplier);
+
     }
+    #endregion
 
     public void Move(Vector3 direction)  //Player Movement
     {
+        if (InputTester.inputInstance.direction != Vector3.zero)
+        {
+            actualDirection = direction;
+            transform.rotation = Quaternion.LookRotation(new Vector3(Camera.main.transform.forward.x,0, Camera.main.transform.forward.z));
+        }
+
         
-        //Directions de la caméra
-        Vector3 fwdCameraDirection = new Vector3(Camera.main.transform.forward.x, 0, Camera.main.transform.forward.z);
-        Vector3 rgtCameraDirection = new Vector3(Camera.main.transform.right.x, 0, Camera.main.transform.right.z); 
-        
-        Debug.DrawRay(Camera.main.transform.position, fwdCameraDirection , Color.blue);
 
         #region movementRegion
 
-        if (InputTester.inputInstance.direction.z != 0)
+        if (actualDirection.z != 0)
         {
-            if(InputTester.inputInstance._playerInputs.Actions.MovementMode.ReadValue<float>() > 0)
-                rb.transform.position += fwdCameraDirection * InputTester.inputInstance.direction.z * speed * speedMultiplier * Time.fixedDeltaTime;
-            else
-            {
-                rb.transform.position += fwdCameraDirection * InputTester.inputInstance.direction.z * speed * Time.fixedDeltaTime;
-            } 
+            _rb.transform.position += Camera.main.transform.forward * actualDirection.z * speed * speedMultiplier * Time.fixedDeltaTime;
         }
 
-        if (InputTester.inputInstance.direction.x != 0)
+        if (actualDirection.x != 0)
         {
-            if(InputTester.inputInstance._playerInputs.Actions.MovementMode.ReadValue<float>() > 0)
-                rb.transform.position += rgtCameraDirection * InputTester.inputInstance.direction.x * speed * speedMultiplier * Time.fixedDeltaTime;
-            else
-            {
-                rb.transform.position += rgtCameraDirection * InputTester.inputInstance.direction.x * speed * Time.fixedDeltaTime;
-            } 
+            _rb.transform.position += Camera.main.transform.right * actualDirection.x * speed * speedMultiplier * Time.fixedDeltaTime;
+        }
+        
+        if (speedMultiplier < 1.2f)
+        {
+            GetComponent<Renderer>().material.color = Color.white;
         }
         
 
         #endregion
         
+    }
+
+    private void SprintStateManager()
+    {
+        print("1");
+        switch (sprintState)
+        {
+            case 1:
+                speedMultiplier += multiplierAddedAtEachInput;
+                sprintState = 2;
+                GetComponent<Renderer>().material.color = Color.yellow;
+                break;
+            case 2:
+                speedMultiplier += multiplierAddedAtEachInput;
+                sprintState = 1;
+                GetComponent<Renderer>().material.color = Color.green;
+                break;
+        } 
     }
 }

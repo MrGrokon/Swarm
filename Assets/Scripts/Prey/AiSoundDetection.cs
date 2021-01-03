@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class AiSoundDetection : MonoBehaviour
 {
-    public float viewRadius;
+    public float startingViewRadius;
+    private float viewRadius;
     [Range(0,360)]
     public float viewAngle;
 
@@ -16,7 +17,8 @@ public class AiSoundDetection : MonoBehaviour
 
     public Transform FindVisibleTargets() //Repérage des cibles à portée
     {
-        
+        viewRadius = startingViewRadius * (Objects.Instance.Alpha.GetComponent<NoiseEmitter>().noiseForce /
+                                           Objects.Instance.Alpha.GetComponent<NoiseEmitter>().maxNoiseForce);
         targetsInViewRadius = Physics.OverlapSphere(transform.position, viewRadius, targetMask);
         if (targetsInViewRadius.Length > 0)
         {
@@ -32,7 +34,6 @@ public class AiSoundDetection : MonoBehaviour
                     {
                         validTarget = target;
                     }
-
                 }
             }
         }
@@ -50,5 +51,10 @@ public class AiSoundDetection : MonoBehaviour
             angleInDegrees += transform.eulerAngles.y;
         }
         return new Vector3(Mathf.Sin(angleInDegrees * Mathf.Deg2Rad), 0,Mathf.Cos(angleInDegrees * Mathf.Deg2Rad));
+    }
+
+    public float GetViewRadius()
+    {
+        return viewRadius;
     }
 }

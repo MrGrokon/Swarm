@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,7 +11,7 @@ public class TrackRenderer : MonoBehaviour
 
     [Header("Display Parameters")]
     public Gradient FreshnessGradient;
-    public float DistanceToPoint = 2f;
+    public float DistanceToPoint = 4f;
     [Range(1f, 10f)]
     public float TimeToBeDisplayed = 5f;
     private float TimePassed = 0f;
@@ -19,6 +20,9 @@ public class TrackRenderer : MonoBehaviour
     private LineRenderer _Line;
 
     [SerializeField] private GameObject lastPrevisuMesh;
+
+    private Vector3 AngleA;
+    private Vector3 AngleB;
 
     #region Unity Functions
     void Start()
@@ -29,6 +33,7 @@ public class TrackRenderer : MonoBehaviour
             Debug.Log("Error: _LineRenderer not defined for " + this.name + " child");
             
         }
+        
     }
 
     private void Update() {
@@ -75,7 +80,7 @@ public class TrackRenderer : MonoBehaviour
         _Line.endColor = GetGradientColorOverFreshness();
         #endregion
         //TODO: Theo changes
-        CreateVisualMesh(PositionTargeted);
+        CreateVisualMesh();
     }
 
     private void EraseTrail(){ 
@@ -91,22 +96,25 @@ public class TrackRenderer : MonoBehaviour
     }
     #endregion
 
-    private void CreateVisualMesh(Vector3 DistancePoint)  //Creation du mesh de visualisation, il ne s'agit là que d'une base qui n'est pas fonctionelle
+    private void CreateVisualMesh()  //Creation du mesh de visualisation, il ne s'agit là que d'une base qui n'est pas fonctionelle
     {
         
         Vector3[] vertices = new Vector3[3];
         Vector2[] uv = new Vector2[3];
         int[] triangles = new int[3];
 
+        AngleA = GetComponent<TrackInfo>().DirFromAngle(GetComponent<TrackInfo>().actualAngle / 2, true);
+        AngleB = new Vector3(-AngleA.x, AngleA.y, AngleA.z);
         
         
-        vertices[0] = transform.position;
-        vertices[1] = DistancePoint + GetComponent<TrackInfo>().DirFromAngle(GetComponent<TrackInfo>().actualAngle / 2, false);
-        vertices[2] = DistancePoint + GetComponent<TrackInfo>().DirFromAngle(-GetComponent<TrackInfo>().actualAngle / 2, false);
+        vertices[0] = new Vector3(0,0);
+        vertices[1] = AngleA * -DistanceToPoint;
+        vertices[2] = AngleB * -DistanceToPoint;
         
-        uv[0] = transform.position;
-        uv[1] = DistancePoint + GetComponent<TrackInfo>().DirFromAngle(GetComponent<TrackInfo>().actualAngle / 2, false);
-        uv[2] = DistancePoint + GetComponent<TrackInfo>().DirFromAngle(-GetComponent<TrackInfo>().actualAngle / 2, false);
+
+        uv[0] = new Vector3(0,1);
+        uv[1] = AngleA * -DistanceToPoint;
+        uv[2] = AngleB * -DistanceToPoint;
 
         triangles[0] = 0;
         triangles[1] = 1;
@@ -117,12 +125,19 @@ public class TrackRenderer : MonoBehaviour
         mesh.uv = uv;
         mesh.triangles = triangles;
 
+        Shader shader = Shader.Find("Standard");
+        Material material = new Material(shader);
+        material.color = GetGradientColorOverFreshness();
+
         if (!lastPrevisuMesh)
         {
             GameObject visuMesh = new GameObject("Visualization", typeof(MeshFilter), typeof(MeshRenderer));
             visuMesh.GetComponent<MeshFilter>().mesh = mesh;
-            visuMesh.transform.localScale = new Vector3(-1, -1, -1);
+            visuMesh.transform.localScale = new Vector3(1, 1, 1);
             visuMesh.transform.position = transform.position;
+            visuMesh.transform.eulerAngles = new Vector3(0, this.transform.eulerAngles.y + 180, 0);
+            visuMesh.transform.parent = this.transform;
+            visuMesh.GetComponent<Renderer>().material = material;
             lastPrevisuMesh = visuMesh;
         }
         else
@@ -130,11 +145,14 @@ public class TrackRenderer : MonoBehaviour
             Destroy(lastPrevisuMesh);
             lastPrevisuMesh = new GameObject("Visualization", typeof(MeshFilter), typeof(MeshRenderer));
             lastPrevisuMesh.GetComponent<MeshFilter>().mesh = mesh;
-            lastPrevisuMesh.transform.localScale = new Vector3(-1, -1, -1);
+            lastPrevisuMesh.transform.localScale = new Vector3(1, 1, 1);
+            lastPrevisuMesh.transform.eulerAngles = new Vector3(0, this.transform.eulerAngles.y + 180, 0);
             lastPrevisuMesh.transform.position = transform.position;
+            lastPrevisuMesh.transform.parent = this.transform;
+            lastPrevisuMesh.GetComponent<Renderer>().material = material;
         }
         
-        
-
+        lastPrevisuMesh.transform.LookAt(GetNextTrack());
     }
+
 }
