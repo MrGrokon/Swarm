@@ -17,31 +17,39 @@ public class AiSoundDetection : MonoBehaviour
 
     public Transform FindVisibleTargets() //Repérage des cibles à portée
     {
-        viewRadius = startingViewRadius * (Objects.Instance.Alpha.GetComponent<NoiseEmitter>().noiseForce /
-                                           Objects.Instance.Alpha.GetComponent<NoiseEmitter>().maxNoiseForce);
-        targetsInViewRadius = Physics.OverlapSphere(transform.position, viewRadius, targetMask);
-        if (targetsInViewRadius.Length > 0)
+        if (Objects.Instance)
         {
-            for (int i = 0; i < targetsInViewRadius.Length; i++)
+            viewRadius = startingViewRadius * (Objects.Instance.Alpha.GetComponent<NoiseEmitter>().noiseForce /
+                                               Objects.Instance.Alpha.GetComponent<NoiseEmitter>().maxNoiseForce);
+            targetsInViewRadius = Physics.OverlapSphere(transform.position, viewRadius, targetMask);
+            if (targetsInViewRadius.Length > 0)
             {
-                Transform target = targetsInViewRadius[i].transform;
-                Vector3 dirToTarget = (target.position - transform.position).normalized;
-            
-                if (Vector3.Angle(transform.forward, dirToTarget) < viewAngle / 2)
+                for (int i = 0; i < targetsInViewRadius.Length; i++)
                 {
-                    float dstToTarget = Vector3.Distance(transform.position, target.position);
-                    if (!Physics.Raycast(transform.position, dirToTarget, dstToTarget, obstacleMask))
+                    Transform target = targetsInViewRadius[i].transform;
+                    Vector3 dirToTarget = (target.position - transform.position).normalized;
+            
+                    if (Vector3.Angle(transform.forward, dirToTarget) < viewAngle / 2)
                     {
-                        validTarget = target;
+                        float dstToTarget = Vector3.Distance(transform.position, target.position);
+                        if (!Physics.Raycast(transform.position, dirToTarget, dstToTarget, obstacleMask))
+                        {
+                            validTarget = target;
+                        }
                     }
                 }
             }
+            else
+            {
+                validTarget = null;
+            }
+
+            
         }
         else
         {
             validTarget = null;
         }
-
         return validTarget;
     }
     public Vector3 DirFromAngle(float  angleInDegrees, bool angleIsGlobal) //Créer une direction depuis un angle, uniquement utilisée dans les scripts éditeur
