@@ -70,6 +70,8 @@ public class herdManager : PreyAiManager
         if (!herdPrey.Contains(other.gameObject))
         {
             herdPrey.Add(other.gameObject);
+            var manager = other.gameObject.GetComponent(typeof(PreyAiManager))  as PreyAiManager;
+            manager.invicible = true;
         }
     }
 
@@ -78,6 +80,8 @@ public class herdManager : PreyAiManager
         if (herdPrey.Contains(other.gameObject))
         {
             herdPrey.Remove(other.gameObject);
+            var manager = other.gameObject.GetComponent(typeof(PreyAiManager))  as PreyAiManager;
+            manager.invicible = false;
         }
     }
 }
