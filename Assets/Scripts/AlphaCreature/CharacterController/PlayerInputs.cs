@@ -434,6 +434,7 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
     private readonly InputAction m_Actions_SwitchTarget;
     private readonly InputAction m_Actions_Climb;
     private readonly InputAction m_Actions_Targeting;
+    private readonly InputAction m_Actions_SwitchTarget;
     public struct ActionsActions
     {
         private @PlayerInputs m_Wrapper;
@@ -453,6 +454,7 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
         public InputAction @SwitchTarget => m_Wrapper.m_Actions_SwitchTarget;
         public InputAction @Climb => m_Wrapper.m_Actions_Climb;
         public InputAction @Targeting => m_Wrapper.m_Actions_Targeting;
+        public InputAction @SwitchTarget => m_Wrapper.m_Actions_SwitchTarget;
         public InputActionMap Get() { return m_Wrapper.m_Actions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -592,5 +594,6 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
         void OnSwitchTarget(InputAction.CallbackContext context);
         void OnClimb(InputAction.CallbackContext context);
         void OnTargeting(InputAction.CallbackContext context);
+        void OnSwitchTarget(InputAction.CallbackContext context);
     }
 }
