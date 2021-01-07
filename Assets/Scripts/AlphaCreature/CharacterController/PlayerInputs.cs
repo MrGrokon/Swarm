@@ -109,7 +109,7 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                 {
                     ""name"": ""Reset"",
                     ""type"": ""Button"",
-                    ""id"": ""580db6e0-7008-4a4e-9d52-fd37ba9ed97a"",
+                    ""id"": ""64a9af49-aa0a-4d9e-88dd-d049861c0dd7"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -117,7 +117,7 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                 {
                     ""name"": ""SwitchTarget"",
                     ""type"": ""Button"",
-                    ""id"": ""d9bb0f33-d750-4135-be8c-8a822e140b24"",
+                    ""id"": ""ffb52486-6aca-49ea-8c52-afe9a8866b6e"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -238,7 +238,7 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""b7657d32-4c22-4648-8c23-b16c9c70fd2e"",
+                    ""id"": ""c0357734-d744-4817-8d0f-c66b2f2d5e4d"",
                     ""path"": ""<Gamepad>/rightStick/x"",
                     ""interactions"": """",
                     ""processors"": """",
