@@ -7,8 +7,6 @@ using UnityEngine.SceneManagement;
 
 public class DebugScript : MonoBehaviour
 {
-    [SerializeField] private List<GameObject> Cameras;
-    [SerializeField] private int cameraNumber;
 
     // Update is called once per frame
     void Update()
