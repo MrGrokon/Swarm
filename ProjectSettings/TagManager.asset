@@ -4,8 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Prey
   - Track
+  - Prey
   layers:
   - Default
   - TransparentFX
@@ -15,9 +15,9 @@ TagManager:
   - UI
   - 
   - 
-  - Obstacle
-  - Player
-  - Prey
+  - Obstacles
+  - 
+  - 
   - 
   - 
   - 
