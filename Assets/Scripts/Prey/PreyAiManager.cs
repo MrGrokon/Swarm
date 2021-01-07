@@ -17,7 +17,7 @@ public class PreyAiManager : MonoBehaviour
     }
     
     [Header("Basic AI Parameters")]
-    [Range(1f, 20f)]
+    [Range(1f, 3f)]
     public float ReachingDistance = 1.5f; 
     public PreyStates MyState;
     public PreyProfile MyProfile;
