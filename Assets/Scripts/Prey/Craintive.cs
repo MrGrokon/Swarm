@@ -41,6 +41,7 @@ public class Craintive : PreyAiManager
 
     private void Update()
     {
+        print(_nm_Agent.destination);
         #region State Debbuging
         if(MyState == PreyStates.Flee){
             Debug.DrawLine(this.transform.position, _nm_Agent.destination, Color.red);
@@ -59,7 +60,7 @@ public class Craintive : PreyAiManager
             switch(MyState){
                 case PreyStates.Flee:
                 //TODO: passer en Mode Hide quelques secondes si je le joueur n'est plus a proximité de lui
-                _nm_Agent.SetDestination(GetRandomRoamingPosition());
+                //_nm_Agent.SetDestination(GetRandomRoamingPosition());
                 _animator.SetBool("IsRunning", false);
                 Dust_PS.Stop();
                 ChangeState(PreyStates.Roam);
@@ -74,8 +75,7 @@ public class Craintive : PreyAiManager
                 
                 case PreyStates.Roam:
                 //TODO: générer proproment un nouveau point de roaming, si possible non randomS
-                
-                    _nm_Agent.SetDestination(GetRandomRoamingPosition()); 
+                _nm_Agent.SetDestination(GetRandomRoamingPosition()); 
                 
                 ChangeState(PreyStates.Roam);
                 break;
@@ -101,7 +101,8 @@ public class Craintive : PreyAiManager
             ChangeState(PreyStates.Flee);
             //ce vector pointe parfois dans la direction du joueur, ce qui implique que le joueur peu la toucher sur son chemin de fuite
             Vector3 FleeMotion = (Objects.Instance.Alpha.transform.position - this.transform.position) * -10;
-            _nm_Agent.SetDestination(FleeMotion);
+            NavMesh.SamplePosition(FleeMotion, out NavMeshHit hit, 1f, 1);
+            _nm_Agent.SetDestination(hit.position);
         }
     }
     #endregion
