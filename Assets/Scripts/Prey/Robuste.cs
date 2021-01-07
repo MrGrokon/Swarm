@@ -49,7 +49,7 @@ public class Robuste : PreyAiManager
         }
         #endregion
 
-        if(_nm_Agent.remainingDistance <= ReachingDistance){
+        if(Vector3.Distance(_nm_Agent.destination, transform.position) <= ReachingDistance){
             Debug.Log("Prey reached his destination");
             //Do things when i reach my Position
             switch(MyState){

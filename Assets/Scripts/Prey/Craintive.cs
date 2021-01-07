@@ -53,7 +53,7 @@ public class Craintive : PreyAiManager
         }
         #endregion
 
-        if(_nm_Agent.remainingDistance <= ReachingDistance){
+        if(Vector3.Distance(_nm_Agent.destination, transform.position) <= ReachingDistance){
             Debug.Log("Prey reached his destination");
             //Do things when i reach my Position
             switch(MyState){
@@ -99,8 +99,8 @@ public class Craintive : PreyAiManager
             _animator.SetBool("IsRunning", true);
             Dust_PS.Play();
             ChangeState(PreyStates.Flee);
-            //ce vector pointe parfois dans la direction du joueur, ce qui implique que le joueur peu la toucher sur sont chemin de fuite
-            Vector3 FleeMotion = (Objects.Instance.Alpha.transform.position - this.transform.position) * -1;
+            //ce vector pointe parfois dans la direction du joueur, ce qui implique que le joueur peu la toucher sur son chemin de fuite
+            Vector3 FleeMotion = (Objects.Instance.Alpha.transform.position - this.transform.position) * -10;
             _nm_Agent.SetDestination(FleeMotion);
         }
     }
