@@ -109,7 +109,15 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                 {
                     ""name"": ""Reset"",
                     ""type"": ""Button"",
-                    ""id"": ""a4772163-e23c-4861-9b01-cdf58e9dc673"",
+                    ""id"": ""7dd94cdc-8874-4747-8e7f-6d78cf9084c0"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""SwitchTarget"",
+                    ""type"": ""Button"",
+                    ""id"": ""eaa740c0-cd1b-4bf1-99a1-5d69dd5f39f6"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -230,12 +238,12 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""2f89821a-c720-4058-bc68-0b9c2366b9e6"",
-                    ""path"": ""<Gamepad>/start"",
+                    ""id"": ""89138335-cdfe-47f0-aa5b-8c8f73f815ff"",
+                    ""path"": ""<Gamepad>/rightStick/x"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Reset"",
+                    ""action"": ""RotateCameraY"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -358,6 +366,7 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
         m_Actions_RightSprintButton = m_Actions.FindAction("RightSprintButton", throwIfNotFound: true);
         m_Actions_Attack = m_Actions.FindAction("Attack", throwIfNotFound: true);
         m_Actions_Reset = m_Actions.FindAction("Reset", throwIfNotFound: true);
+        m_Actions_SwitchTarget = m_Actions.FindAction("SwitchTarget", throwIfNotFound: true);
         m_Actions_Climb = m_Actions.FindAction("Climb", throwIfNotFound: true);
         m_Actions_Targeting = m_Actions.FindAction("Targeting", throwIfNotFound: true);
         m_Actions_SwitchTarget = m_Actions.FindAction("SwitchTarget", throwIfNotFound: true);
@@ -422,6 +431,7 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
     private readonly InputAction m_Actions_RightSprintButton;
     private readonly InputAction m_Actions_Attack;
     private readonly InputAction m_Actions_Reset;
+    private readonly InputAction m_Actions_SwitchTarget;
     private readonly InputAction m_Actions_Climb;
     private readonly InputAction m_Actions_Targeting;
     private readonly InputAction m_Actions_SwitchTarget;
@@ -441,6 +451,7 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
         public InputAction @RightSprintButton => m_Wrapper.m_Actions_RightSprintButton;
         public InputAction @Attack => m_Wrapper.m_Actions_Attack;
         public InputAction @Reset => m_Wrapper.m_Actions_Reset;
+        public InputAction @SwitchTarget => m_Wrapper.m_Actions_SwitchTarget;
         public InputAction @Climb => m_Wrapper.m_Actions_Climb;
         public InputAction @Targeting => m_Wrapper.m_Actions_Targeting;
         public InputAction @SwitchTarget => m_Wrapper.m_Actions_SwitchTarget;
@@ -489,6 +500,9 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                 @Reset.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnReset;
                 @Reset.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnReset;
                 @Reset.canceled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnReset;
+                @SwitchTarget.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnSwitchTarget;
+                @SwitchTarget.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnSwitchTarget;
+                @SwitchTarget.canceled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnSwitchTarget;
                 @Climb.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnClimb;
                 @Climb.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnClimb;
                 @Climb.canceled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnClimb;
@@ -538,6 +552,9 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                 @Reset.started += instance.OnReset;
                 @Reset.performed += instance.OnReset;
                 @Reset.canceled += instance.OnReset;
+                @SwitchTarget.started += instance.OnSwitchTarget;
+                @SwitchTarget.performed += instance.OnSwitchTarget;
+                @SwitchTarget.canceled += instance.OnSwitchTarget;
                 @Climb.started += instance.OnClimb;
                 @Climb.performed += instance.OnClimb;
                 @Climb.canceled += instance.OnClimb;
@@ -574,6 +591,7 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
         void OnRightSprintButton(InputAction.CallbackContext context);
         void OnAttack(InputAction.CallbackContext context);
         void OnReset(InputAction.CallbackContext context);
+        void OnSwitchTarget(InputAction.CallbackContext context);
         void OnClimb(InputAction.CallbackContext context);
         void OnTargeting(InputAction.CallbackContext context);
         void OnSwitchTarget(InputAction.CallbackContext context);
