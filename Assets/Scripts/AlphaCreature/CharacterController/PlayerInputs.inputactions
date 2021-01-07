@@ -96,15 +96,7 @@
                 {
                     "name": "Reset",
                     "type": "Button",
-                    "id": "39aca463-fc6b-4b62-b347-2011029bb249",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
-                    "name": "SwitchTarget",
-                    "type": "Button",
-                    "id": "c4e5bc7b-6e62-415c-996c-6da3bb139e35",
+                    "id": "a4772163-e23c-4861-9b01-cdf58e9dc673",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -225,12 +217,12 @@
                 },
                 {
                     "name": "",
-                    "id": "b146c8e8-5ec7-48a3-af6f-88f863815362",
-                    "path": "<Gamepad>/rightStick/x",
+                    "id": "2f89821a-c720-4058-bc68-0b9c2366b9e6",
+                    "path": "<Gamepad>/start",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "RotateCameraY",
+                    "action": "Reset",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

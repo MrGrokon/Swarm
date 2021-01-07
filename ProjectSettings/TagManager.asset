@@ -6,7 +6,6 @@ TagManager:
   tags:
   - Track
   - Prey
-  - Track
   layers:
   - Default
   - TransparentFX
@@ -17,7 +16,7 @@ TagManager:
   - 
   - 
   - Obstacles
-  - Prey
+  - 
   - 
   - 
   - 
