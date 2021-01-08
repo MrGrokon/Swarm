@@ -293,6 +293,17 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                     ""action"": ""Targeting"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""258186b5-fada-4edd-8ecf-69c7dcd8efff"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Reset"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }

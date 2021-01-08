@@ -19,38 +19,15 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e9a9fd44-a60f-4fbc-b03b-f25159acb4b3" name="Default Changelist" comment="1.1.3.2 : Ajout du navMeshComponents">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/indexLayout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Checkout_at_01_01_2021_17_50__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Checkout_at_01_01_2021_17_50__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Checkout_at_02_01_2021_15_46__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Checkout_at_02_01_2021_15_46__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Checkout_at_06_01_2021_15_29__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Checkout_at_06_01_2021_15_29__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Checkout_at_07_01_2021_18_58__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Checkout_at_07_01_2021_18_58__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Checkout_at_07_01_2021_21_25__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Checkout_at_07_01_2021_21_25__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Merge_at_01_01_2021_18_38__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Merge_at_01_01_2021_18_38__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Merge_at_02_01_2021_15_46__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Merge_at_02_01_2021_15_46__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Merge_at_06_01_2021_15_30__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Merge_at_06_01_2021_15_30__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Merge_at_07_01_2021_21_26__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Merge_at_07_01_2021_21_26__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Merge_at_07_01_2021_21_27__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Merge_at_07_01_2021_21_27__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Merge_at_07_01_2021_21_45__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Merge_at_07_01_2021_21_45__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Merge_at_22_12_2020_11_05__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Merge_at_22_12_2020_11_05__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Update_at_07_01_2021_19_01__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Update_at_07_01_2021_19_01__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Update_at_07_01_2021_21_27__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Update_at_07_01_2021_21_27__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/unnamed.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/unnamed.xml" afterDir="false" />
+    <list default="true" id="e9a9fd44-a60f-4fbc-b03b-f25159acb4b3" name="Default Changelist" comment="Il a pas mis le putain de navmesh">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NewScene/Graphics.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NewScene/Graphics/Debug Materials.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NewScene/Graphics/Materials.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NewScene/Scenes.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NewScene/nTools/PrefabPainter.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NewScene/nTools/PrefabPainter/Examples.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Craintive.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Craintive.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Fast.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Fast.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Robuste.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Robuste.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/PlayerGroup.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/PlayerGroup.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Bastien_LD.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Bastien_LD.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Prey/BasicPrey.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Prey/BasicPrey.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Prey/Craintive.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Prey/Craintive.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Prey/Robuste.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Prey/Robuste.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/nTools/PrefabPainter/Examples.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CharacterController/PlayerInputs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CharacterController/PlayerInputs.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CharacterController/PlayerInputs.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CharacterController/PlayerInputs.inputactions" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,6 +47,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CreatureMover.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/AlphaCreature/PackOrderer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.6.3/Runtime/Core/AxisState.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Théo/Documents/GitHub/Swarm/Swarm/Assets/Scenes/Bastien_LD.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://F:/UnityProject/CsLike/CsLike/Assets/Scripts/BotTargeting.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CharacterController/InputTester.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CharacterController/PlayerInputs.cs" root0="FORCE_HIGHLIGHTING" />
@@ -78,12 +56,16 @@
     <setting file="file://F:/UnityProject/CsLike/CsLike/Assets/Scripts/BotDetection.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/BetaCreature/IntelligenceInterface.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/Objects.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://diff.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Théo/Documents/GitHub/Swarm/Swarm/Assets/Scenes/Bastien_LD.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://diff.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Prey/HerdPrey.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.0.0/InputSystem/Utilities/DelegateHelpers.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../MiniBr/Behind The Line/Assets/Scripts/MouseLook.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/nTools/PrefabPainter/Scripts/Editor/PrefabPainter.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Prey/PreyLife.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/AlphaCreature/Attack.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://diff.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -120,7 +102,6 @@
         <option value="$PROJECT_DIR$/Assets/DestroyTrackOverTime.cs" />
         <option value="$PROJECT_DIR$/Assets/LookAt.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Prey/TracksCreatorOverTime.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Tracks/TrackRenderer.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/DebugScript.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Prey/AIsystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Prey/PreyLife.cs" />
@@ -135,10 +116,11 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Prey/AiSoundDetection.cs" />
         <option value="$PROJECT_DIR$/Assets/herdManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Prey/PreyAiManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CharacterController/PlayerInputs.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Prey/Craintive.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Prey/Robuste.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Prey/BasicPrey.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Tracks/TrackRenderer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CharacterController/PlayerInputs.cs" />
       </list>
     </option>
   </component>
@@ -445,7 +427,21 @@
       <option name="project" value="LOCAL" />
       <updated>1609598693750</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="1.1.3.3 : Fix du navmesh non présent, fix des IA qui ne fuyait pas, Fix du player qui s'envole certaines fois">
+      <created>1610105963435</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1610105963435</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Il a pas mis le putain de navmesh">
+      <created>1610106054750</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1610106054750</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -476,8 +472,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Reformation du maib" />
-    <MESSAGE value="Correctif sur la formation" />
     <MESSAGE value="Correctif sur la formation #2" />
     <MESSAGE value="Changement du spawn des proies&#10;Rebuild du nav mesh" />
     <MESSAGE value="Chery-pick" />
@@ -501,13 +495,15 @@
     <MESSAGE value="1.1.1.0 : Modification de l'attaque (ajout de l'attaque lourde/dash), Début de changement de la gestion de la caméra poour se concorder avec l'attaque, Ajout d'un système pour que les IA recoivent les dommages, création des prefabs de chaque IA, Ajout d'un script éditeur pour voir le range d'attaque du joueur" />
     <MESSAGE value="1.1.3.0 : Fix du bug de rotation X sur la caméra, Ajustement des paramètres des IA selon la documentation, Création des profiles d'IA pour chacune d'entre elles, Correction de bug sur le comportement du terrier et de la craintive, Correction du bug qui faisait que l'attaque rapide n'était pas possible, Correction partielle de l'attaque lourde qui faisait que le joueur était propulsé" />
     <MESSAGE value="1.1.3.0 : Ajout de l'IA en troupeau (seulement patrol de fonctionelle), ajout de la gestion du troupeau" />
-    <option name="LAST_COMMIT_MESSAGE" value="1.1.3.0 : Ajout de l'IA en troupeau (seulement patrol de fonctionelle), ajout de la gestion du troupeau" />
+    <MESSAGE value="1.1.3.3 : Fix du navmesh non présent, fix des IA qui ne fuyait pas, Fix du player qui s'envole certaines fois" />
+    <MESSAGE value="Il a pas mis le putain de navmesh" />
+    <option name="LAST_COMMIT_MESSAGE" value="Il a pas mis le putain de navmesh" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="184" y="126" key="MergeDialog" timestamp="1609598787669">
+    <state x="184" y="126" key="MergeDialog" timestamp="1610111580298">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
-    <state x="184" y="126" key="MergeDialog/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1609598787669" />
+    <state x="184" y="126" key="MergeDialog/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1610111580298" />
     <state x="598" y="321" key="MultipleFileMergeDialog" timestamp="1610103791046">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
@@ -520,14 +516,14 @@
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="92" y="132" width="1736" height="856" key="VCS.FileHistoryDialog/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1609519868736" />
-    <state x="552" y="293" key="Vcs.Push.Dialog.v2" timestamp="1610103802764">
+    <state x="552" y="293" key="Vcs.Push.Dialog.v2" timestamp="1610106057846">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
-    <state x="552" y="293" key="Vcs.Push.Dialog.v2/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1610103802764" />
-    <state x="777" y="474" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1609598822566">
+    <state x="552" y="293" key="Vcs.Push.Dialog.v2/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1610106057846" />
+    <state x="777" y="474" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1610111567599">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
-    <state x="777" y="474" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1609598822566" />
+    <state x="777" y="474" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1610111567599" />
     <state x="732" y="274" key="git4idea.branch.GitSmartOperationDialog" timestamp="1610103703679">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
