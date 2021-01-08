@@ -10,6 +10,7 @@ public class TrackRenderer : MonoBehaviour
     public int MyTrackIndex;
 
     [Header("Display Parameters")]
+    public bool DebugLineRenderer = false;
     public Gradient FreshnessGradient;
     public float DistanceToPoint = 4f;
     [Range(1f, 10f)]
@@ -70,15 +71,19 @@ public class TrackRenderer : MonoBehaviour
     private void DrawLineToward(Vector3 PositionTargeted){  //Création de la ligne de traque
         //drawn the track Info toward the next target or prey
         Debug.DrawLine(this.transform.position, PositionTargeted, Color.magenta);
+
         #region track info by line renderer
-        _Line.enabled = true;
+        if(DebugLineRenderer){
+            _Line.enabled = true;
         // _nextPos not right but Debug.drawnLine working pretty well, to be solved later
         Vector3 _nextPos = (this.transform.position - PositionTargeted ) * DistanceToPoint;
         _Line.SetPosition(0, this.transform.position);
         _Line.SetPosition(1, PositionTargeted);
         _Line.startColor = GetGradientColorOverFreshness();
         _Line.endColor = GetGradientColorOverFreshness();
+        }
         #endregion
+        
         //TODO: Theo changes
         CreateVisualMesh();
     }

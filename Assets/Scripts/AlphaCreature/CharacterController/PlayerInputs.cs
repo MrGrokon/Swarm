@@ -109,7 +109,7 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                 {
                     ""name"": ""Reset"",
                     ""type"": ""Button"",
-                    ""id"": ""04e7ddf9-d0f6-4378-85c9-64883ec6d166"",
+                    ""id"": ""5126b68e-a045-4247-94d4-a37a28e29b46"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -117,7 +117,7 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                 {
                     ""name"": ""SwitchTarget"",
                     ""type"": ""Button"",
-                    ""id"": ""56c67722-9b8b-4175-8c07-eb9009b34ce3"",
+                    ""id"": ""8f45ddd9-eace-4809-acba-c7bfc2fc45b5"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -134,14 +134,6 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                     ""name"": ""Targeting"",
                     ""type"": ""Button"",
                     ""id"": ""39aca463-fc6b-4b62-b347-2011029bb249"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                },
-                {
-                    ""name"": ""SwitchTarget"",
-                    ""type"": ""Button"",
-                    ""id"": ""c4e5bc7b-6e62-415c-996c-6da3bb139e35"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -238,7 +230,7 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""bc051d73-4231-41b4-b6d6-e50f92b8c6bc"",
+                    ""id"": ""4141c20f-51c2-4ac6-91b3-41a42efd0dfd"",
                     ""path"": ""<Gamepad>/rightStick/x"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -301,39 +293,6 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                     ""action"": ""Targeting"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""1D Axis"",
-                    ""id"": ""6bd43141-14d1-48c8-8a40-6500b5ae0cbe"",
-                    ""path"": ""1DAxis"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""SwitchTarget"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""negative"",
-                    ""id"": ""21fedbcb-e8aa-495f-b262-a44b29b54842"",
-                    ""path"": ""<Gamepad>/leftShoulder"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""SwitchTarget"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""positive"",
-                    ""id"": ""7cee88f8-c028-48b4-a504-d37b7a2964b3"",
-                    ""path"": ""<Gamepad>/rightShoulder"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""SwitchTarget"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -369,7 +328,6 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
         m_Actions_SwitchTarget = m_Actions.FindAction("SwitchTarget", throwIfNotFound: true);
         m_Actions_Climb = m_Actions.FindAction("Climb", throwIfNotFound: true);
         m_Actions_Targeting = m_Actions.FindAction("Targeting", throwIfNotFound: true);
-        m_Actions_SwitchTarget = m_Actions.FindAction("SwitchTarget", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -507,9 +465,6 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                 @Targeting.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnTargeting;
                 @Targeting.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnTargeting;
                 @Targeting.canceled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnTargeting;
-                @SwitchTarget.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnSwitchTarget;
-                @SwitchTarget.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnSwitchTarget;
-                @SwitchTarget.canceled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnSwitchTarget;
             }
             m_Wrapper.m_ActionsActionsCallbackInterface = instance;
             if (instance != null)
@@ -559,9 +514,6 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                 @Targeting.started += instance.OnTargeting;
                 @Targeting.performed += instance.OnTargeting;
                 @Targeting.canceled += instance.OnTargeting;
-                @SwitchTarget.started += instance.OnSwitchTarget;
-                @SwitchTarget.performed += instance.OnSwitchTarget;
-                @SwitchTarget.canceled += instance.OnSwitchTarget;
             }
         }
     }

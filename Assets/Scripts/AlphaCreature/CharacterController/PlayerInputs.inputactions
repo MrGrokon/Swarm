@@ -96,7 +96,7 @@
                 {
                     "name": "Reset",
                     "type": "Button",
-                    "id": "39aca463-fc6b-4b62-b347-2011029bb249",
+                    "id": "5126b68e-a045-4247-94d4-a37a28e29b46",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -104,7 +104,7 @@
                 {
                     "name": "SwitchTarget",
                     "type": "Button",
-                    "id": "c4e5bc7b-6e62-415c-996c-6da3bb139e35",
+                    "id": "8f45ddd9-eace-4809-acba-c7bfc2fc45b5",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -121,14 +121,6 @@
                     "name": "Targeting",
                     "type": "Button",
                     "id": "39aca463-fc6b-4b62-b347-2011029bb249",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
-                    "name": "SwitchTarget",
-                    "type": "Button",
-                    "id": "c4e5bc7b-6e62-415c-996c-6da3bb139e35",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -225,7 +217,7 @@
                 },
                 {
                     "name": "",
-                    "id": "b146c8e8-5ec7-48a3-af6f-88f863815362",
+                    "id": "4141c20f-51c2-4ac6-91b3-41a42efd0dfd",
                     "path": "<Gamepad>/rightStick/x",
                     "interactions": "",
                     "processors": "",
@@ -288,39 +280,6 @@
                     "action": "Targeting",
                     "isComposite": false,
                     "isPartOfComposite": false
-                },
-                {
-                    "name": "1D Axis",
-                    "id": "6bd43141-14d1-48c8-8a40-6500b5ae0cbe",
-                    "path": "1DAxis",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "SwitchTarget",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "negative",
-                    "id": "21fedbcb-e8aa-495f-b262-a44b29b54842",
-                    "path": "<Gamepad>/leftShoulder",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "SwitchTarget",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "positive",
-                    "id": "7cee88f8-c028-48b4-a504-d37b7a2964b3",
-                    "path": "<Gamepad>/rightShoulder",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "SwitchTarget",
-                    "isComposite": false,
-                    "isPartOfComposite": true
                 }
             ]
         }
