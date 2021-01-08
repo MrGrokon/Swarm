@@ -63,7 +63,7 @@ public class Craintive : PreyAiManager
                 //_nm_Agent.SetDestination(GetRandomRoamingPosition());
                 _animator.SetBool("IsRunning", false);
                 Dust_PS.Stop();
-                ChangeState(PreyStates.Roam);
+                //ChangeState(PreyStates.Roam);
                 break;
 
                 case PreyStates.LookingForWater:
@@ -88,21 +88,26 @@ public class Craintive : PreyAiManager
 
         if (myDetector.FindVisibleTargets() || mySonorDetection.FindVisibleTargets())
         {
-            //If i found an Enemy
-            Debug.Log("Prey spot the player");
+            if (MyState != PreyStates.Flee ||
+                Vector3.Distance(_nm_Agent.destination, transform.position) <= ReachingDistance)
+            {
+                //If i found an Enemy
+                Debug.Log("Prey spot the player");
 
-            //TODO: Test au moment de la detection, selon les behavior a mettre en place:
-            //  -chercher à se cacher
-            //  -fuire vers le reste de la meute
-            //  -...
+                //TODO: Test au moment de la detection, selon les behavior a mettre en place:
+                //  -chercher à se cacher
+                //  -fuire vers le reste de la meute
+                //  -...
 
-            _animator.SetBool("IsRunning", true);
-            Dust_PS.Play();
-            ChangeState(PreyStates.Flee);
-            //ce vector pointe parfois dans la direction du joueur, ce qui implique que le joueur peu la toucher sur son chemin de fuite
-            Vector3 FleeMotion = (Objects.Instance.Alpha.transform.position - this.transform.position) * -10;
-            NavMesh.SamplePosition(FleeMotion, out NavMeshHit hit, 1f, 1);
-            _nm_Agent.SetDestination(hit.position);
+                _animator.SetBool("IsRunning", true);
+                Dust_PS.Play();
+                ChangeState(PreyStates.Flee);
+                //ce vector pointe parfois dans la direction du joueur, ce qui implique que le joueur peu la toucher sur son chemin de fuite
+                Vector3 FleeMotion = (Objects.Instance.Alpha.transform.position - this.transform.position) * -10;
+                NavMesh.SamplePosition(FleeMotion, out NavMeshHit hit, 1f, 1);
+                _nm_Agent.SetDestination(GetRandomRoamingPosition());
+            }
+           
         }
     }
     #endregion
