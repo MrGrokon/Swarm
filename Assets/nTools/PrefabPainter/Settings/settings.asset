@@ -17,7 +17,7 @@ MonoBehaviour:
     brushes:
     - name: Hautes-Herbes
       settings:
-        brushRadius: 1
+        brushRadius: 3.8
         brushSpacing: 0.5
         brushOverallScale: 1
         brushOverlapCheck: 1
@@ -146,7 +146,7 @@ MonoBehaviour:
       - gameObject: {fileID: 0}
       - gameObject: {fileID: 0}
       selectedSlot: 0
-      selected: 0
+      selected: 1
       colorTag: 0
     - name: ObstacleRock_1
       settings:
@@ -412,16 +412,16 @@ MonoBehaviour:
       - gameObject: {fileID: 0}
       - gameObject: {fileID: 0}
       selectedSlot: 0
-      selected: 1
+      selected: 0
       colorTag: 0
     - name: Spaced ObstaclesTrees
       settings:
-        brushRadius: 1
-        brushSpacing: 0.88
+        brushRadius: 16.8
+        brushSpacing: 5
         brushOverallScale: 1
         brushOverlapCheck: 1
         brushOverlapCheckMode: 0
-        brushOverlapDistance: 5.5
+        brushOverlapDistance: 10.73
         brushOverlapCheckObjects: 1
         brushOverlapCheckLayers:
           serializedVersion: 2
@@ -678,7 +678,7 @@ MonoBehaviour:
       - gameObject: {fileID: 0}
       - gameObject: {fileID: 0}
       selectedSlot: 0
-      selected: 1
+      selected: 0
       colorTag: 0
   - name: Decals
     brushes:

@@ -77,6 +77,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b24e5b4c9e9c40b4b845c1059e72cb9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Cameras: []
+  cameraNumber: 0
 --- !u!1001 &1880581356053283568
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -285,11 +287,6 @@ PrefabInstance:
         type: 3}
       propertyPath: speed
       value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 8726772832846971018, guid: b8ca2ec5494f96e468e120b752962fe1,
-        type: 3}
-      propertyPath: acceleration
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8726772832846971018, guid: b8ca2ec5494f96e468e120b752962fe1,
         type: 3}
