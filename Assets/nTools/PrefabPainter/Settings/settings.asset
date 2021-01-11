@@ -22,7 +22,7 @@ MonoBehaviour:
         brushOverallScale: 1
         brushOverlapCheck: 1
         brushOverlapCheckMode: 0
-        brushOverlapDistance: 5
+        brushOverlapDistance: 2
         brushOverlapCheckObjects: 1
         brushOverlapCheckLayers:
           serializedVersion: 2
