@@ -109,7 +109,15 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                 {
                     ""name"": ""Reset"",
                     ""type"": ""Button"",
-                    ""id"": ""a4772163-e23c-4861-9b01-cdf58e9dc673"",
+                    ""id"": ""5126b68e-a045-4247-94d4-a37a28e29b46"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""SwitchTarget"",
+                    ""type"": ""Button"",
+                    ""id"": ""8f45ddd9-eace-4809-acba-c7bfc2fc45b5"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -126,14 +134,6 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                     ""name"": ""Targeting"",
                     ""type"": ""Button"",
                     ""id"": ""39aca463-fc6b-4b62-b347-2011029bb249"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                },
-                {
-                    ""name"": ""SwitchTarget"",
-                    ""type"": ""Button"",
-                    ""id"": ""c4e5bc7b-6e62-415c-996c-6da3bb139e35"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -230,12 +230,12 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""2f89821a-c720-4058-bc68-0b9c2366b9e6"",
-                    ""path"": ""<Gamepad>/start"",
+                    ""id"": ""4141c20f-51c2-4ac6-91b3-41a42efd0dfd"",
+                    ""path"": ""<Gamepad>/rightStick/x"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Reset"",
+                    ""action"": ""RotateCameraY"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -295,37 +295,15 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""1D Axis"",
-                    ""id"": ""6bd43141-14d1-48c8-8a40-6500b5ae0cbe"",
-                    ""path"": ""1DAxis"",
+                    ""name"": """",
+                    ""id"": ""258186b5-fada-4edd-8ecf-69c7dcd8efff"",
+                    ""path"": ""<Gamepad>/start"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""SwitchTarget"",
-                    ""isComposite"": true,
+                    ""action"": ""Reset"",
+                    ""isComposite"": false,
                     ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""negative"",
-                    ""id"": ""21fedbcb-e8aa-495f-b262-a44b29b54842"",
-                    ""path"": ""<Gamepad>/leftShoulder"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""SwitchTarget"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""positive"",
-                    ""id"": ""7cee88f8-c028-48b4-a504-d37b7a2964b3"",
-                    ""path"": ""<Gamepad>/rightShoulder"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""SwitchTarget"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -358,9 +336,9 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
         m_Actions_RightSprintButton = m_Actions.FindAction("RightSprintButton", throwIfNotFound: true);
         m_Actions_Attack = m_Actions.FindAction("Attack", throwIfNotFound: true);
         m_Actions_Reset = m_Actions.FindAction("Reset", throwIfNotFound: true);
+        m_Actions_SwitchTarget = m_Actions.FindAction("SwitchTarget", throwIfNotFound: true);
         m_Actions_Climb = m_Actions.FindAction("Climb", throwIfNotFound: true);
         m_Actions_Targeting = m_Actions.FindAction("Targeting", throwIfNotFound: true);
-        m_Actions_SwitchTarget = m_Actions.FindAction("SwitchTarget", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -422,9 +400,9 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
     private readonly InputAction m_Actions_RightSprintButton;
     private readonly InputAction m_Actions_Attack;
     private readonly InputAction m_Actions_Reset;
+    private readonly InputAction m_Actions_SwitchTarget;
     private readonly InputAction m_Actions_Climb;
     private readonly InputAction m_Actions_Targeting;
-    private readonly InputAction m_Actions_SwitchTarget;
     public struct ActionsActions
     {
         private @PlayerInputs m_Wrapper;
@@ -441,9 +419,9 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
         public InputAction @RightSprintButton => m_Wrapper.m_Actions_RightSprintButton;
         public InputAction @Attack => m_Wrapper.m_Actions_Attack;
         public InputAction @Reset => m_Wrapper.m_Actions_Reset;
+        public InputAction @SwitchTarget => m_Wrapper.m_Actions_SwitchTarget;
         public InputAction @Climb => m_Wrapper.m_Actions_Climb;
         public InputAction @Targeting => m_Wrapper.m_Actions_Targeting;
-        public InputAction @SwitchTarget => m_Wrapper.m_Actions_SwitchTarget;
         public InputActionMap Get() { return m_Wrapper.m_Actions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -489,15 +467,15 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                 @Reset.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnReset;
                 @Reset.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnReset;
                 @Reset.canceled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnReset;
+                @SwitchTarget.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnSwitchTarget;
+                @SwitchTarget.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnSwitchTarget;
+                @SwitchTarget.canceled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnSwitchTarget;
                 @Climb.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnClimb;
                 @Climb.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnClimb;
                 @Climb.canceled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnClimb;
                 @Targeting.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnTargeting;
                 @Targeting.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnTargeting;
                 @Targeting.canceled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnTargeting;
-                @SwitchTarget.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnSwitchTarget;
-                @SwitchTarget.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnSwitchTarget;
-                @SwitchTarget.canceled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnSwitchTarget;
             }
             m_Wrapper.m_ActionsActionsCallbackInterface = instance;
             if (instance != null)
@@ -538,15 +516,15 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                 @Reset.started += instance.OnReset;
                 @Reset.performed += instance.OnReset;
                 @Reset.canceled += instance.OnReset;
+                @SwitchTarget.started += instance.OnSwitchTarget;
+                @SwitchTarget.performed += instance.OnSwitchTarget;
+                @SwitchTarget.canceled += instance.OnSwitchTarget;
                 @Climb.started += instance.OnClimb;
                 @Climb.performed += instance.OnClimb;
                 @Climb.canceled += instance.OnClimb;
                 @Targeting.started += instance.OnTargeting;
                 @Targeting.performed += instance.OnTargeting;
                 @Targeting.canceled += instance.OnTargeting;
-                @SwitchTarget.started += instance.OnSwitchTarget;
-                @SwitchTarget.performed += instance.OnSwitchTarget;
-                @SwitchTarget.canceled += instance.OnSwitchTarget;
             }
         }
     }
@@ -574,8 +552,8 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
         void OnRightSprintButton(InputAction.CallbackContext context);
         void OnAttack(InputAction.CallbackContext context);
         void OnReset(InputAction.CallbackContext context);
+        void OnSwitchTarget(InputAction.CallbackContext context);
         void OnClimb(InputAction.CallbackContext context);
         void OnTargeting(InputAction.CallbackContext context);
-        void OnSwitchTarget(InputAction.CallbackContext context);
     }
 }

@@ -96,7 +96,15 @@
                 {
                     "name": "Reset",
                     "type": "Button",
-                    "id": "a4772163-e23c-4861-9b01-cdf58e9dc673",
+                    "id": "5126b68e-a045-4247-94d4-a37a28e29b46",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "SwitchTarget",
+                    "type": "Button",
+                    "id": "8f45ddd9-eace-4809-acba-c7bfc2fc45b5",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -113,14 +121,6 @@
                     "name": "Targeting",
                     "type": "Button",
                     "id": "39aca463-fc6b-4b62-b347-2011029bb249",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
-                    "name": "SwitchTarget",
-                    "type": "Button",
-                    "id": "c4e5bc7b-6e62-415c-996c-6da3bb139e35",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -217,12 +217,12 @@
                 },
                 {
                     "name": "",
-                    "id": "2f89821a-c720-4058-bc68-0b9c2366b9e6",
-                    "path": "<Gamepad>/start",
+                    "id": "4141c20f-51c2-4ac6-91b3-41a42efd0dfd",
+                    "path": "<Gamepad>/rightStick/x",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Reset",
+                    "action": "RotateCameraY",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -282,37 +282,15 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "1D Axis",
-                    "id": "6bd43141-14d1-48c8-8a40-6500b5ae0cbe",
-                    "path": "1DAxis",
+                    "name": "",
+                    "id": "258186b5-fada-4edd-8ecf-69c7dcd8efff",
+                    "path": "<Gamepad>/start",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "SwitchTarget",
-                    "isComposite": true,
+                    "action": "Reset",
+                    "isComposite": false,
                     "isPartOfComposite": false
-                },
-                {
-                    "name": "negative",
-                    "id": "21fedbcb-e8aa-495f-b262-a44b29b54842",
-                    "path": "<Gamepad>/leftShoulder",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "SwitchTarget",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "positive",
-                    "id": "7cee88f8-c028-48b4-a504-d37b7a2964b3",
-                    "path": "<Gamepad>/rightShoulder",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "SwitchTarget",
-                    "isComposite": false,
-                    "isPartOfComposite": true
                 }
             ]
         }
