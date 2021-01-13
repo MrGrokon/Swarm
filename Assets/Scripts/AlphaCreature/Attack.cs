@@ -29,8 +29,6 @@ public class Attack : MonoBehaviour
     [SerializeField] private float actualLightAttackCooldown;
 
     [SerializeField] private float actualHeavyAttackCooldown;
-    [SerializeField] private float heavyAttackDistance;
-    [SerializeField] private float lightAttackDistance;
     
     
 
@@ -115,9 +113,8 @@ public class Attack : MonoBehaviour
 
     private void ApplyLightDammage(Transform obj)
     {
-        var manager = obj.GetComponent(typeof(PreyAiManager)) as PreyAiManager;
         print("Light Attack");
-        if (obj && manager.invicible == false)
+        if (obj)
         {
             _ressource.GainRessource(RessourceManager.Resource.Hunger, 20f);
             PackManager.packInstance.gameObject.GetComponent<GeneratePrey>().listOfPrey.Remove(obj.gameObject);
@@ -129,28 +126,22 @@ public class Attack : MonoBehaviour
 
     private void ApplyAttack(string attackType)
     {
-        if(attackType == "Light" && AttackDetection() && Vector3.Distance(AttackDetection().position, transform.position) <= lightAttackDistance)
+        if(attackType == "Light")
             ApplyLightDammage(AttackDetection());
-        else if(attackType == "Heavy" && AttackDetection() && Vector3.Distance(AttackDetection().position, transform.position) <= heavyAttackDistance)
-        {
-            HeavyAttack(AttackDetection());
-        }
         else
         {
-            print("Pas d'attaque sur " +AttackDetection());
+            HeavyAttack(AttackDetection());
         }
     }
 
     private void HeavyAttack(Transform obj)
     {
-        var manager = obj.GetComponent(typeof(PreyAiManager)) as PreyAiManager;
         print("Heavy Attack");
-        if (obj && manager.invicible == false)
+        if (obj)
         {
             _ressource.GainRessource(RessourceManager.Resource.Hunger, 20f);
             PackManager.packInstance.gameObject.GetComponent<GeneratePrey>().listOfPrey.Remove(obj.gameObject);
-            //GetComponent<Rigidbody>().MovePosition(obj.transform.position);
-            transform.position = obj.transform.position;
+            GetComponent<Rigidbody>().MovePosition(obj.transform.position);
             obj.GetComponent<PreyLife>().InstantKill(); 
         }
     }

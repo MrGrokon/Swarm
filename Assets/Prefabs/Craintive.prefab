@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7424316917207132097}
   - component: {fileID: 8349743571219509647}
   - component: {fileID: 3190931337956736642}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Prey_renderer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,8 +26,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 116672314556047505}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: -0.109, z: 0.012963}
+  m_LocalScale: {x: 0.7407428, y: 0.7407428, z: 0.7407428}
   m_Children:
   - {fileID: 8485854983587322770}
   - {fileID: 4458283408303272859}
@@ -60,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 85e694a1f53db0c46a7ae343c4af390a, type: 2}
+  - {fileID: 2100000, guid: 7092c8a1326c5d64f9bd490ba0f2bdeb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -167,7 +167,11 @@ MonoBehaviour:
     type: 3}
   MinTimeToLeaveTrack: 15
   MaxTimeToLeaveTrack: 60
-  PreyTracks: []
+  PreyTracks:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!195 &8128917941845414919
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -344,7 +348,7 @@ GameObject:
   - component: {fileID: 1265926265456321747}
   - component: {fileID: 6878642071851824946}
   - component: {fileID: 1696184778571090895}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Eye_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -436,7 +440,7 @@ GameObject:
   - component: {fileID: 4837208422240755196}
   - component: {fileID: 6193523847154814602}
   - component: {fileID: 1964142907664185592}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Dust_PS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5191,7 +5195,7 @@ GameObject:
   - component: {fileID: 7707642851494771186}
   - component: {fileID: 8070296141553399322}
   - component: {fileID: 5708836305401925475}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Eye_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
