@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2584634481384568929}
   - component: {fileID: 4517095959734189727}
   - component: {fileID: -2419365787366524008}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Track
   m_TagString: Track
   m_Icon: {fileID: 0}
@@ -135,7 +135,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9174717999852118968}
   - component: {fileID: 191880309890661098}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: TrackRenderer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -265,7 +265,7 @@ GameObject:
   - component: {fileID: 578333869509524755}
   - component: {fileID: 2119525337517136721}
   - component: {fileID: 3360015990248494559}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

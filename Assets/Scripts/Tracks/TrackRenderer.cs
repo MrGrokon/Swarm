@@ -34,7 +34,9 @@ public class TrackRenderer : MonoBehaviour
             Debug.Log("Error: _LineRenderer not defined for " + this.name + " child");
             
         }
-        
+
+        GetComponentInChildren<MeshRenderer>().enabled = false;
+
     }
 
     private void Update() {
