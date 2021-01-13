@@ -93,7 +93,7 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 5
     m_NumAlphaKeys: 2
-  DistanceToPoint: 2
+  DistanceToPoint: 5
   TimeToBeDisplayed: 5
   lastPrevisuMesh: {fileID: 0}
 --- !u!114 &4517095959734189727

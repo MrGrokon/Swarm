@@ -29,6 +29,7 @@ public class PreyAiManager : MonoBehaviour
     public Animator _animator;
     public ParticleSystem Dust_PS;
     public bool takeDammage;
+    public float randomRadius;
 
     [Range(1f, 10f)]
     public float TimeToWaitForAbstractedRessources = 3f;
