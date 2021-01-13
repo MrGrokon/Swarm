@@ -26,8 +26,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 116672314556047505}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: -0.109, z: 0.012963}
+  m_LocalScale: {x: 0.7407428, y: 0.7407428, z: 0.7407428}
   m_Children:
   - {fileID: 8485854983587322770}
   - {fileID: 4458283408303272859}
@@ -319,8 +319,6 @@ MonoBehaviour:
   _animator: {fileID: 0}
   Dust_PS: {fileID: 0}
   takeDammage: 0
-  fixedDestination: {fileID: 0}
-  invicible: 0
   TimeToWaitForAbstractedRessources: 3
   _timePassed: 0
   scanInterval: 5

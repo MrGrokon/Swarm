@@ -325,7 +325,7 @@ MonoBehaviour:
   multiplierAddedAtEachInput: 1
   multiplierLosseOverTime: 1
   speed: 8
-  acceleration: 8
+  acceleration: 10
   maxSpeed: 8
   sprintState: 1
 --- !u!114 &8682247731385797725

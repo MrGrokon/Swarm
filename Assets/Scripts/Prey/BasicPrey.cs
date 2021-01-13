@@ -49,8 +49,7 @@ public class BasicPrey : PreyAiManager
         }
         #endregion
 
-        if(Vector3.Distance(_nm_Agent.destination, transform.position) <= ReachingDistance){
-            Debug.Log("Prey reached his destination");
+        if(_nm_Agent.remainingDistance <= ReachingDistance){
             //Do things when i reach my Position
             switch(MyState){
                 case PreyStates.Flee:
@@ -82,7 +81,6 @@ public class BasicPrey : PreyAiManager
                 Vector3.Distance(_nm_Agent.destination, transform.position) <= ReachingDistance)
             {
                 //If i found an Enemy
-                Debug.Log("Prey spot the player");
 
                 //TODO: Test au moment de la detection, selon les behavior a mettre en place:
                 //  -chercher à se cacher
@@ -105,7 +103,20 @@ public class BasicPrey : PreyAiManager
             Debug.Log("ChangeState to " + _state);
             MyState = _state;
             Change_NMA_Properties(_state);
+            OnChangedState(_state);
+        }
+    }
 
+    private void OnChangedState(PreyStates _state)
+    {
+        switch (_state)
+        {
+            case PreyStates.Flee:
+                //ce vector pointe parfois dans la direction du joueur, ce qui implique que le joueur peu la toucher sur son chemin de fuite
+                Vector3 FleeMotion = (Objects.Instance.Alpha.transform.position - this.transform.position) * -5;
+                NavMesh.SamplePosition(FleeMotion, out NavMeshHit hit, 1f, 1);
+                _nm_Agent.SetDestination(hit.position);
+                break;
         }
     }
     

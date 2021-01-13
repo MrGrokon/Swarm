@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.AI;
+using Debug = UnityEngine.Debug;
 
 public class Craintive : PreyAiManager
 {
@@ -41,7 +43,6 @@ public class Craintive : PreyAiManager
 
     private void Update()
     {
-        print(_nm_Agent.destination);
         #region State Debbuging
         if(MyState == PreyStates.Flee){
             Debug.DrawLine(this.transform.position, _nm_Agent.destination, Color.red);
@@ -60,10 +61,10 @@ public class Craintive : PreyAiManager
             switch(MyState){
                 case PreyStates.Flee:
                 //TODO: passer en Mode Hide quelques secondes si je le joueur n'est plus a proximité de lui
-                //_nm_Agent.SetDestination(GetRandomRoamingPosition());
+                _nm_Agent.SetDestination(GetRandomRoamingPosition());
                 _animator.SetBool("IsRunning", false);
                 Dust_PS.Stop();
-                //ChangeState(PreyStates.Roam);
+                ChangeState(PreyStates.Roam);
                 break;
 
                 case PreyStates.LookingForWater:
@@ -102,10 +103,6 @@ public class Craintive : PreyAiManager
                 _animator.SetBool("IsRunning", true);
                 Dust_PS.Play();
                 ChangeState(PreyStates.Flee);
-                //ce vector pointe parfois dans la direction du joueur, ce qui implique que le joueur peu la toucher sur son chemin de fuite
-                Vector3 FleeMotion = (Objects.Instance.Alpha.transform.position - this.transform.position) * -10;
-                NavMesh.SamplePosition(FleeMotion, out NavMeshHit hit, 1f, 1);
-                _nm_Agent.SetDestination(GetRandomRoamingPosition());
             }
            
         }
@@ -117,7 +114,20 @@ public class Craintive : PreyAiManager
             Debug.Log("ChangeState to " + _state);
             MyState = _state;
             Change_NMA_Properties(_state);
+            OnChangedState(_state);
+        }
+    }
 
+    private void OnChangedState(PreyStates _state)
+    {
+        switch (_state)
+        {
+            case PreyStates.Flee:
+                //ce vector pointe parfois dans la direction du joueur, ce qui implique que le joueur peu la toucher sur son chemin de fuite
+                Vector3 FleeMotion = (Objects.Instance.Alpha.transform.position - this.transform.position) * -5;
+                NavMesh.SamplePosition(FleeMotion, out NavMeshHit hit, 1f, 1);
+                _nm_Agent.SetDestination(hit.position);
+                break;
         }
     }
     
@@ -184,7 +194,7 @@ public class Craintive : PreyAiManager
 
     private Vector3 GetRandomRoamingPosition(){
         //TODO: get a random position on the walkable NavMesh
-        Vector3 _randomPos = Random.insideUnitSphere * 10f + this.transform.position;
+        Vector3 _randomPos = Random.insideUnitSphere * randomRadius + this.transform.position;
         NavMeshHit _hit;
         NavMesh.SamplePosition(_randomPos, out _hit, Mathf.Infinity, 1); // 1 == au mask d'area Walkable du navMash
         return _hit.position;

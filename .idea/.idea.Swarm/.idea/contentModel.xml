@@ -73,7 +73,6 @@
             </e>
           </e>
         </e>
-        <e p="PlayerStart.cs" t="Include" />
         <e p="Scripts" t="Include">
           <e p="AlphaCreature" t="Include">
             <e p="Attack.cs" t="Include" />
@@ -123,18 +122,12 @@
             <e p="AiSoundDetection.cs" t="Include" />
             <e p="BasicPrey.cs" t="Include" />
             <e p="Craintive.cs" t="Include" />
-            <e p="herdManager.cs" t="Include" />
-            <e p="HerdPrey.cs" t="Include" />
             <e p="PreyAiManager.cs" t="Include" />
             <e p="PreyLife.cs" t="Include" />
             <e p="PreyProfile.cs" t="Include" />
             <e p="Robuste.cs" t="Include" />
             <e p="Terrier.cs" t="Include" />
             <e p="TracksCreatorOverTime.cs" t="Include" />
-          </e>
-          <e p="Soutenance" t="Include">
-            <e p="Spawner.cs" t="Include" />
-            <e p="SpawnerTrigger.cs" t="Include" />
           </e>
           <e p="Tracks" t="Include">
             <e p="DestroyTrackOverTime.cs" t="Include" />

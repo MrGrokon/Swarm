@@ -17,7 +17,7 @@ public class PreyAiManager : MonoBehaviour
     }
     
     [Header("Basic AI Parameters")]
-    [Range(1f, 20f)]
+    [Range(1f, 3f)]
     public float ReachingDistance = 1.5f; 
     public PreyStates MyState;
     public PreyProfile MyProfile;
@@ -29,8 +29,7 @@ public class PreyAiManager : MonoBehaviour
     public Animator _animator;
     public ParticleSystem Dust_PS;
     public bool takeDammage;
-    public Transform fixedDestination;
-    public bool invicible;
+    public float randomRadius;
 
     [Range(1f, 10f)]
     public float TimeToWaitForAbstractedRessources = 3f;
