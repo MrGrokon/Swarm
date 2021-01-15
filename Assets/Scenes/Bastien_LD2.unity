@@ -109,7 +109,7 @@ NavMeshSettings:
     agentRadius: 0.5
     agentHeight: 2
     agentSlope: 45
-    agentClimb: 0.4
+    agentClimb: 0.7
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
     minRegionArea: 2
@@ -6770,6 +6770,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2027951071}
     m_Modifications:
+    - target: {fileID: 750758234453049110, guid: 388d9f3dcc5f77c44ab1c730c85866d1,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7041910269008906693, guid: 388d9f3dcc5f77c44ab1c730c85866d1,
         type: 3}
       propertyPath: m_Name
