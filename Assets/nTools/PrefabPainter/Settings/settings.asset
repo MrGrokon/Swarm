@@ -279,7 +279,7 @@ MonoBehaviour:
       - gameObject: {fileID: 0}
       - gameObject: {fileID: 0}
       selectedSlot: 0
-      selected: 1
+      selected: 0
       colorTag: 0
     - name: ObstacleTree1
       settings:
@@ -811,7 +811,7 @@ MonoBehaviour:
       - gameObject: {fileID: 0}
       - gameObject: {fileID: 0}
       selectedSlot: 0
-      selected: 0
+      selected: 1
       colorTag: 0
     - name: Track
       settings:
@@ -2281,7 +2281,7 @@ MonoBehaviour:
   placeUnder: 2
   overwritePrefabLayer: 0
   prefabPlaceLayer: 0
-  groupPrefabs: 0
+  groupPrefabs: 1
   ppSnapRotationValue: 15
   ppSnapScaleValue: 0.1
   ppSnapRotation: 1
