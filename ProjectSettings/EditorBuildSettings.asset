@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Game.unity
-    guid: d8dd58fc73310f941b11ca2f9cf52cde
+    path: Assets/Scenes/Bastien_LD.unity
+    guid: 62e1256295e9614469cb4234b69e7ace
   m_configObjects: {}

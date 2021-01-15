@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2584634481384568929}
   - component: {fileID: 4517095959734189727}
   - component: {fileID: -2419365787366524008}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Track
   m_TagString: Track
   m_Icon: {fileID: 0}
@@ -63,6 +63,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PreyRelated: {fileID: 0}
   MyTrackIndex: 0
+  DebugLineRenderer: 0
   FreshnessGradient:
     serializedVersion: 2
     key0: {r: 1, g: 0, b: 0, a: 1}
@@ -92,7 +93,7 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 5
     m_NumAlphaKeys: 2
-  DistanceToPoint: 2
+  DistanceToPoint: 5
   TimeToBeDisplayed: 5
   lastPrevisuMesh: {fileID: 0}
 --- !u!114 &4517095959734189727
@@ -123,7 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76a4e73c1ece4b245ae5575619c981f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToDestroy: 15
+  timeToDestroy: 30
 --- !u!1 &6439192239389745614
 GameObject:
   m_ObjectHideFlags: 0
@@ -134,7 +135,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9174717999852118968}
   - component: {fileID: 191880309890661098}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: TrackRenderer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -264,7 +265,7 @@ GameObject:
   - component: {fileID: 578333869509524755}
   - component: {fileID: 2119525337517136721}
   - component: {fileID: 3360015990248494559}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -280,7 +281,7 @@ Transform:
   m_GameObject: {fileID: 7400525182015867173}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -0.328, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.5157, z: 1}
   m_Children: []
   m_Father: {fileID: 2622212310027546029}
   m_RootOrder: 0

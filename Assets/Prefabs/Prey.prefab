@@ -93,12 +93,14 @@ GameObject:
   - component: {fileID: 1853304259910867412}
   - component: {fileID: 4664549324402317925}
   - component: {fileID: 1900186649020025721}
-  - component: {fileID: 7339573845739339711}
   - component: {fileID: 8128917941845414919}
   - component: {fileID: 6394319303653858047}
   - component: {fileID: 6040251906363349308}
   - component: {fileID: 9078144590713663007}
-  m_Layer: 0
+  - component: {fileID: -1855441763366619793}
+  - component: {fileID: -7425912678644063657}
+  - component: {fileID: 6514161345072321927}
+  m_Layer: 10
   m_Name: Prey
   m_TagString: Prey
   m_Icon: {fileID: 0}
@@ -163,26 +165,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TrackPrefab: {fileID: 2622212310027546019, guid: 231e5a63cde58af49aaa0fa98bd94fa5,
     type: 3}
-  MinTimeToLeaveTrack: 5
-  MaxTimeToLeaveTrack: 25
+  MinTimeToLeaveTrack: 15
+  MaxTimeToLeaveTrack: 60
   PreyTracks: []
---- !u!114 &7339573845739339711
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1853304259910867415}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c580a843f463c646821543fb2785c62, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ReachingDistance: 1.5
-  MyState: 0
-  MyProfile: {fileID: 2296511828036664000, guid: 6fd61dbf2152c6040b830979bb0a0fbb,
-    type: 3}
-  TimeToWaitForAbstractedRessources: 3
 --- !u!195 &8128917941845414919
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -268,6 +253,83 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!23 &-1855441763366619793
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1853304259910867415}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!114 &-7425912678644063657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1853304259910867415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdf8cc8dec58a71408c4dc6b01fb8c85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ReachingDistance: 1.5
+  MyState: 0
+  MyProfile: {fileID: 2296511828036664000, guid: 6fd61dbf2152c6040b830979bb0a0fbb,
+    type: 3}
+  _nm_Agent: {fileID: 0}
+  myDetector: {fileID: 0}
+  mySonorDetection: {fileID: 0}
+  _abs_Resc_Manager: {fileID: 0}
+  _animator: {fileID: 0}
+  Dust_PS: {fileID: 0}
+  takeDammage: 0
+  TimeToWaitForAbstractedRessources: 3
+  _timePassed: 0
+--- !u!114 &6514161345072321927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1853304259910867415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7dd9752cd0f842040afa5353be72a07a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifePoint: 1
 --- !u!1 &2033578018791067581
 GameObject:
   m_ObjectHideFlags: 0

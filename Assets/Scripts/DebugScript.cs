@@ -17,11 +17,6 @@ public class DebugScript : MonoBehaviour
         {
             Reset();
         }
-
-        if (InputTester.inputInstance._playerInputs.Actions.ChangeCamera.triggered)
-        {
-            ChangeCamera();
-        }
     }
 
     private void Reset()
@@ -29,17 +24,4 @@ public class DebugScript : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
-    private void ChangeCamera()
-    {
-        Cameras[cameraNumber].SetActive(false);
-        
-        cameraNumber++;
-        if (cameraNumber < 0)
-        {
-            cameraNumber = Cameras.Count - 1;
-        }
-        else if (cameraNumber > Cameras.Count - 1)
-            cameraNumber = 0;
-        Cameras[cameraNumber].SetActive(true);
-    }
 }

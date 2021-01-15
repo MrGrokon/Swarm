@@ -10,6 +10,7 @@ public class TrackRenderer : MonoBehaviour
     public int MyTrackIndex;
 
     [Header("Display Parameters")]
+    public bool DebugLineRenderer = false;
     public Gradient FreshnessGradient;
     public float DistanceToPoint = 4f;
     [Range(1f, 10f)]
@@ -33,7 +34,9 @@ public class TrackRenderer : MonoBehaviour
             Debug.Log("Error: _LineRenderer not defined for " + this.name + " child");
             
         }
-        
+
+        GetComponentInChildren<MeshRenderer>().enabled = false;
+
     }
 
     private void Update() {
@@ -70,15 +73,19 @@ public class TrackRenderer : MonoBehaviour
     private void DrawLineToward(Vector3 PositionTargeted){  //Création de la ligne de traque
         //drawn the track Info toward the next target or prey
         Debug.DrawLine(this.transform.position, PositionTargeted, Color.magenta);
+
         #region track info by line renderer
-        _Line.enabled = true;
+        if(DebugLineRenderer){
+            _Line.enabled = true;
         // _nextPos not right but Debug.drawnLine working pretty well, to be solved later
         Vector3 _nextPos = (this.transform.position - PositionTargeted ) * DistanceToPoint;
         _Line.SetPosition(0, this.transform.position);
         _Line.SetPosition(1, PositionTargeted);
         _Line.startColor = GetGradientColorOverFreshness();
         _Line.endColor = GetGradientColorOverFreshness();
+        }
         #endregion
+        
         //TODO: Theo changes
         CreateVisualMesh();
     }
@@ -103,18 +110,18 @@ public class TrackRenderer : MonoBehaviour
         Vector2[] uv = new Vector2[3];
         int[] triangles = new int[3];
 
-        AngleA = GetComponent<TrackInfo>().DirFromAngle(-GetComponent<TrackInfo>().actualAngle / 2, true);
+        AngleA = GetComponent<TrackInfo>().DirFromAngle(GetComponent<TrackInfo>().actualAngle / 2, true);
         AngleB = new Vector3(-AngleA.x, AngleA.y, AngleA.z);
         
         
         vertices[0] = new Vector3(0,0);
-        vertices[1] = AngleA * DistanceToPoint;
-        vertices[2] = AngleB * DistanceToPoint;
+        vertices[1] = AngleA * -DistanceToPoint;
+        vertices[2] = AngleB * -DistanceToPoint;
         
 
         uv[0] = new Vector3(0,1);
-        uv[1] = AngleA * DistanceToPoint;
-        uv[2] = AngleB * DistanceToPoint;
+        uv[1] = AngleA * -DistanceToPoint;
+        uv[2] = AngleB * -DistanceToPoint;
 
         triangles[0] = 0;
         triangles[1] = 1;
@@ -152,19 +159,7 @@ public class TrackRenderer : MonoBehaviour
             lastPrevisuMesh.GetComponent<Renderer>().material = material;
         }
         
-        
-
+        lastPrevisuMesh.transform.LookAt(GetNextTrack());
     }
 
-    private void OnDrawGizmos()
-    {
-        AngleA = GetComponent<TrackInfo>().DirFromAngle(-GetComponent<TrackInfo>().actualAngle / 2, false);
-        //AngleB = GetComponent<TrackInfo>().DirFromAngle(GetComponent<TrackInfo>().actualAngle / 2, false);
-        AngleB = new Vector3(-AngleA.x, AngleA.y, AngleA.z);
-        Gizmos.color = Color.blue;
-        Gizmos.DrawWireSphere(transform.position + AngleA * DistanceToPoint, 1f);
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position + AngleB * DistanceToPoint, 1f);
-        
-    }
 }

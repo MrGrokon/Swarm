@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{33c555b9-7f10-431a-a246-f4ef93f41747}">
+		<property name="assetPath">
+			<value>GORE Squeeze flesh with squealing air pressure.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>192</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>9.7970364583333325</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{f8ea1947-53de-4ea8-8fb1-0efce7ea8ea4}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -22,22 +22,6 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Bridge R/L",
-                    "type": "Value",
-                    "id": "57bc3603-7e8e-4bca-bd26-5f930e58a9fe",
-                    "expectedControlType": "Axis",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
-                    "name": "Bridge F/B",
-                    "type": "Value",
-                    "id": "92737d9d-605a-4bc8-ab84-84cdf834ba80",
-                    "expectedControlType": "Axis",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
                     "name": "RotateCameraY",
                     "type": "Value",
                     "id": "30eb780b-7b1c-434f-9c28-d242e5f7c916",
@@ -102,33 +86,25 @@
                     "interactions": ""
                 },
                 {
-                    "name": "LT",
-                    "type": "Button",
-                    "id": "e4311cd1-5eb5-4912-ab45-9ea581361d67",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
                     "name": "Attack",
                     "type": "Button",
                     "id": "c473b79d-657b-427a-ac0e-00df27d82814",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "Hold"
                 },
                 {
-                    "name": "ChangeCamera",
+                    "name": "Reset",
                     "type": "Button",
-                    "id": "2974958f-a61a-41b2-8639-a3f581254474",
+                    "id": "5126b68e-a045-4247-94d4-a37a28e29b46",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
                 },
                 {
-                    "name": "Reset",
+                    "name": "SwitchTarget",
                     "type": "Button",
-                    "id": "a4772163-e23c-4861-9b01-cdf58e9dc673",
+                    "id": "8f45ddd9-eace-4809-acba-c7bfc2fc45b5",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -137,6 +113,14 @@
                     "name": "Climb",
                     "type": "Button",
                     "id": "5e72a2dd-47ac-490f-895a-038ea3828592",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Targeting",
+                    "type": "Button",
+                    "id": "39aca463-fc6b-4b62-b347-2011029bb249",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -162,28 +146,6 @@
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "Move F/B",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "8dbfd0dc-38ce-49f3-b9ad-64b921f6af14",
-                    "path": "<Gamepad>/rightStick/x",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Bridge R/L",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "1911c0d5-9ce5-4416-b362-016d18b49a18",
-                    "path": "<Gamepad>/rightStick/y",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Bridge F/B",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -255,23 +217,12 @@
                 },
                 {
                     "name": "",
-                    "id": "a43ca5b8-b82d-4776-b0b4-96d6fe8f8650",
-                    "path": "<Gamepad>/rightStickPress",
+                    "id": "4141c20f-51c2-4ac6-91b3-41a42efd0dfd",
+                    "path": "<Gamepad>/rightStick/x",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "ChangeCamera",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "2f89821a-c720-4058-bc68-0b9c2366b9e6",
-                    "path": "<Gamepad>/start",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Reset",
+                    "action": "RotateCameraY",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -316,6 +267,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "RotateCameraY",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5e769711-77b3-4789-8748-b3983b0b2286",
+                    "path": "<Gamepad>/rightStickPress",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Targeting",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "258186b5-fada-4edd-8ecf-69c7dcd8efff",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Reset",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{4824d688-239c-4cac-ae9a-9f2365e5f052}">
+		<property name="assetPath">
+			<value>Snow Impact Stomp Hard.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>96</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>4.7963541666666663</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{f8ea1947-53de-4ea8-8fb1-0efce7ea8ea4}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -58,24 +58,21 @@ public class CreatureMover : MonoBehaviour
         if (InputTester.inputInstance.direction != Vector3.zero)
         {
             actualDirection = direction;
+            transform.rotation = Quaternion.LookRotation(new Vector3(Camera.main.transform.forward.x,0, Camera.main.transform.forward.z));
         }
 
-        //Directions de la caméra
-        Vector3 fwdCameraDirection = new Vector3(Camera.main.transform.forward.x, 0, Camera.main.transform.forward.z);
-        Vector3 rgtCameraDirection = new Vector3(Camera.main.transform.right.x, 0, Camera.main.transform.right.z); 
         
-        Debug.DrawRay(Camera.main.transform.position, fwdCameraDirection , Color.blue);
 
         #region movementRegion
 
         if (actualDirection.z != 0)
         {
-            _rb.transform.position += fwdCameraDirection * actualDirection.z * speed * speedMultiplier * Time.fixedDeltaTime;
+            _rb.transform.position += Camera.main.transform.forward * actualDirection.z * speed * speedMultiplier * Time.fixedDeltaTime;
         }
 
         if (actualDirection.x != 0)
         {
-            _rb.transform.position += rgtCameraDirection * actualDirection.x * speed * speedMultiplier * Time.fixedDeltaTime;
+            _rb.transform.position += Camera.main.transform.right * actualDirection.x * speed * speedMultiplier * Time.fixedDeltaTime;
         }
         
         if (speedMultiplier < 1.2f)
