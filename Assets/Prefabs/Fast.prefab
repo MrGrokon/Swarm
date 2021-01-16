@@ -205,8 +205,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a2fd233881e88643881e10340cbbf2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viewRadius: 10
-  viewAngle: 70
+  viewRadius: 18
+  viewAngle: 90
   targetMask:
     serializedVersion: 2
     m_Bits: 512
@@ -318,8 +318,7 @@ MonoBehaviour:
   _animator: {fileID: 0}
   Dust_PS: {fileID: 0}
   takeDammage: 0
-  fixedDestination: {fileID: 0}
-  invicible: 0
+  randomRadius: 0
   TimeToWaitForAbstractedRessources: 3
   _timePassed: 0
 --- !u!114 &7883882698611547573

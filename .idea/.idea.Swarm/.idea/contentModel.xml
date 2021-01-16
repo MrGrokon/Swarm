@@ -154,6 +154,7 @@
           <e p="NavMeshSurfaceModifierVolumeTests.cs" t="Include" />
           <e p="NavMeshSurfaceTests.cs" t="Include" />
         </e>
+        <e p="TrackDetector.cs" t="Include" />
       </e>
       <e p="NavMeshComponents.csproj" t="IncludeRecursive" />
       <e p="NavMeshComponentsEditor.csproj" t="IncludeRecursive" />

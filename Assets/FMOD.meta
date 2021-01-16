@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/NewScene/Graphics/Debug Materials/Materials.meta
+guid: 17cc4f61ff4b21a4184c89c21cdb69d9
+=======
 guid: 72ad1251a2c3793408b2de47b3409450
+>>>>>>> main:Assets/FMOD.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
