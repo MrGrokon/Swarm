@@ -52,13 +52,6 @@ public class BasicPrey : PreyAiManager
         if(_nm_Agent.remainingDistance <= ReachingDistance){
             //Do things when i reach my Position
             switch(MyState){
-                case PreyStates.Flee:
-                //TODO: passer en Mode Hide quelques secondes si je le joueur n'est plus a proximité de lui
-                _nm_Agent.SetDestination(GetRandomRoamingPosition());
-                _animator.SetBool("IsRunning", false);
-                Dust_PS.Stop();
-                ChangeState(PreyStates.Roam);
-                break;
 
                 case PreyStates.LookingForWater:
                 //TODO: rester quelques seconde en position le temps de remplir ses ressources
@@ -94,6 +87,14 @@ public class BasicPrey : PreyAiManager
                 Vector3 FleeMotion = (Objects.Instance.Alpha.transform.position - this.transform.position) * -1;
                 _nm_Agent.SetDestination(FleeMotion);
             }
+        }
+        else if (!myDetector.FindVisibleTargets() && MyState == PreyStates.Flee ||
+                 !mySonorDetection.FindVisibleTargets() && MyState == PreyStates.Flee)
+        {
+            _nm_Agent.SetDestination(GetRandomRoamingPosition());
+            _animator.SetBool("IsRunning", false);
+            Dust_PS.Stop();
+            ChangeState(PreyStates.Roam);
         }
     }
     #endregion

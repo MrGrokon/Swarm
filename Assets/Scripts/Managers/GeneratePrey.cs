@@ -29,7 +29,7 @@ public class GeneratePrey : MonoBehaviour
             float X = Random.Range(minMaxX.x, minMaxX.y);
             float Y = Random.Range(minMaxY.x, minMaxY.y);
             NavMeshHit hit;
-            NavMesh.SamplePosition(new Vector3(X,terrain.transform.position.y, Y), out hit, 200f, NavMesh.AllAreas); //Sample la position donnée sur le navmesh et peut retourner un bool
+            NavMesh.SamplePosition(transform.position + new Vector3(X,terrain.transform.position.y, Y), out hit, 200f, NavMesh.AllAreas); //Sample la position donnée sur le navmesh et peut retourner un bool
             var prey = Instantiate(preyPrefab, hit.position, Quaternion.identity);
             listOfPrey.Add(prey);
         }

@@ -59,13 +59,6 @@ public class Craintive : PreyAiManager
             Debug.Log("Prey reached his destination");
             //Do things when i reach my Position
             switch(MyState){
-                case PreyStates.Flee:
-                //TODO: passer en Mode Hide quelques secondes si je le joueur n'est plus a proximité de lui
-                _nm_Agent.SetDestination(GetRandomRoamingPosition());
-                _animator.SetBool("IsRunning", false);
-                Dust_PS.Stop();
-                ChangeState(PreyStates.Roam);
-                break;
 
                 case PreyStates.LookingForWater:
                 //TODO: rester quelques seconde en position le temps de remplir ses ressources
@@ -106,6 +99,14 @@ public class Craintive : PreyAiManager
             }
            
         }
+        else if (!myDetector.FindVisibleTargets() && MyState == PreyStates.Flee ||
+                 !mySonorDetection.FindVisibleTargets() && MyState == PreyStates.Flee)
+        {
+            _nm_Agent.SetDestination(GetRandomRoamingPosition());
+            _animator.SetBool("IsRunning", false);
+            Dust_PS.Stop();
+            ChangeState(PreyStates.Roam);
+        }
     }
     #endregion
 
@@ -124,7 +125,7 @@ public class Craintive : PreyAiManager
         {
             case PreyStates.Flee:
                 //ce vector pointe parfois dans la direction du joueur, ce qui implique que le joueur peu la toucher sur son chemin de fuite
-                Vector3 FleeMotion = (Objects.Instance.Alpha.transform.position - this.transform.position) * -5;
+                Vector3 FleeMotion = (Objects.Instance.Alpha.transform.position - this.transform.position).normalized * -10;
                 NavMesh.SamplePosition(FleeMotion, out NavMeshHit hit, 1f, 1);
                 _nm_Agent.SetDestination(hit.position);
                 break;
