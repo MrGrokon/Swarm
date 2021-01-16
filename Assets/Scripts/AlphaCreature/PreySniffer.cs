@@ -38,12 +38,14 @@ public class PreySniffer : MonoBehaviour
         private void OnTriggerEnter(Collider _col) { //Ajout de la traçe dans la liste du joueur comme étant analysable
             if(_col.tag == "Track" && ProofsList.Contains(_col.gameObject) == false){
                 ProofsList.Add(_col.gameObject);
+                Debug.Log("barbabchouch " +_col.gameObject.GetComponent<MeshRenderer>().material.shader.GetPropertyType(6));
             }
         }
 
         private void OnTriggerExit(Collider _col) { //Suppression de la traçe dans la liste du joueur comme étant analysable
             if(_col.tag == "Track" && ProofsList.Contains(_col.gameObject)){
                 ProofsList.Remove(_col.gameObject);
+                _col.gameObject.GetComponent<MeshRenderer>().material.SetInt("IsActive", 0);
             }
         }
         #endregion
