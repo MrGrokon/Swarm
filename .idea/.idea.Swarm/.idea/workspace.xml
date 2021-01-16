@@ -21,20 +21,19 @@
   <component name="ChangeListManager">
     <list default="true" id="e9a9fd44-a60f-4fbc-b03b-f25159acb4b3" name="Default Changelist" comment="Il a pas mis le putain de navmesh">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/projectSettingsUpdater.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/projectSettingsUpdater.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Default_Changelist1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Default_Changelist1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Merge_at_07_01_2021_21_45__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Merge_at_07_01_2021_21_45__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Update_at_13_01_2021_23_12__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Update_at_13_01_2021_23_12__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Update_at_13_01_2021_23_13__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Update_at_13_01_2021_23_13__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/unnamed.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/unnamed.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Checkout_at_07_01_2021_21_25_[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Checkout_at_07_01_2021_21_25__Default_Changelist_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Merge_at_07_01_2021_21_26_[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Merge_at_07_01_2021_21_26__Default_Changelist_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Merge_at_07_01_2021_21_27_[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Merge_at_07_01_2021_21_27__Default_Changelist_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Merge_at_07_01_2021_21_45_[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Merge_at_07_01_2021_21_45__Default_Changelist_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Update_at_07_01_2021_21_27_[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Update_at_07_01_2021_21_27__Default_Changelist_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Alpha Creature.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Alpha Creature.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/PlayerGroup.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/PlayerGroup.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Track.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Track.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Bastien_LD2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Bastien_LD2.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tracks/TrackRenderer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tracks/TrackRenderer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/--MAP--.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/--MAP--.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,14 +54,19 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/AlphaCreature/PackOrderer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.6.3/Runtime/Core/AxisState.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Prey/Craintive.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Théo/Documents/GitHub/Swarm/Swarm/Assets/Scripts/Managers/GeneratePrey.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://F:/UnityProject/CsLike/CsLike/Assets/Scripts/BotTargeting.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CharacterController/InputTester.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CharacterController/PlayerInputs.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Théo/Documents/GitHub/Swarm/Swarm/Assets/Scenes/Game.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/AlphaCreature/Targeting.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/GeneratePrey.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://F:/UnityProject/CsLike/CsLike/Assets/Scripts/BotDetection.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/BetaCreature/IntelligenceInterface.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/Objects.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Théo/Documents/GitHub/Swarm/Swarm/Assets/Scenes/Game.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Théo/Documents/GitHub/Swarm/Swarm/Assets/Prefabs/Alpha Creature.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Théo/Documents/GitHub/Swarm/Swarm/Assets/Scripts/AlphaCreature/CreatureMover.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.0.0/InputSystem/Utilities/DelegateHelpers.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/nTools/PrefabPainter/Scripts/Editor/PrefabPainter.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Prey/PreyLife.cs" root0="FORCE_HIGHLIGHTING" />
@@ -89,7 +93,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/RessourceManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/BetaCreature/CreatureIntelligence.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Common/HealthSysteme.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Managers/GeneratePrey.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Managers/PackManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Prey/AiDetection.cs" />
         <option value="$PROJECT_DIR$/Assets/TrackInfo.cs" />
@@ -110,7 +113,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/Attack.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/Targeting.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/ThridPersonCamera.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CreatureMover.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Prey/HerdPrey.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Prey/AiSoundDetection.cs" />
         <option value="$PROJECT_DIR$/Assets/herdManager.cs" />
@@ -120,8 +122,10 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Prey/Terrier.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Prey/Robuste.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Prey/BasicPrey.cs" />
-        <option value="$PROJECT_DIR$/Assets/TrackDetector.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tracks/TrackRenderer.cs" />
+        <option value="$PROJECT_DIR$/Assets/TrackDetector.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Managers/GeneratePrey.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CreatureMover.cs" />
       </list>
     </option>
   </component>
@@ -234,7 +238,9 @@
       <workItem from="1609598730331" duration="789000" />
       <workItem from="1609860842155" duration="3995000" />
       <workItem from="1610378285028" duration="630000" />
-      <workItem from="1610579330897" duration="713000" />
+      <workItem from="1610579330897" duration="938000" />
+      <workItem from="1610733911456" duration="2187000" />
+      <workItem from="1610754445812" duration="1528000" />
     </task>
     <task id="LOCAL-00001" summary="Camera system implémenté">
       <created>1606123669149</created>
@@ -446,7 +452,35 @@
       <option name="project" value="LOCAL" />
       <updated>1610106054750</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="[1.1.4.2] Ajout du track detector qui affiche les trâces autour du joueur">
+      <created>1610580240708</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1610580240708</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Ajout du FMOD">
+      <created>1610734062867</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1610734062867</updated>
+    </task>
+    <task id="LOCAL-00033" summary="[1.1.4.7] Modification et amélioration du spawner">
+      <created>1610755061790</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1610755061790</updated>
+    </task>
+    <task id="LOCAL-00034" summary="[1.1.4.8] Correction du bug qui faisais voler le joueur en début de partie">
+      <created>1610755963047</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1610755963047</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -478,10 +512,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Chery-pick" />
-    <MESSAGE value="Ajout du camera Rotate" />
-    <MESSAGE value="Fix des spawn des proies,&#10;Clamp des valeur de faim et vie,&#10;Possible fix du trail qui ne dépop pas" />
-    <MESSAGE value="Add flee state, field of view visualization for the AI&#10;Create visual detection for AI" />
     <MESSAGE value="Fix AI naviguation problems&#10;Add base mesh rendering for previsualization&#10;Fix navmesh" />
     <MESSAGE value=" 0.5.1.0 : Fix TrackRenderer trail" />
     <MESSAGE value=" 0.5.1.1 : Ajout du sound detection" />
@@ -503,7 +533,11 @@
     <MESSAGE value="Il a pas mis le putain de navmesh" />
     <MESSAGE value="[1.1.3.5] Fix du problème d'IA qui marchait sur elle même , augmentation de la distance de roaming, Fix du l'IA qui ne savait pas où allé lors de la fuite, Augmentation de la taille d'affichage des tracks renderer, Augmentation de la distance de fuite des prey" />
     <MESSAGE value="Mise au point du main" />
-    <option name="LAST_COMMIT_MESSAGE" value="Mise au point du main" />
+    <MESSAGE value="[1.1.4.2] Ajout du track detector qui affiche les trâces autour du joueur" />
+    <MESSAGE value="Ajout du FMOD" />
+    <MESSAGE value="[1.1.4.7] Modification et amélioration du spawner" />
+    <MESSAGE value="[1.1.4.8] Correction du bug qui faisais voler le joueur en début de partie" />
+    <option name="LAST_COMMIT_MESSAGE" value="[1.1.4.8] Correction du bug qui faisais voler le joueur en début de partie" />
   </component>
   <component name="WindowStateProjectService">
     <state x="184" y="126" key="MergeDialog" timestamp="1610111580298">
@@ -522,14 +556,14 @@
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="92" y="132" width="1736" height="856" key="VCS.FileHistoryDialog/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1609519868736" />
-    <state x="552" y="293" key="Vcs.Push.Dialog.v2" timestamp="1610577725127">
+    <state x="552" y="293" key="Vcs.Push.Dialog.v2" timestamp="1610734519577">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
-    <state x="552" y="293" key="Vcs.Push.Dialog.v2/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1610577725127" />
-    <state x="777" y="474" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1610576070080">
+    <state x="552" y="293" key="Vcs.Push.Dialog.v2/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1610734519577" />
+    <state x="777" y="474" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1610755680298">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
-    <state x="777" y="474" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1610576070080" />
+    <state x="777" y="474" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1610755680298" />
     <state x="732" y="274" key="git4idea.branch.GitSmartOperationDialog" timestamp="1610577647801">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>

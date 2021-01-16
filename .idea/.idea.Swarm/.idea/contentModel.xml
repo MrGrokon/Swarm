@@ -30,6 +30,63 @@
             <e p="SpawnPrefabOnKeyDown.cs" t="Include" />
           </e>
         </e>
+        <e p="FMOD" t="Include">
+          <e p="SoundList" t="Include">
+            <e p="Metadata" t="Include">
+              <e p="Asset" t="Include">
+                <e p="{f8ea1947-53de-4ea8-8fb1-0efce7ea8ea4}.xml" t="Include" />
+              </e>
+              <e p="AudioFile" t="Include">
+                <e p="{082dceb0-b031-4170-85d7-939fddcbdcc9}.xml" t="Include" />
+                <e p="{2f05690b-a336-42a3-b468-bc4260808085}.xml" t="Include" />
+                <e p="{33c555b9-7f10-431a-a246-f4ef93f41747}.xml" t="Include" />
+                <e p="{4824d688-239c-4cac-ae9a-9f2365e5f052}.xml" t="Include" />
+                <e p="{5d2aefcc-69c5-4f4d-8b1a-3ed4aae20c91}.xml" t="Include" />
+                <e p="{6b0a5cfa-d9fa-410e-89ae-4c144795621f}.xml" t="Include" />
+                <e p="{71845ee4-39bf-466d-8914-29678141c2ec}.xml" t="Include" />
+                <e p="{97c24c3e-d8b9-4663-8e9e-2b94f060db5b}.xml" t="Include" />
+                <e p="{b6960aa9-766b-4695-b058-34c312a183ab}.xml" t="Include" />
+                <e p="{ba498baf-3c96-4bb9-a84c-3c5b212e0d71}.xml" t="Include" />
+              </e>
+              <e p="Bank" t="Include">
+                <e p="{0e23ad48-157f-4374-9550-ae50d3591ef8}.xml" t="Include" />
+              </e>
+              <e p="BankFolder" t="Include">
+                <e p="{6870e864-6374-4b35-8938-2b4aeb8f7631}.xml" t="Include" />
+              </e>
+              <e p="EffectPresetFolder" t="Include">
+                <e p="{25c41762-e7f1-43a1-a5e4-9d02dc34bd87}.xml" t="Include" />
+              </e>
+              <e p="EncodingSetting" t="Include">
+                <e p="{0486ff56-072f-4b84-beb6-a3bf200949fb}.xml" t="Include" />
+              </e>
+              <e p="Event" t="Include">
+                <e p="{01401652-0f94-474b-b878-1a799942008e}.xml" t="Include" />
+                <e p="{183b7cd6-f545-458e-995f-0b020d5e83ec}.xml" t="Include" />
+                <e p="{78a90e26-9b95-4278-9ea8-f3be1f145110}.xml" t="Include" />
+              </e>
+              <e p="EventFolder" t="Include">
+                <e p="{d76db21c-79aa-4b73-9089-e291f7d1bc63}.xml" t="Include" />
+              </e>
+              <e p="Master.xml" t="Include" />
+              <e p="Mixer.xml" t="Include" />
+              <e p="ParameterPresetFolder" t="Include">
+                <e p="{628ce587-b63a-4a08-bde8-ce519534251b}.xml" t="Include" />
+              </e>
+              <e p="Platform" t="Include">
+                <e p="{12ece97f-cf53-4fc9-92e4-5b7402afda63}.xml" t="Include" />
+              </e>
+              <e p="Return" t="Include">
+                <e p="{b566c449-8f61-4969-8ea5-5341963eff6d}.xml" t="Include" />
+              </e>
+              <e p="SnapshotGroup" t="Include">
+                <e p="{b2df178e-c479-42df-bc8c-037eec92a5ae}.xml" t="Include" />
+              </e>
+              <e p="Tags.xml" t="Include" />
+              <e p="Workspace.xml" t="Include" />
+            </e>
+          </e>
+        </e>
         <e p="NavMeshComponents" t="Include">
           <e p="Editor" t="Include">
             <e p="NavMeshAssetManager.cs" t="Include" />
