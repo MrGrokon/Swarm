@@ -17,12 +17,12 @@ MonoBehaviour:
     brushes:
     - name: Hautes-Herbes
       settings:
-        brushRadius: 3.8
-        brushSpacing: 0.5
+        brushRadius: 1
+        brushSpacing: 3.55
         brushOverallScale: 1
-        brushOverlapCheck: 1
+        brushOverlapCheck: 0
         brushOverlapCheckMode: 0
-        brushOverlapDistance: 2
+        brushOverlapDistance: 5
         brushOverlapCheckObjects: 1
         brushOverlapCheckLayers:
           serializedVersion: 2
@@ -40,9 +40,9 @@ MonoBehaviour:
         orientationMode: 1
         flipOrientation: 0
         rotation: {x: 0, y: 0, z: 0}
-        randomizeOrientationX: 0
+        randomizeOrientationX: 3.6
         randomizeOrientationY: 100
-        randomizeOrientationZ: 0
+        randomizeOrientationZ: 3.6
         scaleTransformMode: 0
         scaleMode: 1
         scaleUniformMin: 1
@@ -123,7 +123,7 @@ MonoBehaviour:
         roundRotationValue: 0
         slopeEnabled: 1
         slopeAngleMin: 0
-        slopeAngleMax: 15
+        slopeAngleMax: 25
         slopeVector: 1
         slopeVectorCustom: {x: 0, y: 1, z: 0}
         slopeVectorFlip: 0
@@ -173,9 +173,9 @@ MonoBehaviour:
         orientationMode: 1
         flipOrientation: 0
         rotation: {x: 0, y: 0, z: 0}
-        randomizeOrientationX: 0
+        randomizeOrientationX: 98.6
         randomizeOrientationY: 100
-        randomizeOrientationZ: 0
+        randomizeOrientationZ: 100
         scaleTransformMode: 0
         scaleMode: 0
         scaleUniformMin: 0.6
@@ -283,7 +283,7 @@ MonoBehaviour:
       colorTag: 0
     - name: ObstacleTree1
       settings:
-        brushRadius: 1
+        brushRadius: 10.7
         brushSpacing: 0.88
         brushOverallScale: 1
         brushOverlapCheck: 1
@@ -416,12 +416,12 @@ MonoBehaviour:
       colorTag: 0
     - name: Spaced ObstaclesTrees
       settings:
-        brushRadius: 16.8
-        brushSpacing: 5
+        brushRadius: 20
+        brushSpacing: 3.99
         brushOverallScale: 1
         brushOverlapCheck: 1
         brushOverlapCheckMode: 0
-        brushOverlapDistance: 10.73
+        brushOverlapDistance: 5.5
         brushOverlapCheckObjects: 1
         brushOverlapCheckLayers:
           serializedVersion: 2
@@ -709,11 +709,11 @@ MonoBehaviour:
         randomizeOrientationY: 100
         randomizeOrientationZ: 100
         scaleTransformMode: 0
-        scaleMode: 1
+        scaleMode: 0
         scaleUniformMin: 1
         scaleUniformMax: 1
         scalePerAxisMin: {x: 1, y: 1, z: 1}
-        scalePerAxisMax: {x: 1.2, y: 1.2, z: 1.2}
+        scalePerAxisMax: {x: 1, y: 1, z: 1}
         scaleAux: 1
         multibrushEnabled: 0
         multibrushSlots:
@@ -812,6 +812,139 @@ MonoBehaviour:
       - gameObject: {fileID: 0}
       selectedSlot: 0
       selected: 1
+      colorTag: 0
+    - name: Track
+      settings:
+        brushRadius: 1
+        brushSpacing: 5
+        brushOverallScale: 1
+        brushOverlapCheck: 0
+        brushOverlapCheckMode: 0
+        brushOverlapDistance: 0.5
+        brushOverlapCheckObjects: 1
+        brushOverlapCheckLayers:
+          serializedVersion: 2
+          m_Bits: 0
+        ppOrientationMode: 0
+        ppFlipOrientation: 0
+        ppFixedRotation: 0
+        ppFixedRotationValue: {x: 0, y: 0, z: 0}
+        ppFixedRotationTransformMode: 0
+        ppFixedScale: 0
+        ppFixedScaleValue: {x: 1, y: 1, z: 1}
+        ppFixedScaleTransformMode: 0
+        positionOffset: {x: 0, y: 0, z: 0}
+        orientationTransformMode: 0
+        orientationMode: 1
+        flipOrientation: 0
+        rotation: {x: 0, y: 0, z: 0}
+        randomizeOrientationX: 0
+        randomizeOrientationY: 100
+        randomizeOrientationZ: 0
+        scaleTransformMode: 0
+        scaleMode: 0
+        scaleUniformMin: 1
+        scaleUniformMax: 1
+        scalePerAxisMin: {x: 1, y: 1, z: 1}
+        scalePerAxisMax: {x: 1, y: 1, z: 1}
+        scaleAux: 1
+        multibrushEnabled: 0
+        multibrushSlots:
+        - enabled: 1
+          raiting: 1
+          position: {x: 0, y: 0, z: 0}
+          rotation: {x: 0, y: 0, z: 0}
+          scale: {x: 1, y: 1, z: 1}
+          pivotOffset: {x: 0.00000011920929, y: -0.2269476, z: 0}
+        - enabled: 1
+          raiting: 1
+          position: {x: 0, y: 0, z: 0}
+          rotation: {x: 0, y: 0, z: 0}
+          scale: {x: 1, y: 1, z: 1}
+          pivotOffset: {x: 0, y: 0, z: 0}
+        - enabled: 1
+          raiting: 1
+          position: {x: 0, y: 0, z: 0}
+          rotation: {x: 0, y: 0, z: 0}
+          scale: {x: 1, y: 1, z: 1}
+          pivotOffset: {x: 0, y: 0, z: 0}
+        - enabled: 1
+          raiting: 1
+          position: {x: 0, y: 0, z: 0}
+          rotation: {x: 0, y: 0, z: 0}
+          scale: {x: 1, y: 1, z: 1}
+          pivotOffset: {x: 0, y: 0, z: 0}
+        - enabled: 1
+          raiting: 1
+          position: {x: 0, y: 0, z: 0}
+          rotation: {x: 0, y: 0, z: 0}
+          scale: {x: 1, y: 1, z: 1}
+          pivotOffset: {x: 0, y: 0, z: 0}
+        - enabled: 1
+          raiting: 1
+          position: {x: 0, y: 0, z: 0}
+          rotation: {x: 0, y: 0, z: 0}
+          scale: {x: 1, y: 1, z: 1}
+          pivotOffset: {x: 0, y: 0, z: 0}
+        - enabled: 1
+          raiting: 1
+          position: {x: 0, y: 0, z: 0}
+          rotation: {x: 0, y: 0, z: 0}
+          scale: {x: 1, y: 1, z: 1}
+          pivotOffset: {x: 0, y: 0, z: 0}
+        - enabled: 1
+          raiting: 1
+          position: {x: 0, y: 0, z: 0}
+          rotation: {x: 0, y: 0, z: 0}
+          scale: {x: 1, y: 1, z: 1}
+          pivotOffset: {x: 0, y: 0, z: 0}
+        - enabled: 1
+          raiting: 1
+          position: {x: 0, y: 0, z: 0}
+          rotation: {x: 0, y: 0, z: 0}
+          scale: {x: 1, y: 1, z: 1}
+          pivotOffset: {x: 0, y: 0, z: 0}
+        - enabled: 1
+          raiting: 1
+          position: {x: 0, y: 0, z: 0}
+          rotation: {x: 0, y: 0, z: 0}
+          scale: {x: 1, y: 1, z: 1}
+          pivotOffset: {x: 0, y: 0, z: 0}
+        multibrushPaintSelectedSlot: 0
+        multibrushMode: 0
+        multibrushPattern: 0 1 2 3 5 6 7 8 9
+        multibrushPatternContinue: 0
+        advancedSettingsEnabled: 0
+        roundScale: 0
+        roundScaleValue: 0
+        roundRotation: 0
+        roundRotationValue: 0
+        slopeEnabled: 0
+        slopeAngleMin: 0
+        slopeAngleMax: 35
+        slopeVector: 1
+        slopeVectorCustom: {x: 0, y: 1, z: 0}
+        slopeVectorFlip: 0
+        gridEnabled: 0
+        gridOrigin: {x: 0, y: 0}
+        gridStep: {x: 5, y: 5}
+        gridPlane: 1
+        gridNormal: {x: 0, y: 1, z: 0}
+        gridAngle: 0
+      prefabSlots:
+      - gameObject: {fileID: 2622212310027546019, guid: 231e5a63cde58af49aaa0fa98bd94fa5,
+          type: 3}
+      - gameObject: {fileID: 0}
+      - gameObject: {fileID: 0}
+      - gameObject: {fileID: 0}
+      - gameObject: {fileID: 0}
+      - gameObject: {fileID: 0}
+      - gameObject: {fileID: 0}
+      - gameObject: {fileID: 0}
+      - gameObject: {fileID: 0}
+      - gameObject: {fileID: 0}
+      selectedSlot: 0
+      selected: 0
       colorTag: 0
   - name: Decals
     brushes:
@@ -2153,7 +2286,7 @@ MonoBehaviour:
   ppSnapScaleValue: 0.1
   ppSnapRotation: 1
   ppSnapScale: 1
-  eraseBrushRadius: 11.17
+  eraseBrushRadius: 3.2
   eraseByLayer: 0
   eraseLayers:
     serializedVersion: 2
