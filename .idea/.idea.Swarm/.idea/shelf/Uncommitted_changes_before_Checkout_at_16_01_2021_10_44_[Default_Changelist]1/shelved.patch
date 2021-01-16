@@ -1,0 +1,61 @@
+Index: Assets/Scripts/Managers/GeneratePrey.cs
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>using System;\r\nusing System.Collections;\r\nusing System.Collections.Generic;\r\nusing UnityEngine;\r\nusing UnityEngine.AI;\r\nusing Random = UnityEngine.Random;\r\n\r\npublic class GeneratePrey : MonoBehaviour\r\n{\r\n\r\n    [SerializeField] private GameObject terrain;\r\n\r\n    [SerializeField] private Vector2 minMaxX;\r\n\r\n    [SerializeField] private Vector2 minMaxY;\r\n\r\n    [SerializeField] private int maxPrey;\r\n\r\n    [SerializeField] public List<GameObject> listOfPrey;\r\n\r\n    [SerializeField] private GameObject preyPrefab;\r\n\r\n\r\n    // Update is called once per frame\r\n    void Update()\r\n    {\r\n        if (listOfPrey.Count < maxPrey)  //Génération des proies\r\n        {\r\n            float X = Random.Range(minMaxX.x, minMaxX.y);\r\n            float Y = Random.Range(minMaxY.x, minMaxY.y);\r\n            NavMeshHit hit;\r\n            NavMesh.SamplePosition(transform.position + new Vector3(X,terrain.transform.position.y, Y), out hit, 200f, NavMesh.AllAreas); //Sample la position donnée sur le navmesh et peut retourner un bool\r\n            var prey = Instantiate(preyPrefab, hit.position, Quaternion.identity);\r\n            listOfPrey.Add(prey);\r\n        }\r\n    }\r\n\r\n    private void OnDrawGizmos()\r\n    {\r\n        Gizmos.color = Color.red;\r\n        Gizmos.DrawSphere(transform.position - new Vector3(minMaxX.x,0, minMaxY.y), 1f);\r\n        Gizmos.DrawSphere(transform.position - new Vector3(minMaxX.y,0, minMaxY.y), 1f);\r\n        Gizmos.DrawSphere( transform.position - new Vector3(minMaxX.x,0, minMaxY.x), 1f);\r\n        Gizmos.DrawSphere(transform.position - new Vector3(minMaxX.y,0, minMaxY.x), 1f);\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Assets/Scripts/Managers/GeneratePrey.cs	(revision a8ee5d4448058ab3ec927114e87a89f2775ae2ba)
++++ Assets/Scripts/Managers/GeneratePrey.cs	(date 1610758348062)
+@@ -31,8 +31,14 @@
+             NavMeshHit hit;
+             NavMesh.SamplePosition(transform.position + new Vector3(X,terrain.transform.position.y, Y), out hit, 200f, NavMesh.AllAreas); //Sample la position donnée sur le navmesh et peut retourner un bool
+             var prey = Instantiate(preyPrefab, hit.position, Quaternion.identity);
++            prey.transform.parent = this.transform;
+             listOfPrey.Add(prey);
+         }
++
++        if (InputTester.inputInstance._playerInputs.Actions.CreateBeta.triggered)
++        {
++            this.gameObject.SetActive(false);
++        }
+     }
+ 
+     private void OnDrawGizmos()
+Index: ProjectSettings/EditorBuildSettings.asset
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>%YAML 1.1\r\n%TAG !u! tag:unity3d.com,2011:\r\n--- !u!1045 &1\r\nEditorBuildSettings:\r\n  m_ObjectHideFlags: 0\r\n  serializedVersion: 2\r\n  m_Scenes:\r\n  - enabled: 1\r\n    path: Assets/Scenes/Bastien_LD.unity\r\n    guid: 62e1256295e9614469cb4234b69e7ace\r\n  m_configObjects: {}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ProjectSettings/EditorBuildSettings.asset	(revision a8ee5d4448058ab3ec927114e87a89f2775ae2ba)
++++ ProjectSettings/EditorBuildSettings.asset	(date 1610758371118)
+@@ -6,6 +6,6 @@
+   serializedVersion: 2
+   m_Scenes:
+   - enabled: 1
+-    path: Assets/Scenes/Bastien_LD.unity
+-    guid: 62e1256295e9614469cb4234b69e7ace
++    path: Assets/Scenes/Bastien_LD2.unity
++    guid: 83fcef62661becd4d89c1607494877dc
+   m_configObjects: {}
+Index: Assets/Scenes/Bastien_LD2.unity
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Assets/Scenes/Bastien_LD2.unity	(revision a8ee5d4448058ab3ec927114e87a89f2775ae2ba)
++++ Assets/Scenes/Bastien_LD2.unity	(date 1610758371422)
+@@ -39214,6 +39214,11 @@
+       propertyPath: m_LocalEulerAnglesHint.z
+       value: 0
+       objectReference: {fileID: 0}
++    - target: {fileID: 3754177437721940506, guid: 92193ce2ed7f2f74d80c648720dc8e3d,
++        type: 3}
++      propertyPath: m_Enabled
++      value: 0
++      objectReference: {fileID: 0}
+     m_RemovedComponents: []
+   m_SourcePrefab: {fileID: 100100000, guid: 92193ce2ed7f2f74d80c648720dc8e3d, type: 3}
+ --- !u!1001 &2081530505

@@ -1,0 +1,18 @@
+Index: .idea/.idea.Swarm/.idea/shelf/Default_Changelist1.xml
+===================================================================
+--- .idea/.idea.Swarm/.idea/shelf/Default_Changelist1.xml	(revision dcfaa4fa0f342db04c11e04d8cb5fea0213c4219)
++++ .idea/.idea.Swarm/.idea/shelf/Default_Changelist1.xml	(revision dcfaa4fa0f342db04c11e04d8cb5fea0213c4219)
+@@ -1,4 +0,0 @@
+-<changelist name="Default_Changelist1" date="1610575943944" recycled="false">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Default_Changelist1/shelved.patch" />
+-  <option name="DESCRIPTION" value="Default Changelist" />
+-</changelist>
+\ No newline at end of file
+diff --git .idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Merge_at_07_01_2021_21_26__Default_Changelist_.xml .idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Merge_at_07_01_2021_21_26__Default_Changelist_.xml
+diff --git .idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Update_at_13_01_2021_23_12__Default_Changelist_.xml .idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Update_at_13_01_2021_23_12__Default_Changelist_.xml
+diff --git .idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Merge_at_07_01_2021_21_27__Default_Changelist_.xml .idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Merge_at_07_01_2021_21_27__Default_Changelist_.xml
+diff --git .idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Update_at_13_01_2021_23_13__Default_Changelist_.xml .idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Update_at_13_01_2021_23_13__Default_Changelist_.xml
+diff --git .idea/.idea.Swarm/.idea/shelf/unnamed.xml .idea/.idea.Swarm/.idea/shelf/unnamed.xml
+diff --git .idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Merge_at_07_01_2021_21_45__Default_Changelist_.xml .idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Merge_at_07_01_2021_21_45__Default_Changelist_.xml
+diff --git .idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Checkout_at_07_01_2021_21_25__Default_Changelist_.xml .idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Checkout_at_07_01_2021_21_25__Default_Changelist_.xml
+diff --git .idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Update_at_07_01_2021_21_27__Default_Changelist_.xml .idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Update_at_07_01_2021_21_27__Default_Changelist_.xml
