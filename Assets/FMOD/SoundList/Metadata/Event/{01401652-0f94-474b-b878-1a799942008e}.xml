@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.00.00">
 	<object class="Event" id="{01401652-0f94-474b-b878-1a799942008e}">
 		<property name="name">
-			<value>PreyDie</value>
+			<value>HunterEat</value>
 		</property>
 		<property name="outputFormat">
 			<value>2</value>
@@ -348,7 +348,7 @@
 			<value>0.62</value>
 		</property>
 		<property name="value">
-			<value>1</value>
+			<value>0</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{97eb5508-c105-4f71-ac3c-1ca47595afe2}">
@@ -380,7 +380,7 @@
 			<value>0.35999999999999999</value>
 		</property>
 		<property name="value">
-			<value>-46</value>
+			<value>-46.0000038</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{ed3fd2e2-1a10-4459-a9b3-7845b0e0f05a}">
@@ -388,7 +388,7 @@
 			<value>1.04</value>
 		</property>
 		<property name="value">
-			<value>2</value>
+			<value>0</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{6520689b-2489-4a88-bf00-432b148ddb5d}">
@@ -396,7 +396,7 @@
 			<value>0.88374384236453196</value>
 		</property>
 		<property name="value">
-			<value>-44</value>
+			<value>-43.9999962</value>
 		</property>
 	</object>
 </objects>
