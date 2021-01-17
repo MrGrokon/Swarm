@@ -69,7 +69,7 @@ public class CameraRotate : MonoBehaviour
         rotation.y -= InputTester.inputInstance._playerInputs.Actions.RotateCameraY.ReadValue<float>() * cameraSpeed * Time.deltaTime * controlDirection;
         rotation.x = Mathf.Clamp(rotation.x, -35, 60);
 
-        PlayerRef.transform.rotation = Quaternion.Euler(0, rotation.y, 0);
+       // PlayerRef.transform.rotation = Quaternion.Euler(0, rotation.y, 0);
         transform.rotation = Quaternion.Euler(rotation.x, rotation.y, 0);
     }
 }
