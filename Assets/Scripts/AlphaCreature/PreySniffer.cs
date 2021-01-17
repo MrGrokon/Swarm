@@ -25,6 +25,7 @@ public class PreySniffer : MonoBehaviour
                     //this will sort the arrey so ProofList[0] will always be the closest to the alpha
                     ProofsList.OrderBy(x => Vector3.Distance(this.transform.position, x.transform.position));
                     ProofsList[0].GetComponent<TrackRenderer>().UseTrack();
+                    ProofsList[0].GetComponent<MeshRenderer>().material.SetColor("ACTIC", Color.white);
                 }
             }
             #region InputReseter
@@ -38,14 +39,14 @@ public class PreySniffer : MonoBehaviour
         private void OnTriggerEnter(Collider _col) { //Ajout de la traçe dans la liste du joueur comme étant analysable
             if(_col.tag == "Track" && ProofsList.Contains(_col.gameObject) == false){
                 ProofsList.Add(_col.gameObject);
-                Debug.Log("barbabchouch " +_col.gameObject.GetComponent<MeshRenderer>().material.shader.GetPropertyType(6));
+                //_col.GetComponent<MeshRenderer>().material.SetColor("ACTIV", Color.white);
             }
         }
 
         private void OnTriggerExit(Collider _col) { //Suppression de la traçe dans la liste du joueur comme étant analysable
             if(_col.tag == "Track" && ProofsList.Contains(_col.gameObject)){
                 ProofsList.Remove(_col.gameObject);
-                _col.gameObject.GetComponent<MeshRenderer>().material.SetInt("IsActive", 0);
+                //_col.GetComponent<MeshRenderer>().material.SetColor("ACTIV", Color.black);
             }
         }
         #endregion
