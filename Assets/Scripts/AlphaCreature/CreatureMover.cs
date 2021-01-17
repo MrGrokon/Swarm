@@ -15,8 +15,12 @@ public class CreatureMover : MonoBehaviour
     [SerializeField] private float acceleration;
     public float maxSpeed;
     private Vector3 actualDirection;
+    [Tooltip("Impulsion à chaque input de sprint")]
+    [SerializeField] private float impulseForceByEachStep;
 
     [SerializeField] private int sprintState;
+    [Tooltip("Montant de nourriture consommé à chaque input de sprint")]
+    [SerializeField] private float amountOfFoodConsumedBySprint;
 
     #region Unity Functions
     void Start()
@@ -93,11 +97,15 @@ public class CreatureMover : MonoBehaviour
             case 1:
                 speedMultiplier += multiplierAddedAtEachInput;
                 sprintState = 2;
+                GetComponent<RessourceManager>().LooseRessource(RessourceManager.Resource.Hunger, amountOfFoodConsumedBySprint);
+                _rb.AddForce(_rb.transform.forward * impulseForceByEachStep * 100, ForceMode.Impulse);
                 GetComponent<Renderer>().material.color = Color.yellow;
                 break;
             case 2:
                 speedMultiplier += multiplierAddedAtEachInput;
                 sprintState = 1;
+                GetComponent<RessourceManager>().LooseRessource(RessourceManager.Resource.Hunger, amountOfFoodConsumedBySprint);
+                _rb.AddForce(_rb.transform.forward * impulseForceByEachStep * 100, ForceMode.Impulse);
                 GetComponent<Renderer>().material.color = Color.green;
                 break;
         } 
