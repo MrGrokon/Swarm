@@ -20,27 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1edd0d37-b333-4aa9-b5cd-217dae9d2baf" name="Revert: " comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Default_Changelist1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Default_Changelist1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Default_Changelist2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Default_Changelist2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Default_Changelist3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Default_Changelist3.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_01_2021_01_17__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_01_2021_01_17__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_01_2021_01_18__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_01_2021_01_18__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_01_2021_10_44__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_01_2021_10_44__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_01_2021_10_44__Default_Changelist_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_01_2021_10_44__Default_Changelist_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Merge_at_13_01_2021_23_40__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Merge_at_13_01_2021_23_40__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Merge_at_16_01_2021_01_20__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Merge_at_16_01_2021_01_20__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Merge_at_16_01_2021_01_20__Default_Changelist_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Merge_at_16_01_2021_01_20__Default_Changelist_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Update_at_13_01_2021_23_12__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Update_at_13_01_2021_23_12__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Update_at_13_01_2021_23_13__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Update_at_13_01_2021_23_13__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Update_at_16_01_2021_01_08__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Update_at_16_01_2021_01_08__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Update_at_16_01_2021_10_45__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Update_at_16_01_2021_10_45__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Update_at_16_01_2021_10_47__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Update_at_16_01_2021_10_47__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/unnamed.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/unnamed.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Alpha Creature.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Alpha Creature.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/PlayerGroup.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/PlayerGroup.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Bastien_LD2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Bastien_LD2.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CreatureMover.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CreatureMover.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -519,7 +501,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Fix AI naviguation problems&#10;Add base mesh rendering for previsualization&#10;Fix navmesh" />
     <MESSAGE value=" 0.5.1.0 : Fix TrackRenderer trail" />
     <MESSAGE value=" 0.5.1.1 : Ajout du sound detection" />
     <MESSAGE value="0.6.0.0 : Add sprint mecanic" />
@@ -544,7 +525,8 @@
     <MESSAGE value="Ajout du FMOD" />
     <MESSAGE value="[1.1.4.7] Modification et amélioration du spawner" />
     <MESSAGE value="[1.1.4.8] Correction du bug qui faisais voler le joueur en début de partie" />
-    <option name="LAST_COMMIT_MESSAGE" value="[1.1.4.8] Correction du bug qui faisais voler le joueur en début de partie" />
+    <MESSAGE value="[1.1.5.2] Changement de l'orientation du personnage, Ajout d'une impulsion lors du sprint, Ajout d'une consommation de nourriture à chaque impulsion du sprint, Tweek des valeurs sur le player" />
+    <option name="LAST_COMMIT_MESSAGE" value="[1.1.5.2] Changement de l'orientation du personnage, Ajout d'une impulsion lors du sprint, Ajout d'une consommation de nourriture à chaque impulsion du sprint, Tweek des valeurs sur le player" />
   </component>
   <component name="WindowStateProjectService">
     <state x="184" y="126" key="MergeDialog" timestamp="1610111580298">
@@ -563,10 +545,10 @@
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="92" y="132" width="1736" height="856" key="VCS.FileHistoryDialog/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1609519868736" />
-    <state x="552" y="293" key="Vcs.Push.Dialog.v2" timestamp="1610893256549">
+    <state x="552" y="293" key="Vcs.Push.Dialog.v2" timestamp="1610893394790">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
-    <state x="552" y="293" key="Vcs.Push.Dialog.v2/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1610893256549" />
+    <state x="552" y="293" key="Vcs.Push.Dialog.v2/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1610893394790" />
     <state x="777" y="474" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1610755680298">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>

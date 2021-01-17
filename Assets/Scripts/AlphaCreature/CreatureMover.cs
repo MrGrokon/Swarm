@@ -22,6 +22,9 @@ public class CreatureMover : MonoBehaviour
     [Tooltip("Montant de nourriture consommé à chaque input de sprint")]
     [SerializeField] private float amountOfFoodConsumedBySprint;
 
+    [SerializeField] private ParticleSystem playerStepPS;
+    [SerializeField] private ParticleSystem playerSpeedPS;
+
     #region Unity Functions
     void Start()
     {
@@ -82,6 +85,16 @@ public class CreatureMover : MonoBehaviour
         if (speedMultiplier < 1.2f)
         {
             GetComponent<Renderer>().material.color = Color.white;
+            
+        }
+
+        if (_rb.velocity.magnitude > 0.5f && speedMultiplier > 1.2f)
+        {
+            playerSpeedPS.Play();
+        }
+        else
+        {
+            playerSpeedPS.Stop();
         }
         
 
@@ -91,7 +104,8 @@ public class CreatureMover : MonoBehaviour
 
     private void SprintStateManager()
     {
-        print("1");
+        playerStepPS.Play();
+        print(1);
         switch (sprintState)
         {
             case 1:
@@ -109,5 +123,6 @@ public class CreatureMover : MonoBehaviour
                 GetComponent<Renderer>().material.color = Color.green;
                 break;
         } 
+        //playerPS.Stop();
     }
 }
