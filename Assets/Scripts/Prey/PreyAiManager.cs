@@ -35,6 +35,9 @@ public class PreyAiManager : MonoBehaviour
     public float TimeToWaitForAbstractedRessources = 3f;
     public float _timePassed = 0f;
 
+    public float fleeTime;
+    public float actualFleeTime;
+
     public virtual void Die()
     {
         

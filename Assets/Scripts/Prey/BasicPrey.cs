@@ -73,28 +73,19 @@ public class BasicPrey : PreyAiManager
             if (MyState != PreyStates.Flee ||
                 Vector3.Distance(_nm_Agent.destination, transform.position) <= ReachingDistance)
             {
-                //If i found an Enemy
-
-                //TODO: Test au moment de la detection, selon les behavior a mettre en place:
-                //  -chercher à se cacher
-                //  -fuire vers le reste de la meute
-                //  -...
-
-                _animator.SetBool("IsRunning", true);
-                Dust_PS.Play();
                 ChangeState(PreyStates.Flee);
-                //ce vector pointe parfois dans la direction du joueur, ce qui implique que le joueur peu la toucher sur sont chemin de fuite
-                Vector3 FleeMotion = (Objects.Instance.Alpha.transform.position - this.transform.position) * -1;
-                _nm_Agent.SetDestination(FleeMotion);
             }
         }
         else if (!myDetector.FindVisibleTargets() && MyState == PreyStates.Flee ||
                  !mySonorDetection.FindVisibleTargets() && MyState == PreyStates.Flee)
         {
-            _nm_Agent.SetDestination(GetRandomRoamingPosition());
-            _animator.SetBool("IsRunning", false);
-            Dust_PS.Stop();
-            ChangeState(PreyStates.Roam);
+            if (actualFleeTime <= 0)
+            {
+                _nm_Agent.SetDestination(GetRandomRoamingPosition());
+                _animator.SetBool("IsRunning", false);
+                Dust_PS.Stop();
+                ChangeState(PreyStates.Roam);
+            }
         }
     }
     #endregion
@@ -113,10 +104,30 @@ public class BasicPrey : PreyAiManager
         switch (_state)
         {
             case PreyStates.Flee:
+                //If i found an Enemy
+                Debug.Log("Prey spot the player");
+
+                //TODO: Test au moment de la detection, selon les behavior a mettre en place:
+                //  -chercher à se cacher
+                //  -fuire vers le reste de la meute
+                //  -...
+
+                _animator.SetBool("IsRunning", true);
+                Dust_PS.Play();
                 //ce vector pointe parfois dans la direction du joueur, ce qui implique que le joueur peu la toucher sur son chemin de fuite
-                Vector3 FleeMotion = (Objects.Instance.Alpha.transform.position - this.transform.position) * -5;
+                Vector3 FleeMotion = (Objects.Instance.Alpha.transform.position - this.transform.position).normalized * -5;
                 NavMesh.SamplePosition(FleeMotion, out NavMeshHit hit, 1f, 1);
+                Vector3 randomPositionInsideSphere = hit.position + Random.insideUnitSphere * 5f;
+                while (_nm_Agent.CalculatePath(randomPositionInsideSphere, new NavMeshPath()) == false)
+                {
+                    FleeMotion = (Objects.Instance.Alpha.transform.position - this.transform.position).normalized * -5;
+                    NavMesh.SamplePosition(FleeMotion, out NavMeshHit hit2, 1f, 1);
+                    randomPositionInsideSphere = hit.position + Random.insideUnitSphere * 5f;
+                }
                 _nm_Agent.SetDestination(hit.position);
+                print("destination : " +_nm_Agent.destination);
+                actualFleeTime = fleeTime;
+
                 break;
         }
     }
@@ -184,4 +195,12 @@ public class BasicPrey : PreyAiManager
         }
     }
     #endregion
+    
+    private void ManageTimer()
+    {
+        if (actualFleeTime > 0)
+        {
+            actualFleeTime -= 1 * Time.deltaTime;
+        }
+    }
 }
