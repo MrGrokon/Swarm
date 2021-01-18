@@ -1,9 +1,11 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.AI;
 using Debug = UnityEngine.Debug;
+using Random = UnityEngine.Random;
 
 public class Craintive : PreyAiManager
 {
@@ -37,12 +39,13 @@ public class Craintive : PreyAiManager
             Change_NMA_Properties(PreyStates.Roam);
         }
         
-        InvokeRepeating("Scan", 0, scanInterval);
+        //InvokeRepeating("Scan", 0, scanInterval);
         
     }
 
     private void Update()
     {
+        ManageTimer();
         #region State Debbuging
         if(MyState == PreyStates.Flee){
             Debug.DrawLine(this.transform.position, _nm_Agent.destination, Color.red);
@@ -71,7 +74,6 @@ public class Craintive : PreyAiManager
                 //TODO: générer proproment un nouveau point de roaming, si possible non randomS
                 _nm_Agent.SetDestination(GetRandomRoamingPosition()); 
                 
-                ChangeState(PreyStates.Roam);
                 break;
                 
                 case PreyStates.Scan:
@@ -85,16 +87,6 @@ public class Craintive : PreyAiManager
             if (MyState != PreyStates.Flee ||
                 Vector3.Distance(_nm_Agent.destination, transform.position) <= ReachingDistance)
             {
-                //If i found an Enemy
-                Debug.Log("Prey spot the player");
-
-                //TODO: Test au moment de la detection, selon les behavior a mettre en place:
-                //  -chercher à se cacher
-                //  -fuire vers le reste de la meute
-                //  -...
-
-                _animator.SetBool("IsRunning", true);
-                Dust_PS.Play();
                 ChangeState(PreyStates.Flee);
             }
            
@@ -102,10 +94,13 @@ public class Craintive : PreyAiManager
         else if (!myDetector.FindVisibleTargets() && MyState == PreyStates.Flee ||
                  !mySonorDetection.FindVisibleTargets() && MyState == PreyStates.Flee)
         {
-            _nm_Agent.SetDestination(GetRandomRoamingPosition());
-            _animator.SetBool("IsRunning", false);
-            Dust_PS.Stop();
-            ChangeState(PreyStates.Roam);
+            if (actualFleeTime <= 0)
+            {
+                _nm_Agent.SetDestination(GetRandomRoamingPosition());
+                _animator.SetBool("IsRunning", false);
+                Dust_PS.Stop();
+                ChangeState(PreyStates.Roam);
+            }
         }
     }
     #endregion
@@ -124,10 +119,30 @@ public class Craintive : PreyAiManager
         switch (_state)
         {
             case PreyStates.Flee:
+                //If i found an Enemy
+                Debug.Log("Prey spot the player");
+
+                //TODO: Test au moment de la detection, selon les behavior a mettre en place:
+                //  -chercher à se cacher
+                //  -fuire vers le reste de la meute
+                //  -...
+
+                _animator.SetBool("IsRunning", true);
+                Dust_PS.Play();
                 //ce vector pointe parfois dans la direction du joueur, ce qui implique que le joueur peu la toucher sur son chemin de fuite
-                Vector3 FleeMotion = (Objects.Instance.Alpha.transform.position - this.transform.position).normalized * -10;
+                Vector3 FleeMotion = (Objects.Instance.Alpha.transform.position - this.transform.position).normalized * -5;
                 NavMesh.SamplePosition(FleeMotion, out NavMeshHit hit, 1f, 1);
+                Vector3 randomPositionInsideSphere = hit.position + Random.insideUnitSphere * 5f;
+                while (_nm_Agent.CalculatePath(randomPositionInsideSphere, new NavMeshPath()) == false)
+                {
+                    FleeMotion = (Objects.Instance.Alpha.transform.position - this.transform.position).normalized * -5;
+                    NavMesh.SamplePosition(FleeMotion, out NavMeshHit hit2, 1f, 1);
+                    randomPositionInsideSphere = hit.position + Random.insideUnitSphere * 5f;
+                }
                 _nm_Agent.SetDestination(hit.position);
+                print("destination : " +_nm_Agent.destination);
+                actualFleeTime = fleeTime;
+
                 break;
         }
     }
@@ -213,4 +228,18 @@ public class Craintive : PreyAiManager
         }
     }
     #endregion
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(_nm_Agent.destination, 2f);
+    }
+
+    private void ManageTimer()
+    {
+        if (actualFleeTime > 0)
+        {
+            actualFleeTime -= 1 * Time.deltaTime;
+        }
+    }
 }
