@@ -18,18 +18,18 @@ public class NoiseEmitter : MonoBehaviour
     private void CheckPlayerSpeedIntensity()
     {
         CreatureMover mover = GetComponent<CreatureMover>();
-        if ((mover.speed * mover.speedMultiplier) / (mover.maxSpeed * mover.maxSpeedMultiplier) > 0 && (mover.speed * mover.speedMultiplier) / (mover.maxSpeed * mover.maxSpeedMultiplier) <= 0.33f)
+        if ((mover.speed * mover.speedMultiplier) / (mover.maxSpeed * mover.maxSpeedMultiplier) > 0 && (mover.speed * mover.speedMultiplier) / (mover.maxSpeed * mover.maxSpeedMultiplier) <= 0.66f)
         {
             noiseForce = 1;
         }
-        else if((mover.speed * mover.speedMultiplier) / (mover.maxSpeed * mover.maxSpeedMultiplier) > 0.33f && (mover.speed * mover.speedMultiplier) / (mover.maxSpeed * mover.maxSpeedMultiplier) <= 0.66f)
+        else if((mover.speed * mover.speedMultiplier) / (mover.maxSpeed * mover.maxSpeedMultiplier) > 0.66f && (mover.speed * mover.speedMultiplier) / (mover.maxSpeed * mover.maxSpeedMultiplier) <= 1f)
         {
             noiseForce = 2;
         }
-        else if((mover.speed * mover.speedMultiplier) / (mover.maxSpeed * mover.maxSpeedMultiplier) > 0.66f && (mover.speed * mover.speedMultiplier) / (mover.maxSpeed * mover.maxSpeedMultiplier) <= 1f)
+        /*else if((mover.speed * mover.speedMultiplier) / (mover.maxSpeed * mover.maxSpeedMultiplier) > 0.66f && (mover.speed * mover.speedMultiplier) / (mover.maxSpeed * mover.maxSpeedMultiplier) <= 1f)
         {
             noiseForce = 3;
-        }
+        }*/
         else
         {
             noiseForce = 0;
