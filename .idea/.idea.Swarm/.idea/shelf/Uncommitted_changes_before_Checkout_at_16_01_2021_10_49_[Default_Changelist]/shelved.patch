@@ -1,0 +1,439 @@
+Index: Assets/NewScene/Prefabs/LD Elements.meta
+===================================================================
+--- Assets/NewScene/Prefabs/LD Elements.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
++++ Assets/NewScene/Prefabs/LD Elements.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: c6733fdf5e8030e4d948fe7c78212bc6
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/NewScene/Materials/Environment Materials.meta
+===================================================================
+--- Assets/NewScene/Materials/Environment Materials.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
++++ Assets/NewScene/Materials/Environment Materials.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: 94d6bdb81c43ce0479784c0e99ee5583
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/NewScene/nTools/PrefabPainter/Settings.meta
+===================================================================
+--- Assets/NewScene/nTools/PrefabPainter/Settings.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
++++ Assets/NewScene/nTools/PrefabPainter/Settings.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: ed19775b04422624ab19cd65ddef404c
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/NewScene/nTools/PrefabPainter/Examples/Materials.meta
+===================================================================
+--- Assets/NewScene/nTools/PrefabPainter/Examples/Materials.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
++++ Assets/NewScene/nTools/PrefabPainter/Examples/Materials.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: a0997de69e4cb89428537d90e081e5bb
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/NewScene/Graphics/Materials/Preys.meta
+===================================================================
+--- Assets/NewScene/Graphics/Materials/Preys.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
++++ Assets/NewScene/Graphics/Materials/Preys.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: caa57cc0defbb64499faf7c5ed5e862d
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/NewScene/nTools/PrefabPainter/Scripts/Editor.meta
+===================================================================
+--- Assets/NewScene/nTools/PrefabPainter/Scripts/Editor.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
++++ Assets/NewScene/nTools/PrefabPainter/Scripts/Editor.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: 3a255ed1bca97264b94e0470c0a0768d
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/NewScene/Graphics/Materials/Environment Materials.meta
+===================================================================
+--- Assets/NewScene/Graphics/Materials/Environment Materials.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
++++ Assets/NewScene/Graphics/Materials/Environment Materials.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: 3a16927592c79fa4b87202acbe04fd3f
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/nTools/PrefabPainter/Examples/Prefabs.meta
+===================================================================
+--- Assets/nTools/PrefabPainter/Examples/Prefabs.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
++++ Assets/nTools/PrefabPainter/Examples/Prefabs.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: 51fdc489d2388684191d9a8e6643dba2
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/NewScene/Graphics/Textures.meta
+===================================================================
+--- Assets/NewScene/Graphics/Textures.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
++++ Assets/NewScene/Graphics/Textures.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: 27c061695a213ac489c2cbbab42d0e8c
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/NewScene/nTools/PrefabPainter/Examples/Textures.meta
+===================================================================
+--- Assets/NewScene/nTools/PrefabPainter/Examples/Textures.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
++++ Assets/NewScene/nTools/PrefabPainter/Examples/Textures.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: 87a4bb9156b7dc84bb3e645a0c1b9cbf
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/NewScene/Scenes/Lucas-Works.meta
+===================================================================
+--- Assets/NewScene/Scenes/Lucas-Works.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
++++ Assets/NewScene/Scenes/Lucas-Works.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: 856f8057f28bdf848ab9fb7ca88b848a
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/NewScene/Graphics/Post-Process Related.meta
+===================================================================
+--- Assets/NewScene/Graphics/Post-Process Related.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
++++ Assets/NewScene/Graphics/Post-Process Related.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: 9c12caaba101b5c4e9c9b42751248c72
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/NewScene/Prefabs/PreyProfiles.meta
+===================================================================
+--- Assets/NewScene/Prefabs/PreyProfiles.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
++++ Assets/NewScene/Prefabs/PreyProfiles.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: cc1161defae7394429fea6ce9d3f22a0
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/NewScene/nTools/PrefabPainter/Examples/Scenes.meta
+===================================================================
+--- Assets/NewScene/nTools/PrefabPainter/Examples/Scenes.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
++++ Assets/NewScene/nTools/PrefabPainter/Examples/Scenes.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: 9b40d96ef19fc4d47b56b62fd269b308
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/nTools/PrefabPainter/Examples/Materials.meta
+===================================================================
+--- Assets/nTools/PrefabPainter/Examples/Materials.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
++++ Assets/nTools/PrefabPainter/Examples/Materials.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: f856079b98172ec4080dc9ce51d3990f
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/NewScene/nTools/PrefabPainter/GUI.meta
+===================================================================
+--- Assets/NewScene/nTools/PrefabPainter/GUI.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
++++ Assets/NewScene/nTools/PrefabPainter/GUI.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: d634ed4e29f88d141aaada7421286874
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/NewScene/Materials/Preys.meta
+===================================================================
+--- Assets/NewScene/Materials/Preys.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
++++ Assets/NewScene/Materials/Preys.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: a7fa38e3c9a7a8447a48e25e0db3a9d3
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/NewScene/Graphics/Shaders.meta
+===================================================================
+--- Assets/NewScene/Graphics/Shaders.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
++++ Assets/NewScene/Graphics/Shaders.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: 7d90f0b7e069d004f98d10c4ce6bb743
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/NewScene/Graphics/Images.meta
+===================================================================
+--- Assets/NewScene/Graphics/Images.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
++++ Assets/NewScene/Graphics/Images.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: 02bfe84018e7cd54c80aa54dfd347ab5
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/NewScene/Graphics/Materials/DebugMatérials.meta
+===================================================================
+--- Assets/NewScene/Graphics/Materials/DebugMatérials.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
++++ Assets/NewScene/Graphics/Materials/DebugMatérials.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: 60b664474dd5e264493943e129b8c7c2
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/NewScene/Materials/DebugMatérials.meta
+===================================================================
+--- Assets/NewScene/Materials/DebugMatérials.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
++++ Assets/NewScene/Materials/DebugMatérials.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: 9d075a847bd665347ab4af66d350aeb3
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/NewScene/nTools/PrefabPainter/Docs.meta
+===================================================================
+--- Assets/NewScene/nTools/PrefabPainter/Docs.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
++++ Assets/NewScene/nTools/PrefabPainter/Docs.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: 499108a3700f5b8499f84990444b8ed7
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/NewScene/Scenes/Bastien_LD.meta
+===================================================================
+--- Assets/NewScene/Scenes/Bastien_LD.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
++++ Assets/NewScene/Scenes/Bastien_LD.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: 5f203146adfea484aa5130291993a421
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/nTools/PrefabPainter/Examples/Textures.meta
+===================================================================
+--- Assets/nTools/PrefabPainter/Examples/Textures.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
++++ Assets/nTools/PrefabPainter/Examples/Textures.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: d621f09509857aa428663367c8fc73ab
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/nTools/PrefabPainter/Examples/Scenes.meta
+===================================================================
+--- Assets/nTools/PrefabPainter/Examples/Scenes.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
++++ Assets/nTools/PrefabPainter/Examples/Scenes.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: 1d17fb93486c3524eb05e79df1883f79
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/NewScene/Prefabs/Managers.meta
+===================================================================
+--- Assets/NewScene/Prefabs/Managers.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
++++ Assets/NewScene/Prefabs/Managers.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: a210316ec4fa3044d833afdd3a28be79
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/nTools/PrefabPainter/Examples/Models.meta
+===================================================================
+--- Assets/nTools/PrefabPainter/Examples/Models.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
++++ Assets/nTools/PrefabPainter/Examples/Models.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: 26c501c6a74688f40ab576f88cc34555
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/NewScene/Prefabs/UI.meta
+===================================================================
+--- Assets/NewScene/Prefabs/UI.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
++++ Assets/NewScene/Prefabs/UI.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: 60ea6951083ec894d8d138adc659b63c
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/NewScene/Graphics/Debug Materials/Materials.meta
+===================================================================
+--- Assets/NewScene/Graphics/Debug Materials/Materials.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
++++ Assets/NewScene/Graphics/Debug Materials/Materials.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
+@@ -1,12 +0,0 @@
+-fileFormatVersion: 2
+-<<<<<<< HEAD:Assets/NewScene/Graphics/Debug Materials/Materials.meta
+-guid: 754e2642db795af4c828be566c25047e
+-=======
+-guid: 72ad1251a2c3793408b2de47b3409450
+->>>>>>> main:Assets/FMOD.meta
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/NewScene/nTools/PrefabPainter/Examples/Models.meta
+===================================================================
+--- Assets/NewScene/nTools/PrefabPainter/Examples/Models.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
++++ Assets/NewScene/nTools/PrefabPainter/Examples/Models.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: 888b9f723771dbc47a43c34a044f9909
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/NewScene/nTools/PrefabPainter/Presets.meta
+===================================================================
+--- Assets/NewScene/nTools/PrefabPainter/Presets.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
++++ Assets/NewScene/nTools/PrefabPainter/Presets.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: 6c892807bb048764a845bda0e599551f
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/NewScene/Scenes/Game.meta
+===================================================================
+--- Assets/NewScene/Scenes/Game.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
++++ Assets/NewScene/Scenes/Game.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: 1ccbf1fc38a4aed41a94679c9c8b3925
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/NewScene/nTools/PrefabPainter/Examples/Prefabs.meta
+===================================================================
+--- Assets/NewScene/nTools/PrefabPainter/Examples/Prefabs.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
++++ Assets/NewScene/nTools/PrefabPainter/Examples/Prefabs.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: 8e286c9a335ce35438edce9b1932a07f
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+diff --git .idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Merge_at_13_01_2021_23_40__Default_Changelist_.xml .idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Merge_at_13_01_2021_23_40__Default_Changelist_.xml
+diff --git .idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Update_at_13_01_2021_23_12__Default_Changelist_.xml .idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Update_at_13_01_2021_23_12__Default_Changelist_.xml
+diff --git .idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Update_at_13_01_2021_23_13__Default_Changelist_.xml .idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Update_at_13_01_2021_23_13__Default_Changelist_.xml
+diff --git .idea/.idea.Swarm/.idea/shelf/unnamed.xml .idea/.idea.Swarm/.idea/shelf/unnamed.xml
+diff --git .idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Merge_at_07_01_2021_21_45__Default_Changelist_.xml .idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Merge_at_07_01_2021_21_45__Default_Changelist_.xml
+diff --git .idea/.idea.Swarm/.idea/shelf/Default_Changelist1.xml .idea/.idea.Swarm/.idea/shelf/Default_Changelist1.xml

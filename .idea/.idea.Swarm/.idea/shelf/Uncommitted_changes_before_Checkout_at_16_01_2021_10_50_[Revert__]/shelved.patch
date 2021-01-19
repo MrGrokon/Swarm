@@ -1,0 +1,705 @@
+Index: Assets/NewScene/Prefabs/LD Elements.meta
+===================================================================
+--- Assets/NewScene/Prefabs/LD Elements.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
++++ Assets/NewScene/Prefabs/LD Elements.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: c6733fdf5e8030e4d948fe7c78212bc6
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/NewScene/nTools/PrefabPainter/Examples/Materials.meta
+===================================================================
+--- Assets/NewScene/nTools/PrefabPainter/Examples/Materials.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
++++ Assets/NewScene/nTools/PrefabPainter/Examples/Materials.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: a0997de69e4cb89428537d90e081e5bb
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/NewScene/nTools/PrefabPainter/Scripts/Editor.meta
+===================================================================
+--- Assets/NewScene/nTools/PrefabPainter/Scripts/Editor.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
++++ Assets/NewScene/nTools/PrefabPainter/Scripts/Editor.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: 3a255ed1bca97264b94e0470c0a0768d
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/NewScene/Graphics/Textures.meta
+===================================================================
+--- Assets/NewScene/Graphics/Textures.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
++++ Assets/NewScene/Graphics/Textures.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: 27c061695a213ac489c2cbbab42d0e8c
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/NewScene/nTools/PrefabPainter/Examples/Textures.meta
+===================================================================
+--- Assets/NewScene/nTools/PrefabPainter/Examples/Textures.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
++++ Assets/NewScene/nTools/PrefabPainter/Examples/Textures.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: 87a4bb9156b7dc84bb3e645a0c1b9cbf
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/NewScene/nTools/PrefabPainter/Examples/Scenes.meta
+===================================================================
+--- Assets/NewScene/nTools/PrefabPainter/Examples/Scenes.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
++++ Assets/NewScene/nTools/PrefabPainter/Examples/Scenes.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: 9b40d96ef19fc4d47b56b62fd269b308
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/NewScene/nTools/PrefabPainter/GUI.meta
+===================================================================
+--- Assets/NewScene/nTools/PrefabPainter/GUI.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
++++ Assets/NewScene/nTools/PrefabPainter/GUI.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: d634ed4e29f88d141aaada7421286874
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/NewScene/Materials/Preys.meta
+===================================================================
+--- Assets/NewScene/Materials/Preys.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
++++ Assets/NewScene/Materials/Preys.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: a7fa38e3c9a7a8447a48e25e0db3a9d3
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/NewScene/Graphics/Shaders.meta
+===================================================================
+--- Assets/NewScene/Graphics/Shaders.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
++++ Assets/NewScene/Graphics/Shaders.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: 7d90f0b7e069d004f98d10c4ce6bb743
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/NewScene/Graphics/Images.meta
+===================================================================
+--- Assets/NewScene/Graphics/Images.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
++++ Assets/NewScene/Graphics/Images.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: 02bfe84018e7cd54c80aa54dfd347ab5
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/NewScene/Prefabs.meta
+===================================================================
+--- Assets/NewScene/Prefabs.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
++++ Assets/NewScene/Prefabs.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: 0b099ff37de3c52478cfc7d98de2b2c0
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/NewScene/Materials/DebugMatérials.meta
+===================================================================
+--- Assets/NewScene/Materials/DebugMatérials.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
++++ Assets/NewScene/Materials/DebugMatérials.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: 9d075a847bd665347ab4af66d350aeb3
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/NewScene/Scenes/Bastien_LD.meta
+===================================================================
+--- Assets/NewScene/Scenes/Bastien_LD.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
++++ Assets/NewScene/Scenes/Bastien_LD.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: 5f203146adfea484aa5130291993a421
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/nTools/PrefabPainter/Examples/Textures.meta
+===================================================================
+--- Assets/nTools/PrefabPainter/Examples/Textures.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
++++ Assets/nTools/PrefabPainter/Examples/Textures.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: d621f09509857aa428663367c8fc73ab
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/nTools/PrefabPainter/Examples.meta
+===================================================================
+--- Assets/nTools/PrefabPainter/Examples.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
++++ Assets/nTools/PrefabPainter/Examples.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: dd82b5ea95706f340b552c424382c7dd
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/nTools/PrefabPainter/Examples/Scenes.meta
+===================================================================
+--- Assets/nTools/PrefabPainter/Examples/Scenes.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
++++ Assets/nTools/PrefabPainter/Examples/Scenes.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: 1d17fb93486c3524eb05e79df1883f79
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/NewScene/Prefabs/UI.meta
+===================================================================
+--- Assets/NewScene/Prefabs/UI.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
++++ Assets/NewScene/Prefabs/UI.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: 60ea6951083ec894d8d138adc659b63c
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/NewScene/Materials.meta
+===================================================================
+--- Assets/NewScene/Materials.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
++++ Assets/NewScene/Materials.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: e40cbac4ea9f5c54793cb13205c5c9f3
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/NewScene/Graphics/Materials.meta
+===================================================================
+--- Assets/NewScene/Graphics/Materials.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
++++ Assets/NewScene/Graphics/Materials.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: 03535f2c5f4b6084d80fef7295b56650
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/NewScene/Graphics/Debug Materials.meta
+===================================================================
+--- Assets/NewScene/Graphics/Debug Materials.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
++++ Assets/NewScene/Graphics/Debug Materials.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: dc92af21041c0cf4596ef3f610679a7a
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/NewScene/Materials/Environment Materials.meta
+===================================================================
+--- Assets/NewScene/Materials/Environment Materials.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
++++ Assets/NewScene/Materials/Environment Materials.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: 94d6bdb81c43ce0479784c0e99ee5583
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/NewScene/nTools/PrefabPainter/Settings.meta
+===================================================================
+--- Assets/NewScene/nTools/PrefabPainter/Settings.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
++++ Assets/NewScene/nTools/PrefabPainter/Settings.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: ed19775b04422624ab19cd65ddef404c
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/NewScene/Graphics/Materials/Preys.meta
+===================================================================
+--- Assets/NewScene/Graphics/Materials/Preys.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
++++ Assets/NewScene/Graphics/Materials/Preys.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: caa57cc0defbb64499faf7c5ed5e862d
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/NewScene/Graphics/Materials/Environment Materials.meta
+===================================================================
+--- Assets/NewScene/Graphics/Materials/Environment Materials.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
++++ Assets/NewScene/Graphics/Materials/Environment Materials.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: 3a16927592c79fa4b87202acbe04fd3f
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/NewScene/nTools/PrefabPainter/Examples.meta
+===================================================================
+--- Assets/NewScene/nTools/PrefabPainter/Examples.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
++++ Assets/NewScene/nTools/PrefabPainter/Examples.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: 8a6fe17be1d8fb84ea141f75fb57dcf5
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/nTools/PrefabPainter/Examples/Prefabs.meta
+===================================================================
+--- Assets/nTools/PrefabPainter/Examples/Prefabs.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
++++ Assets/nTools/PrefabPainter/Examples/Prefabs.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: 51fdc489d2388684191d9a8e6643dba2
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/NewScene/Scenes/Lucas-Works.meta
+===================================================================
+--- Assets/NewScene/Scenes/Lucas-Works.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
++++ Assets/NewScene/Scenes/Lucas-Works.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: 856f8057f28bdf848ab9fb7ca88b848a
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/NewScene/Graphics/Post-Process Related.meta
+===================================================================
+--- Assets/NewScene/Graphics/Post-Process Related.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
++++ Assets/NewScene/Graphics/Post-Process Related.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: 9c12caaba101b5c4e9c9b42751248c72
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/NewScene/Prefabs/PreyProfiles.meta
+===================================================================
+--- Assets/NewScene/Prefabs/PreyProfiles.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
++++ Assets/NewScene/Prefabs/PreyProfiles.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: cc1161defae7394429fea6ce9d3f22a0
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/NewScene/Scenes.meta
+===================================================================
+--- Assets/NewScene/Scenes.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
++++ Assets/NewScene/Scenes.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: 0682a66efa409ea44a19900a85617120
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/nTools/PrefabPainter/Examples/Materials.meta
+===================================================================
+--- Assets/nTools/PrefabPainter/Examples/Materials.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
++++ Assets/nTools/PrefabPainter/Examples/Materials.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: f856079b98172ec4080dc9ce51d3990f
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/NewScene/Graphics/Materials/DebugMatérials.meta
+===================================================================
+--- Assets/NewScene/Graphics/Materials/DebugMatérials.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
++++ Assets/NewScene/Graphics/Materials/DebugMatérials.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: 60b664474dd5e264493943e129b8c7c2
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/NewScene/nTools/PrefabPainter/Docs.meta
+===================================================================
+--- Assets/NewScene/nTools/PrefabPainter/Docs.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
++++ Assets/NewScene/nTools/PrefabPainter/Docs.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: 499108a3700f5b8499f84990444b8ed7
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/NewScene/Prefabs/Managers.meta
+===================================================================
+--- Assets/NewScene/Prefabs/Managers.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
++++ Assets/NewScene/Prefabs/Managers.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: a210316ec4fa3044d833afdd3a28be79
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/nTools/PrefabPainter/Examples/Models.meta
+===================================================================
+--- Assets/nTools/PrefabPainter/Examples/Models.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
++++ Assets/nTools/PrefabPainter/Examples/Models.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: 26c501c6a74688f40ab576f88cc34555
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/NewScene/nTools/PrefabPainter/Scripts.meta
+===================================================================
+--- Assets/NewScene/nTools/PrefabPainter/Scripts.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
++++ Assets/NewScene/nTools/PrefabPainter/Scripts.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: 1de74d655aefe314a93273b42befa70a
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/NewScene/Graphics/Debug Materials/Materials.meta
+===================================================================
+--- Assets/NewScene/Graphics/Debug Materials/Materials.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
++++ Assets/NewScene/Graphics/Debug Materials/Materials.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
+@@ -1,12 +0,0 @@
+-fileFormatVersion: 2
+-<<<<<<< HEAD:Assets/NewScene/Graphics/Debug Materials/Materials.meta
+-guid: 754e2642db795af4c828be566c25047e
+-=======
+-guid: 72ad1251a2c3793408b2de47b3409450
+->>>>>>> main:Assets/FMOD.meta
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/NewScene/nTools/PrefabPainter/Examples/Models.meta
+===================================================================
+--- Assets/NewScene/nTools/PrefabPainter/Examples/Models.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
++++ Assets/NewScene/nTools/PrefabPainter/Examples/Models.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: 888b9f723771dbc47a43c34a044f9909
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/NewScene/nTools/PrefabPainter/Presets.meta
+===================================================================
+--- Assets/NewScene/nTools/PrefabPainter/Presets.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
++++ Assets/NewScene/nTools/PrefabPainter/Presets.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: 6c892807bb048764a845bda0e599551f
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/NewScene/Scenes/Game.meta
+===================================================================
+--- Assets/NewScene/Scenes/Game.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
++++ Assets/NewScene/Scenes/Game.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: 1ccbf1fc38a4aed41a94679c9c8b3925
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/NewScene/nTools/PrefabPainter/Examples/Prefabs.meta
+===================================================================
+--- Assets/NewScene/nTools/PrefabPainter/Examples/Prefabs.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
++++ Assets/NewScene/nTools/PrefabPainter/Examples/Prefabs.meta	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: 8e286c9a335ce35438edce9b1932a07f
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: .idea/.idea.Swarm/.idea/contentModel.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ContentModelStore\">\r\n    <e p=\"C:\\Users\\Théo\\AppData\\Local\\JetBrains\\Rider2020.2\\extResources\" t=\"IncludeRecursive\" />\r\n    <e p=\"C:\\Users\\Théo\\AppData\\Local\\JetBrains\\Rider2020.2\\resharper-host\\Local\\Transient\\Rider\\v202\\SolutionCaches\\_Swarm.-460535874.00\" t=\"ExcludeRecursive\" />\r\n    <e p=\"C:\\Users\\Théo\\Documents\\GitHub\\Swarm\\Swarm\" t=\"IncludeRecursive\">\r\n      <e p=\"Assembly-CSharp-Editor.csproj\" t=\"IncludeRecursive\" />\r\n      <e p=\"Assembly-CSharp.csproj\" t=\"IncludeRecursive\" />\r\n      <e p=\"Assets\" t=\"Include\">\r\n        <e p=\"Examples\" t=\"Include\">\r\n          <e p=\"Editor\" t=\"Include\">\r\n            <e p=\"NavMeshComponentsExamplesEditor.asmdef\" t=\"Include\" />\r\n            <e p=\"NavMeshPrefabInstanceEditor.cs\" t=\"Include\" />\r\n          </e>\r\n          <e p=\"NavMeshComponentsExamples.asmdef\" t=\"Include\" />\r\n          <e p=\"Scripts\" t=\"Include\">\r\n            <e p=\"AgentLinkMover.cs\" t=\"Include\" />\r\n            <e p=\"ClickToMove.cs\" t=\"Include\" />\r\n            <e p=\"DestroyOnTrigger.cs\" t=\"Include\" />\r\n            <e p=\"DungeonManager.cs\" t=\"Include\" />\r\n            <e p=\"EnableIffSleeping.cs\" t=\"Include\" />\r\n            <e p=\"FreeCam.cs\" t=\"Include\" />\r\n            <e p=\"LocalNavMeshBuilder.cs\" t=\"Include\" />\r\n            <e p=\"MeshTool.cs\" t=\"Include\" />\r\n            <e p=\"NavMeshPrefabInstance.cs\" t=\"Include\" />\r\n            <e p=\"NavMeshSourceTag.cs\" t=\"Include\" />\r\n            <e p=\"Oscillator.cs\" t=\"Include\" />\r\n            <e p=\"RandomInstancing.cs\" t=\"Include\" />\r\n            <e p=\"RandomWalk.cs\" t=\"Include\" />\r\n            <e p=\"SpawnPrefabOnKeyDown.cs\" t=\"Include\" />\r\n          </e>\r\n        </e>\r\n        <e p=\"NavMeshComponents\" t=\"Include\">\r\n          <e p=\"Editor\" t=\"Include\">\r\n            <e p=\"NavMeshAssetManager.cs\" t=\"Include\" />\r\n            <e p=\"NavMeshComponentsEditor.asmdef\" t=\"Include\" />\r\n            <e p=\"NavMeshComponentsGUIUtility.cs\" t=\"Include\" />\r\n            <e p=\"NavMeshLinkEditor.cs\" t=\"Include\" />\r\n            <e p=\"NavMeshModifierEditor.cs\" t=\"Include\" />\r\n            <e p=\"NavMeshModifierVolumeEditor.cs\" t=\"Include\" />\r\n            <e p=\"NavMeshSurfaceEditor.cs\" t=\"Include\" />\r\n          </e>\r\n          <e p=\"Scripts\" t=\"Include\">\r\n            <e p=\"NavMeshComponents.asmdef\" t=\"Include\" />\r\n            <e p=\"NavMeshLink.cs\" t=\"Include\" />\r\n            <e p=\"NavMeshModifier.cs\" t=\"Include\" />\r\n            <e p=\"NavMeshModifierVolume.cs\" t=\"Include\" />\r\n            <e p=\"NavMeshSurface.cs\" t=\"Include\" />\r\n          </e>\r\n        </e>\r\n        <e p=\"nTools\" t=\"Include\">\r\n          <e p=\"PrefabPainter\" t=\"Include\">\r\n            <e p=\"Docs\" t=\"Include\">\r\n              <e p=\"changelog.txt\" t=\"Include\" />\r\n            </e>\r\n            <e p=\"Presets\" t=\"Include\">\r\n              <e p=\"Decal Along Stroke.xml\" t=\"Include\" />\r\n              <e p=\"Decal Footsteps.xml\" t=\"Include\" />\r\n              <e p=\"Decal.xml\" t=\"Include\" />\r\n              <e p=\"Random.xml\" t=\"Include\" />\r\n              <e p=\"Stones.xml\" t=\"Include\" />\r\n              <e p=\"Tree Multibrush.xml\" t=\"Include\" />\r\n              <e p=\"Tree.xml\" t=\"Include\" />\r\n            </e>\r\n            <e p=\"Scripts\" t=\"Include\">\r\n              <e p=\"Editor\" t=\"Include\">\r\n                <e p=\"PrafabPainterGUI.cs\" t=\"Include\" />\r\n                <e p=\"PrefabPainter.cs\" t=\"Include\" />\r\n              </e>\r\n              <e p=\"PrefabPainterSceneSettings.cs\" t=\"Include\" />\r\n              <e p=\"PrefabPainterSettings.cs\" t=\"Include\" />\r\n              <e p=\"Utility.cs\" t=\"Include\" />\r\n            </e>\r\n          </e>\r\n        </e>\r\n        <e p=\"Scripts\" t=\"Include\">\r\n          <e p=\"AlphaCreature\" t=\"Include\">\r\n            <e p=\"Attack.cs\" t=\"Include\" />\r\n            <e p=\"BetaCreature_Creator.cs\" t=\"Include\" />\r\n            <e p=\"CameraRotate.cs\" t=\"Include\" />\r\n            <e p=\"CharacterController\" t=\"Include\">\r\n              <e p=\"InputTester.cs\" t=\"Include\" />\r\n              <e p=\"PlayerInputs.cs\" t=\"Include\" />\r\n            </e>\r\n            <e p=\"CreatureMover.cs\" t=\"Include\" />\r\n            <e p=\"FallAsleep.cs\" t=\"Include\" />\r\n            <e p=\"NoiseEmitter.cs\" t=\"Include\" />\r\n            <e p=\"PackOrderer.cs\" t=\"Include\" />\r\n            <e p=\"PreySniffer.cs\" t=\"Include\" />\r\n            <e p=\"RessourceManager.cs\" t=\"Include\" />\r\n            <e p=\"Targeting.cs\" t=\"Include\" />\r\n            <e p=\"ThridPersonCamera.cs\" t=\"Include\" />\r\n          </e>\r\n          <e p=\"BetaCreature\" t=\"Include\">\r\n            <e p=\"CreatureIntelligence.cs\" t=\"Include\" />\r\n            <e p=\"IntelligenceInterface.cs\" t=\"Include\" />\r\n          </e>\r\n          <e p=\"ClimbableTree.cs\" t=\"Include\" />\r\n          <e p=\"Common\" t=\"Include\">\r\n            <e p=\"HealthSysteme.cs\" t=\"Include\" />\r\n          </e>\r\n          <e p=\"DebugScript.cs\" t=\"Include\" />\r\n          <e p=\"DeprecatedScripts\" t=\"Include\">\r\n            <e p=\"DetectPlayer.cs\" t=\"Include\" />\r\n          </e>\r\n          <e p=\"Editor\" t=\"Include\">\r\n            <e p=\"FieldOfViewEditor.cs\" t=\"Include\" />\r\n            <e p=\"PlayerFieldOfView.cs\" t=\"Include\" />\r\n            <e p=\"SoundRangeEditor.cs\" t=\"Include\" />\r\n          </e>\r\n          <e p=\"Managers\" t=\"Include\">\r\n            <e p=\"GeneratePrey.cs\" t=\"Include\" />\r\n            <e p=\"Objects.cs\" t=\"Include\" />\r\n            <e p=\"PackManager.cs\" t=\"Include\" />\r\n            <e p=\"SetObjectDynamicaly.cs\" t=\"Include\" />\r\n            <e p=\"StartAsChildOf.cs\" t=\"Include\" />\r\n          </e>\r\n          <e p=\"PackMover.cs\" t=\"Include\" />\r\n          <e p=\"Prey\" t=\"Include\">\r\n            <e p=\"AbstractedRessourcesManager.cs\" t=\"Include\" />\r\n            <e p=\"AiDetection.cs\" t=\"Include\" />\r\n            <e p=\"AiSoundDetection.cs\" t=\"Include\" />\r\n            <e p=\"BasicPrey.cs\" t=\"Include\" />\r\n            <e p=\"Craintive.cs\" t=\"Include\" />\r\n            <e p=\"PreyAiManager.cs\" t=\"Include\" />\r\n            <e p=\"PreyLife.cs\" t=\"Include\" />\r\n            <e p=\"PreyProfile.cs\" t=\"Include\" />\r\n            <e p=\"Robuste.cs\" t=\"Include\" />\r\n            <e p=\"Terrier.cs\" t=\"Include\" />\r\n            <e p=\"TracksCreatorOverTime.cs\" t=\"Include\" />\r\n          </e>\r\n          <e p=\"Tracks\" t=\"Include\">\r\n            <e p=\"DestroyTrackOverTime.cs\" t=\"Include\" />\r\n            <e p=\"TrackInfo.cs\" t=\"Include\" />\r\n            <e p=\"TrackRenderer.cs\" t=\"Include\" />\r\n          </e>\r\n          <e p=\"UI\" t=\"Include\">\r\n            <e p=\"UI_Bar_FollowRessource.cs\" t=\"Include\" />\r\n          </e>\r\n        </e>\r\n        <e p=\"Tests\" t=\"Include\">\r\n          <e p=\"Editor\" t=\"Include\">\r\n            <e p=\"NavMeshComponentsTestsEditmode.asmdef\" t=\"Include\" />\r\n            <e p=\"NavMeshModifierVolumeInPrefabTests.cs\" t=\"Include\" />\r\n            <e p=\"NavMeshSurfaceInPrefabTests.cs\" t=\"Include\" />\r\n            <e p=\"NavMeshSurfaceInPrefabVariantTests.cs\" t=\"Include\" />\r\n            <e p=\"PrefabSavingUtil.cs\" t=\"Include\" />\r\n            <e p=\"PrefabStageAutoSavingUtil.cs\" t=\"Include\" />\r\n          </e>\r\n          <e p=\"NavMeshComponentsTestsPlaymode.asmdef\" t=\"Include\" />\r\n          <e p=\"NavMeshSurfaceAgentTests.cs\" t=\"Include\" />\r\n          <e p=\"NavMeshSurfaceLinkTests.cs\" t=\"Include\" />\r\n          <e p=\"NavMeshSurfaceModifierTests.cs\" t=\"Include\" />\r\n          <e p=\"NavMeshSurfaceModifierVolumeTests.cs\" t=\"Include\" />\r\n          <e p=\"NavMeshSurfaceTests.cs\" t=\"Include\" />\r\n        </e>\r\n        <e p=\"TrackDetector.cs\" t=\"Include\" />\r\n      </e>\r\n      <e p=\"NavMeshComponents.csproj\" t=\"IncludeRecursive\" />\r\n      <e p=\"NavMeshComponentsEditor.csproj\" t=\"IncludeRecursive\" />\r\n      <e p=\"NavMeshComponentsExamples.csproj\" t=\"IncludeRecursive\" />\r\n      <e p=\"NavMeshComponentsExamplesEditor.csproj\" t=\"IncludeRecursive\" />\r\n      <e p=\"NavMeshComponentsTestsEditmode.csproj\" t=\"IncludeRecursive\" />\r\n      <e p=\"NavMeshComponentsTestsPlaymode.csproj\" t=\"IncludeRecursive\" />\r\n      <e p=\"obj\" t=\"ExcludeRecursive\" />\r\n      <e p=\"Packages\" t=\"ExcludeRecursive\" />\r\n      <e p=\"Swarm.sln\" t=\"IncludeFlat\" />\r\n      <e p=\"Temp\\bin\" t=\"ExcludeRecursive\" />\r\n    </e>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/.idea.Swarm/.idea/contentModel.xml	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
++++ .idea/.idea.Swarm/.idea/contentModel.xml	(date 1610790557599)
+@@ -30,6 +30,63 @@
+             <e p="SpawnPrefabOnKeyDown.cs" t="Include" />
+           </e>
+         </e>
++        <e p="FMOD" t="Include">
++          <e p="SoundList" t="Include">
++            <e p="Metadata" t="Include">
++              <e p="Asset" t="Include">
++                <e p="{f8ea1947-53de-4ea8-8fb1-0efce7ea8ea4}.xml" t="Include" />
++              </e>
++              <e p="AudioFile" t="Include">
++                <e p="{082dceb0-b031-4170-85d7-939fddcbdcc9}.xml" t="Include" />
++                <e p="{2f05690b-a336-42a3-b468-bc4260808085}.xml" t="Include" />
++                <e p="{33c555b9-7f10-431a-a246-f4ef93f41747}.xml" t="Include" />
++                <e p="{4824d688-239c-4cac-ae9a-9f2365e5f052}.xml" t="Include" />
++                <e p="{5d2aefcc-69c5-4f4d-8b1a-3ed4aae20c91}.xml" t="Include" />
++                <e p="{6b0a5cfa-d9fa-410e-89ae-4c144795621f}.xml" t="Include" />
++                <e p="{71845ee4-39bf-466d-8914-29678141c2ec}.xml" t="Include" />
++                <e p="{97c24c3e-d8b9-4663-8e9e-2b94f060db5b}.xml" t="Include" />
++                <e p="{b6960aa9-766b-4695-b058-34c312a183ab}.xml" t="Include" />
++                <e p="{ba498baf-3c96-4bb9-a84c-3c5b212e0d71}.xml" t="Include" />
++              </e>
++              <e p="Bank" t="Include">
++                <e p="{0e23ad48-157f-4374-9550-ae50d3591ef8}.xml" t="Include" />
++              </e>
++              <e p="BankFolder" t="Include">
++                <e p="{6870e864-6374-4b35-8938-2b4aeb8f7631}.xml" t="Include" />
++              </e>
++              <e p="EffectPresetFolder" t="Include">
++                <e p="{25c41762-e7f1-43a1-a5e4-9d02dc34bd87}.xml" t="Include" />
++              </e>
++              <e p="EncodingSetting" t="Include">
++                <e p="{0486ff56-072f-4b84-beb6-a3bf200949fb}.xml" t="Include" />
++              </e>
++              <e p="Event" t="Include">
++                <e p="{01401652-0f94-474b-b878-1a799942008e}.xml" t="Include" />
++                <e p="{183b7cd6-f545-458e-995f-0b020d5e83ec}.xml" t="Include" />
++                <e p="{78a90e26-9b95-4278-9ea8-f3be1f145110}.xml" t="Include" />
++              </e>
++              <e p="EventFolder" t="Include">
++                <e p="{d76db21c-79aa-4b73-9089-e291f7d1bc63}.xml" t="Include" />
++              </e>
++              <e p="Master.xml" t="Include" />
++              <e p="Mixer.xml" t="Include" />
++              <e p="ParameterPresetFolder" t="Include">
++                <e p="{628ce587-b63a-4a08-bde8-ce519534251b}.xml" t="Include" />
++              </e>
++              <e p="Platform" t="Include">
++                <e p="{12ece97f-cf53-4fc9-92e4-5b7402afda63}.xml" t="Include" />
++              </e>
++              <e p="Return" t="Include">
++                <e p="{b566c449-8f61-4969-8ea5-5341963eff6d}.xml" t="Include" />
++              </e>
++              <e p="SnapshotGroup" t="Include">
++                <e p="{b2df178e-c479-42df-bc8c-037eec92a5ae}.xml" t="Include" />
++              </e>
++              <e p="Tags.xml" t="Include" />
++              <e p="Workspace.xml" t="Include" />
++            </e>
++          </e>
++        </e>
+         <e p="NavMeshComponents" t="Include">
+           <e p="Editor" t="Include">
+             <e p="NavMeshAssetManager.cs" t="Include" />
+Index: .idea/.idea.Swarm/.idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"BranchesTreeState\">\r\n    <expand>\r\n      <path>\r\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n        <item name=\"LOCAL_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n      </path>\r\n      <path>\r\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n        <item name=\"REMOTE_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n      </path>\r\n      <path>\r\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n        <item name=\"REMOTE_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n        <item name=\"GROUP_NODE:origin\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n      </path>\r\n    </expand>\r\n    <select />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"e9a9fd44-a60f-4fbc-b03b-f25159acb4b3\" name=\"Default Changelist\" comment=\"Il a pas mis le putain de navmesh\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/.idea.Swarm/.idea/contentModel.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/.idea.Swarm/.idea/contentModel.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/.idea.Swarm/.idea/projectSettingsUpdater.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/.idea.Swarm/.idea/projectSettingsUpdater.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Default_Changelist1.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Default_Changelist1.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Merge_at_07_01_2021_21_45__Default_Changelist_.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Merge_at_07_01_2021_21_45__Default_Changelist_.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Update_at_13_01_2021_23_12__Default_Changelist_.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Update_at_13_01_2021_23_12__Default_Changelist_.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Update_at_13_01_2021_23_13__Default_Changelist_.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Update_at_13_01_2021_23_13__Default_Changelist_.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/unnamed.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/unnamed.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/.idea.Swarm/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/.idea.Swarm/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/Assets/Prefabs/Alpha Creature.prefab\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Assets/Prefabs/Alpha Creature.prefab\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/Assets/Prefabs/PlayerGroup.prefab\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Assets/Prefabs/PlayerGroup.prefab\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/Assets/Prefabs/Track.prefab\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Assets/Prefabs/Track.prefab\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/Assets/Scenes/Bastien_LD2.unity\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Assets/Scenes/Bastien_LD2.unity\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/Assets/Scripts/Tracks/TrackRenderer.cs\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Assets/Scripts/Tracks/TrackRenderer.cs\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/ProjectSettings/TagManager.asset\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/ProjectSettings/TagManager.asset\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"ThéoBranch\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"HighlightingSettingsPerFile\">\r\n    <setting file=\"file://$PROJECT_DIR$/Assets/Scripts/Prey/BasicPrey.cs\" root0=\"FORCE_HIGHLIGHTING\" />\r\n    <setting file=\"file://$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CreatureMover.cs\" root0=\"FORCE_HIGHLIGHTING\" />\r\n    <setting file=\"file://$PROJECT_DIR$/Assets/Scripts/AlphaCreature/PackOrderer.cs\" root0=\"FORCE_HIGHLIGHTING\" />\r\n    <setting file=\"file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.6.3/Runtime/Core/AxisState.cs\" root0=\"SKIP_HIGHLIGHTING\" />\r\n    <setting file=\"file://$PROJECT_DIR$/Assets/Scripts/Prey/Craintive.cs\" root0=\"FORCE_HIGHLIGHTING\" />\r\n    <setting file=\"file://F:/UnityProject/CsLike/CsLike/Assets/Scripts/BotTargeting.cs\" root0=\"SKIP_HIGHLIGHTING\" />\r\n    <setting file=\"file://$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CharacterController/InputTester.cs\" root0=\"FORCE_HIGHLIGHTING\" />\r\n    <setting file=\"file://$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CharacterController/PlayerInputs.cs\" root0=\"FORCE_HIGHLIGHTING\" />\r\n    <setting file=\"file://$PROJECT_DIR$/Assets/Scripts/AlphaCreature/Targeting.cs\" root0=\"FORCE_HIGHLIGHTING\" />\r\n    <setting file=\"file://$PROJECT_DIR$/Assets/Scripts/Managers/GeneratePrey.cs\" root0=\"FORCE_HIGHLIGHTING\" />\r\n    <setting file=\"file://F:/UnityProject/CsLike/CsLike/Assets/Scripts/BotDetection.cs\" root0=\"SKIP_HIGHLIGHTING\" />\r\n    <setting file=\"file://$PROJECT_DIR$/Assets/Scripts/BetaCreature/IntelligenceInterface.cs\" root0=\"FORCE_HIGHLIGHTING\" />\r\n    <setting file=\"file://$PROJECT_DIR$/Assets/Scripts/Managers/Objects.cs\" root0=\"FORCE_HIGHLIGHTING\" />\r\n    <setting file=\"file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.0.0/InputSystem/Utilities/DelegateHelpers.cs\" root0=\"SKIP_HIGHLIGHTING\" />\r\n    <setting file=\"file://$PROJECT_DIR$/Assets/nTools/PrefabPainter/Scripts/Editor/PrefabPainter.cs\" root0=\"FORCE_HIGHLIGHTING\" />\r\n    <setting file=\"file://$PROJECT_DIR$/Assets/Scripts/Prey/PreyLife.cs\" root0=\"FORCE_HIGHLIGHTING\" />\r\n    <setting file=\"file://$PROJECT_DIR$/Assets/Scripts/AlphaCreature/Attack.cs\" root0=\"FORCE_HIGHLIGHTING\" />\r\n  </component>\r\n  <component name=\"IdeDocumentHistory\">\r\n    <option name=\"CHANGED_PATHS\">\r\n      <list>\r\n        <option value=\"$PROJECT_DIR$/Assets/Scripts/Prey/HealthSystemPrey.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/DetectPlayer.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/Scripts/Prey/PreyManagerOrWhatEverWeCallIt.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/Scripts/InputTester.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/Scripts/PreySniffer.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/Scripts/PackManager.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/ObjectsInstance.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/GeneratePrey.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/CameraChanger.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CharacterController/InputTester.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/AiSoundDetection.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/Scripts/Prey/FieldOfViewEditor.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/Scripts/AlphaCreature/BetaCreature_Creator.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/Scripts/AlphaCreature/PackOrderer.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/Scripts/AlphaCreature/PreySniffer.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/Scripts/AlphaCreature/RessourceManager.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/Scripts/BetaCreature/CreatureIntelligence.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/Scripts/Common/HealthSysteme.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/Scripts/Managers/GeneratePrey.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/Scripts/Managers/PackManager.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/Scripts/Prey/AiDetection.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/TrackInfo.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/Scripts/AlphaCreature/FallAsleep.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/CameraRotate.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/ThridPersonCamera.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/Scripts/Editor/SoundRangeEditor.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/NoiseEmitter.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/ClimbableTree.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/DestroyTrackOverTime.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/LookAt.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/Scripts/Prey/TracksCreatorOverTime.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/Scripts/DebugScript.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/Scripts/Prey/AIsystem.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/Scripts/Prey/PreyLife.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/Scripts/Editor/PlayerFieldOfView.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CameraRotate.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/Scripts/AlphaCreature/Attack.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/Scripts/AlphaCreature/Targeting.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/Scripts/AlphaCreature/ThridPersonCamera.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CreatureMover.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/Scripts/Prey/HerdPrey.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/Scripts/Prey/AiSoundDetection.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/herdManager.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CharacterController/PlayerInputs.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/Scripts/Prey/PreyAiManager.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/Scripts/Prey/Craintive.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/Scripts/Prey/Terrier.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/Scripts/Prey/Robuste.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/Scripts/Prey/BasicPrey.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/TrackDetector.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/Scripts/Tracks/TrackRenderer.cs\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"1kgWRL9xhW13eBvb9G63GM0hhKZ\" />\r\n  <component name=\"ProjectLevelVcsManager\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"Discover.Launch.Via.Unity\" value=\"true\" />\r\n    <property name=\"Git.Branch.Popup.ShowAllRemotes\" value=\"true\" />\r\n    <property name=\"Rider.DefaultBreakpoints.AreToggled\" value=\"true\" />\r\n    <property name=\"Rider.ProjectViewActivator.IsNotFirstRun\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\r\n    <property name=\"node.js.detected.package.eslint\" value=\"true\" />\r\n    <property name=\"node.js.detected.package.tslint\" value=\"true\" />\r\n    <property name=\"node.js.path.for.package.eslint\" value=\"project\" />\r\n    <property name=\"node.js.path.for.package.tslint\" value=\"project\" />\r\n    <property name=\"node.js.selected.package.eslint\" value=\"(autodetect)\" />\r\n    <property name=\"node.js.selected.package.tslint\" value=\"(autodetect)\" />\r\n    <property name=\"nodejs_package_manager_path\" value=\"npm\" />\r\n    <property name=\"vue.rearranger.settings.migration\" value=\"true\" />\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"Attach to Unity Editor.Attach to Unity Editor\">\r\n    <configuration name=\"Standalone Player\" type=\"RunUnityExe\" factoryName=\"Unity Executable\">\r\n      <option name=\"EXE_PATH\" value=\"$USER_HOME$/Desktop/Chasse 0.2\\Proto_Swarm.exe\" />\r\n      <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"C:\\Users\\Théo\\Desktop\\Chasse 0.2\" />\r\n      <option name=\"PASS_PARENT_ENVS\" value=\"1\" />\r\n      <option name=\"USE_EXTERNAL_CONSOLE\" value=\"0\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"Attach to Unity Editor &amp; Play\" type=\"UNITY_DEBUG_RUN_CONFIGURATION\" factoryName=\"UNITY_ATTACH_AND_PLAY\" show_console_on_std_err=\"false\" show_console_on_std_out=\"false\" port=\"50000\" address=\"localhost\">\r\n      <option name=\"allowRunningInParallel\" value=\"false\" />\r\n      <option name=\"listenPortForConnections\" value=\"false\" />\r\n      <option name=\"pid\" />\r\n      <option name=\"selectedOptions\">\r\n        <set />\r\n      </option>\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"Attach to Unity Editor\" type=\"UNITY_DEBUG_RUN_CONFIGURATION\" factoryName=\"Unity Debug\" show_console_on_std_err=\"false\" show_console_on_std_out=\"false\" port=\"50000\" address=\"localhost\">\r\n      <option name=\"allowRunningInParallel\" value=\"false\" />\r\n      <option name=\"listenPortForConnections\" value=\"false\" />\r\n      <option name=\"pid\" />\r\n      <option name=\"selectedOptions\">\r\n        <set />\r\n      </option>\r\n      <method v=\"2\" />\r\n    </configuration>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"SvnConfiguration\">\r\n    <configuration />\r\n  </component>\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"e9a9fd44-a60f-4fbc-b03b-f25159acb4b3\" name=\"Default Changelist\" comment=\"\" />\r\n      <created>1606122712142</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1606122712142</updated>\r\n      <workItem from=\"1606122731146\" duration=\"1657000\" />\r\n      <workItem from=\"1606668458389\" duration=\"1956000\" />\r\n      <workItem from=\"1606917889306\" duration=\"4446000\" />\r\n      <workItem from=\"1607018165915\" duration=\"751000\" />\r\n      <workItem from=\"1607087468044\" duration=\"5324000\" />\r\n      <workItem from=\"1607092849844\" duration=\"297000\" />\r\n      <workItem from=\"1607102962869\" duration=\"1883000\" />\r\n      <workItem from=\"1607165821441\" duration=\"2359000\" />\r\n      <workItem from=\"1607287181160\" duration=\"425000\" />\r\n      <workItem from=\"1607288431560\" duration=\"2089000\" />\r\n      <workItem from=\"1607376802374\" duration=\"219000\" />\r\n      <workItem from=\"1607468629553\" duration=\"39000\" />\r\n      <workItem from=\"1607884799181\" duration=\"2265000\" />\r\n      <workItem from=\"1607935921826\" duration=\"69000\" />\r\n      <workItem from=\"1607936123811\" duration=\"4584000\" />\r\n      <workItem from=\"1607965027025\" duration=\"572000\" />\r\n      <workItem from=\"1607988860373\" duration=\"758000\" />\r\n      <workItem from=\"1608023677684\" duration=\"1362000\" />\r\n      <workItem from=\"1608056982369\" duration=\"669000\" />\r\n      <workItem from=\"1608210920802\" duration=\"2183000\" />\r\n      <workItem from=\"1608238891545\" duration=\"3446000\" />\r\n      <workItem from=\"1608284493309\" duration=\"3301000\" />\r\n      <workItem from=\"1608312459709\" duration=\"1920000\" />\r\n      <workItem from=\"1608542936182\" duration=\"626000\" />\r\n      <workItem from=\"1608546338484\" duration=\"5198000\" />\r\n      <workItem from=\"1608630123941\" duration=\"714000\" />\r\n      <workItem from=\"1608634938235\" duration=\"16000\" />\r\n      <workItem from=\"1608643233642\" duration=\"3974000\" />\r\n      <workItem from=\"1608733177957\" duration=\"3444000\" />\r\n      <workItem from=\"1609003939405\" duration=\"37000\" />\r\n      <workItem from=\"1609011589673\" duration=\"659000\" />\r\n      <workItem from=\"1609085077854\" duration=\"1671000\" />\r\n      <workItem from=\"1609155798941\" duration=\"1397000\" />\r\n      <workItem from=\"1609252366755\" duration=\"1000\" />\r\n      <workItem from=\"1609252393266\" duration=\"17000\" />\r\n      <workItem from=\"1609257562017\" duration=\"318000\" />\r\n      <workItem from=\"1609519335710\" duration=\"8380000\" />\r\n      <workItem from=\"1609535183238\" duration=\"2239000\" />\r\n      <workItem from=\"1609537610272\" duration=\"114000\" />\r\n      <workItem from=\"1609542465351\" duration=\"1202000\" />\r\n      <workItem from=\"1609544056538\" duration=\"105000\" />\r\n      <workItem from=\"1609546693252\" duration=\"750000\" />\r\n      <workItem from=\"1609591600886\" duration=\"5083000\" />\r\n      <workItem from=\"1609598730331\" duration=\"789000\" />\r\n      <workItem from=\"1609860842155\" duration=\"3995000\" />\r\n      <workItem from=\"1610378285028\" duration=\"630000\" />\r\n      <workItem from=\"1610579330897\" duration=\"713000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Camera system implémenté\">\r\n      <created>1606123669149</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1606123669149</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"Merge du main dans le bridge\">\r\n      <created>1606664177577</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1606664177577</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"Base CHasse\">\r\n      <created>1607087521153</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1607087521153</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"Tout les scripts implémentés comme convenu dans le flow chart\">\r\n      <created>1607093512724</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1607093512724</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"Ajout des inputs\">\r\n      <created>1607096751581</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1607096751581</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"Reformation du maib\">\r\n      <created>1607105355978</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1607105355978</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"Correctif sur la formation\">\r\n      <created>1607124688723</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1607124688723</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00008\" summary=\"Correctif sur la formation #2\">\r\n      <created>1607125054106</created>\r\n      <option name=\"number\" value=\"00008\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1607125054106</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00009\" summary=\"Changement du spawn des proies&#10;Rebuild du nav mesh\">\r\n      <created>1607268343138</created>\r\n      <option name=\"number\" value=\"00009\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1607268343138</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00010\" summary=\"Chery-pick\">\r\n      <created>1607268501898</created>\r\n      <option name=\"number\" value=\"00010\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1607268501898</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00011\" summary=\"Ajout du camera Rotate\">\r\n      <created>1607287597839</created>\r\n      <option name=\"number\" value=\"00011\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00011\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1607287597839</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00012\" summary=\"Ajout du camera Rotate\">\r\n      <created>1607288924671</created>\r\n      <option name=\"number\" value=\"00012\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00012\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1607288924671</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00013\" summary=\"Fix des spawn des proies,&#10;Clamp des valeur de faim et vie,&#10;Possible fix du trail qui ne dépop pas\">\r\n      <created>1607290062365</created>\r\n      <option name=\"number\" value=\"00013\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00013\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1607290062365</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00014\" summary=\"Fix AI naviguation problems&#10;Add base mesh rendering for previsualization&#10;Fix navmesh\">\r\n      <created>1607895400454</created>\r\n      <option name=\"number\" value=\"00014\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00014\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1607895400454</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00015\" summary=\" 0.5.1.0 : Fix TrackRenderer trail\">\r\n      <created>1607938636569</created>\r\n      <option name=\"number\" value=\"00015\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00015\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1607938636569</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00016\" summary=\" 0.5.1.1 : Ajout du sound detection\">\r\n      <created>1607943786196</created>\r\n      <option name=\"number\" value=\"00016\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00016\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1607943786196</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00017\" summary=\"0.6.0.0 : Add sprint mecanic\">\r\n      <created>1608213047223</created>\r\n      <option name=\"number\" value=\"00017\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00017\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1608213047223</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00018\" summary=\" 0.5.2.0 : Bonne orientation de track renderer visual&#10; Ajustement sur la caméra\">\r\n      <created>1608313373159</created>\r\n      <option name=\"number\" value=\"00018\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00018\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1608313373160</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00019\" summary=\" 0.6.1.0 : Ajout de feedback sur le sommeil, Ajout de signes pour le sprint, Augmentation de la vitesse de la caméra, Dépop du cône de traque\">\r\n      <created>1608547842754</created>\r\n      <option name=\"number\" value=\"00019\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00019\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1608547842754</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00020\" summary=\" 0.6.2.0 : Réecriture de la caméra, suppression des tremblements lié a mouvements, Suppression de la création des bétas\">\r\n      <created>1608550546326</created>\r\n      <option name=\"number\" value=\"00020\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00020\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1608550546326</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00021\" summary=\" 1.0.0.0 : Ajout d'un émetteur de son sur le joueur, changement de la détection du son par les proies, ajout des éléments de LD suivant : hautes-herbes, rochers\">\r\n      <created>1608633613816</created>\r\n      <option name=\"number\" value=\"00021\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00021\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1608633613816</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00022\" summary=\"1.0.0.0b : Ajout de l'arbre grimpable ainsi que la possibilité d'attaquer depuis ce dernier, Ajout de la couleur de fraicheur de la traçe (nécessitera un petit fix sur la couleur), Changement du scripts d'attaque pour qu'un script extérieur puisse invoquer l'attaque du joueur, Ajout d'une touche de grimpe pour le joueur'\">\r\n      <created>1608647065742</created>\r\n      <option name=\"number\" value=\"00022\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00022\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1608647065742</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00023\" summary=\"Meta manquant\">\r\n      <created>1609085281826</created>\r\n      <option name=\"number\" value=\"00023\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00023\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1609085281826</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00024\" summary=\"1.0.6.0 : Ajout des suppression des tracks over the time\">\r\n      <created>1609086209269</created>\r\n      <option name=\"number\" value=\"00024\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00024\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1609086209269</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00025\" summary=\" 1.0.6.2 : (Rectification) Clamp de la caméra sur l'axe X\">\r\n      <created>1609157412035</created>\r\n      <option name=\"number\" value=\"00025\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00025\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1609157412035</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00026\" summary=\"1.1.0.0 : Ajout des IA de types : Robuste, Terrier, Rapide et Craintive; Commencement du remaniement de l'attaque\">\r\n      <created>1609426926414</created>\r\n      <option name=\"number\" value=\"00026\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00026\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1609426926414</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00027\" summary=\"1.1.1.0 : Modification de l'attaque (ajout de l'attaque lourde/dash), Début de changement de la gestion de la caméra poour se concorder avec l'attaque, Ajout d'un système pour que les IA recoivent les dommages, création des prefabs de chaque IA, Ajout d'un script éditeur pour voir le range d'attaque du joueur\">\r\n      <created>1609537703794</created>\r\n      <option name=\"number\" value=\"00027\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00027\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1609537703794</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00028\" summary=\"1.1.3.0 : Fix du bug de rotation X sur la caméra, Ajustement des paramètres des IA selon la documentation, Création des profiles d'IA pour chacune d'entre elles, Correction de bug sur le comportement du terrier et de la craintive, Correction du bug qui faisait que l'attaque rapide n'était pas possible, Correction partielle de l'attaque lourde qui faisait que le joueur était propulsé\">\r\n      <created>1609598693750</created>\r\n      <option name=\"number\" value=\"00028\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00028\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1609598693750</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00029\" summary=\"1.1.3.3 : Fix du navmesh non présent, fix des IA qui ne fuyait pas, Fix du player qui s'envole certaines fois\">\r\n      <created>1610105963435</created>\r\n      <option name=\"number\" value=\"00029\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00029\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1610105963435</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00030\" summary=\"Il a pas mis le putain de navmesh\">\r\n      <created>1610106054750</created>\r\n      <option name=\"number\" value=\"00030\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00030\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1610106054750</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"31\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"UnityProjectConfiguration\" hasMinimizedUI=\"true\" />\r\n  <component name=\"UnityUnitTestConfiguration\" currentTestLauncher=\"EditMode\" />\r\n  <component name=\"Vcs.Log.History.Properties\">\r\n    <option name=\"COLUMN_ORDER\">\r\n      <list>\r\n        <option value=\"0\" />\r\n        <option value=\"2\" />\r\n        <option value=\"3\" />\r\n        <option value=\"1\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n    <option name=\"oldMeFiltersMigrated\" value=\"true\" />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <option name=\"CLEAR_INITIAL_COMMIT_MESSAGE\" value=\"true\" />\r\n    <MESSAGE value=\"Chery-pick\" />\r\n    <MESSAGE value=\"Ajout du camera Rotate\" />\r\n    <MESSAGE value=\"Fix des spawn des proies,&#10;Clamp des valeur de faim et vie,&#10;Possible fix du trail qui ne dépop pas\" />\r\n    <MESSAGE value=\"Add flee state, field of view visualization for the AI&#10;Create visual detection for AI\" />\r\n    <MESSAGE value=\"Fix AI naviguation problems&#10;Add base mesh rendering for previsualization&#10;Fix navmesh\" />\r\n    <MESSAGE value=\" 0.5.1.0 : Fix TrackRenderer trail\" />\r\n    <MESSAGE value=\" 0.5.1.1 : Ajout du sound detection\" />\r\n    <MESSAGE value=\"0.6.0.0 : Add sprint mecanic\" />\r\n    <MESSAGE value=\" 0.5.2.0 : Bonne orientation de track renderer visual&#10; Ajustement sur la caméra\" />\r\n    <MESSAGE value=\" 0.6.1.0 : Ajout de feedback sur le sommeil, Ajout de signes pour le sprint, Augmentation de la vitesse de la caméra, Dépop du cône de traque\" />\r\n    <MESSAGE value=\" 0.6.2.0 : Réecriture de la caméra, suppression des tremblements lié a mouvements, Suppression de la création des bétas\" />\r\n    <MESSAGE value=\" 1.0.0.0 : Ajout d'un émetteur de son sur le joueur, changement de la détection du son par les proies, ajout des éléments de LD suivant : hautes-herbes, rochers\" />\r\n    <MESSAGE value=\"1.0.0.0b : Ajout de l'arbre grimpable ainsi que la possibilité d'attaquer depuis ce dernier, Ajout de la couleur de fraicheur de la traçe (nécessitera un petit fix sur la couleur), Changement du scripts d'attaque pour qu'un script extérieur puisse invoquer l'attaque du joueur, Ajout d'une touche de grimpe pour le joueur'\" />\r\n    <MESSAGE value=\" 1.0.1.4 : Ajout de la rotation de la caméra sur l'axe X\" />\r\n    <MESSAGE value=\"Meta manquant\" />\r\n    <MESSAGE value=\"1.0.6.0 : Ajout des suppression des tracks over the time\" />\r\n    <MESSAGE value=\" 1.0.6.2 : (Rectification) Clamp de la caméra sur l'axe X\" />\r\n    <MESSAGE value=\"1.1.0.0 : Ajout des IA de types : Robuste, Terrier, Rapide et Craintive; Commencement du remaniement de l'attaque\" />\r\n    <MESSAGE value=\"1.1.1.0 : Modification de l'attaque (ajout de l'attaque lourde/dash), Début de changement de la gestion de la caméra poour se concorder avec l'attaque, Ajout d'un système pour que les IA recoivent les dommages, création des prefabs de chaque IA, Ajout d'un script éditeur pour voir le range d'attaque du joueur\" />\r\n    <MESSAGE value=\"1.1.3.0 : Fix du bug de rotation X sur la caméra, Ajustement des paramètres des IA selon la documentation, Création des profiles d'IA pour chacune d'entre elles, Correction de bug sur le comportement du terrier et de la craintive, Correction du bug qui faisait que l'attaque rapide n'était pas possible, Correction partielle de l'attaque lourde qui faisait que le joueur était propulsé\" />\r\n    <MESSAGE value=\"1.1.3.0 : Ajout de l'IA en troupeau (seulement patrol de fonctionelle), ajout de la gestion du troupeau\" />\r\n    <MESSAGE value=\"1.1.3.3 : Fix du navmesh non présent, fix des IA qui ne fuyait pas, Fix du player qui s'envole certaines fois\" />\r\n    <MESSAGE value=\"Il a pas mis le putain de navmesh\" />\r\n    <MESSAGE value=\"[1.1.3.5] Fix du problème d'IA qui marchait sur elle même , augmentation de la distance de roaming, Fix du l'IA qui ne savait pas où allé lors de la fuite, Augmentation de la taille d'affichage des tracks renderer, Augmentation de la distance de fuite des prey\" />\r\n    <MESSAGE value=\"Mise au point du main\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Mise au point du main\" />\r\n  </component>\r\n  <component name=\"WindowStateProjectService\">\r\n    <state x=\"184\" y=\"126\" key=\"MergeDialog\" timestamp=\"1610111580298\">\r\n      <screen x=\"0\" y=\"40\" width=\"1920\" height=\"1040\" />\r\n    </state>\r\n    <state x=\"184\" y=\"126\" key=\"MergeDialog/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040\" timestamp=\"1610111580298\" />\r\n    <state x=\"598\" y=\"321\" key=\"MultipleFileMergeDialog\" timestamp=\"1610103791046\">\r\n      <screen x=\"0\" y=\"40\" width=\"1920\" height=\"1040\" />\r\n    </state>\r\n    <state x=\"598\" y=\"321\" key=\"MultipleFileMergeDialog/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040\" timestamp=\"1610103791045\" />\r\n    <state x=\"670\" y=\"238\" key=\"RiderGenerateDialog\" timestamp=\"1610576584078\">\r\n      <screen x=\"0\" y=\"40\" width=\"1920\" height=\"1040\" />\r\n    </state>\r\n    <state x=\"670\" y=\"238\" key=\"RiderGenerateDialog/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040\" timestamp=\"1610576584078\" />\r\n    <state x=\"92\" y=\"132\" width=\"1736\" height=\"856\" key=\"VCS.FileHistoryDialog\" timestamp=\"1609519868736\">\r\n      <screen x=\"0\" y=\"40\" width=\"1920\" height=\"1040\" />\r\n    </state>\r\n    <state x=\"92\" y=\"132\" width=\"1736\" height=\"856\" key=\"VCS.FileHistoryDialog/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040\" timestamp=\"1609519868736\" />\r\n    <state x=\"552\" y=\"293\" key=\"Vcs.Push.Dialog.v2\" timestamp=\"1610577725127\">\r\n      <screen x=\"0\" y=\"40\" width=\"1920\" height=\"1040\" />\r\n    </state>\r\n    <state x=\"552\" y=\"293\" key=\"Vcs.Push.Dialog.v2/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040\" timestamp=\"1610577725127\" />\r\n    <state x=\"777\" y=\"474\" key=\"com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2\" timestamp=\"1610576070080\">\r\n      <screen x=\"0\" y=\"40\" width=\"1920\" height=\"1040\" />\r\n    </state>\r\n    <state x=\"777\" y=\"474\" key=\"com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040\" timestamp=\"1610576070080\" />\r\n    <state x=\"732\" y=\"274\" key=\"git4idea.branch.GitSmartOperationDialog\" timestamp=\"1610577647801\">\r\n      <screen x=\"0\" y=\"40\" width=\"1920\" height=\"1040\" />\r\n    </state>\r\n    <state x=\"732\" y=\"274\" key=\"git4idea.branch.GitSmartOperationDialog/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040\" timestamp=\"1610577647801\" />\r\n    <state x=\"616\" y=\"260\" key=\"run.anything.popup\" timestamp=\"1609174409132\">\r\n      <screen x=\"0\" y=\"40\" width=\"1920\" height=\"1040\" />\r\n    </state>\r\n    <state x=\"616\" y=\"260\" key=\"run.anything.popup/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040\" timestamp=\"1609174409132\" />\r\n  </component>\r\n  <component name=\"XDebuggerManager\">\r\n    <breakpoint-manager>\r\n      <breakpoints>\r\n        <breakpoint enabled=\"true\" suspend=\"NONE\" type=\"DotNet Exception Breakpoints\">\r\n          <properties exception=\"System.Threading.ThreadAbortException\" displayValue=\"System.Threading.ThreadAbortException\" />\r\n          <option name=\"timeStamp\" value=\"1\" />\r\n        </breakpoint>\r\n      </breakpoints>\r\n    </breakpoint-manager>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/.idea.Swarm/.idea/workspace.xml	(revision 97aba69c405b48c72c6ecf758293337d5c72312d)
++++ .idea/.idea.Swarm/.idea/workspace.xml	(date 1610790557575)
+@@ -19,23 +19,42 @@
+     <select />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="e9a9fd44-a60f-4fbc-b03b-f25159acb4b3" name="Default Changelist" comment="Il a pas mis le putain de navmesh">
+-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/contentModel.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/projectSettingsUpdater.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/projectSettingsUpdater.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Default_Changelist1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Default_Changelist1.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Merge_at_07_01_2021_21_45__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Merge_at_07_01_2021_21_45__Default_Changelist_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Update_at_13_01_2021_23_12__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Update_at_13_01_2021_23_12__Default_Changelist_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Update_at_13_01_2021_23_13__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Update_at_13_01_2021_23_13__Default_Changelist_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/unnamed.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/unnamed.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Alpha Creature.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Alpha Creature.prefab" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/PlayerGroup.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/PlayerGroup.prefab" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Track.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Track.prefab" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Bastien_LD2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Bastien_LD2.unity" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tracks/TrackRenderer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tracks/TrackRenderer.cs" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
++    <list default="true" id="e9a9fd44-a60f-4fbc-b03b-f25159acb4b3" name="Default Changelist" comment="1.1.3.0 : Ajout de l'IA en troupeau (seulement patrol de fonctionelle), ajout de la gestion du troupeau">
++      <change beforePath="$PROJECT_DIR$/Assets/NewScene/Graphics/Debug Materials/Materials.meta" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/Assets/NewScene/Graphics/Images.meta" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/Assets/NewScene/Graphics/Materials/DebugMatérials.meta" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/Assets/NewScene/Graphics/Materials/Environment Materials.meta" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/Assets/NewScene/Graphics/Materials/Preys.meta" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/Assets/NewScene/Graphics/Post-Process Related.meta" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/Assets/NewScene/Graphics/Shaders.meta" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/Assets/NewScene/Graphics/Textures.meta" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/Assets/NewScene/Materials/DebugMatérials.meta" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/Assets/NewScene/Materials/Environment Materials.meta" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/Assets/NewScene/Materials/Preys.meta" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/Assets/NewScene/Prefabs/LD Elements.meta" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/Assets/NewScene/Prefabs/Managers.meta" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/Assets/NewScene/Prefabs/PreyProfiles.meta" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/Assets/NewScene/Prefabs/UI.meta" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/Assets/NewScene/Scenes/Bastien_LD.meta" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/Assets/NewScene/Scenes/Game.meta" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/Assets/NewScene/Scenes/Lucas-Works.meta" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/Assets/NewScene/nTools/PrefabPainter/Docs.meta" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/Assets/NewScene/nTools/PrefabPainter/Examples/Materials.meta" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/Assets/NewScene/nTools/PrefabPainter/Examples/Models.meta" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/Assets/NewScene/nTools/PrefabPainter/Examples/Prefabs.meta" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/Assets/NewScene/nTools/PrefabPainter/Examples/Scenes.meta" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/Assets/NewScene/nTools/PrefabPainter/Examples/Textures.meta" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/Assets/NewScene/nTools/PrefabPainter/GUI.meta" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/Assets/NewScene/nTools/PrefabPainter/Presets.meta" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/Assets/NewScene/nTools/PrefabPainter/Scripts/Editor.meta" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/Assets/NewScene/nTools/PrefabPainter/Settings.meta" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/Assets/nTools/PrefabPainter/Examples/Materials.meta" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/Assets/nTools/PrefabPainter/Examples/Models.meta" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/Assets/nTools/PrefabPainter/Examples/Prefabs.meta" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/Assets/nTools/PrefabPainter/Examples/Scenes.meta" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/Assets/nTools/PrefabPainter/Examples/Textures.meta" beforeDir="false" />
+     </list>
++    <list id="1edd0d37-b333-4aa9-b5cd-217dae9d2baf" name="Revert: " comment="" />
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -53,16 +72,19 @@
+     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Prey/BasicPrey.cs" root0="FORCE_HIGHLIGHTING" />
+     <setting file="file://$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CreatureMover.cs" root0="FORCE_HIGHLIGHTING" />
+     <setting file="file://$PROJECT_DIR$/Assets/Scripts/AlphaCreature/PackOrderer.cs" root0="FORCE_HIGHLIGHTING" />
+-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.6.3/Runtime/Core/AxisState.cs" root0="SKIP_HIGHLIGHTING" />
+     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Prey/Craintive.cs" root0="FORCE_HIGHLIGHTING" />
++    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.6.3/Runtime/Core/AxisState.cs" root0="SKIP_HIGHLIGHTING" />
+     <setting file="file://F:/UnityProject/CsLike/CsLike/Assets/Scripts/BotTargeting.cs" root0="SKIP_HIGHLIGHTING" />
+     <setting file="file://$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CharacterController/InputTester.cs" root0="FORCE_HIGHLIGHTING" />
++    <setting file="mock://C:/Users/Théo/Documents/GitHub/Swarm/Swarm/Assets/Scripts/Prey/BasicPrey.cs" root0="SKIP_HIGHLIGHTING" />
+     <setting file="file://$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CharacterController/PlayerInputs.cs" root0="FORCE_HIGHLIGHTING" />
+     <setting file="file://$PROJECT_DIR$/Assets/Scripts/AlphaCreature/Targeting.cs" root0="FORCE_HIGHLIGHTING" />
++    <setting file="mock://C:/Users/Théo/Documents/GitHub/Swarm/Swarm/Assets/NewScene/Scenes/Bastien_LD.meta" root0="SKIP_HIGHLIGHTING" />
+     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/GeneratePrey.cs" root0="FORCE_HIGHLIGHTING" />
+     <setting file="file://F:/UnityProject/CsLike/CsLike/Assets/Scripts/BotDetection.cs" root0="SKIP_HIGHLIGHTING" />
+     <setting file="file://$PROJECT_DIR$/Assets/Scripts/BetaCreature/IntelligenceInterface.cs" root0="FORCE_HIGHLIGHTING" />
+     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/Objects.cs" root0="FORCE_HIGHLIGHTING" />
++    <setting file="mock://C:/Users/Théo/Documents/GitHub/Swarm/Swarm/Assets/Scripts/Managers/GeneratePrey.cs" root0="SKIP_HIGHLIGHTING" />
+     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.0.0/InputSystem/Utilities/DelegateHelpers.cs" root0="SKIP_HIGHLIGHTING" />
+     <setting file="file://$PROJECT_DIR$/Assets/nTools/PrefabPainter/Scripts/Editor/PrefabPainter.cs" root0="FORCE_HIGHLIGHTING" />
+     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Prey/PreyLife.cs" root0="FORCE_HIGHLIGHTING" />
+diff --git .idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Merge_at_13_01_2021_23_40__Default_Changelist_.xml .idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Merge_at_13_01_2021_23_40__Default_Changelist_.xml
+diff --git .idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Update_at_13_01_2021_23_12__Default_Changelist_.xml .idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Update_at_13_01_2021_23_12__Default_Changelist_.xml
+diff --git .idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Update_at_13_01_2021_23_13__Default_Changelist_.xml .idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Update_at_13_01_2021_23_13__Default_Changelist_.xml
+diff --git .idea/.idea.Swarm/.idea/shelf/unnamed.xml .idea/.idea.Swarm/.idea/shelf/unnamed.xml
+diff --git .idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Merge_at_07_01_2021_21_45__Default_Changelist_.xml .idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Merge_at_07_01_2021_21_45__Default_Changelist_.xml
+diff --git .idea/.idea.Swarm/.idea/shelf/Default_Changelist1.xml .idea/.idea.Swarm/.idea/shelf/Default_Changelist1.xml

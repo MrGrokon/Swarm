@@ -1,0 +1,775 @@
+Index: Assets/Scripts/Prey/Craintive.cs
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>using System.Collections;\r\nusing System.Collections.Generic;\r\nusing System.Diagnostics;\r\nusing UnityEngine;\r\nusing UnityEngine.AI;\r\nusing Debug = UnityEngine.Debug;\r\n\r\npublic class Craintive : PreyAiManager\r\n{\r\n    [SerializeField] private float scanInterval;\r\n    [SerializeField] private float scanTime;\r\n    #region Unity Fonction\r\n    private void Awake()\r\n    {\r\n        _nm_Agent = this.GetComponent<NavMeshAgent>();\r\n        myDetector = this.GetComponent<AiDetection>();\r\n        mySonorDetection = this.GetComponent<AiSoundDetection>();\r\n        _abs_Resc_Manager = this.GetComponent<AbstractedRessourcesManager>();\r\n        _animator = this.GetComponent<Animator>();\r\n        Dust_PS = this.GetComponentInChildren<ParticleSystem>();\r\n\r\n        if(Dust_PS != null){\r\n            Dust_PS.Stop();\r\n        }\r\n        else{\r\n            Debug.Log(\"DustParticule not found\");\r\n        }\r\n        if(_abs_Resc_Manager == null){\r\n            Debug.Log(\"AbstractedRessourcesManager not found\");\r\n        }\r\n        if(MyProfile == null){\r\n            Debug.Log(\"Critical Error: Prey Profile not found\");\r\n        }\r\n        else{\r\n            ChangeState(PreyStates.Roam);\r\n            //normalement change_Nma_Properties() est déja appeler dans changeState()\r\n            Change_NMA_Properties(PreyStates.Roam);\r\n        }\r\n        \r\n        InvokeRepeating(\"Scan\", 0, scanInterval);\r\n        \r\n    }\r\n\r\n    private void Update()\r\n    {\r\n        #region State Debbuging\r\n        if(MyState == PreyStates.Flee){\r\n            Debug.DrawLine(this.transform.position, _nm_Agent.destination, Color.red);\r\n        }\r\n        else if(MyState == PreyStates.LookingForWater || MyState == PreyStates.LookingForFood ){\r\n            Debug.DrawLine(this.transform.position, _nm_Agent.destination, Color.green);\r\n        }\r\n        else if(MyState == PreyStates.Roam){\r\n            Debug.DrawLine(this.transform.position, _nm_Agent.destination, Color.blue);\r\n        }\r\n        #endregion\r\n\r\n        if(Vector3.Distance(_nm_Agent.destination, transform.position) <= ReachingDistance){\r\n            Debug.Log(\"Prey reached his destination\");\r\n            //Do things when i reach my Position\r\n            switch(MyState){\r\n\r\n                case PreyStates.LookingForWater:\r\n                //TODO: rester quelques seconde en position le temps de remplir ses ressources\r\n                _abs_Resc_Manager.RestoreRessources(\"Water\");\r\n                _nm_Agent.SetDestination(GetRandomRoamingPosition());\r\n                ChangeState(PreyStates.Roam);\r\n                break;\r\n                \r\n                case PreyStates.Roam:\r\n                //TODO: générer proproment un nouveau point de roaming, si possible non randomS\r\n                _nm_Agent.SetDestination(GetRandomRoamingPosition()); \r\n                \r\n                ChangeState(PreyStates.Roam);\r\n                break;\r\n                \r\n                case PreyStates.Scan:\r\n                    transform.Rotate(Vector3.up * (360 / scanTime) * Time.deltaTime);\r\n                    break;\r\n            }\r\n        }\r\n\r\n        if (myDetector.FindVisibleTargets() || mySonorDetection.FindVisibleTargets())\r\n        {\r\n            if (MyState != PreyStates.Flee ||\r\n                Vector3.Distance(_nm_Agent.destination, transform.position) <= ReachingDistance)\r\n            {\r\n                //If i found an Enemy\r\n                Debug.Log(\"Prey spot the player\");\r\n\r\n                //TODO: Test au moment de la detection, selon les behavior a mettre en place:\r\n                //  -chercher à se cacher\r\n                //  -fuire vers le reste de la meute\r\n                //  -...\r\n\r\n                _animator.SetBool(\"IsRunning\", true);\r\n                Dust_PS.Play();\r\n                ChangeState(PreyStates.Flee);\r\n            }\r\n           \r\n        }\r\n        else if (!myDetector.FindVisibleTargets() && MyState == PreyStates.Flee ||\r\n                 !mySonorDetection.FindVisibleTargets() && MyState == PreyStates.Flee)\r\n        {\r\n            _nm_Agent.SetDestination(GetRandomRoamingPosition());\r\n            _animator.SetBool(\"IsRunning\", false);\r\n            Dust_PS.Stop();\r\n            ChangeState(PreyStates.Roam);\r\n        }\r\n    }\r\n    #endregion\r\n\r\n    public void ChangeState(PreyStates _state){\r\n        if(MyState != _state){\r\n            Debug.Log(\"ChangeState to \" + _state);\r\n            MyState = _state;\r\n            Change_NMA_Properties(_state);\r\n            OnChangedState(_state);\r\n        }\r\n    }\r\n\r\n    private void OnChangedState(PreyStates _state)\r\n    {\r\n        switch (_state)\r\n        {\r\n            case PreyStates.Flee:\r\n                //ce vector pointe parfois dans la direction du joueur, ce qui implique que le joueur peu la toucher sur son chemin de fuite\r\n                Vector3 FleeMotion = (Objects.Instance.Alpha.transform.position - this.transform.position).normalized * -10;\r\n                NavMesh.SamplePosition(FleeMotion, out NavMeshHit hit, 1f, 1);\r\n                _nm_Agent.SetDestination(hit.position);\r\n                break;\r\n        }\r\n    }\r\n    \r\n    public override void CheckOutFor(string _ressources){\r\n        switch (_ressources){\r\n            case \"Food\":\r\n                ChangeState(PreyStates.Roam);\r\n                //ChangeState(PreyStates.LookingForSomething);\r\n                //_nm_Agent.SetDestination(Objects.Instance.GetCloserRessources(Objects.ObjectType.FoodSource, this.gameObject));\r\n                //_nm_Agent.SetDestination(Objects.Instance.)\r\n            break;\r\n\r\n            case \"Water\":\r\n                ChangeState(PreyStates.LookingForWater);\r\n                _nm_Agent.SetDestination(Objects.Instance.GetCloserRessources(Objects.ObjectType.WaterSource, this.gameObject));\r\n                //Set the destination of my prey to the closer WaterSource\r\n            break;\r\n\r\n            default:\r\n            Debug.Log(\"CheckOutFor() -> parameter wrong or incoherent\");\r\n            break;\r\n        }\r\n    }\r\n\r\n    public override bool IsAlreadyLooking(){\r\n        if(MyState == PreyStates.LookingForWater || MyState == PreyStates.LookingForFood){\r\n            return true;\r\n        }\r\n        return false;\r\n    }\r\n\r\n    public override void Die()\r\n    {\r\n        //Destroy all tracks when the prey die\r\n        //TODO: must be connected later to the HealthSysteme.\r\n        foreach (var track in GetComponent<TracksCreatorOverTime>().PreyTracks)\r\n        {\r\n            Destroy(track);\r\n        }\r\n\r\n        GetComponent<TracksCreatorOverTime>().PreyTracks.Clear();\r\n        Destroy(gameObject);\r\n    }\r\n\r\n    private void Scan()\r\n    {\r\n        if (MyState == PreyStates.Roam)\r\n        {\r\n            _nm_Agent.isStopped = true;\r\n            ChangeState(PreyStates.Scan);\r\n            StartCoroutine(ScanWait(3));\r\n        }\r\n            \r\n    }\r\n\r\n    IEnumerator ScanWait(int scanTime)\r\n    {\r\n        yield return new WaitForSeconds(scanTime);\r\n        _nm_Agent.isStopped = false;\r\n        ChangeState(PreyStates.Roam);\r\n    }\r\n    \r\n    #region Low Level Functions\r\n\r\n    private Vector3 GetRandomRoamingPosition(){\r\n        //TODO: get a random position on the walkable NavMesh\r\n        Vector3 _randomPos = Random.insideUnitSphere * randomRadius + this.transform.position;\r\n        NavMeshHit _hit;\r\n        NavMesh.SamplePosition(_randomPos, out _hit, Mathf.Infinity, 1); // 1 == au mask d'area Walkable du navMash\r\n        return _hit.position;\r\n    \r\n    }\r\n\r\n    private void Change_NMA_Properties(PreyStates _state){\r\n        if(_state == PreyStates.Flee){\r\n            _nm_Agent.speed = MyProfile.PreySpeed * MyProfile.SprintSpeedMultiplier;\r\n            _nm_Agent.acceleration = MyProfile.PreyAcceleraration * MyProfile.SprintSpeedMultiplier;\r\n        }\r\n        else{\r\n            _nm_Agent.speed = MyProfile.PreySpeed ;\r\n            _nm_Agent.acceleration = MyProfile.PreyAcceleraration;\r\n        }\r\n    }\r\n    #endregion\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Assets/Scripts/Prey/Craintive.cs	(revision 079e4cbebebb5b7db0a3b403f2bf59de36f6cbda)
++++ Assets/Scripts/Prey/Craintive.cs	(date 1610994318919)
+@@ -71,7 +71,6 @@
+                 //TODO: générer proproment un nouveau point de roaming, si possible non randomS
+                 _nm_Agent.SetDestination(GetRandomRoamingPosition()); 
+                 
+-                ChangeState(PreyStates.Roam);
+                 break;
+                 
+                 case PreyStates.Scan:
+@@ -128,6 +127,7 @@
+                 Vector3 FleeMotion = (Objects.Instance.Alpha.transform.position - this.transform.position).normalized * -10;
+                 NavMesh.SamplePosition(FleeMotion, out NavMeshHit hit, 1f, 1);
+                 _nm_Agent.SetDestination(hit.position);
++                print(_nm_Agent.destination);
+                 break;
+         }
+     }
+Index: Assets/Scenes/Game.unity
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>%YAML 1.1\r\n%TAG !u! tag:unity3d.com,2011:\r\n--- !u!29 &1\r\nOcclusionCullingSettings:\r\n  m_ObjectHideFlags: 0\r\n  serializedVersion: 2\r\n  m_OcclusionBakeSettings:\r\n    smallestOccluder: 5\r\n    smallestHole: 0.25\r\n    backfaceThreshold: 100\r\n  m_SceneGUID: 00000000000000000000000000000000\r\n  m_OcclusionCullingData: {fileID: 0}\r\n--- !u!104 &2\r\nRenderSettings:\r\n  m_ObjectHideFlags: 0\r\n  serializedVersion: 9\r\n  m_Fog: 0\r\n  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}\r\n  m_FogMode: 3\r\n  m_FogDensity: 0.015\r\n  m_LinearFogStart: 0\r\n  m_LinearFogEnd: 125\r\n  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}\r\n  m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}\r\n  m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}\r\n  m_AmbientIntensity: 0.84\r\n  m_AmbientMode: 0\r\n  m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}\r\n  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}\r\n  m_HaloStrength: 0.145\r\n  m_FlareStrength: 1\r\n  m_FlareFadeSpeed: 3\r\n  m_HaloTexture: {fileID: 0}\r\n  m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}\r\n  m_DefaultReflectionMode: 0\r\n  m_DefaultReflectionResolution: 128\r\n  m_ReflectionBounces: 1\r\n  m_ReflectionIntensity: 1\r\n  m_CustomReflection: {fileID: 0}\r\n  m_Sun: {fileID: 0}\r\n  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}\r\n  m_UseRadianceAmbientProbe: 0\r\n--- !u!157 &3\r\nLightmapSettings:\r\n  m_ObjectHideFlags: 0\r\n  serializedVersion: 11\r\n  m_GIWorkflowMode: 1\r\n  m_GISettings:\r\n    serializedVersion: 2\r\n    m_BounceScale: 1\r\n    m_IndirectOutputScale: 1\r\n    m_AlbedoBoost: 1\r\n    m_EnvironmentLightingMode: 0\r\n    m_EnableBakedLightmaps: 1\r\n    m_EnableRealtimeLightmaps: 0\r\n  m_LightmapEditorSettings:\r\n    serializedVersion: 12\r\n    m_Resolution: 2\r\n    m_BakeResolution: 40\r\n    m_AtlasSize: 1024\r\n    m_AO: 0\r\n    m_AOMaxDistance: 1\r\n    m_CompAOExponent: 1\r\n    m_CompAOExponentDirect: 0\r\n    m_ExtractAmbientOcclusion: 0\r\n    m_Padding: 2\r\n    m_LightmapParameters: {fileID: 0}\r\n    m_LightmapsBakeMode: 1\r\n    m_TextureCompression: 1\r\n    m_FinalGather: 0\r\n    m_FinalGatherFiltering: 1\r\n    m_FinalGatherRayCount: 256\r\n    m_ReflectionCompression: 2\r\n    m_MixedBakeMode: 2\r\n    m_BakeBackend: 1\r\n    m_PVRSampling: 1\r\n    m_PVRDirectSampleCount: 32\r\n    m_PVRSampleCount: 512\r\n    m_PVRBounces: 2\r\n    m_PVREnvironmentSampleCount: 256\r\n    m_PVREnvironmentReferencePointCount: 2048\r\n    m_PVRFilteringMode: 1\r\n    m_PVRDenoiserTypeDirect: 1\r\n    m_PVRDenoiserTypeIndirect: 1\r\n    m_PVRDenoiserTypeAO: 1\r\n    m_PVRFilterTypeDirect: 0\r\n    m_PVRFilterTypeIndirect: 0\r\n    m_PVRFilterTypeAO: 0\r\n    m_PVREnvironmentMIS: 1\r\n    m_PVRCulling: 1\r\n    m_PVRFilteringGaussRadiusDirect: 1\r\n    m_PVRFilteringGaussRadiusIndirect: 5\r\n    m_PVRFilteringGaussRadiusAO: 2\r\n    m_PVRFilteringAtrousPositionSigmaDirect: 0.5\r\n    m_PVRFilteringAtrousPositionSigmaIndirect: 2\r\n    m_PVRFilteringAtrousPositionSigmaAO: 1\r\n    m_ExportTrainingData: 0\r\n    m_TrainingDataDestination: TrainingData\r\n    m_LightProbeSampleCountMultiplier: 4\r\n  m_LightingDataAsset: {fileID: 0}\r\n  m_UseShadowmask: 1\r\n--- !u!196 &4\r\nNavMeshSettings:\r\n  serializedVersion: 2\r\n  m_ObjectHideFlags: 0\r\n  m_BuildSettings:\r\n    serializedVersion: 2\r\n    agentTypeID: 0\r\n    agentRadius: 0.5\r\n    agentHeight: 2\r\n    agentSlope: 45\r\n    agentClimb: 0.4\r\n    ledgeDropHeight: 0\r\n    maxJumpAcrossDistance: 0\r\n    minRegionArea: 2\r\n    manualCellSize: 0\r\n    cellSize: 0.16666667\r\n    manualTileSize: 0\r\n    tileSize: 256\r\n    accuratePlacement: 0\r\n    debug:\r\n      m_Flags: 0\r\n  m_NavMeshData: {fileID: 23800000, guid: e5b45b0d80f424e47832de507163e76a, type: 2}\r\n--- !u!1 &47320266\r\nGameObject:\r\n  m_ObjectHideFlags: 0\r\n  m_CorrespondingSourceObject: {fileID: 0}\r\n  m_PrefabInstance: {fileID: 0}\r\n  m_PrefabAsset: {fileID: 0}\r\n  serializedVersion: 6\r\n  m_Component:\r\n  - component: {fileID: 47320267}\r\n  m_Layer: 0\r\n  m_Name: TerrierTest\r\n  m_TagString: Untagged\r\n  m_Icon: {fileID: 0}\r\n  m_NavMeshLayer: 0\r\n  m_StaticEditorFlags: 0\r\n  m_IsActive: 1\r\n--- !u!4 &47320267\r\nTransform:\r\n  m_ObjectHideFlags: 0\r\n  m_CorrespondingSourceObject: {fileID: 0}\r\n  m_PrefabInstance: {fileID: 0}\r\n  m_PrefabAsset: {fileID: 0}\r\n  m_GameObject: {fileID: 47320266}\r\n  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}\r\n  m_LocalPosition: {x: -14.2, y: -3.1029358, z: 51.8}\r\n  m_LocalScale: {x: 1, y: 1, z: 1}\r\n  m_Children: []\r\n  m_Father: {fileID: 0}\r\n  m_RootOrder: 14\r\n  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}\r\n--- !u!1001 &220690330\r\nPrefabInstance:\r\n  m_ObjectHideFlags: 0\r\n  serializedVersion: 2\r\n  m_Modification:\r\n    m_TransformParent: {fileID: 0}\r\n    m_Modifications:\r\n    - target: {fileID: 1853304259910867411, guid: 29c888cf0a78cd4498fce567d441f7ba,\r\n        type: 3}\r\n      propertyPath: m_LocalPosition.x\r\n      value: 6.5269556\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 1853304259910867411, guid: 29c888cf0a78cd4498fce567d441f7ba,\r\n        type: 3}\r\n      propertyPath: m_LocalPosition.y\r\n      value: 1.87\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 1853304259910867411, guid: 29c888cf0a78cd4498fce567d441f7ba,\r\n        type: 3}\r\n      propertyPath: m_LocalPosition.z\r\n      value: 20.48584\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 1853304259910867411, guid: 29c888cf0a78cd4498fce567d441f7ba,\r\n        type: 3}\r\n      propertyPath: m_LocalRotation.x\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 1853304259910867411, guid: 29c888cf0a78cd4498fce567d441f7ba,\r\n        type: 3}\r\n      propertyPath: m_LocalRotation.y\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 1853304259910867411, guid: 29c888cf0a78cd4498fce567d441f7ba,\r\n        type: 3}\r\n      propertyPath: m_LocalRotation.z\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 1853304259910867411, guid: 29c888cf0a78cd4498fce567d441f7ba,\r\n        type: 3}\r\n      propertyPath: m_LocalRotation.w\r\n      value: 1\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 1853304259910867411, guid: 29c888cf0a78cd4498fce567d441f7ba,\r\n        type: 3}\r\n      propertyPath: m_RootOrder\r\n      value: 4\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 1853304259910867411, guid: 29c888cf0a78cd4498fce567d441f7ba,\r\n        type: 3}\r\n      propertyPath: m_LocalEulerAnglesHint.x\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 1853304259910867411, guid: 29c888cf0a78cd4498fce567d441f7ba,\r\n        type: 3}\r\n      propertyPath: m_LocalEulerAnglesHint.y\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 1853304259910867411, guid: 29c888cf0a78cd4498fce567d441f7ba,\r\n        type: 3}\r\n      propertyPath: m_LocalEulerAnglesHint.z\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 1853304259910867415, guid: 29c888cf0a78cd4498fce567d441f7ba,\r\n        type: 3}\r\n      propertyPath: m_Name\r\n      value: Prey\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 6394319303653858047, guid: 29c888cf0a78cd4498fce567d441f7ba,\r\n        type: 3}\r\n      propertyPath: viewRadius\r\n      value: 15\r\n      objectReference: {fileID: 0}\r\n    m_RemovedComponents:\r\n    - {fileID: 7376011113714017504, guid: 29c888cf0a78cd4498fce567d441f7ba, type: 3}\r\n  m_SourcePrefab: {fileID: 100100000, guid: 29c888cf0a78cd4498fce567d441f7ba, type: 3}\r\n--- !u!1 &359437678\r\nGameObject:\r\n  m_ObjectHideFlags: 0\r\n  m_CorrespondingSourceObject: {fileID: 0}\r\n  m_PrefabInstance: {fileID: 0}\r\n  m_PrefabAsset: {fileID: 0}\r\n  serializedVersion: 6\r\n  m_Component:\r\n  - component: {fileID: 359437679}\r\n  m_Layer: 0\r\n  m_Name: GameObject\r\n  m_TagString: Untagged\r\n  m_Icon: {fileID: 0}\r\n  m_NavMeshLayer: 0\r\n  m_StaticEditorFlags: 0\r\n  m_IsActive: 1\r\n--- !u!4 &359437679\r\nTransform:\r\n  m_ObjectHideFlags: 0\r\n  m_CorrespondingSourceObject: {fileID: 0}\r\n  m_PrefabInstance: {fileID: 0}\r\n  m_PrefabAsset: {fileID: 0}\r\n  m_GameObject: {fileID: 359437678}\r\n  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}\r\n  m_LocalPosition: {x: -20.92, y: 2.446, z: 4.380001}\r\n  m_LocalScale: {x: 1, y: 1, z: 1}\r\n  m_Children: []\r\n  m_Father: {fileID: 2101114159}\r\n  m_RootOrder: 0\r\n  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}\r\n--- !u!1001 &612842746\r\nPrefabInstance:\r\n  m_ObjectHideFlags: 0\r\n  serializedVersion: 2\r\n  m_Modification:\r\n    m_TransformParent: {fileID: 0}\r\n    m_Modifications:\r\n    - target: {fileID: 1853304259910867411, guid: 407227cf503b624428f235c2e9126cc8,\r\n        type: 3}\r\n      propertyPath: m_LocalPosition.x\r\n      value: 34.20577\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 1853304259910867411, guid: 407227cf503b624428f235c2e9126cc8,\r\n        type: 3}\r\n      propertyPath: m_LocalPosition.y\r\n      value: 1.6\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 1853304259910867411, guid: 407227cf503b624428f235c2e9126cc8,\r\n        type: 3}\r\n      propertyPath: m_LocalPosition.z\r\n      value: -40.50239\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 1853304259910867411, guid: 407227cf503b624428f235c2e9126cc8,\r\n        type: 3}\r\n      propertyPath: m_LocalRotation.x\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 1853304259910867411, guid: 407227cf503b624428f235c2e9126cc8,\r\n        type: 3}\r\n      propertyPath: m_LocalRotation.y\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 1853304259910867411, guid: 407227cf503b624428f235c2e9126cc8,\r\n        type: 3}\r\n      propertyPath: m_LocalRotation.z\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 1853304259910867411, guid: 407227cf503b624428f235c2e9126cc8,\r\n        type: 3}\r\n      propertyPath: m_LocalRotation.w\r\n      value: 1\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 1853304259910867411, guid: 407227cf503b624428f235c2e9126cc8,\r\n        type: 3}\r\n      propertyPath: m_RootOrder\r\n      value: 3\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 1853304259910867411, guid: 407227cf503b624428f235c2e9126cc8,\r\n        type: 3}\r\n      propertyPath: m_LocalEulerAnglesHint.x\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 1853304259910867411, guid: 407227cf503b624428f235c2e9126cc8,\r\n        type: 3}\r\n      propertyPath: m_LocalEulerAnglesHint.y\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 1853304259910867411, guid: 407227cf503b624428f235c2e9126cc8,\r\n        type: 3}\r\n      propertyPath: m_LocalEulerAnglesHint.z\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 1853304259910867415, guid: 407227cf503b624428f235c2e9126cc8,\r\n        type: 3}\r\n      propertyPath: m_Name\r\n      value: Craintive\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 4168637345543240578, guid: 407227cf503b624428f235c2e9126cc8,\r\n        type: 3}\r\n      propertyPath: scanInterval\r\n      value: 15\r\n      objectReference: {fileID: 0}\r\n    m_RemovedComponents: []\r\n  m_SourcePrefab: {fileID: 100100000, guid: 407227cf503b624428f235c2e9126cc8, type: 3}\r\n--- !u!1 &660753841 stripped\r\nGameObject:\r\n  m_CorrespondingSourceObject: {fileID: 1853304259910867415, guid: 29c888cf0a78cd4498fce567d441f7ba,\r\n    type: 3}\r\n  m_PrefabInstance: {fileID: 220690330}\r\n  m_PrefabAsset: {fileID: 0}\r\n--- !u!114 &660753842\r\nMonoBehaviour:\r\n  m_ObjectHideFlags: 0\r\n  m_CorrespondingSourceObject: {fileID: 0}\r\n  m_PrefabInstance: {fileID: 0}\r\n  m_PrefabAsset: {fileID: 0}\r\n  m_GameObject: {fileID: 660753841}\r\n  m_Enabled: 1\r\n  m_EditorHideFlags: 0\r\n  m_Script: {fileID: 11500000, guid: 7dd9752cd0f842040afa5353be72a07a, type: 3}\r\n  m_Name: \r\n  m_EditorClassIdentifier: \r\n  lifePoint: 1\r\n--- !u!1001 &854565810\r\nPrefabInstance:\r\n  m_ObjectHideFlags: 0\r\n  serializedVersion: 2\r\n  m_Modification:\r\n    m_TransformParent: {fileID: 0}\r\n    m_Modifications:\r\n    - target: {fileID: 1853304259910867411, guid: 1825090ddbbb52f4c8e6ec8b51ea799b,\r\n        type: 3}\r\n      propertyPath: m_LocalPosition.x\r\n      value: -9.3624935\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 1853304259910867411, guid: 1825090ddbbb52f4c8e6ec8b51ea799b,\r\n        type: 3}\r\n      propertyPath: m_LocalPosition.y\r\n      value: 1.7\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 1853304259910867411, guid: 1825090ddbbb52f4c8e6ec8b51ea799b,\r\n        type: 3}\r\n      propertyPath: m_LocalPosition.z\r\n      value: 37.51\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 1853304259910867411, guid: 1825090ddbbb52f4c8e6ec8b51ea799b,\r\n        type: 3}\r\n      propertyPath: m_LocalRotation.x\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 1853304259910867411, guid: 1825090ddbbb52f4c8e6ec8b51ea799b,\r\n        type: 3}\r\n      propertyPath: m_LocalRotation.y\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 1853304259910867411, guid: 1825090ddbbb52f4c8e6ec8b51ea799b,\r\n        type: 3}\r\n      propertyPath: m_LocalRotation.z\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 1853304259910867411, guid: 1825090ddbbb52f4c8e6ec8b51ea799b,\r\n        type: 3}\r\n      propertyPath: m_LocalRotation.w\r\n      value: 1\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 1853304259910867411, guid: 1825090ddbbb52f4c8e6ec8b51ea799b,\r\n        type: 3}\r\n      propertyPath: m_RootOrder\r\n      value: 1\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 1853304259910867411, guid: 1825090ddbbb52f4c8e6ec8b51ea799b,\r\n        type: 3}\r\n      propertyPath: m_LocalEulerAnglesHint.x\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 1853304259910867411, guid: 1825090ddbbb52f4c8e6ec8b51ea799b,\r\n        type: 3}\r\n      propertyPath: m_LocalEulerAnglesHint.y\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 1853304259910867411, guid: 1825090ddbbb52f4c8e6ec8b51ea799b,\r\n        type: 3}\r\n      propertyPath: m_LocalEulerAnglesHint.z\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 1853304259910867415, guid: 1825090ddbbb52f4c8e6ec8b51ea799b,\r\n        type: 3}\r\n      propertyPath: m_Name\r\n      value: Robuste\r\n      objectReference: {fileID: 0}\r\n    m_RemovedComponents: []\r\n  m_SourcePrefab: {fileID: 100100000, guid: 1825090ddbbb52f4c8e6ec8b51ea799b, type: 3}\r\n--- !u!1 &879819992\r\nGameObject:\r\n  m_ObjectHideFlags: 0\r\n  m_CorrespondingSourceObject: {fileID: 0}\r\n  m_PrefabInstance: {fileID: 0}\r\n  m_PrefabAsset: {fileID: 0}\r\n  serializedVersion: 6\r\n  m_Component:\r\n  - component: {fileID: 879819994}\r\n  - component: {fileID: 879819993}\r\n  m_Layer: 0\r\n  m_Name: Directional Light\r\n  m_TagString: Untagged\r\n  m_Icon: {fileID: 0}\r\n  m_NavMeshLayer: 0\r\n  m_StaticEditorFlags: 0\r\n  m_IsActive: 1\r\n--- !u!108 &879819993\r\nLight:\r\n  m_ObjectHideFlags: 0\r\n  m_CorrespondingSourceObject: {fileID: 0}\r\n  m_PrefabInstance: {fileID: 0}\r\n  m_PrefabAsset: {fileID: 0}\r\n  m_GameObject: {fileID: 879819992}\r\n  m_Enabled: 1\r\n  serializedVersion: 10\r\n  m_Type: 1\r\n  m_Shape: 0\r\n  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}\r\n  m_Intensity: 1\r\n  m_Range: 10\r\n  m_SpotAngle: 30\r\n  m_InnerSpotAngle: 21.80208\r\n  m_CookieSize: 10\r\n  m_Shadows:\r\n    m_Type: 2\r\n    m_Resolution: -1\r\n    m_CustomResolution: -1\r\n    m_Strength: 0.463\r\n    m_Bias: 0.05\r\n    m_NormalBias: 0.4\r\n    m_NearPlane: 0.2\r\n    m_CullingMatrixOverride:\r\n      e00: 1\r\n      e01: 0\r\n      e02: 0\r\n      e03: 0\r\n      e10: 0\r\n      e11: 1\r\n      e12: 0\r\n      e13: 0\r\n      e20: 0\r\n      e21: 0\r\n      e22: 1\r\n      e23: 0\r\n      e30: 0\r\n      e31: 0\r\n      e32: 0\r\n      e33: 1\r\n    m_UseCullingMatrixOverride: 0\r\n  m_Cookie: {fileID: 0}\r\n  m_DrawHalo: 0\r\n  m_Flare: {fileID: 0}\r\n  m_RenderMode: 0\r\n  m_CullingMask:\r\n    serializedVersion: 2\r\n    m_Bits: 4294967295\r\n  m_RenderingLayerMask: 1\r\n  m_Lightmapping: 4\r\n  m_LightShadowCasterMode: 0\r\n  m_AreaSize: {x: 1, y: 1}\r\n  m_BounceIntensity: 1\r\n  m_ColorTemperature: 6570\r\n  m_UseColorTemperature: 0\r\n  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}\r\n  m_UseBoundingSphereOverride: 0\r\n  m_ShadowRadius: 0\r\n  m_ShadowAngle: 0\r\n--- !u!4 &879819994\r\nTransform:\r\n  m_ObjectHideFlags: 0\r\n  m_CorrespondingSourceObject: {fileID: 0}\r\n  m_PrefabInstance: {fileID: 0}\r\n  m_PrefabAsset: {fileID: 0}\r\n  m_GameObject: {fileID: 879819992}\r\n  m_LocalRotation: {x: 0.33571333, y: -0.27253962, z: 0.009442388, w: 0.9016261}\r\n  m_LocalPosition: {x: 0, y: 3, z: 0}\r\n  m_LocalScale: {x: 1, y: 1, z: 1}\r\n  m_Children: []\r\n  m_Father: {fileID: 0}\r\n  m_RootOrder: 0\r\n  m_LocalEulerAnglesHint: {x: 37.627003, y: -37.772003, z: -12.096001}\r\n--- !u!1001 &990892482\r\nPrefabInstance:\r\n  m_ObjectHideFlags: 0\r\n  serializedVersion: 2\r\n  m_Modification:\r\n    m_TransformParent: {fileID: 0}\r\n    m_Modifications:\r\n    - target: {fileID: 3918980950647326663, guid: 4e22bc4d94cfb0c4394efffe9705e773,\r\n        type: 3}\r\n      propertyPath: m_LocalPosition.x\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 3918980950647326663, guid: 4e22bc4d94cfb0c4394efffe9705e773,\r\n        type: 3}\r\n      propertyPath: m_LocalPosition.y\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 3918980950647326663, guid: 4e22bc4d94cfb0c4394efffe9705e773,\r\n        type: 3}\r\n      propertyPath: m_LocalPosition.z\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 3918980950647326663, guid: 4e22bc4d94cfb0c4394efffe9705e773,\r\n        type: 3}\r\n      propertyPath: m_LocalRotation.x\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 3918980950647326663, guid: 4e22bc4d94cfb0c4394efffe9705e773,\r\n        type: 3}\r\n      propertyPath: m_LocalRotation.y\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 3918980950647326663, guid: 4e22bc4d94cfb0c4394efffe9705e773,\r\n        type: 3}\r\n      propertyPath: m_LocalRotation.z\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 3918980950647326663, guid: 4e22bc4d94cfb0c4394efffe9705e773,\r\n        type: 3}\r\n      propertyPath: m_LocalRotation.w\r\n      value: 1\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 3918980950647326663, guid: 4e22bc4d94cfb0c4394efffe9705e773,\r\n        type: 3}\r\n      propertyPath: m_RootOrder\r\n      value: 6\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 3918980950647326663, guid: 4e22bc4d94cfb0c4394efffe9705e773,\r\n        type: 3}\r\n      propertyPath: m_LocalEulerAnglesHint.x\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 3918980950647326663, guid: 4e22bc4d94cfb0c4394efffe9705e773,\r\n        type: 3}\r\n      propertyPath: m_LocalEulerAnglesHint.y\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 3918980950647326663, guid: 4e22bc4d94cfb0c4394efffe9705e773,\r\n        type: 3}\r\n      propertyPath: m_LocalEulerAnglesHint.z\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 3918980950647326664, guid: 4e22bc4d94cfb0c4394efffe9705e773,\r\n        type: 3}\r\n      propertyPath: m_Name\r\n      value: --UI--\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 3918980951296294128, guid: 4e22bc4d94cfb0c4394efffe9705e773,\r\n        type: 3}\r\n      propertyPath: m_AnchorMax.x\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 3918980951296294128, guid: 4e22bc4d94cfb0c4394efffe9705e773,\r\n        type: 3}\r\n      propertyPath: m_AnchorMax.y\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 3918980951651471997, guid: 4e22bc4d94cfb0c4394efffe9705e773,\r\n        type: 3}\r\n      propertyPath: m_AnchorMax.x\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 3918980951651471997, guid: 4e22bc4d94cfb0c4394efffe9705e773,\r\n        type: 3}\r\n      propertyPath: m_AnchorMax.y\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    m_RemovedComponents: []\r\n  m_SourcePrefab: {fileID: 100100000, guid: 4e22bc4d94cfb0c4394efffe9705e773, type: 3}\r\n--- !u!1001 &1312798724\r\nPrefabInstance:\r\n  m_ObjectHideFlags: 0\r\n  serializedVersion: 2\r\n  m_Modification:\r\n    m_TransformParent: {fileID: 0}\r\n    m_Modifications:\r\n    - target: {fileID: 1853304259910867411, guid: d7f7a1c5932f155419e64f018c6c0e5f,\r\n        type: 3}\r\n      propertyPath: m_LocalPosition.x\r\n      value: -43.890873\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 1853304259910867411, guid: d7f7a1c5932f155419e64f018c6c0e5f,\r\n        type: 3}\r\n      propertyPath: m_LocalPosition.y\r\n      value: 1.5\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 1853304259910867411, guid: d7f7a1c5932f155419e64f018c6c0e5f,\r\n        type: 3}\r\n      propertyPath: m_LocalPosition.z\r\n      value: 22.257\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 1853304259910867411, guid: d7f7a1c5932f155419e64f018c6c0e5f,\r\n        type: 3}\r\n      propertyPath: m_LocalRotation.x\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 1853304259910867411, guid: d7f7a1c5932f155419e64f018c6c0e5f,\r\n        type: 3}\r\n      propertyPath: m_LocalRotation.y\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 1853304259910867411, guid: d7f7a1c5932f155419e64f018c6c0e5f,\r\n        type: 3}\r\n      propertyPath: m_LocalRotation.z\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 1853304259910867411, guid: d7f7a1c5932f155419e64f018c6c0e5f,\r\n        type: 3}\r\n      propertyPath: m_LocalRotation.w\r\n      value: 1\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 1853304259910867411, guid: d7f7a1c5932f155419e64f018c6c0e5f,\r\n        type: 3}\r\n      propertyPath: m_RootOrder\r\n      value: 2\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 1853304259910867411, guid: d7f7a1c5932f155419e64f018c6c0e5f,\r\n        type: 3}\r\n      propertyPath: m_LocalEulerAnglesHint.x\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 1853304259910867411, guid: d7f7a1c5932f155419e64f018c6c0e5f,\r\n        type: 3}\r\n      propertyPath: m_LocalEulerAnglesHint.y\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 1853304259910867411, guid: d7f7a1c5932f155419e64f018c6c0e5f,\r\n        type: 3}\r\n      propertyPath: m_LocalEulerAnglesHint.z\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 1853304259910867415, guid: d7f7a1c5932f155419e64f018c6c0e5f,\r\n        type: 3}\r\n      propertyPath: m_Name\r\n      value: Terrier\r\n      objectReference: {fileID: 0}\r\n    m_RemovedComponents:\r\n    - {fileID: -7425912678644063657, guid: d7f7a1c5932f155419e64f018c6c0e5f, type: 3}\r\n  m_SourcePrefab: {fileID: 100100000, guid: d7f7a1c5932f155419e64f018c6c0e5f, type: 3}\r\n--- !u!1 &1326416588 stripped\r\nGameObject:\r\n  m_CorrespondingSourceObject: {fileID: 1349554506105746105, guid: da24192a800e15f45aebc2a45780b08f,\r\n    type: 3}\r\n  m_PrefabInstance: {fileID: 1803700013}\r\n  m_PrefabAsset: {fileID: 0}\r\n--- !u!4 &1429840441 stripped\r\nTransform:\r\n  m_CorrespondingSourceObject: {fileID: 3918980950647326663, guid: 4e22bc4d94cfb0c4394efffe9705e773,\r\n    type: 3}\r\n  m_PrefabInstance: {fileID: 990892482}\r\n  m_PrefabAsset: {fileID: 0}\r\n--- !u!1 &1530906452\r\nGameObject:\r\n  m_ObjectHideFlags: 0\r\n  m_CorrespondingSourceObject: {fileID: 0}\r\n  m_PrefabInstance: {fileID: 0}\r\n  m_PrefabAsset: {fileID: 0}\r\n  serializedVersion: 6\r\n  m_Component:\r\n  - component: {fileID: 1530906453}\r\n  m_Layer: 5\r\n  m_Name: ClimbableTree_group\r\n  m_TagString: Untagged\r\n  m_Icon: {fileID: 0}\r\n  m_NavMeshLayer: 0\r\n  m_StaticEditorFlags: 0\r\n  m_IsActive: 1\r\n--- !u!4 &1530906453\r\nTransform:\r\n  m_ObjectHideFlags: 0\r\n  m_CorrespondingSourceObject: {fileID: 0}\r\n  m_PrefabInstance: {fileID: 0}\r\n  m_PrefabAsset: {fileID: 0}\r\n  m_GameObject: {fileID: 1530906452}\r\n  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}\r\n  m_LocalPosition: {x: 0, y: 0, z: 0}\r\n  m_LocalScale: {x: 1, y: 1, z: 1}\r\n  m_Children: []\r\n  m_Father: {fileID: 0}\r\n  m_RootOrder: 13\r\n  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}\r\n--- !u!1 &1733636582 stripped\r\nGameObject:\r\n  m_CorrespondingSourceObject: {fileID: 1853304259910867415, guid: d7f7a1c5932f155419e64f018c6c0e5f,\r\n    type: 3}\r\n  m_PrefabInstance: {fileID: 1312798724}\r\n  m_PrefabAsset: {fileID: 0}\r\n--- !u!114 &1733636583\r\nMonoBehaviour:\r\n  m_ObjectHideFlags: 0\r\n  m_CorrespondingSourceObject: {fileID: 0}\r\n  m_PrefabInstance: {fileID: 0}\r\n  m_PrefabAsset: {fileID: 0}\r\n  m_GameObject: {fileID: 1733636582}\r\n  m_Enabled: 1\r\n  m_EditorHideFlags: 0\r\n  m_Script: {fileID: 11500000, guid: 30e43647336143c4c8dee4c4918284e9, type: 3}\r\n  m_Name: \r\n  m_EditorClassIdentifier: \r\n  ReachingDistance: 1.5\r\n  MyState: 0\r\n  MyProfile: {fileID: 2296511828036664000, guid: 6fd61dbf2152c6040b830979bb0a0fbb,\r\n    type: 3}\r\n  _nm_Agent: {fileID: 0}\r\n  myDetector: {fileID: 0}\r\n  mySonorDetection: {fileID: 0}\r\n  _abs_Resc_Manager: {fileID: 0}\r\n  _animator: {fileID: 0}\r\n  Dust_PS: {fileID: 0}\r\n  takeDammage: 0\r\n  randomRadius: 0\r\n  TimeToWaitForAbstractedRessources: 3\r\n  _timePassed: 0\r\n  burrowTransform: {fileID: 47320267}\r\n--- !u!1001 &1803700013\r\nPrefabInstance:\r\n  m_ObjectHideFlags: 0\r\n  serializedVersion: 2\r\n  m_Modification:\r\n    m_TransformParent: {fileID: 0}\r\n    m_Modifications:\r\n    - target: {fileID: 1349554506105746105, guid: da24192a800e15f45aebc2a45780b08f,\r\n        type: 3}\r\n      propertyPath: m_Name\r\n      value: --MAP--\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 1349554506105746105, guid: da24192a800e15f45aebc2a45780b08f,\r\n        type: 3}\r\n      propertyPath: m_StaticEditorFlags\r\n      value: 4294967295\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 4578983972681724498, guid: da24192a800e15f45aebc2a45780b08f,\r\n        type: 3}\r\n      propertyPath: m_StaticEditorFlags\r\n      value: 4294967295\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 4578983972681724498, guid: da24192a800e15f45aebc2a45780b08f,\r\n        type: 3}\r\n      propertyPath: m_Layer\r\n      value: 8\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 4578983972681724498, guid: da24192a800e15f45aebc2a45780b08f,\r\n        type: 3}\r\n      propertyPath: m_NavMeshLayer\r\n      value: 1\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 4578983972986210841, guid: da24192a800e15f45aebc2a45780b08f,\r\n        type: 3}\r\n      propertyPath: m_StaticEditorFlags\r\n      value: 4294967295\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 4578983972986210841, guid: da24192a800e15f45aebc2a45780b08f,\r\n        type: 3}\r\n      propertyPath: m_Layer\r\n      value: 8\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 4578983972986210841, guid: da24192a800e15f45aebc2a45780b08f,\r\n        type: 3}\r\n      propertyPath: m_NavMeshLayer\r\n      value: 1\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 4578983973034193876, guid: da24192a800e15f45aebc2a45780b08f,\r\n        type: 3}\r\n      propertyPath: m_StaticEditorFlags\r\n      value: 4294967295\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 4578983973034193876, guid: da24192a800e15f45aebc2a45780b08f,\r\n        type: 3}\r\n      propertyPath: m_Layer\r\n      value: 8\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 4578983973034193876, guid: da24192a800e15f45aebc2a45780b08f,\r\n        type: 3}\r\n      propertyPath: m_NavMeshLayer\r\n      value: 1\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 4578983973248717462, guid: da24192a800e15f45aebc2a45780b08f,\r\n        type: 3}\r\n      propertyPath: m_StaticEditorFlags\r\n      value: 4294967295\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 4578983973353914849, guid: da24192a800e15f45aebc2a45780b08f,\r\n        type: 3}\r\n      propertyPath: m_StaticEditorFlags\r\n      value: 4294967295\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 4578983973353914849, guid: da24192a800e15f45aebc2a45780b08f,\r\n        type: 3}\r\n      propertyPath: m_Layer\r\n      value: 8\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 4578983973353914849, guid: da24192a800e15f45aebc2a45780b08f,\r\n        type: 3}\r\n      propertyPath: m_NavMeshLayer\r\n      value: 1\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 4578983973400948662, guid: da24192a800e15f45aebc2a45780b08f,\r\n        type: 3}\r\n      propertyPath: m_StaticEditorFlags\r\n      value: 4294967295\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 4578983973400948662, guid: da24192a800e15f45aebc2a45780b08f,\r\n        type: 3}\r\n      propertyPath: m_NavMeshLayer\r\n      value: 1\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 4578983973400948662, guid: da24192a800e15f45aebc2a45780b08f,\r\n        type: 3}\r\n      propertyPath: m_Layer\r\n      value: 8\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 4578983973857028106, guid: da24192a800e15f45aebc2a45780b08f,\r\n        type: 3}\r\n      propertyPath: m_LocalPosition.x\r\n      value: 1.3\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 4578983973857028110, guid: da24192a800e15f45aebc2a45780b08f,\r\n        type: 3}\r\n      propertyPath: m_StaticEditorFlags\r\n      value: 4294967295\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 4578983973857028110, guid: da24192a800e15f45aebc2a45780b08f,\r\n        type: 3}\r\n      propertyPath: m_Layer\r\n      value: 8\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 4578983973857028110, guid: da24192a800e15f45aebc2a45780b08f,\r\n        type: 3}\r\n      propertyPath: m_NavMeshLayer\r\n      value: 1\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 5386110685191464007, guid: da24192a800e15f45aebc2a45780b08f,\r\n        type: 3}\r\n      propertyPath: m_LocalPosition.x\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 5386110685191464007, guid: da24192a800e15f45aebc2a45780b08f,\r\n        type: 3}\r\n      propertyPath: m_LocalPosition.y\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 5386110685191464007, guid: da24192a800e15f45aebc2a45780b08f,\r\n        type: 3}\r\n      propertyPath: m_LocalPosition.z\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 5386110685191464007, guid: da24192a800e15f45aebc2a45780b08f,\r\n        type: 3}\r\n      propertyPath: m_LocalRotation.x\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 5386110685191464007, guid: da24192a800e15f45aebc2a45780b08f,\r\n        type: 3}\r\n      propertyPath: m_LocalRotation.y\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 5386110685191464007, guid: da24192a800e15f45aebc2a45780b08f,\r\n        type: 3}\r\n      propertyPath: m_LocalRotation.z\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 5386110685191464007, guid: da24192a800e15f45aebc2a45780b08f,\r\n        type: 3}\r\n      propertyPath: m_LocalRotation.w\r\n      value: 1\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 5386110685191464007, guid: da24192a800e15f45aebc2a45780b08f,\r\n        type: 3}\r\n      propertyPath: m_RootOrder\r\n      value: 7\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 5386110685191464007, guid: da24192a800e15f45aebc2a45780b08f,\r\n        type: 3}\r\n      propertyPath: m_LocalEulerAnglesHint.x\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 5386110685191464007, guid: da24192a800e15f45aebc2a45780b08f,\r\n        type: 3}\r\n      propertyPath: m_LocalEulerAnglesHint.y\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 5386110685191464007, guid: da24192a800e15f45aebc2a45780b08f,\r\n        type: 3}\r\n      propertyPath: m_LocalEulerAnglesHint.z\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 6421038950325865799, guid: da24192a800e15f45aebc2a45780b08f,\r\n        type: 3}\r\n      propertyPath: m_StaticEditorFlags\r\n      value: 4294967295\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 6421038950325865799, guid: da24192a800e15f45aebc2a45780b08f,\r\n        type: 3}\r\n      propertyPath: m_Layer\r\n      value: 8\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 6421038950325865799, guid: da24192a800e15f45aebc2a45780b08f,\r\n        type: 3}\r\n      propertyPath: m_NavMeshLayer\r\n      value: 1\r\n      objectReference: {fileID: 0}\r\n    m_RemovedComponents: []\r\n  m_SourcePrefab: {fileID: 100100000, guid: da24192a800e15f45aebc2a45780b08f, type: 3}\r\n--- !u!1 &1827378427\r\nGameObject:\r\n  m_ObjectHideFlags: 19\r\n  m_CorrespondingSourceObject: {fileID: 0}\r\n  m_PrefabInstance: {fileID: 0}\r\n  m_PrefabAsset: {fileID: 0}\r\n  serializedVersion: 6\r\n  m_Component:\r\n  - component: {fileID: 1827378429}\r\n  - component: {fileID: 1827378428}\r\n  m_Layer: 0\r\n  m_Name: PrefabPainterSceneSettings\r\n  m_TagString: Untagged\r\n  m_Icon: {fileID: 0}\r\n  m_NavMeshLayer: 0\r\n  m_StaticEditorFlags: 0\r\n  m_IsActive: 1\r\n--- !u!114 &1827378428\r\nMonoBehaviour:\r\n  m_ObjectHideFlags: 19\r\n  m_CorrespondingSourceObject: {fileID: 0}\r\n  m_PrefabInstance: {fileID: 0}\r\n  m_PrefabAsset: {fileID: 0}\r\n  m_GameObject: {fileID: 1827378427}\r\n  m_Enabled: 1\r\n  m_EditorHideFlags: 0\r\n  m_Script: {fileID: 11500000, guid: 5d0d71238b38a4a38b35b955fbf5c019, type: 3}\r\n  m_Name: \r\n  m_EditorClassIdentifier: \r\n  parentForPrefabs: {fileID: 0}\r\n--- !u!4 &1827378429\r\nTransform:\r\n  m_ObjectHideFlags: 19\r\n  m_CorrespondingSourceObject: {fileID: 0}\r\n  m_PrefabInstance: {fileID: 0}\r\n  m_PrefabAsset: {fileID: 0}\r\n  m_GameObject: {fileID: 1827378427}\r\n  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}\r\n  m_LocalPosition: {x: 0, y: 0, z: 0}\r\n  m_LocalScale: {x: 1, y: 1, z: 1}\r\n  m_Children: []\r\n  m_Father: {fileID: 0}\r\n  m_RootOrder: 12\r\n  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}\r\n--- !u!1 &2101114158\r\nGameObject:\r\n  m_ObjectHideFlags: 0\r\n  m_CorrespondingSourceObject: {fileID: 0}\r\n  m_PrefabInstance: {fileID: 0}\r\n  m_PrefabAsset: {fileID: 0}\r\n  serializedVersion: 6\r\n  m_Component:\r\n  - component: {fileID: 2101114159}\r\n  m_Layer: 0\r\n  m_Name: Pack\r\n  m_TagString: Untagged\r\n  m_Icon: {fileID: 0}\r\n  m_NavMeshLayer: 0\r\n  m_StaticEditorFlags: 0\r\n  m_IsActive: 1\r\n--- !u!4 &2101114159\r\nTransform:\r\n  m_ObjectHideFlags: 0\r\n  m_CorrespondingSourceObject: {fileID: 0}\r\n  m_PrefabInstance: {fileID: 0}\r\n  m_PrefabAsset: {fileID: 0}\r\n  m_GameObject: {fileID: 2101114158}\r\n  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}\r\n  m_LocalPosition: {x: 39.561764, y: 1.6, z: 11.695484}\r\n  m_LocalScale: {x: 1, y: 1, z: 1}\r\n  m_Children:\r\n  - {fileID: 359437679}\r\n  - {fileID: 2135339502}\r\n  m_Father: {fileID: 0}\r\n  m_RootOrder: 9\r\n  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}\r\n--- !u!4 &2135339502 stripped\r\nTransform:\r\n  m_CorrespondingSourceObject: {fileID: 8082260682968824203, guid: b8ca2ec5494f96e468e120b752962fe1,\r\n    type: 3}\r\n  m_PrefabInstance: {fileID: 8082260680867104869}\r\n  m_PrefabAsset: {fileID: 0}\r\n--- !u!1001 &4195671182206796646\r\nPrefabInstance:\r\n  m_ObjectHideFlags: 0\r\n  serializedVersion: 2\r\n  m_Modification:\r\n    m_TransformParent: {fileID: 0}\r\n    m_Modifications:\r\n    - target: {fileID: 3314841442416103658, guid: 541e5c8e1736bd8408388d524836f246,\r\n        type: 3}\r\n      propertyPath: terrain\r\n      value: \r\n      objectReference: {fileID: 1326416588}\r\n    - target: {fileID: 3314841442416103658, guid: 541e5c8e1736bd8408388d524836f246,\r\n        type: 3}\r\n      propertyPath: maxPrey\r\n      value: 2\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 3314841442416103658, guid: 541e5c8e1736bd8408388d524836f246,\r\n        type: 3}\r\n      propertyPath: m_Enabled\r\n      value: 1\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 3314841442416103658, guid: 541e5c8e1736bd8408388d524836f246,\r\n        type: 3}\r\n      propertyPath: minMaxX.x\r\n      value: -20\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 3314841442416103658, guid: 541e5c8e1736bd8408388d524836f246,\r\n        type: 3}\r\n      propertyPath: minMaxX.y\r\n      value: 20\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 3314841442416103658, guid: 541e5c8e1736bd8408388d524836f246,\r\n        type: 3}\r\n      propertyPath: minMaxY.x\r\n      value: -20\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 3314841442416103658, guid: 541e5c8e1736bd8408388d524836f246,\r\n        type: 3}\r\n      propertyPath: minMaxY.y\r\n      value: 20\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 4195671181614474848, guid: 541e5c8e1736bd8408388d524836f246,\r\n        type: 3}\r\n      propertyPath: m_Name\r\n      value: Pack Manager\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 4195671181614474862, guid: 541e5c8e1736bd8408388d524836f246,\r\n        type: 3}\r\n      propertyPath: m_LocalPosition.x\r\n      value: 39.561764\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 4195671181614474862, guid: 541e5c8e1736bd8408388d524836f246,\r\n        type: 3}\r\n      propertyPath: m_LocalPosition.y\r\n      value: 34.7\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 4195671181614474862, guid: 541e5c8e1736bd8408388d524836f246,\r\n        type: 3}\r\n      propertyPath: m_LocalPosition.z\r\n      value: 11.695484\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 4195671181614474862, guid: 541e5c8e1736bd8408388d524836f246,\r\n        type: 3}\r\n      propertyPath: m_LocalRotation.x\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 4195671181614474862, guid: 541e5c8e1736bd8408388d524836f246,\r\n        type: 3}\r\n      propertyPath: m_LocalRotation.y\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 4195671181614474862, guid: 541e5c8e1736bd8408388d524836f246,\r\n        type: 3}\r\n      propertyPath: m_LocalRotation.z\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 4195671181614474862, guid: 541e5c8e1736bd8408388d524836f246,\r\n        type: 3}\r\n      propertyPath: m_LocalRotation.w\r\n      value: 1\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 4195671181614474862, guid: 541e5c8e1736bd8408388d524836f246,\r\n        type: 3}\r\n      propertyPath: m_RootOrder\r\n      value: 5\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 4195671181614474862, guid: 541e5c8e1736bd8408388d524836f246,\r\n        type: 3}\r\n      propertyPath: m_LocalEulerAnglesHint.x\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 4195671181614474862, guid: 541e5c8e1736bd8408388d524836f246,\r\n        type: 3}\r\n      propertyPath: m_LocalEulerAnglesHint.y\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 4195671181614474862, guid: 541e5c8e1736bd8408388d524836f246,\r\n        type: 3}\r\n      propertyPath: m_LocalEulerAnglesHint.z\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    m_RemovedComponents: []\r\n  m_SourcePrefab: {fileID: 100100000, guid: 541e5c8e1736bd8408388d524836f246, type: 3}\r\n--- !u!1001 &5753358664039036775\r\nPrefabInstance:\r\n  m_ObjectHideFlags: 0\r\n  serializedVersion: 2\r\n  m_Modification:\r\n    m_TransformParent: {fileID: 0}\r\n    m_Modifications:\r\n    - target: {fileID: 5753358662504104769, guid: 573a8c514391fcb4fbf3ad1b43d349a5,\r\n        type: 3}\r\n      propertyPath: m_LocalPosition.x\r\n      value: -57.52\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 5753358662504104769, guid: 573a8c514391fcb4fbf3ad1b43d349a5,\r\n        type: 3}\r\n      propertyPath: m_LocalPosition.y\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 5753358662504104769, guid: 573a8c514391fcb4fbf3ad1b43d349a5,\r\n        type: 3}\r\n      propertyPath: m_LocalPosition.z\r\n      value: -50.02\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 5753358662504104769, guid: 573a8c514391fcb4fbf3ad1b43d349a5,\r\n        type: 3}\r\n      propertyPath: m_LocalRotation.x\r\n      value: -0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 5753358662504104769, guid: 573a8c514391fcb4fbf3ad1b43d349a5,\r\n        type: 3}\r\n      propertyPath: m_LocalRotation.y\r\n      value: -0.36887604\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 5753358662504104769, guid: 573a8c514391fcb4fbf3ad1b43d349a5,\r\n        type: 3}\r\n      propertyPath: m_LocalRotation.z\r\n      value: -0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 5753358662504104769, guid: 573a8c514391fcb4fbf3ad1b43d349a5,\r\n        type: 3}\r\n      propertyPath: m_LocalRotation.w\r\n      value: 0.92947865\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 5753358662504104769, guid: 573a8c514391fcb4fbf3ad1b43d349a5,\r\n        type: 3}\r\n      propertyPath: m_RootOrder\r\n      value: 10\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 5753358662504104769, guid: 573a8c514391fcb4fbf3ad1b43d349a5,\r\n        type: 3}\r\n      propertyPath: m_LocalEulerAnglesHint.x\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 5753358662504104769, guid: 573a8c514391fcb4fbf3ad1b43d349a5,\r\n        type: 3}\r\n      propertyPath: m_LocalEulerAnglesHint.y\r\n      value: -43.293003\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 5753358662504104769, guid: 573a8c514391fcb4fbf3ad1b43d349a5,\r\n        type: 3}\r\n      propertyPath: m_LocalEulerAnglesHint.z\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 5753358662504104772, guid: 573a8c514391fcb4fbf3ad1b43d349a5,\r\n        type: 3}\r\n      propertyPath: m_Name\r\n      value: Lake\r\n      objectReference: {fileID: 0}\r\n    m_RemovedComponents: []\r\n  m_SourcePrefab: {fileID: 100100000, guid: 573a8c514391fcb4fbf3ad1b43d349a5, type: 3}\r\n--- !u!1001 &7662421104053034688\r\nPrefabInstance:\r\n  m_ObjectHideFlags: 0\r\n  serializedVersion: 2\r\n  m_Modification:\r\n    m_TransformParent: {fileID: 0}\r\n    m_Modifications:\r\n    - target: {fileID: 7662421104586968841, guid: 306951537f2e688408ddbdebf01ca1f5,\r\n        type: 3}\r\n      propertyPath: m_Name\r\n      value: Tree\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 7662421104586968847, guid: 306951537f2e688408ddbdebf01ca1f5,\r\n        type: 3}\r\n      propertyPath: m_LocalPosition.x\r\n      value: -4.6\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 7662421104586968847, guid: 306951537f2e688408ddbdebf01ca1f5,\r\n        type: 3}\r\n      propertyPath: m_LocalPosition.y\r\n      value: 0.11\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 7662421104586968847, guid: 306951537f2e688408ddbdebf01ca1f5,\r\n        type: 3}\r\n      propertyPath: m_LocalPosition.z\r\n      value: 39.7\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 7662421104586968847, guid: 306951537f2e688408ddbdebf01ca1f5,\r\n        type: 3}\r\n      propertyPath: m_LocalRotation.x\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 7662421104586968847, guid: 306951537f2e688408ddbdebf01ca1f5,\r\n        type: 3}\r\n      propertyPath: m_LocalRotation.y\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 7662421104586968847, guid: 306951537f2e688408ddbdebf01ca1f5,\r\n        type: 3}\r\n      propertyPath: m_LocalRotation.z\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 7662421104586968847, guid: 306951537f2e688408ddbdebf01ca1f5,\r\n        type: 3}\r\n      propertyPath: m_LocalRotation.w\r\n      value: 1\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 7662421104586968847, guid: 306951537f2e688408ddbdebf01ca1f5,\r\n        type: 3}\r\n      propertyPath: m_RootOrder\r\n      value: 8\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 7662421104586968847, guid: 306951537f2e688408ddbdebf01ca1f5,\r\n        type: 3}\r\n      propertyPath: m_LocalEulerAnglesHint.x\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 7662421104586968847, guid: 306951537f2e688408ddbdebf01ca1f5,\r\n        type: 3}\r\n      propertyPath: m_LocalEulerAnglesHint.y\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 7662421104586968847, guid: 306951537f2e688408ddbdebf01ca1f5,\r\n        type: 3}\r\n      propertyPath: m_LocalEulerAnglesHint.z\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    m_RemovedComponents: []\r\n  m_SourcePrefab: {fileID: 100100000, guid: 306951537f2e688408ddbdebf01ca1f5, type: 3}\r\n--- !u!1001 &7914880650757789432\r\nPrefabInstance:\r\n  m_ObjectHideFlags: 0\r\n  serializedVersion: 2\r\n  m_Modification:\r\n    m_TransformParent: {fileID: 1429840441}\r\n    m_Modifications:\r\n    - target: {fileID: 7914880650158864731, guid: d1178a9c0d720f34f833fce2772f540d,\r\n        type: 3}\r\n      propertyPath: m_LocalPosition.x\r\n      value: 2.96\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 7914880650158864731, guid: d1178a9c0d720f34f833fce2772f540d,\r\n        type: 3}\r\n      propertyPath: m_LocalPosition.y\r\n      value: 2\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 7914880650158864731, guid: d1178a9c0d720f34f833fce2772f540d,\r\n        type: 3}\r\n      propertyPath: m_LocalPosition.z\r\n      value: 8.69\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 7914880650158864731, guid: d1178a9c0d720f34f833fce2772f540d,\r\n        type: 3}\r\n      propertyPath: m_LocalRotation.x\r\n      value: -0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 7914880650158864731, guid: d1178a9c0d720f34f833fce2772f540d,\r\n        type: 3}\r\n      propertyPath: m_LocalRotation.y\r\n      value: -0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 7914880650158864731, guid: d1178a9c0d720f34f833fce2772f540d,\r\n        type: 3}\r\n      propertyPath: m_LocalRotation.z\r\n      value: -0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 7914880650158864731, guid: d1178a9c0d720f34f833fce2772f540d,\r\n        type: 3}\r\n      propertyPath: m_LocalRotation.w\r\n      value: 1\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 7914880650158864731, guid: d1178a9c0d720f34f833fce2772f540d,\r\n        type: 3}\r\n      propertyPath: m_RootOrder\r\n      value: 2\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 7914880650158864731, guid: d1178a9c0d720f34f833fce2772f540d,\r\n        type: 3}\r\n      propertyPath: m_LocalEulerAnglesHint.x\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 7914880650158864731, guid: d1178a9c0d720f34f833fce2772f540d,\r\n        type: 3}\r\n      propertyPath: m_LocalEulerAnglesHint.y\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 7914880650158864731, guid: d1178a9c0d720f34f833fce2772f540d,\r\n        type: 3}\r\n      propertyPath: m_LocalEulerAnglesHint.z\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 7914880650158864743, guid: d1178a9c0d720f34f833fce2772f540d,\r\n        type: 3}\r\n      propertyPath: m_Name\r\n      value: Hautes-Herbes\r\n      objectReference: {fileID: 0}\r\n    m_RemovedComponents: []\r\n  m_SourcePrefab: {fileID: 100100000, guid: d1178a9c0d720f34f833fce2772f540d, type: 3}\r\n--- !u!1001 &8082260680867104869\r\nPrefabInstance:\r\n  m_ObjectHideFlags: 0\r\n  serializedVersion: 2\r\n  m_Modification:\r\n    m_TransformParent: {fileID: 2101114159}\r\n    m_Modifications:\r\n    - target: {fileID: 8082260682968824200, guid: b8ca2ec5494f96e468e120b752962fe1,\r\n        type: 3}\r\n      propertyPath: m_Name\r\n      value: Alpha Creature\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 8082260682968824203, guid: b8ca2ec5494f96e468e120b752962fe1,\r\n        type: 3}\r\n      propertyPath: m_LocalPosition.x\r\n      value: -19.5\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 8082260682968824203, guid: b8ca2ec5494f96e468e120b752962fe1,\r\n        type: 3}\r\n      propertyPath: m_LocalPosition.y\r\n      value: 0.34\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 8082260682968824203, guid: b8ca2ec5494f96e468e120b752962fe1,\r\n        type: 3}\r\n      propertyPath: m_LocalPosition.z\r\n      value: 2.8\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 8082260682968824203, guid: b8ca2ec5494f96e468e120b752962fe1,\r\n        type: 3}\r\n      propertyPath: m_LocalRotation.x\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 8082260682968824203, guid: b8ca2ec5494f96e468e120b752962fe1,\r\n        type: 3}\r\n      propertyPath: m_LocalRotation.y\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 8082260682968824203, guid: b8ca2ec5494f96e468e120b752962fe1,\r\n        type: 3}\r\n      propertyPath: m_LocalRotation.z\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 8082260682968824203, guid: b8ca2ec5494f96e468e120b752962fe1,\r\n        type: 3}\r\n      propertyPath: m_LocalRotation.w\r\n      value: 1\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 8082260682968824203, guid: b8ca2ec5494f96e468e120b752962fe1,\r\n        type: 3}\r\n      propertyPath: m_RootOrder\r\n      value: 1\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 8082260682968824203, guid: b8ca2ec5494f96e468e120b752962fe1,\r\n        type: 3}\r\n      propertyPath: m_LocalEulerAnglesHint.x\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 8082260682968824203, guid: b8ca2ec5494f96e468e120b752962fe1,\r\n        type: 3}\r\n      propertyPath: m_LocalEulerAnglesHint.y\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 8082260682968824203, guid: b8ca2ec5494f96e468e120b752962fe1,\r\n        type: 3}\r\n      propertyPath: m_LocalEulerAnglesHint.z\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    m_RemovedComponents: []\r\n  m_SourcePrefab: {fileID: 100100000, guid: b8ca2ec5494f96e468e120b752962fe1, type: 3}\r\n--- !u!1 &8082260680867104870 stripped\r\nGameObject:\r\n  m_CorrespondingSourceObject: {fileID: 6966099247247773826, guid: b8ca2ec5494f96e468e120b752962fe1,\r\n    type: 3}\r\n  m_PrefabInstance: {fileID: 8082260680867104869}\r\n  m_PrefabAsset: {fileID: 0}\r\n--- !u!1001 &9171322782406082694\r\nPrefabInstance:\r\n  m_ObjectHideFlags: 0\r\n  serializedVersion: 2\r\n  m_Modification:\r\n    m_TransformParent: {fileID: 0}\r\n    m_Modifications:\r\n    - target: {fileID: 9171322782217905296, guid: c342d158cf9a3a54f8aa5a40ab3bb016,\r\n        type: 3}\r\n      propertyPath: Follow\r\n      value: \r\n      objectReference: {fileID: 8082260680867104870}\r\n    - target: {fileID: 9171322782217905296, guid: c342d158cf9a3a54f8aa5a40ab3bb016,\r\n        type: 3}\r\n      propertyPath: inversedControl\r\n      value: 1\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 9171322782217905296, guid: c342d158cf9a3a54f8aa5a40ab3bb016,\r\n        type: 3}\r\n      propertyPath: m_Enabled\r\n      value: 1\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 9171322782217905297, guid: c342d158cf9a3a54f8aa5a40ab3bb016,\r\n        type: 3}\r\n      propertyPath: m_LocalPosition.x\r\n      value: 20.12\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 9171322782217905297, guid: c342d158cf9a3a54f8aa5a40ab3bb016,\r\n        type: 3}\r\n      propertyPath: m_LocalPosition.y\r\n      value: 4.52\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 9171322782217905297, guid: c342d158cf9a3a54f8aa5a40ab3bb016,\r\n        type: 3}\r\n      propertyPath: m_LocalPosition.z\r\n      value: 14.29\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 9171322782217905297, guid: c342d158cf9a3a54f8aa5a40ab3bb016,\r\n        type: 3}\r\n      propertyPath: m_LocalRotation.x\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 9171322782217905297, guid: c342d158cf9a3a54f8aa5a40ab3bb016,\r\n        type: 3}\r\n      propertyPath: m_LocalRotation.y\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 9171322782217905297, guid: c342d158cf9a3a54f8aa5a40ab3bb016,\r\n        type: 3}\r\n      propertyPath: m_LocalRotation.z\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 9171322782217905297, guid: c342d158cf9a3a54f8aa5a40ab3bb016,\r\n        type: 3}\r\n      propertyPath: m_LocalRotation.w\r\n      value: 1\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 9171322782217905297, guid: c342d158cf9a3a54f8aa5a40ab3bb016,\r\n        type: 3}\r\n      propertyPath: m_RootOrder\r\n      value: 11\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 9171322782217905297, guid: c342d158cf9a3a54f8aa5a40ab3bb016,\r\n        type: 3}\r\n      propertyPath: m_LocalEulerAnglesHint.x\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 9171322782217905297, guid: c342d158cf9a3a54f8aa5a40ab3bb016,\r\n        type: 3}\r\n      propertyPath: m_LocalEulerAnglesHint.y\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 9171322782217905297, guid: c342d158cf9a3a54f8aa5a40ab3bb016,\r\n        type: 3}\r\n      propertyPath: m_LocalEulerAnglesHint.z\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 9171322782217905299, guid: c342d158cf9a3a54f8aa5a40ab3bb016,\r\n        type: 3}\r\n      propertyPath: m_Name\r\n      value: CameraController\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 9171322782753937895, guid: c342d158cf9a3a54f8aa5a40ab3bb016,\r\n        type: 3}\r\n      propertyPath: targetToLook\r\n      value: \r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 9171322782753937895, guid: c342d158cf9a3a54f8aa5a40ab3bb016,\r\n        type: 3}\r\n      propertyPath: maxX\r\n      value: 45\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 9171322782753937895, guid: c342d158cf9a3a54f8aa5a40ab3bb016,\r\n        type: 3}\r\n      propertyPath: minX\r\n      value: -45\r\n      objectReference: {fileID: 0}\r\n    m_RemovedComponents: []\r\n  m_SourcePrefab: {fileID: 100100000, guid: c342d158cf9a3a54f8aa5a40ab3bb016, type: 3}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Assets/Scenes/Game.unity	(revision 079e4cbebebb5b7db0a3b403f2bf59de36f6cbda)
++++ Assets/Scenes/Game.unity	(date 1610993521626)
+@@ -149,7 +149,7 @@
+   m_LocalScale: {x: 1, y: 1, z: 1}
+   m_Children: []
+   m_Father: {fileID: 0}
+-  m_RootOrder: 14
++  m_RootOrder: 12
+   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+ --- !u!1001 &220690330
+ PrefabInstance:
+@@ -196,7 +196,7 @@
+     - target: {fileID: 1853304259910867411, guid: 29c888cf0a78cd4498fce567d441f7ba,
+         type: 3}
+       propertyPath: m_RootOrder
+-      value: 4
++      value: 5
+       objectReference: {fileID: 0}
+     - target: {fileID: 1853304259910867411, guid: 29c888cf0a78cd4498fce567d441f7ba,
+         type: 3}
+@@ -226,36 +226,6 @@
+     m_RemovedComponents:
+     - {fileID: 7376011113714017504, guid: 29c888cf0a78cd4498fce567d441f7ba, type: 3}
+   m_SourcePrefab: {fileID: 100100000, guid: 29c888cf0a78cd4498fce567d441f7ba, type: 3}
+---- !u!1 &359437678
+-GameObject:
+-  m_ObjectHideFlags: 0
+-  m_CorrespondingSourceObject: {fileID: 0}
+-  m_PrefabInstance: {fileID: 0}
+-  m_PrefabAsset: {fileID: 0}
+-  serializedVersion: 6
+-  m_Component:
+-  - component: {fileID: 359437679}
+-  m_Layer: 0
+-  m_Name: GameObject
+-  m_TagString: Untagged
+-  m_Icon: {fileID: 0}
+-  m_NavMeshLayer: 0
+-  m_StaticEditorFlags: 0
+-  m_IsActive: 1
+---- !u!4 &359437679
+-Transform:
+-  m_ObjectHideFlags: 0
+-  m_CorrespondingSourceObject: {fileID: 0}
+-  m_PrefabInstance: {fileID: 0}
+-  m_PrefabAsset: {fileID: 0}
+-  m_GameObject: {fileID: 359437678}
+-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+-  m_LocalPosition: {x: -20.92, y: 2.446, z: 4.380001}
+-  m_LocalScale: {x: 1, y: 1, z: 1}
+-  m_Children: []
+-  m_Father: {fileID: 2101114159}
+-  m_RootOrder: 0
+-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+ --- !u!1001 &612842746
+ PrefabInstance:
+   m_ObjectHideFlags: 0
+@@ -301,7 +271,7 @@
+     - target: {fileID: 1853304259910867411, guid: 407227cf503b624428f235c2e9126cc8,
+         type: 3}
+       propertyPath: m_RootOrder
+-      value: 3
++      value: 4
+       objectReference: {fileID: 0}
+     - target: {fileID: 1853304259910867411, guid: 407227cf503b624428f235c2e9126cc8,
+         type: 3}
+@@ -394,7 +364,7 @@
+     - target: {fileID: 1853304259910867411, guid: 1825090ddbbb52f4c8e6ec8b51ea799b,
+         type: 3}
+       propertyPath: m_RootOrder
+-      value: 1
++      value: 2
+       objectReference: {fileID: 0}
+     - target: {fileID: 1853304259910867411, guid: 1825090ddbbb52f4c8e6ec8b51ea799b,
+         type: 3}
+@@ -418,6 +388,75 @@
+       objectReference: {fileID: 0}
+     m_RemovedComponents: []
+   m_SourcePrefab: {fileID: 100100000, guid: 1825090ddbbb52f4c8e6ec8b51ea799b, type: 3}
++--- !u!1001 &873679597
++PrefabInstance:
++  m_ObjectHideFlags: 0
++  serializedVersion: 2
++  m_Modification:
++    m_TransformParent: {fileID: 0}
++    m_Modifications:
++    - target: {fileID: 1880581357649425126, guid: 92193ce2ed7f2f74d80c648720dc8e3d,
++        type: 3}
++      propertyPath: m_Name
++      value: PlayerGroup
++      objectReference: {fileID: 0}
++    - target: {fileID: 1880581357649425127, guid: 92193ce2ed7f2f74d80c648720dc8e3d,
++        type: 3}
++      propertyPath: m_LocalPosition.x
++      value: 20.756472
++      objectReference: {fileID: 0}
++    - target: {fileID: 1880581357649425127, guid: 92193ce2ed7f2f74d80c648720dc8e3d,
++        type: 3}
++      propertyPath: m_LocalPosition.y
++      value: 1.97
++      objectReference: {fileID: 0}
++    - target: {fileID: 1880581357649425127, guid: 92193ce2ed7f2f74d80c648720dc8e3d,
++        type: 3}
++      propertyPath: m_LocalPosition.z
++      value: 8.48201
++      objectReference: {fileID: 0}
++    - target: {fileID: 1880581357649425127, guid: 92193ce2ed7f2f74d80c648720dc8e3d,
++        type: 3}
++      propertyPath: m_LocalRotation.x
++      value: 0
++      objectReference: {fileID: 0}
++    - target: {fileID: 1880581357649425127, guid: 92193ce2ed7f2f74d80c648720dc8e3d,
++        type: 3}
++      propertyPath: m_LocalRotation.y
++      value: 0
++      objectReference: {fileID: 0}
++    - target: {fileID: 1880581357649425127, guid: 92193ce2ed7f2f74d80c648720dc8e3d,
++        type: 3}
++      propertyPath: m_LocalRotation.z
++      value: 0
++      objectReference: {fileID: 0}
++    - target: {fileID: 1880581357649425127, guid: 92193ce2ed7f2f74d80c648720dc8e3d,
++        type: 3}
++      propertyPath: m_LocalRotation.w
++      value: 1
++      objectReference: {fileID: 0}
++    - target: {fileID: 1880581357649425127, guid: 92193ce2ed7f2f74d80c648720dc8e3d,
++        type: 3}
++      propertyPath: m_RootOrder
++      value: 1
++      objectReference: {fileID: 0}
++    - target: {fileID: 1880581357649425127, guid: 92193ce2ed7f2f74d80c648720dc8e3d,
++        type: 3}
++      propertyPath: m_LocalEulerAnglesHint.x
++      value: 0
++      objectReference: {fileID: 0}
++    - target: {fileID: 1880581357649425127, guid: 92193ce2ed7f2f74d80c648720dc8e3d,
++        type: 3}
++      propertyPath: m_LocalEulerAnglesHint.y
++      value: 0
++      objectReference: {fileID: 0}
++    - target: {fileID: 1880581357649425127, guid: 92193ce2ed7f2f74d80c648720dc8e3d,
++        type: 3}
++      propertyPath: m_LocalEulerAnglesHint.z
++      value: 0
++      objectReference: {fileID: 0}
++    m_RemovedComponents: []
++  m_SourcePrefab: {fileID: 100100000, guid: 92193ce2ed7f2f74d80c648720dc8e3d, type: 3}
+ --- !u!1 &879819992
+ GameObject:
+   m_ObjectHideFlags: 0
+@@ -644,7 +683,7 @@
+     - target: {fileID: 1853304259910867411, guid: d7f7a1c5932f155419e64f018c6c0e5f,
+         type: 3}
+       propertyPath: m_RootOrder
+-      value: 2
++      value: 3
+       objectReference: {fileID: 0}
+     - target: {fileID: 1853304259910867411, guid: d7f7a1c5932f155419e64f018c6c0e5f,
+         type: 3}
+@@ -669,12 +708,6 @@
+     m_RemovedComponents:
+     - {fileID: -7425912678644063657, guid: d7f7a1c5932f155419e64f018c6c0e5f, type: 3}
+   m_SourcePrefab: {fileID: 100100000, guid: d7f7a1c5932f155419e64f018c6c0e5f, type: 3}
+---- !u!1 &1326416588 stripped
+-GameObject:
+-  m_CorrespondingSourceObject: {fileID: 1349554506105746105, guid: da24192a800e15f45aebc2a45780b08f,
+-    type: 3}
+-  m_PrefabInstance: {fileID: 1803700013}
+-  m_PrefabAsset: {fileID: 0}
+ --- !u!4 &1429840441 stripped
+ Transform:
+   m_CorrespondingSourceObject: {fileID: 3918980950647326663, guid: 4e22bc4d94cfb0c4394efffe9705e773,
+@@ -709,7 +742,7 @@
+   m_LocalScale: {x: 1, y: 1, z: 1}
+   m_Children: []
+   m_Father: {fileID: 0}
+-  m_RootOrder: 13
++  m_RootOrder: 11
+   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+ --- !u!1 &1733636582 stripped
+ GameObject:
+@@ -975,150 +1008,8 @@
+   m_LocalScale: {x: 1, y: 1, z: 1}
+   m_Children: []
+   m_Father: {fileID: 0}
+-  m_RootOrder: 12
++  m_RootOrder: 10
+   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+---- !u!1 &2101114158
+-GameObject:
+-  m_ObjectHideFlags: 0
+-  m_CorrespondingSourceObject: {fileID: 0}
+-  m_PrefabInstance: {fileID: 0}
+-  m_PrefabAsset: {fileID: 0}
+-  serializedVersion: 6
+-  m_Component:
+-  - component: {fileID: 2101114159}
+-  m_Layer: 0
+-  m_Name: Pack
+-  m_TagString: Untagged
+-  m_Icon: {fileID: 0}
+-  m_NavMeshLayer: 0
+-  m_StaticEditorFlags: 0
+-  m_IsActive: 1
+---- !u!4 &2101114159
+-Transform:
+-  m_ObjectHideFlags: 0
+-  m_CorrespondingSourceObject: {fileID: 0}
+-  m_PrefabInstance: {fileID: 0}
+-  m_PrefabAsset: {fileID: 0}
+-  m_GameObject: {fileID: 2101114158}
+-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+-  m_LocalPosition: {x: 39.561764, y: 1.6, z: 11.695484}
+-  m_LocalScale: {x: 1, y: 1, z: 1}
+-  m_Children:
+-  - {fileID: 359437679}
+-  - {fileID: 2135339502}
+-  m_Father: {fileID: 0}
+-  m_RootOrder: 9
+-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+---- !u!4 &2135339502 stripped
+-Transform:
+-  m_CorrespondingSourceObject: {fileID: 8082260682968824203, guid: b8ca2ec5494f96e468e120b752962fe1,
+-    type: 3}
+-  m_PrefabInstance: {fileID: 8082260680867104869}
+-  m_PrefabAsset: {fileID: 0}
+---- !u!1001 &4195671182206796646
+-PrefabInstance:
+-  m_ObjectHideFlags: 0
+-  serializedVersion: 2
+-  m_Modification:
+-    m_TransformParent: {fileID: 0}
+-    m_Modifications:
+-    - target: {fileID: 3314841442416103658, guid: 541e5c8e1736bd8408388d524836f246,
+-        type: 3}
+-      propertyPath: terrain
+-      value: 
+-      objectReference: {fileID: 1326416588}
+-    - target: {fileID: 3314841442416103658, guid: 541e5c8e1736bd8408388d524836f246,
+-        type: 3}
+-      propertyPath: maxPrey
+-      value: 2
+-      objectReference: {fileID: 0}
+-    - target: {fileID: 3314841442416103658, guid: 541e5c8e1736bd8408388d524836f246,
+-        type: 3}
+-      propertyPath: m_Enabled
+-      value: 1
+-      objectReference: {fileID: 0}
+-    - target: {fileID: 3314841442416103658, guid: 541e5c8e1736bd8408388d524836f246,
+-        type: 3}
+-      propertyPath: minMaxX.x
+-      value: -20
+-      objectReference: {fileID: 0}
+-    - target: {fileID: 3314841442416103658, guid: 541e5c8e1736bd8408388d524836f246,
+-        type: 3}
+-      propertyPath: minMaxX.y
+-      value: 20
+-      objectReference: {fileID: 0}
+-    - target: {fileID: 3314841442416103658, guid: 541e5c8e1736bd8408388d524836f246,
+-        type: 3}
+-      propertyPath: minMaxY.x
+-      value: -20
+-      objectReference: {fileID: 0}
+-    - target: {fileID: 3314841442416103658, guid: 541e5c8e1736bd8408388d524836f246,
+-        type: 3}
+-      propertyPath: minMaxY.y
+-      value: 20
+-      objectReference: {fileID: 0}
+-    - target: {fileID: 4195671181614474848, guid: 541e5c8e1736bd8408388d524836f246,
+-        type: 3}
+-      propertyPath: m_Name
+-      value: Pack Manager
+-      objectReference: {fileID: 0}
+-    - target: {fileID: 4195671181614474862, guid: 541e5c8e1736bd8408388d524836f246,
+-        type: 3}
+-      propertyPath: m_LocalPosition.x
+-      value: 39.561764
+-      objectReference: {fileID: 0}
+-    - target: {fileID: 4195671181614474862, guid: 541e5c8e1736bd8408388d524836f246,
+-        type: 3}
+-      propertyPath: m_LocalPosition.y
+-      value: 34.7
+-      objectReference: {fileID: 0}
+-    - target: {fileID: 4195671181614474862, guid: 541e5c8e1736bd8408388d524836f246,
+-        type: 3}
+-      propertyPath: m_LocalPosition.z
+-      value: 11.695484
+-      objectReference: {fileID: 0}
+-    - target: {fileID: 4195671181614474862, guid: 541e5c8e1736bd8408388d524836f246,
+-        type: 3}
+-      propertyPath: m_LocalRotation.x
+-      value: 0
+-      objectReference: {fileID: 0}
+-    - target: {fileID: 4195671181614474862, guid: 541e5c8e1736bd8408388d524836f246,
+-        type: 3}
+-      propertyPath: m_LocalRotation.y
+-      value: 0
+-      objectReference: {fileID: 0}
+-    - target: {fileID: 4195671181614474862, guid: 541e5c8e1736bd8408388d524836f246,
+-        type: 3}
+-      propertyPath: m_LocalRotation.z
+-      value: 0
+-      objectReference: {fileID: 0}
+-    - target: {fileID: 4195671181614474862, guid: 541e5c8e1736bd8408388d524836f246,
+-        type: 3}
+-      propertyPath: m_LocalRotation.w
+-      value: 1
+-      objectReference: {fileID: 0}
+-    - target: {fileID: 4195671181614474862, guid: 541e5c8e1736bd8408388d524836f246,
+-        type: 3}
+-      propertyPath: m_RootOrder
+-      value: 5
+-      objectReference: {fileID: 0}
+-    - target: {fileID: 4195671181614474862, guid: 541e5c8e1736bd8408388d524836f246,
+-        type: 3}
+-      propertyPath: m_LocalEulerAnglesHint.x
+-      value: 0
+-      objectReference: {fileID: 0}
+-    - target: {fileID: 4195671181614474862, guid: 541e5c8e1736bd8408388d524836f246,
+-        type: 3}
+-      propertyPath: m_LocalEulerAnglesHint.y
+-      value: 0
+-      objectReference: {fileID: 0}
+-    - target: {fileID: 4195671181614474862, guid: 541e5c8e1736bd8408388d524836f246,
+-        type: 3}
+-      propertyPath: m_LocalEulerAnglesHint.z
+-      value: 0
+-      objectReference: {fileID: 0}
+-    m_RemovedComponents: []
+-  m_SourcePrefab: {fileID: 100100000, guid: 541e5c8e1736bd8408388d524836f246, type: 3}
+ --- !u!1001 &5753358664039036775
+ PrefabInstance:
+   m_ObjectHideFlags: 0
+@@ -1164,7 +1055,7 @@
+     - target: {fileID: 5753358662504104769, guid: 573a8c514391fcb4fbf3ad1b43d349a5,
+         type: 3}
+       propertyPath: m_RootOrder
+-      value: 10
++      value: 9
+       objectReference: {fileID: 0}
+     - target: {fileID: 5753358662504104769, guid: 573a8c514391fcb4fbf3ad1b43d349a5,
+         type: 3}
+@@ -1326,177 +1217,3 @@
+       objectReference: {fileID: 0}
+     m_RemovedComponents: []
+   m_SourcePrefab: {fileID: 100100000, guid: d1178a9c0d720f34f833fce2772f540d, type: 3}
+---- !u!1001 &8082260680867104869
+-PrefabInstance:
+-  m_ObjectHideFlags: 0
+-  serializedVersion: 2
+-  m_Modification:
+-    m_TransformParent: {fileID: 2101114159}
+-    m_Modifications:
+-    - target: {fileID: 8082260682968824200, guid: b8ca2ec5494f96e468e120b752962fe1,
+-        type: 3}
+-      propertyPath: m_Name
+-      value: Alpha Creature
+-      objectReference: {fileID: 0}
+-    - target: {fileID: 8082260682968824203, guid: b8ca2ec5494f96e468e120b752962fe1,
+-        type: 3}
+-      propertyPath: m_LocalPosition.x
+-      value: -19.5
+-      objectReference: {fileID: 0}
+-    - target: {fileID: 8082260682968824203, guid: b8ca2ec5494f96e468e120b752962fe1,
+-        type: 3}
+-      propertyPath: m_LocalPosition.y
+-      value: 0.34
+-      objectReference: {fileID: 0}
+-    - target: {fileID: 8082260682968824203, guid: b8ca2ec5494f96e468e120b752962fe1,
+-        type: 3}
+-      propertyPath: m_LocalPosition.z
+-      value: 2.8
+-      objectReference: {fileID: 0}
+-    - target: {fileID: 8082260682968824203, guid: b8ca2ec5494f96e468e120b752962fe1,
+-        type: 3}
+-      propertyPath: m_LocalRotation.x
+-      value: 0
+-      objectReference: {fileID: 0}
+-    - target: {fileID: 8082260682968824203, guid: b8ca2ec5494f96e468e120b752962fe1,
+-        type: 3}
+-      propertyPath: m_LocalRotation.y
+-      value: 0
+-      objectReference: {fileID: 0}
+-    - target: {fileID: 8082260682968824203, guid: b8ca2ec5494f96e468e120b752962fe1,
+-        type: 3}
+-      propertyPath: m_LocalRotation.z
+-      value: 0
+-      objectReference: {fileID: 0}
+-    - target: {fileID: 8082260682968824203, guid: b8ca2ec5494f96e468e120b752962fe1,
+-        type: 3}
+-      propertyPath: m_LocalRotation.w
+-      value: 1
+-      objectReference: {fileID: 0}
+-    - target: {fileID: 8082260682968824203, guid: b8ca2ec5494f96e468e120b752962fe1,
+-        type: 3}
+-      propertyPath: m_RootOrder
+-      value: 1
+-      objectReference: {fileID: 0}
+-    - target: {fileID: 8082260682968824203, guid: b8ca2ec5494f96e468e120b752962fe1,
+-        type: 3}
+-      propertyPath: m_LocalEulerAnglesHint.x
+-      value: 0
+-      objectReference: {fileID: 0}
+-    - target: {fileID: 8082260682968824203, guid: b8ca2ec5494f96e468e120b752962fe1,
+-        type: 3}
+-      propertyPath: m_LocalEulerAnglesHint.y
+-      value: 0
+-      objectReference: {fileID: 0}
+-    - target: {fileID: 8082260682968824203, guid: b8ca2ec5494f96e468e120b752962fe1,
+-        type: 3}
+-      propertyPath: m_LocalEulerAnglesHint.z
+-      value: 0
+-      objectReference: {fileID: 0}
+-    m_RemovedComponents: []
+-  m_SourcePrefab: {fileID: 100100000, guid: b8ca2ec5494f96e468e120b752962fe1, type: 3}
+---- !u!1 &8082260680867104870 stripped
+-GameObject:
+-  m_CorrespondingSourceObject: {fileID: 6966099247247773826, guid: b8ca2ec5494f96e468e120b752962fe1,
+-    type: 3}
+-  m_PrefabInstance: {fileID: 8082260680867104869}
+-  m_PrefabAsset: {fileID: 0}
+---- !u!1001 &9171322782406082694
+-PrefabInstance:
+-  m_ObjectHideFlags: 0
+-  serializedVersion: 2
+-  m_Modification:
+-    m_TransformParent: {fileID: 0}
+-    m_Modifications:
+-    - target: {fileID: 9171322782217905296, guid: c342d158cf9a3a54f8aa5a40ab3bb016,
+-        type: 3}
+-      propertyPath: Follow
+-      value: 
+-      objectReference: {fileID: 8082260680867104870}
+-    - target: {fileID: 9171322782217905296, guid: c342d158cf9a3a54f8aa5a40ab3bb016,
+-        type: 3}
+-      propertyPath: inversedControl
+-      value: 1
+-      objectReference: {fileID: 0}
+-    - target: {fileID: 9171322782217905296, guid: c342d158cf9a3a54f8aa5a40ab3bb016,
+-        type: 3}
+-      propertyPath: m_Enabled
+-      value: 1
+-      objectReference: {fileID: 0}
+-    - target: {fileID: 9171322782217905297, guid: c342d158cf9a3a54f8aa5a40ab3bb016,
+-        type: 3}
+-      propertyPath: m_LocalPosition.x
+-      value: 20.12
+-      objectReference: {fileID: 0}
+-    - target: {fileID: 9171322782217905297, guid: c342d158cf9a3a54f8aa5a40ab3bb016,
+-        type: 3}
+-      propertyPath: m_LocalPosition.y
+-      value: 4.52
+-      objectReference: {fileID: 0}
+-    - target: {fileID: 9171322782217905297, guid: c342d158cf9a3a54f8aa5a40ab3bb016,
+-        type: 3}
+-      propertyPath: m_LocalPosition.z
+-      value: 14.29
+-      objectReference: {fileID: 0}
+-    - target: {fileID: 9171322782217905297, guid: c342d158cf9a3a54f8aa5a40ab3bb016,
+-        type: 3}
+-      propertyPath: m_LocalRotation.x
+-      value: 0
+-      objectReference: {fileID: 0}
+-    - target: {fileID: 9171322782217905297, guid: c342d158cf9a3a54f8aa5a40ab3bb016,
+-        type: 3}
+-      propertyPath: m_LocalRotation.y
+-      value: 0
+-      objectReference: {fileID: 0}
+-    - target: {fileID: 9171322782217905297, guid: c342d158cf9a3a54f8aa5a40ab3bb016,
+-        type: 3}
+-      propertyPath: m_LocalRotation.z
+-      value: 0
+-      objectReference: {fileID: 0}
+-    - target: {fileID: 9171322782217905297, guid: c342d158cf9a3a54f8aa5a40ab3bb016,
+-        type: 3}
+-      propertyPath: m_LocalRotation.w
+-      value: 1
+-      objectReference: {fileID: 0}
+-    - target: {fileID: 9171322782217905297, guid: c342d158cf9a3a54f8aa5a40ab3bb016,
+-        type: 3}
+-      propertyPath: m_RootOrder
+-      value: 11
+-      objectReference: {fileID: 0}
+-    - target: {fileID: 9171322782217905297, guid: c342d158cf9a3a54f8aa5a40ab3bb016,
+-        type: 3}
+-      propertyPath: m_LocalEulerAnglesHint.x
+-      value: 0
+-      objectReference: {fileID: 0}
+-    - target: {fileID: 9171322782217905297, guid: c342d158cf9a3a54f8aa5a40ab3bb016,
+-        type: 3}
+-      propertyPath: m_LocalEulerAnglesHint.y
+-      value: 0
+-      objectReference: {fileID: 0}
+-    - target: {fileID: 9171322782217905297, guid: c342d158cf9a3a54f8aa5a40ab3bb016,
+-        type: 3}
+-      propertyPath: m_LocalEulerAnglesHint.z
+-      value: 0
+-      objectReference: {fileID: 0}
+-    - target: {fileID: 9171322782217905299, guid: c342d158cf9a3a54f8aa5a40ab3bb016,
+-        type: 3}
+-      propertyPath: m_Name
+-      value: CameraController
+-      objectReference: {fileID: 0}
+-    - target: {fileID: 9171322782753937895, guid: c342d158cf9a3a54f8aa5a40ab3bb016,
+-        type: 3}
+-      propertyPath: targetToLook
+-      value: 
+-      objectReference: {fileID: 0}
+-    - target: {fileID: 9171322782753937895, guid: c342d158cf9a3a54f8aa5a40ab3bb016,
+-        type: 3}
+-      propertyPath: maxX
+-      value: 45
+-      objectReference: {fileID: 0}
+-    - target: {fileID: 9171322782753937895, guid: c342d158cf9a3a54f8aa5a40ab3bb016,
+-        type: 3}
+-      propertyPath: minX
+-      value: -45
+-      objectReference: {fileID: 0}
+-    m_RemovedComponents: []
+-  m_SourcePrefab: {fileID: 100100000, guid: c342d158cf9a3a54f8aa5a40ab3bb016, type: 3}
+Index: Assets/Scenes/Bastien_LD2.unity
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Assets/Scenes/Bastien_LD2.unity	(revision 079e4cbebebb5b7db0a3b403f2bf59de36f6cbda)
++++ Assets/Scenes/Bastien_LD2.unity	(date 1610898721389)
+@@ -100906,25 +100906,6 @@
+     type: 3}
+   m_PrefabInstance: {fileID: 1761642600}
+   m_PrefabAsset: {fileID: 0}
+---- !u!1 &1762735299 stripped
+-GameObject:
+-  m_CorrespondingSourceObject: {fileID: 1880581356507342706, guid: 92193ce2ed7f2f74d80c648720dc8e3d,
+-    type: 3}
+-  m_PrefabInstance: {fileID: 2063696737}
+-  m_PrefabAsset: {fileID: 0}
+---- !u!65 &1762735300
+-BoxCollider:
+-  m_ObjectHideFlags: 0
+-  m_CorrespondingSourceObject: {fileID: 0}
+-  m_PrefabInstance: {fileID: 0}
+-  m_PrefabAsset: {fileID: 0}
+-  m_GameObject: {fileID: 1762735299}
+-  m_Material: {fileID: 0}
+-  m_IsTrigger: 0
+-  m_Enabled: 1
+-  serializedVersion: 2
+-  m_Size: {x: 1.1080954, y: 2.3532953, z: 1.3825397}
+-  m_Center: {x: -0.0000020841971, y: 0.13264427, z: 0.30485383}
+ --- !u!1001 &1762739407
+ PrefabInstance:
+   m_ObjectHideFlags: 0
+@@ -119911,21 +119892,6 @@
+   m_Modification:
+     m_TransformParent: {fileID: 0}
+     m_Modifications:
+-    - target: {fileID: 1620023639, guid: 92193ce2ed7f2f74d80c648720dc8e3d, type: 3}
+-      propertyPath: ShapeModule.radius.value
+-      value: 4.88
+-      objectReference: {fileID: 0}
+-    - target: {fileID: 1880581356507342709, guid: 92193ce2ed7f2f74d80c648720dc8e3d,
+-        type: 3}
+-      propertyPath: m_Enabled
+-      value: 0
+-      objectReference: {fileID: 0}
+-    - target: {fileID: 1880581356507342710, guid: 92193ce2ed7f2f74d80c648720dc8e3d,
+-        type: 3}
+-      propertyPath: m_Mesh
+-      value: 
+-      objectReference: {fileID: -3740500708424522155, guid: 2e13e23f15c9c1d4ca308d9b4d5082a3,
+-        type: 3}
+     - target: {fileID: 1880581357649425126, guid: 92193ce2ed7f2f74d80c648720dc8e3d,
+         type: 3}
+       propertyPath: m_Name
+@@ -119986,58 +119952,7 @@
+       propertyPath: m_LocalEulerAnglesHint.z
+       value: 0
+       objectReference: {fileID: 0}
+-    - target: {fileID: 1915556527516213748, guid: 92193ce2ed7f2f74d80c648720dc8e3d,
+-        type: 3}
+-      propertyPath: m_LocalScale.x
+-      value: 0.5
+-      objectReference: {fileID: 0}
+-    - target: {fileID: 1915556527516213748, guid: 92193ce2ed7f2f74d80c648720dc8e3d,
+-        type: 3}
+-      propertyPath: m_LocalScale.y
+-      value: 0.5
+-      objectReference: {fileID: 0}
+-    - target: {fileID: 1915556527516213748, guid: 92193ce2ed7f2f74d80c648720dc8e3d,
+-        type: 3}
+-      propertyPath: m_LocalScale.z
+-      value: 0.5
+-      objectReference: {fileID: 0}
+-    - target: {fileID: 1915556527516213748, guid: 92193ce2ed7f2f74d80c648720dc8e3d,
+-        type: 3}
+-      propertyPath: m_LocalPosition.z
+-      value: 1.001
+-      objectReference: {fileID: 0}
+-    - target: {fileID: 1915556527516213748, guid: 92193ce2ed7f2f74d80c648720dc8e3d,
+-        type: 3}
+-      propertyPath: m_LocalPosition.y
+-      value: -0.11
+-      objectReference: {fileID: 0}
+-    - target: {fileID: 1915556527516213748, guid: 92193ce2ed7f2f74d80c648720dc8e3d,
+-        type: 3}
+-      propertyPath: m_LocalPosition.x
+-      value: -0
+-      objectReference: {fileID: 0}
+-    - target: {fileID: 4127633083451621880, guid: 92193ce2ed7f2f74d80c648720dc8e3d,
+-        type: 3}
+-      propertyPath: m_Materials.Array.data[0]
+-      value: 
+-      objectReference: {fileID: 2100000, guid: d21d923be360c4945a6e17b56601ff8f, type: 2}
+-    - target: {fileID: 5500919764458978805, guid: 92193ce2ed7f2f74d80c648720dc8e3d,
+-        type: 3}
+-      propertyPath: m_Materials.Array.data[0]
+-      value: 
+-      objectReference: {fileID: 2100000, guid: d21d923be360c4945a6e17b56601ff8f, type: 2}
+-    - target: {fileID: 7304345728587345534, guid: 92193ce2ed7f2f74d80c648720dc8e3d,
+-        type: 3}
+-      propertyPath: offset.z
+-      value: 1.3
+-      objectReference: {fileID: 0}
+-    - target: {fileID: 7885108968244166846, guid: 92193ce2ed7f2f74d80c648720dc8e3d,
+-        type: 3}
+-      propertyPath: m_Materials.Array.data[0]
+-      value: 
+-      objectReference: {fileID: 2100000, guid: d21d923be360c4945a6e17b56601ff8f, type: 2}
+-    m_RemovedComponents:
+-    - {fileID: 1880581356507342708, guid: 92193ce2ed7f2f74d80c648720dc8e3d, type: 3}
++    m_RemovedComponents: []
+   m_SourcePrefab: {fileID: 100100000, guid: 92193ce2ed7f2f74d80c648720dc8e3d, type: 3}
+ --- !u!1001 &2064215644
+ PrefabInstance:
+Index: .idea/.idea.Swarm/.idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"BranchesTreeState\">\r\n    <expand>\r\n      <path>\r\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n        <item name=\"LOCAL_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n      </path>\r\n      <path>\r\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n        <item name=\"REMOTE_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n      </path>\r\n      <path>\r\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n        <item name=\"REMOTE_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n        <item name=\"GROUP_NODE:origin\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n      </path>\r\n    </expand>\r\n    <select />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"1edd0d37-b333-4aa9-b5cd-217dae9d2baf\" name=\"Revert: \" comment=\"\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/.idea.Swarm/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/.idea.Swarm/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/Assets/Prefabs/PlayerGroup.prefab\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Assets/Prefabs/PlayerGroup.prefab\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/Assets/Scenes/Bastien_LD2.unity\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Assets/Scenes/Bastien_LD2.unity\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CreatureMover.cs\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CreatureMover.cs\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"main\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"HighlightingSettingsPerFile\">\r\n    <setting file=\"file://$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CreatureMover.cs\" root0=\"FORCE_HIGHLIGHTING\" />\r\n    <setting file=\"file://$PROJECT_DIR$/Assets/nTools/PrefabPainter/Scripts/Editor/PrefabPainter.cs\" root0=\"FORCE_HIGHLIGHTING\" />\r\n    <setting file=\"file://$PROJECT_DIR$/Assets/Scripts/AlphaCreature/PackOrderer.cs\" root0=\"FORCE_HIGHLIGHTING\" />\r\n    <setting file=\"file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.6.3/Runtime/Core/AxisState.cs\" root0=\"SKIP_HIGHLIGHTING\" />\r\n    <setting file=\"file://$PROJECT_DIR$/Assets/Scripts/AlphaCreature/Targeting.cs\" root0=\"FORCE_HIGHLIGHTING\" />\r\n    <setting file=\"file://$PROJECT_DIR$/Assets/Scripts/Prey/Terrier.cs\" root0=\"FORCE_HIGHLIGHTING\" />\r\n    <setting file=\"file://$PROJECT_DIR$/Assets/Scripts/Prey/Craintive.cs\" root0=\"FORCE_HIGHLIGHTING\" />\r\n    <setting file=\"file://F:/UnityProject/CsLike/CsLike/Assets/Scripts/BotTargeting.cs\" root0=\"SKIP_HIGHLIGHTING\" />\r\n    <setting file=\"file://$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CharacterController/InputTester.cs\" root0=\"FORCE_HIGHLIGHTING\" />\r\n    <setting file=\"file://$PROJECT_DIR$/Assets/Scripts/Prey/Robuste.cs\" root0=\"FORCE_HIGHLIGHTING\" />\r\n    <setting file=\"file://$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CharacterController/PlayerInputs.cs\" root0=\"FORCE_HIGHLIGHTING\" />\r\n    <setting file=\"file://$PROJECT_DIR$/Assets/Scripts/Managers/GeneratePrey.cs\" root0=\"FORCE_HIGHLIGHTING\" />\r\n    <setting file=\"file://F:/UnityProject/CsLike/CsLike/Assets/Scripts/BotDetection.cs\" root0=\"SKIP_HIGHLIGHTING\" />\r\n    <setting file=\"file://$PROJECT_DIR$/Assets/Scripts/Prey/BasicPrey.cs\" root0=\"FORCE_HIGHLIGHTING\" />\r\n    <setting file=\"file://$PROJECT_DIR$/Assets/Scripts/BetaCreature/IntelligenceInterface.cs\" root0=\"FORCE_HIGHLIGHTING\" />\r\n    <setting file=\"file://$PROJECT_DIR$/Assets/Scripts/Managers/Objects.cs\" root0=\"FORCE_HIGHLIGHTING\" />\r\n    <setting file=\"file://$PROJECT_DIR$/Assets/Scripts/Prey/PreyLife.cs\" root0=\"FORCE_HIGHLIGHTING\" />\r\n    <setting file=\"file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.0.0/InputSystem/Utilities/DelegateHelpers.cs\" root0=\"SKIP_HIGHLIGHTING\" />\r\n    <setting file=\"file://$PROJECT_DIR$/Assets/Scripts/ClimbableTree.cs\" root0=\"FORCE_HIGHLIGHTING\" />\r\n    <setting file=\"file://$PROJECT_DIR$/Assets/Scripts/AlphaCreature/Attack.cs\" root0=\"FORCE_HIGHLIGHTING\" />\r\n  </component>\r\n  <component name=\"IdeDocumentHistory\">\r\n    <option name=\"CHANGED_PATHS\">\r\n      <list>\r\n        <option value=\"$PROJECT_DIR$/Assets/Scripts/Prey/HealthSystemPrey.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/DetectPlayer.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/Scripts/Prey/PreyManagerOrWhatEverWeCallIt.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/Scripts/InputTester.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/Scripts/PreySniffer.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/Scripts/PackManager.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/ObjectsInstance.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/GeneratePrey.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/CameraChanger.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CharacterController/InputTester.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/AiSoundDetection.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/Scripts/Prey/FieldOfViewEditor.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/Scripts/AlphaCreature/BetaCreature_Creator.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/Scripts/AlphaCreature/PackOrderer.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/Scripts/AlphaCreature/PreySniffer.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/Scripts/AlphaCreature/RessourceManager.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/Scripts/BetaCreature/CreatureIntelligence.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/Scripts/Common/HealthSysteme.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/Scripts/Managers/PackManager.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/Scripts/Prey/AiDetection.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/TrackInfo.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/Scripts/AlphaCreature/FallAsleep.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/CameraRotate.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/ThridPersonCamera.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/Scripts/Editor/SoundRangeEditor.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/NoiseEmitter.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/ClimbableTree.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/DestroyTrackOverTime.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/LookAt.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/Scripts/Prey/TracksCreatorOverTime.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/Scripts/DebugScript.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/Scripts/Prey/AIsystem.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/Scripts/Prey/PreyLife.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/Scripts/Editor/PlayerFieldOfView.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/Scripts/AlphaCreature/Attack.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/Scripts/AlphaCreature/Targeting.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/Scripts/AlphaCreature/ThridPersonCamera.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/Scripts/Prey/HerdPrey.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/Scripts/Prey/AiSoundDetection.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/herdManager.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CharacterController/PlayerInputs.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/Scripts/Prey/PreyAiManager.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/Scripts/Tracks/TrackRenderer.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/TrackDetector.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/Scripts/Managers/GeneratePrey.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/Scripts/Prey/Craintive.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/Scripts/Prey/Terrier.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/Scripts/Prey/BasicPrey.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/Scripts/Prey/Robuste.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CameraRotate.cs\" />\r\n        <option value=\"$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CreatureMover.cs\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"1kgWRL9xhW13eBvb9G63GM0hhKZ\" />\r\n  <component name=\"ProjectLevelVcsManager\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"Discover.Launch.Via.Unity\" value=\"true\" />\r\n    <property name=\"Git.Branch.Popup.ShowAllRemotes\" value=\"true\" />\r\n    <property name=\"Rider.DefaultBreakpoints.AreToggled\" value=\"true\" />\r\n    <property name=\"Rider.ProjectViewActivator.IsNotFirstRun\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\r\n    <property name=\"node.js.detected.package.eslint\" value=\"true\" />\r\n    <property name=\"node.js.detected.package.tslint\" value=\"true\" />\r\n    <property name=\"node.js.path.for.package.eslint\" value=\"project\" />\r\n    <property name=\"node.js.path.for.package.tslint\" value=\"project\" />\r\n    <property name=\"node.js.selected.package.eslint\" value=\"(autodetect)\" />\r\n    <property name=\"node.js.selected.package.tslint\" value=\"(autodetect)\" />\r\n    <property name=\"nodejs_package_manager_path\" value=\"npm\" />\r\n    <property name=\"vue.rearranger.settings.migration\" value=\"true\" />\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"Attach to Unity Editor.Attach to Unity Editor\">\r\n    <configuration name=\"Standalone Player\" type=\"RunUnityExe\" factoryName=\"Unity Executable\">\r\n      <option name=\"EXE_PATH\" value=\"$USER_HOME$/Desktop/Chasse 0.2\\Proto_Swarm.exe\" />\r\n      <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"C:\\Users\\Théo\\Desktop\\Chasse 0.2\" />\r\n      <option name=\"PASS_PARENT_ENVS\" value=\"1\" />\r\n      <option name=\"USE_EXTERNAL_CONSOLE\" value=\"0\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"Attach to Unity Editor &amp; Play\" type=\"UNITY_DEBUG_RUN_CONFIGURATION\" factoryName=\"UNITY_ATTACH_AND_PLAY\" show_console_on_std_err=\"false\" show_console_on_std_out=\"false\" port=\"50000\" address=\"localhost\">\r\n      <option name=\"allowRunningInParallel\" value=\"false\" />\r\n      <option name=\"listenPortForConnections\" value=\"false\" />\r\n      <option name=\"pid\" />\r\n      <option name=\"selectedOptions\">\r\n        <set />\r\n      </option>\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"Attach to Unity Editor\" type=\"UNITY_DEBUG_RUN_CONFIGURATION\" factoryName=\"Unity Debug\" show_console_on_std_err=\"false\" show_console_on_std_out=\"false\" port=\"50000\" address=\"localhost\">\r\n      <option name=\"allowRunningInParallel\" value=\"false\" />\r\n      <option name=\"listenPortForConnections\" value=\"false\" />\r\n      <option name=\"pid\" />\r\n      <option name=\"selectedOptions\">\r\n        <set />\r\n      </option>\r\n      <method v=\"2\" />\r\n    </configuration>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"SvnConfiguration\">\r\n    <configuration />\r\n  </component>\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <created>1606122712142</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1606122712142</updated>\r\n      <workItem from=\"1606122731146\" duration=\"1657000\" />\r\n      <workItem from=\"1606668458389\" duration=\"1956000\" />\r\n      <workItem from=\"1606917889306\" duration=\"4446000\" />\r\n      <workItem from=\"1607018165915\" duration=\"751000\" />\r\n      <workItem from=\"1607087468044\" duration=\"5324000\" />\r\n      <workItem from=\"1607092849844\" duration=\"297000\" />\r\n      <workItem from=\"1607102962869\" duration=\"1883000\" />\r\n      <workItem from=\"1607165821441\" duration=\"2359000\" />\r\n      <workItem from=\"1607287181160\" duration=\"425000\" />\r\n      <workItem from=\"1607288431560\" duration=\"2089000\" />\r\n      <workItem from=\"1607376802374\" duration=\"219000\" />\r\n      <workItem from=\"1607468629553\" duration=\"39000\" />\r\n      <workItem from=\"1607884799181\" duration=\"2265000\" />\r\n      <workItem from=\"1607935921826\" duration=\"69000\" />\r\n      <workItem from=\"1607936123811\" duration=\"4584000\" />\r\n      <workItem from=\"1607965027025\" duration=\"572000\" />\r\n      <workItem from=\"1607988860373\" duration=\"758000\" />\r\n      <workItem from=\"1608023677684\" duration=\"1362000\" />\r\n      <workItem from=\"1608056982369\" duration=\"669000\" />\r\n      <workItem from=\"1608210920802\" duration=\"2183000\" />\r\n      <workItem from=\"1608238891545\" duration=\"3446000\" />\r\n      <workItem from=\"1608284493309\" duration=\"3301000\" />\r\n      <workItem from=\"1608312459709\" duration=\"1920000\" />\r\n      <workItem from=\"1608542936182\" duration=\"626000\" />\r\n      <workItem from=\"1608546338484\" duration=\"5198000\" />\r\n      <workItem from=\"1608630123941\" duration=\"714000\" />\r\n      <workItem from=\"1608634938235\" duration=\"16000\" />\r\n      <workItem from=\"1608643233642\" duration=\"3974000\" />\r\n      <workItem from=\"1608733177957\" duration=\"3444000\" />\r\n      <workItem from=\"1609003939405\" duration=\"37000\" />\r\n      <workItem from=\"1609011589673\" duration=\"659000\" />\r\n      <workItem from=\"1609085077854\" duration=\"1671000\" />\r\n      <workItem from=\"1609155798941\" duration=\"1397000\" />\r\n      <workItem from=\"1609252366755\" duration=\"1000\" />\r\n      <workItem from=\"1609252393266\" duration=\"17000\" />\r\n      <workItem from=\"1609257562017\" duration=\"318000\" />\r\n      <workItem from=\"1609519335710\" duration=\"8380000\" />\r\n      <workItem from=\"1609535183238\" duration=\"2239000\" />\r\n      <workItem from=\"1609537610272\" duration=\"114000\" />\r\n      <workItem from=\"1609542465351\" duration=\"1202000\" />\r\n      <workItem from=\"1609544056538\" duration=\"105000\" />\r\n      <workItem from=\"1609546693252\" duration=\"750000\" />\r\n      <workItem from=\"1609591600886\" duration=\"5083000\" />\r\n      <workItem from=\"1609598730331\" duration=\"789000\" />\r\n      <workItem from=\"1609860842155\" duration=\"3995000\" />\r\n      <workItem from=\"1610378285028\" duration=\"630000\" />\r\n      <workItem from=\"1610579330897\" duration=\"938000\" />\r\n      <workItem from=\"1610733911456\" duration=\"2187000\" />\r\n      <workItem from=\"1610754445812\" duration=\"1528000\" />\r\n      <workItem from=\"1610793866481\" duration=\"881000\" />\r\n      <workItem from=\"1610890749932\" duration=\"2482000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Camera system implémenté\">\r\n      <created>1606123669149</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1606123669149</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"Merge du main dans le bridge\">\r\n      <created>1606664177577</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1606664177577</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"Base CHasse\">\r\n      <created>1607087521153</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1607087521153</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"Tout les scripts implémentés comme convenu dans le flow chart\">\r\n      <created>1607093512724</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1607093512724</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"Ajout des inputs\">\r\n      <created>1607096751581</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1607096751581</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"Reformation du maib\">\r\n      <created>1607105355978</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1607105355978</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"Correctif sur la formation\">\r\n      <created>1607124688723</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1607124688723</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00008\" summary=\"Correctif sur la formation #2\">\r\n      <created>1607125054106</created>\r\n      <option name=\"number\" value=\"00008\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1607125054106</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00009\" summary=\"Changement du spawn des proies&#10;Rebuild du nav mesh\">\r\n      <created>1607268343138</created>\r\n      <option name=\"number\" value=\"00009\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1607268343138</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00010\" summary=\"Chery-pick\">\r\n      <created>1607268501898</created>\r\n      <option name=\"number\" value=\"00010\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1607268501898</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00011\" summary=\"Ajout du camera Rotate\">\r\n      <created>1607287597839</created>\r\n      <option name=\"number\" value=\"00011\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00011\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1607287597839</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00012\" summary=\"Ajout du camera Rotate\">\r\n      <created>1607288924671</created>\r\n      <option name=\"number\" value=\"00012\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00012\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1607288924671</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00013\" summary=\"Fix des spawn des proies,&#10;Clamp des valeur de faim et vie,&#10;Possible fix du trail qui ne dépop pas\">\r\n      <created>1607290062365</created>\r\n      <option name=\"number\" value=\"00013\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00013\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1607290062365</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00014\" summary=\"Fix AI naviguation problems&#10;Add base mesh rendering for previsualization&#10;Fix navmesh\">\r\n      <created>1607895400454</created>\r\n      <option name=\"number\" value=\"00014\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00014\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1607895400454</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00015\" summary=\" 0.5.1.0 : Fix TrackRenderer trail\">\r\n      <created>1607938636569</created>\r\n      <option name=\"number\" value=\"00015\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00015\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1607938636569</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00016\" summary=\" 0.5.1.1 : Ajout du sound detection\">\r\n      <created>1607943786196</created>\r\n      <option name=\"number\" value=\"00016\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00016\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1607943786196</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00017\" summary=\"0.6.0.0 : Add sprint mecanic\">\r\n      <created>1608213047223</created>\r\n      <option name=\"number\" value=\"00017\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00017\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1608213047223</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00018\" summary=\" 0.5.2.0 : Bonne orientation de track renderer visual&#10; Ajustement sur la caméra\">\r\n      <created>1608313373159</created>\r\n      <option name=\"number\" value=\"00018\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00018\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1608313373160</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00019\" summary=\" 0.6.1.0 : Ajout de feedback sur le sommeil, Ajout de signes pour le sprint, Augmentation de la vitesse de la caméra, Dépop du cône de traque\">\r\n      <created>1608547842754</created>\r\n      <option name=\"number\" value=\"00019\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00019\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1608547842754</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00020\" summary=\" 0.6.2.0 : Réecriture de la caméra, suppression des tremblements lié a mouvements, Suppression de la création des bétas\">\r\n      <created>1608550546326</created>\r\n      <option name=\"number\" value=\"00020\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00020\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1608550546326</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00021\" summary=\" 1.0.0.0 : Ajout d'un émetteur de son sur le joueur, changement de la détection du son par les proies, ajout des éléments de LD suivant : hautes-herbes, rochers\">\r\n      <created>1608633613816</created>\r\n      <option name=\"number\" value=\"00021\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00021\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1608633613816</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00022\" summary=\"1.0.0.0b : Ajout de l'arbre grimpable ainsi que la possibilité d'attaquer depuis ce dernier, Ajout de la couleur de fraicheur de la traçe (nécessitera un petit fix sur la couleur), Changement du scripts d'attaque pour qu'un script extérieur puisse invoquer l'attaque du joueur, Ajout d'une touche de grimpe pour le joueur'\">\r\n      <created>1608647065742</created>\r\n      <option name=\"number\" value=\"00022\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00022\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1608647065742</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00023\" summary=\"Meta manquant\">\r\n      <created>1609085281826</created>\r\n      <option name=\"number\" value=\"00023\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00023\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1609085281826</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00024\" summary=\"1.0.6.0 : Ajout des suppression des tracks over the time\">\r\n      <created>1609086209269</created>\r\n      <option name=\"number\" value=\"00024\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00024\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1609086209269</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00025\" summary=\" 1.0.6.2 : (Rectification) Clamp de la caméra sur l'axe X\">\r\n      <created>1609157412035</created>\r\n      <option name=\"number\" value=\"00025\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00025\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1609157412035</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00026\" summary=\"1.1.0.0 : Ajout des IA de types : Robuste, Terrier, Rapide et Craintive; Commencement du remaniement de l'attaque\">\r\n      <created>1609426926414</created>\r\n      <option name=\"number\" value=\"00026\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00026\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1609426926414</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00027\" summary=\"1.1.1.0 : Modification de l'attaque (ajout de l'attaque lourde/dash), Début de changement de la gestion de la caméra poour se concorder avec l'attaque, Ajout d'un système pour que les IA recoivent les dommages, création des prefabs de chaque IA, Ajout d'un script éditeur pour voir le range d'attaque du joueur\">\r\n      <created>1609537703794</created>\r\n      <option name=\"number\" value=\"00027\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00027\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1609537703794</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00028\" summary=\"1.1.3.0 : Fix du bug de rotation X sur la caméra, Ajustement des paramètres des IA selon la documentation, Création des profiles d'IA pour chacune d'entre elles, Correction de bug sur le comportement du terrier et de la craintive, Correction du bug qui faisait que l'attaque rapide n'était pas possible, Correction partielle de l'attaque lourde qui faisait que le joueur était propulsé\">\r\n      <created>1609598693750</created>\r\n      <option name=\"number\" value=\"00028\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00028\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1609598693750</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00029\" summary=\"1.1.3.3 : Fix du navmesh non présent, fix des IA qui ne fuyait pas, Fix du player qui s'envole certaines fois\">\r\n      <created>1610105963435</created>\r\n      <option name=\"number\" value=\"00029\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00029\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1610105963435</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00030\" summary=\"Il a pas mis le putain de navmesh\">\r\n      <created>1610106054750</created>\r\n      <option name=\"number\" value=\"00030\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00030\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1610106054750</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00031\" summary=\"[1.1.4.2] Ajout du track detector qui affiche les trâces autour du joueur\">\r\n      <created>1610580240708</created>\r\n      <option name=\"number\" value=\"00031\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00031\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1610580240708</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00032\" summary=\"Ajout du FMOD\">\r\n      <created>1610734062867</created>\r\n      <option name=\"number\" value=\"00032\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00032\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1610734062867</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00033\" summary=\"[1.1.4.7] Modification et amélioration du spawner\">\r\n      <created>1610755061790</created>\r\n      <option name=\"number\" value=\"00033\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00033\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1610755061790</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00034\" summary=\"[1.1.4.8] Correction du bug qui faisais voler le joueur en début de partie\">\r\n      <created>1610755963047</created>\r\n      <option name=\"number\" value=\"00034\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00034\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1610755963047</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"35\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"UnityProjectConfiguration\" hasMinimizedUI=\"true\" />\r\n  <component name=\"UnityUnitTestConfiguration\" currentTestLauncher=\"EditMode\" />\r\n  <component name=\"Vcs.Log.History.Properties\">\r\n    <option name=\"COLUMN_ORDER\">\r\n      <list>\r\n        <option value=\"0\" />\r\n        <option value=\"2\" />\r\n        <option value=\"3\" />\r\n        <option value=\"1\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n    <option name=\"oldMeFiltersMigrated\" value=\"true\" />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <option name=\"CLEAR_INITIAL_COMMIT_MESSAGE\" value=\"true\" />\r\n    <MESSAGE value=\" 0.5.1.0 : Fix TrackRenderer trail\" />\r\n    <MESSAGE value=\" 0.5.1.1 : Ajout du sound detection\" />\r\n    <MESSAGE value=\"0.6.0.0 : Add sprint mecanic\" />\r\n    <MESSAGE value=\" 0.5.2.0 : Bonne orientation de track renderer visual&#10; Ajustement sur la caméra\" />\r\n    <MESSAGE value=\" 0.6.1.0 : Ajout de feedback sur le sommeil, Ajout de signes pour le sprint, Augmentation de la vitesse de la caméra, Dépop du cône de traque\" />\r\n    <MESSAGE value=\" 0.6.2.0 : Réecriture de la caméra, suppression des tremblements lié a mouvements, Suppression de la création des bétas\" />\r\n    <MESSAGE value=\" 1.0.0.0 : Ajout d'un émetteur de son sur le joueur, changement de la détection du son par les proies, ajout des éléments de LD suivant : hautes-herbes, rochers\" />\r\n    <MESSAGE value=\"1.0.0.0b : Ajout de l'arbre grimpable ainsi que la possibilité d'attaquer depuis ce dernier, Ajout de la couleur de fraicheur de la traçe (nécessitera un petit fix sur la couleur), Changement du scripts d'attaque pour qu'un script extérieur puisse invoquer l'attaque du joueur, Ajout d'une touche de grimpe pour le joueur'\" />\r\n    <MESSAGE value=\" 1.0.1.4 : Ajout de la rotation de la caméra sur l'axe X\" />\r\n    <MESSAGE value=\"Meta manquant\" />\r\n    <MESSAGE value=\"1.0.6.0 : Ajout des suppression des tracks over the time\" />\r\n    <MESSAGE value=\" 1.0.6.2 : (Rectification) Clamp de la caméra sur l'axe X\" />\r\n    <MESSAGE value=\"1.1.0.0 : Ajout des IA de types : Robuste, Terrier, Rapide et Craintive; Commencement du remaniement de l'attaque\" />\r\n    <MESSAGE value=\"1.1.1.0 : Modification de l'attaque (ajout de l'attaque lourde/dash), Début de changement de la gestion de la caméra poour se concorder avec l'attaque, Ajout d'un système pour que les IA recoivent les dommages, création des prefabs de chaque IA, Ajout d'un script éditeur pour voir le range d'attaque du joueur\" />\r\n    <MESSAGE value=\"1.1.3.0 : Fix du bug de rotation X sur la caméra, Ajustement des paramètres des IA selon la documentation, Création des profiles d'IA pour chacune d'entre elles, Correction de bug sur le comportement du terrier et de la craintive, Correction du bug qui faisait que l'attaque rapide n'était pas possible, Correction partielle de l'attaque lourde qui faisait que le joueur était propulsé\" />\r\n    <MESSAGE value=\"1.1.3.0 : Ajout de l'IA en troupeau (seulement patrol de fonctionelle), ajout de la gestion du troupeau\" />\r\n    <MESSAGE value=\"1.1.3.3 : Fix du navmesh non présent, fix des IA qui ne fuyait pas, Fix du player qui s'envole certaines fois\" />\r\n    <MESSAGE value=\"Il a pas mis le putain de navmesh\" />\r\n    <MESSAGE value=\"[1.1.3.5] Fix du problème d'IA qui marchait sur elle même , augmentation de la distance de roaming, Fix du l'IA qui ne savait pas où allé lors de la fuite, Augmentation de la taille d'affichage des tracks renderer, Augmentation de la distance de fuite des prey\" />\r\n    <MESSAGE value=\"Mise au point du main\" />\r\n    <MESSAGE value=\"[1.1.4.2] Ajout du track detector qui affiche les trâces autour du joueur\" />\r\n    <MESSAGE value=\"Ajout du FMOD\" />\r\n    <MESSAGE value=\"[1.1.4.7] Modification et amélioration du spawner\" />\r\n    <MESSAGE value=\"[1.1.4.8] Correction du bug qui faisais voler le joueur en début de partie\" />\r\n    <MESSAGE value=\"[1.1.5.2] Changement de l'orientation du personnage, Ajout d'une impulsion lors du sprint, Ajout d'une consommation de nourriture à chaque impulsion du sprint, Tweek des valeurs sur le player\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"[1.1.5.2] Changement de l'orientation du personnage, Ajout d'une impulsion lors du sprint, Ajout d'une consommation de nourriture à chaque impulsion du sprint, Tweek des valeurs sur le player\" />\r\n  </component>\r\n  <component name=\"WindowStateProjectService\">\r\n    <state x=\"184\" y=\"126\" key=\"MergeDialog\" timestamp=\"1610111580298\">\r\n      <screen x=\"0\" y=\"40\" width=\"1920\" height=\"1040\" />\r\n    </state>\r\n    <state x=\"184\" y=\"126\" key=\"MergeDialog/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040\" timestamp=\"1610111580298\" />\r\n    <state x=\"598\" y=\"321\" key=\"MultipleFileMergeDialog\" timestamp=\"1610790629395\">\r\n      <screen x=\"0\" y=\"40\" width=\"1920\" height=\"1040\" />\r\n    </state>\r\n    <state x=\"598\" y=\"321\" key=\"MultipleFileMergeDialog/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040\" timestamp=\"1610790629395\" />\r\n    <state x=\"670\" y=\"238\" key=\"RiderGenerateDialog\" timestamp=\"1610576584078\">\r\n      <screen x=\"0\" y=\"40\" width=\"1920\" height=\"1040\" />\r\n    </state>\r\n    <state x=\"670\" y=\"238\" key=\"RiderGenerateDialog/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040\" timestamp=\"1610576584078\" />\r\n    <state x=\"92\" y=\"132\" width=\"1736\" height=\"856\" key=\"VCS.FileHistoryDialog\" timestamp=\"1609519868736\">\r\n      <screen x=\"0\" y=\"40\" width=\"1920\" height=\"1040\" />\r\n    </state>\r\n    <state x=\"92\" y=\"132\" width=\"1736\" height=\"856\" key=\"VCS.FileHistoryDialog/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040\" timestamp=\"1609519868736\" />\r\n    <state x=\"552\" y=\"293\" key=\"Vcs.Push.Dialog.v2\" timestamp=\"1610893394790\">\r\n      <screen x=\"0\" y=\"40\" width=\"1920\" height=\"1040\" />\r\n    </state>\r\n    <state x=\"552\" y=\"293\" key=\"Vcs.Push.Dialog.v2/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040\" timestamp=\"1610893394790\" />\r\n    <state x=\"777\" y=\"474\" key=\"com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2\" timestamp=\"1610755680298\">\r\n      <screen x=\"0\" y=\"40\" width=\"1920\" height=\"1040\" />\r\n    </state>\r\n    <state x=\"777\" y=\"474\" key=\"com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040\" timestamp=\"1610755680298\" />\r\n    <state x=\"732\" y=\"274\" key=\"git4idea.branch.GitSmartOperationDialog\" timestamp=\"1610577647801\">\r\n      <screen x=\"0\" y=\"40\" width=\"1920\" height=\"1040\" />\r\n    </state>\r\n    <state x=\"732\" y=\"274\" key=\"git4idea.branch.GitSmartOperationDialog/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040\" timestamp=\"1610577647801\" />\r\n    <state x=\"616\" y=\"260\" key=\"run.anything.popup\" timestamp=\"1609174409132\">\r\n      <screen x=\"0\" y=\"40\" width=\"1920\" height=\"1040\" />\r\n    </state>\r\n    <state x=\"616\" y=\"260\" key=\"run.anything.popup/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040\" timestamp=\"1609174409132\" />\r\n  </component>\r\n  <component name=\"XDebuggerManager\">\r\n    <breakpoint-manager>\r\n      <breakpoints>\r\n        <breakpoint enabled=\"true\" suspend=\"NONE\" type=\"DotNet Exception Breakpoints\">\r\n          <properties exception=\"System.Threading.ThreadAbortException\" displayValue=\"System.Threading.ThreadAbortException\" />\r\n          <option name=\"timeStamp\" value=\"1\" />\r\n        </breakpoint>\r\n      </breakpoints>\r\n    </breakpoint-manager>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/.idea.Swarm/.idea/workspace.xml	(revision 079e4cbebebb5b7db0a3b403f2bf59de36f6cbda)
++++ .idea/.idea.Swarm/.idea/workspace.xml	(date 1610994150182)
+@@ -19,11 +19,10 @@
+     <select />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="1edd0d37-b333-4aa9-b5cd-217dae9d2baf" name="Revert: " comment="">
++    <list default="true" id="1edd0d37-b333-4aa9-b5cd-217dae9d2baf" name="Revert: " comment="Oublie d'override pour la 1.1.5.3">
+       <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/PlayerGroup.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/PlayerGroup.prefab" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Bastien_LD2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Bastien_LD2.unity" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CreatureMover.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CreatureMover.cs" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -230,6 +229,7 @@
+       <workItem from="1610754445812" duration="1528000" />
+       <workItem from="1610793866481" duration="881000" />
+       <workItem from="1610890749932" duration="2482000" />
++      <workItem from="1610993664673" duration="481000" />
+     </task>
+     <task id="LOCAL-00001" summary="Camera system implémenté">
+       <created>1606123669149</created>
+@@ -469,7 +469,21 @@
+       <option name="project" value="LOCAL" />
+       <updated>1610755963047</updated>
+     </task>
+-    <option name="localTasksCounter" value="35" />
++    <task id="LOCAL-00035" summary="[1.1.5.3] Ajout de systèmes de particules pour le sprint, Modification de la position de la caméra, Intégration du loup">
++      <created>1610898589594</created>
++      <option name="number" value="00035" />
++      <option name="presentableId" value="LOCAL-00035" />
++      <option name="project" value="LOCAL" />
++      <updated>1610898589594</updated>
++    </task>
++    <task id="LOCAL-00036" summary="Oublie d'override pour la 1.1.5.3">
++      <created>1610898627196</created>
++      <option name="number" value="00036" />
++      <option name="presentableId" value="LOCAL-00036" />
++      <option name="project" value="LOCAL" />
++      <updated>1610898627196</updated>
++    </task>
++    <option name="localTasksCounter" value="37" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -501,8 +515,6 @@
+   </component>
+   <component name="VcsManagerConfiguration">
+     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+-    <MESSAGE value=" 0.5.1.0 : Fix TrackRenderer trail" />
+-    <MESSAGE value=" 0.5.1.1 : Ajout du sound detection" />
+     <MESSAGE value="0.6.0.0 : Add sprint mecanic" />
+     <MESSAGE value=" 0.5.2.0 : Bonne orientation de track renderer visual&#10; Ajustement sur la caméra" />
+     <MESSAGE value=" 0.6.1.0 : Ajout de feedback sur le sommeil, Ajout de signes pour le sprint, Augmentation de la vitesse de la caméra, Dépop du cône de traque" />
+@@ -526,7 +538,9 @@
+     <MESSAGE value="[1.1.4.7] Modification et amélioration du spawner" />
+     <MESSAGE value="[1.1.4.8] Correction du bug qui faisais voler le joueur en début de partie" />
+     <MESSAGE value="[1.1.5.2] Changement de l'orientation du personnage, Ajout d'une impulsion lors du sprint, Ajout d'une consommation de nourriture à chaque impulsion du sprint, Tweek des valeurs sur le player" />
+-    <option name="LAST_COMMIT_MESSAGE" value="[1.1.5.2] Changement de l'orientation du personnage, Ajout d'une impulsion lors du sprint, Ajout d'une consommation de nourriture à chaque impulsion du sprint, Tweek des valeurs sur le player" />
++    <MESSAGE value="[1.1.5.3] Ajout de systèmes de particules pour le sprint, Modification de la position de la caméra, Intégration du loup" />
++    <MESSAGE value="Oublie d'override pour la 1.1.5.3" />
++    <option name="LAST_COMMIT_MESSAGE" value="Oublie d'override pour la 1.1.5.3" />
+   </component>
+   <component name="WindowStateProjectService">
+     <state x="184" y="126" key="MergeDialog" timestamp="1610111580298">
+@@ -545,10 +559,10 @@
+       <screen x="0" y="40" width="1920" height="1040" />
+     </state>
+     <state x="92" y="132" width="1736" height="856" key="VCS.FileHistoryDialog/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1609519868736" />
+-    <state x="552" y="293" key="Vcs.Push.Dialog.v2" timestamp="1610893394790">
++    <state x="552" y="293" key="Vcs.Push.Dialog.v2" timestamp="1610898712040">
+       <screen x="0" y="40" width="1920" height="1040" />
+     </state>
+-    <state x="552" y="293" key="Vcs.Push.Dialog.v2/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1610893394790" />
++    <state x="552" y="293" key="Vcs.Push.Dialog.v2/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1610898712040" />
+     <state x="777" y="474" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1610755680298">
+       <screen x="0" y="40" width="1920" height="1040" />
+     </state>
+@@ -569,6 +583,19 @@
+           <properties exception="System.Threading.ThreadAbortException" displayValue="System.Threading.ThreadAbortException" />
+           <option name="timeStamp" value="1" />
+         </breakpoint>
++        <line-breakpoint enabled="true" type="DotNet Breakpoints">
++          <url>file://$PROJECT_DIR$/Assets/Scripts/Prey/Craintive.cs</url>
++          <line>129</line>
++          <properties documentPath="C:\Users\Théo\Documents\GitHub\Swarm\Swarm\Assets\Scripts\Prey\Craintive.cs" initialLine="129">
++            <startOffsets>
++              <option value="4864" />
++            </startOffsets>
++            <endOffsets>
++              <option value="4903" />
++            </endOffsets>
++          </properties>
++          <option name="timeStamp" value="2" />
++        </line-breakpoint>
+       </breakpoints>
+     </breakpoint-manager>
+   </component>
