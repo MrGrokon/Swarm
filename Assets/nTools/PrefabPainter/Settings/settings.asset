@@ -15,12 +15,144 @@ MonoBehaviour:
   tabs:
   - name: Trees
     brushes:
-    - name: Hautes-Herbes
+    - name: tree1
       settings:
-        brushRadius: 1
-        brushSpacing: 3.55
+        brushRadius: 8
+        brushSpacing: 3
         brushOverallScale: 1
-        brushOverlapCheck: 0
+        brushOverlapCheck: 1
+        brushOverlapCheckMode: 0
+        brushOverlapDistance: 4
+        brushOverlapCheckObjects: 1
+        brushOverlapCheckLayers:
+          serializedVersion: 2
+          m_Bits: 0
+        ppOrientationMode: 0
+        ppFlipOrientation: 0
+        ppFixedRotation: 0
+        ppFixedRotationValue: {x: 0, y: 0, z: 0}
+        ppFixedRotationTransformMode: 0
+        ppFixedScale: 0
+        ppFixedScaleValue: {x: 1, y: 1, z: 1}
+        ppFixedScaleTransformMode: 0
+        positionOffset: {x: 0, y: -0.2, z: 0}
+        orientationTransformMode: 0
+        orientationMode: 4
+        flipOrientation: 0
+        rotation: {x: 0, y: 0, z: 0}
+        randomizeOrientationX: 5
+        randomizeOrientationY: 100
+        randomizeOrientationZ: 5
+        scaleTransformMode: 0
+        scaleMode: 0
+        scaleUniformMin: 0.8
+        scaleUniformMax: 1.3
+        scalePerAxisMin: {x: 1, y: 1, z: 1}
+        scalePerAxisMax: {x: 1, y: 1, z: 1}
+        scaleAux: 1
+        multibrushEnabled: 0
+        multibrushSlots:
+        - enabled: 1
+          raiting: 1
+          position: {x: 0, y: 0, z: 0}
+          rotation: {x: 0, y: 0, z: 0}
+          scale: {x: 1, y: 1, z: 1}
+          pivotOffset: {x: 0, y: 0, z: 0}
+        - enabled: 1
+          raiting: 1
+          position: {x: 0, y: 0, z: 0}
+          rotation: {x: 0, y: 0, z: 0}
+          scale: {x: 1, y: 1, z: 1}
+          pivotOffset: {x: 0, y: 0, z: 0}
+        - enabled: 1
+          raiting: 1
+          position: {x: 0, y: 0, z: 0}
+          rotation: {x: 0, y: 0, z: 0}
+          scale: {x: 1, y: 1, z: 1}
+          pivotOffset: {x: 0, y: 0, z: 0}
+        - enabled: 1
+          raiting: 1
+          position: {x: 0, y: 0, z: 0}
+          rotation: {x: 0, y: 0, z: 0}
+          scale: {x: 1, y: 1, z: 1}
+          pivotOffset: {x: 0, y: 0, z: 0}
+        - enabled: 1
+          raiting: 1
+          position: {x: 0, y: 0, z: 0}
+          rotation: {x: 0, y: 0, z: 0}
+          scale: {x: 1, y: 1, z: 1}
+          pivotOffset: {x: 0, y: 0, z: 0}
+        - enabled: 1
+          raiting: 1
+          position: {x: 0, y: 0, z: 0}
+          rotation: {x: 0, y: 0, z: 0}
+          scale: {x: 1, y: 1, z: 1}
+          pivotOffset: {x: 0, y: 0, z: 0}
+        - enabled: 1
+          raiting: 1
+          position: {x: 0, y: 0, z: 0}
+          rotation: {x: 0, y: 0, z: 0}
+          scale: {x: 1, y: 1, z: 1}
+          pivotOffset: {x: 0, y: 0, z: 0}
+        - enabled: 1
+          raiting: 1
+          position: {x: 0, y: 0, z: 0}
+          rotation: {x: 0, y: 0, z: 0}
+          scale: {x: 1, y: 1, z: 1}
+          pivotOffset: {x: 0, y: 0, z: 0}
+        - enabled: 1
+          raiting: 1
+          position: {x: 0, y: 0, z: 0}
+          rotation: {x: 0, y: 0, z: 0}
+          scale: {x: 1, y: 1, z: 1}
+          pivotOffset: {x: 0, y: 0, z: 0}
+        - enabled: 1
+          raiting: 1
+          position: {x: 0, y: 0, z: 0}
+          rotation: {x: 0, y: 0, z: 0}
+          scale: {x: 1, y: 1, z: 1}
+          pivotOffset: {x: 0, y: 0, z: 0}
+        multibrushPaintSelectedSlot: 0
+        multibrushMode: 0
+        multibrushPattern: 0 1 2 3 5 6 7 8 9
+        multibrushPatternContinue: 0
+        advancedSettingsEnabled: 0
+        roundScale: 0
+        roundScaleValue: 0
+        roundRotation: 0
+        roundRotationValue: 0
+        slopeEnabled: 0
+        slopeAngleMin: 0
+        slopeAngleMax: 35
+        slopeVector: 1
+        slopeVectorCustom: {x: 0, y: 1, z: 0}
+        slopeVectorFlip: 0
+        gridEnabled: 0
+        gridOrigin: {x: 0, y: 0}
+        gridStep: {x: 5, y: 5}
+        gridPlane: 1
+        gridNormal: {x: 0, y: 1, z: 0}
+        gridAngle: 0
+      prefabSlots:
+      - gameObject: {fileID: 142772, guid: 8e66ff4afa28c4be7821a9ae9372d1f7, type: 2}
+      - gameObject: {fileID: 0}
+      - gameObject: {fileID: 0}
+      - gameObject: {fileID: 0}
+      - gameObject: {fileID: 0}
+      - gameObject: {fileID: 0}
+      - gameObject: {fileID: 0}
+      - gameObject: {fileID: 0}
+      - gameObject: {fileID: 0}
+      - gameObject: {fileID: 0}
+      selectedSlot: 0
+      selected: 1
+      colorTag: 0
+    - name: tree2
+      settings:
+        brushRadius: 8
+        brushSpacing: 3
+        brushOverallScale: 1
+        brushOverlapCheck: 1
         brushOverlapCheckMode: 0
         brushOverlapDistance: 5
         brushOverlapCheckObjects: 1
@@ -35,284 +167,18 @@ MonoBehaviour:
         ppFixedScale: 0
         ppFixedScaleValue: {x: 1, y: 1, z: 1}
         ppFixedScaleTransformMode: 0
-        positionOffset: {x: 0, y: 0, z: 0}
+        positionOffset: {x: 0, y: -0.2, z: 0}
         orientationTransformMode: 0
-        orientationMode: 1
+        orientationMode: 4
         flipOrientation: 0
         rotation: {x: 0, y: 0, z: 0}
-        randomizeOrientationX: 3.6
+        randomizeOrientationX: 5
         randomizeOrientationY: 100
-        randomizeOrientationZ: 3.6
-        scaleTransformMode: 0
-        scaleMode: 1
-        scaleUniformMin: 1
-        scaleUniformMax: 1
-        scalePerAxisMin: {x: 1, y: 1, z: 1}
-        scalePerAxisMax: {x: 1, y: 1, z: 1}
-        scaleAux: 1
-        multibrushEnabled: 0
-        multibrushSlots:
-        - enabled: 1
-          raiting: 1
-          position: {x: 0, y: 0, z: 0}
-          rotation: {x: 0, y: 0, z: 0}
-          scale: {x: 1, y: 1, z: 1}
-          pivotOffset: {x: 0, y: 0, z: 0}
-        - enabled: 1
-          raiting: 1
-          position: {x: 0, y: 0, z: 0}
-          rotation: {x: 0, y: 0, z: 0}
-          scale: {x: 1, y: 1, z: 1}
-          pivotOffset: {x: 0, y: 0, z: 0}
-        - enabled: 1
-          raiting: 1
-          position: {x: 0, y: 0, z: 0}
-          rotation: {x: 0, y: 0, z: 0}
-          scale: {x: 1, y: 1, z: 1}
-          pivotOffset: {x: 0, y: 0, z: 0}
-        - enabled: 1
-          raiting: 1
-          position: {x: 0, y: 0, z: 0}
-          rotation: {x: 0, y: 0, z: 0}
-          scale: {x: 1, y: 1, z: 1}
-          pivotOffset: {x: 0, y: 0, z: 0}
-        - enabled: 1
-          raiting: 1
-          position: {x: 0, y: 0, z: 0}
-          rotation: {x: 0, y: 0, z: 0}
-          scale: {x: 1, y: 1, z: 1}
-          pivotOffset: {x: 0, y: 0, z: 0}
-        - enabled: 1
-          raiting: 1
-          position: {x: 0, y: 0, z: 0}
-          rotation: {x: 0, y: 0, z: 0}
-          scale: {x: 1, y: 1, z: 1}
-          pivotOffset: {x: 0, y: 0, z: 0}
-        - enabled: 1
-          raiting: 1
-          position: {x: 0, y: 0, z: 0}
-          rotation: {x: 0, y: 0, z: 0}
-          scale: {x: 1, y: 1, z: 1}
-          pivotOffset: {x: 0, y: 0, z: 0}
-        - enabled: 1
-          raiting: 1
-          position: {x: 0, y: 0, z: 0}
-          rotation: {x: 0, y: 0, z: 0}
-          scale: {x: 1, y: 1, z: 1}
-          pivotOffset: {x: 0, y: 0, z: 0}
-        - enabled: 1
-          raiting: 1
-          position: {x: 0, y: 0, z: 0}
-          rotation: {x: 0, y: 0, z: 0}
-          scale: {x: 1, y: 1, z: 1}
-          pivotOffset: {x: 0, y: 0, z: 0}
-        - enabled: 1
-          raiting: 1
-          position: {x: 0, y: 0, z: 0}
-          rotation: {x: 0, y: 0, z: 0}
-          scale: {x: 1, y: 1, z: 1}
-          pivotOffset: {x: 0, y: 0, z: 0}
-        multibrushPaintSelectedSlot: 0
-        multibrushMode: 0
-        multibrushPattern: 0 1 2 3 5 6 7 8 9
-        multibrushPatternContinue: 0
-        advancedSettingsEnabled: 0
-        roundScale: 0
-        roundScaleValue: 0
-        roundRotation: 0
-        roundRotationValue: 0
-        slopeEnabled: 1
-        slopeAngleMin: 0
-        slopeAngleMax: 25
-        slopeVector: 1
-        slopeVectorCustom: {x: 0, y: 1, z: 0}
-        slopeVectorFlip: 0
-        gridEnabled: 0
-        gridOrigin: {x: 0, y: 0}
-        gridStep: {x: 5, y: 5}
-        gridPlane: 1
-        gridNormal: {x: 0, y: 1, z: 0}
-        gridAngle: 0
-      prefabSlots:
-      - gameObject: {fileID: 7914880650158864743, guid: d1178a9c0d720f34f833fce2772f540d,
-          type: 3}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      selectedSlot: 0
-      selected: 0
-      colorTag: 0
-    - name: ObstacleRock_1
-      settings:
-        brushRadius: 3
-        brushSpacing: 5
-        brushOverallScale: 1
-        brushOverlapCheck: 0
-        brushOverlapCheckMode: 0
-        brushOverlapDistance: 0.5
-        brushOverlapCheckObjects: 1
-        brushOverlapCheckLayers:
-          serializedVersion: 2
-          m_Bits: 0
-        ppOrientationMode: 0
-        ppFlipOrientation: 0
-        ppFixedRotation: 0
-        ppFixedRotationValue: {x: 0, y: 0, z: 0}
-        ppFixedRotationTransformMode: 0
-        ppFixedScale: 0
-        ppFixedScaleValue: {x: 1, y: 1, z: 1}
-        ppFixedScaleTransformMode: 0
-        positionOffset: {x: 0, y: 0, z: 0}
-        orientationTransformMode: 0
-        orientationMode: 1
-        flipOrientation: 0
-        rotation: {x: 0, y: 0, z: 0}
-        randomizeOrientationX: 98.6
-        randomizeOrientationY: 100
-        randomizeOrientationZ: 100
-        scaleTransformMode: 0
-        scaleMode: 0
-        scaleUniformMin: 0.6
-        scaleUniformMax: 1.2
-        scalePerAxisMin: {x: 1, y: 1, z: 1}
-        scalePerAxisMax: {x: 1, y: 1, z: 1}
-        scaleAux: 1
-        multibrushEnabled: 0
-        multibrushSlots:
-        - enabled: 1
-          raiting: 1
-          position: {x: 0, y: 0, z: 0}
-          rotation: {x: 0, y: 0, z: 0}
-          scale: {x: 1, y: 1, z: 1}
-          pivotOffset: {x: 0, y: 0, z: 0}
-        - enabled: 1
-          raiting: 1
-          position: {x: 0, y: 0, z: 0}
-          rotation: {x: 0, y: 0, z: 0}
-          scale: {x: 1, y: 1, z: 1}
-          pivotOffset: {x: 0, y: 0, z: 0}
-        - enabled: 1
-          raiting: 1
-          position: {x: 0, y: 0, z: 0}
-          rotation: {x: 0, y: 0, z: 0}
-          scale: {x: 1, y: 1, z: 1}
-          pivotOffset: {x: 0, y: 0, z: 0}
-        - enabled: 1
-          raiting: 1
-          position: {x: 0, y: 0, z: 0}
-          rotation: {x: 0, y: 0, z: 0}
-          scale: {x: 1, y: 1, z: 1}
-          pivotOffset: {x: 0, y: 0, z: 0}
-        - enabled: 1
-          raiting: 1
-          position: {x: 0, y: 0, z: 0}
-          rotation: {x: 0, y: 0, z: 0}
-          scale: {x: 1, y: 1, z: 1}
-          pivotOffset: {x: 0, y: 0, z: 0}
-        - enabled: 1
-          raiting: 1
-          position: {x: 0, y: 0, z: 0}
-          rotation: {x: 0, y: 0, z: 0}
-          scale: {x: 1, y: 1, z: 1}
-          pivotOffset: {x: 0, y: 0, z: 0}
-        - enabled: 1
-          raiting: 1
-          position: {x: 0, y: 0, z: 0}
-          rotation: {x: 0, y: 0, z: 0}
-          scale: {x: 1, y: 1, z: 1}
-          pivotOffset: {x: 0, y: 0, z: 0}
-        - enabled: 1
-          raiting: 1
-          position: {x: 0, y: 0, z: 0}
-          rotation: {x: 0, y: 0, z: 0}
-          scale: {x: 1, y: 1, z: 1}
-          pivotOffset: {x: 0, y: 0, z: 0}
-        - enabled: 1
-          raiting: 1
-          position: {x: 0, y: 0, z: 0}
-          rotation: {x: 0, y: 0, z: 0}
-          scale: {x: 1, y: 1, z: 1}
-          pivotOffset: {x: 0, y: 0, z: 0}
-        - enabled: 1
-          raiting: 1
-          position: {x: 0, y: 0, z: 0}
-          rotation: {x: 0, y: 0, z: 0}
-          scale: {x: 1, y: 1, z: 1}
-          pivotOffset: {x: 0, y: 0, z: 0}
-        multibrushPaintSelectedSlot: 0
-        multibrushMode: 0
-        multibrushPattern: 0 1 2 3 5 6 7 8 9
-        multibrushPatternContinue: 0
-        advancedSettingsEnabled: 0
-        roundScale: 0
-        roundScaleValue: 0
-        roundRotation: 0
-        roundRotationValue: 0
-        slopeEnabled: 0
-        slopeAngleMin: 0
-        slopeAngleMax: 35
-        slopeVector: 1
-        slopeVectorCustom: {x: 0, y: 1, z: 0}
-        slopeVectorFlip: 0
-        gridEnabled: 0
-        gridOrigin: {x: 0, y: 0}
-        gridStep: {x: 5, y: 5}
-        gridPlane: 1
-        gridNormal: {x: 0, y: 1, z: 0}
-        gridAngle: 0
-      prefabSlots:
-      - gameObject: {fileID: 7041910269008906693, guid: 417fd3254e534a644b7365f56b45a5de,
-          type: 3}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      selectedSlot: 0
-      selected: 0
-      colorTag: 0
-    - name: ObstacleTree1
-      settings:
-        brushRadius: 5.02
-        brushSpacing: 0.88
-        brushOverallScale: 1
-        brushOverlapCheck: 1
-        brushOverlapCheckMode: 0
-        brushOverlapDistance: 3
-        brushOverlapCheckObjects: 1
-        brushOverlapCheckLayers:
-          serializedVersion: 2
-          m_Bits: 0
-        ppOrientationMode: 0
-        ppFlipOrientation: 0
-        ppFixedRotation: 0
-        ppFixedRotationValue: {x: 0, y: 0, z: 0}
-        ppFixedRotationTransformMode: 0
-        ppFixedScale: 0
-        ppFixedScaleValue: {x: 1, y: 1, z: 1}
-        ppFixedScaleTransformMode: 0
-        positionOffset: {x: 0, y: 0, z: 0}
-        orientationTransformMode: 0
-        orientationMode: 0
-        flipOrientation: 0
-        rotation: {x: 0, y: 0, z: 0}
-        randomizeOrientationX: 2.7
-        randomizeOrientationY: 100
-        randomizeOrientationZ: 2.2
+        randomizeOrientationZ: 5
         scaleTransformMode: 0
         scaleMode: 0
         scaleUniformMin: 0.8
-        scaleUniformMax: 1.6
+        scaleUniformMax: 1.3
         scalePerAxisMin: {x: 1, y: 1, z: 1}
         scalePerAxisMax: {x: 1, y: 1, z: 1}
         scaleAux: 1
@@ -387,9 +253,9 @@ MonoBehaviour:
         roundScaleValue: 0
         roundRotation: 0
         roundRotationValue: 0
-        slopeEnabled: 1
+        slopeEnabled: 0
         slopeAngleMin: 0
-        slopeAngleMax: 30
+        slopeAngleMax: 35
         slopeVector: 1
         slopeVectorCustom: {x: 0, y: 1, z: 0}
         slopeVectorFlip: 0
@@ -400,8 +266,7 @@ MonoBehaviour:
         gridNormal: {x: 0, y: 1, z: 0}
         gridAngle: 0
       prefabSlots:
-      - gameObject: {fileID: 1369390214454770194, guid: 74a7e4c0e25b5614ba34c0b252147ba3,
-          type: 3}
+      - gameObject: {fileID: 100618, guid: e07b9ca3ecaff4d4fbf82c30d96cf38b, type: 2}
       - gameObject: {fileID: 0}
       - gameObject: {fileID: 0}
       - gameObject: {fileID: 0}
@@ -414,14 +279,14 @@ MonoBehaviour:
       selectedSlot: 0
       selected: 0
       colorTag: 0
-    - name: Spaced ObstaclesTrees
+    - name: tree3
       settings:
-        brushRadius: 20
-        brushSpacing: 3.99
+        brushRadius: 8
+        brushSpacing: 3
         brushOverallScale: 1
         brushOverlapCheck: 1
         brushOverlapCheckMode: 0
-        brushOverlapDistance: 5.5
+        brushOverlapDistance: 5
         brushOverlapCheckObjects: 1
         brushOverlapCheckLayers:
           serializedVersion: 2
@@ -434,18 +299,18 @@ MonoBehaviour:
         ppFixedScale: 0
         ppFixedScaleValue: {x: 1, y: 1, z: 1}
         ppFixedScaleTransformMode: 0
-        positionOffset: {x: 0, y: 0, z: 0}
+        positionOffset: {x: 0, y: -0.2, z: 0}
         orientationTransformMode: 0
-        orientationMode: 0
+        orientationMode: 4
         flipOrientation: 0
         rotation: {x: 0, y: 0, z: 0}
-        randomizeOrientationX: 2.7
+        randomizeOrientationX: 5
         randomizeOrientationY: 100
-        randomizeOrientationZ: 2.2
+        randomizeOrientationZ: 5
         scaleTransformMode: 0
         scaleMode: 0
         scaleUniformMin: 0.8
-        scaleUniformMax: 1.6
+        scaleUniformMax: 1.3
         scalePerAxisMin: {x: 1, y: 1, z: 1}
         scalePerAxisMax: {x: 1, y: 1, z: 1}
         scaleAux: 1
@@ -520,9 +385,9 @@ MonoBehaviour:
         roundScaleValue: 0
         roundRotation: 0
         roundRotationValue: 0
-        slopeEnabled: 1
+        slopeEnabled: 0
         slopeAngleMin: 0
-        slopeAngleMax: 30
+        slopeAngleMax: 35
         slopeVector: 1
         slopeVectorCustom: {x: 0, y: 1, z: 0}
         slopeVectorFlip: 0
@@ -533,8 +398,7 @@ MonoBehaviour:
         gridNormal: {x: 0, y: 1, z: 0}
         gridAngle: 0
       prefabSlots:
-      - gameObject: {fileID: 1369390214454770194, guid: 74a7e4c0e25b5614ba34c0b252147ba3,
-          type: 3}
+      - gameObject: {fileID: 178792, guid: 0dd60fda408f047bfb07894449319218, type: 2}
       - gameObject: {fileID: 0}
       - gameObject: {fileID: 0}
       - gameObject: {fileID: 0}
@@ -547,147 +411,14 @@ MonoBehaviour:
       selectedSlot: 0
       selected: 0
       colorTag: 0
-    - name: ClimbableTree
+    - name: tree4
       settings:
-        brushRadius: 1.3
-        brushSpacing: 5
+        brushRadius: 8
+        brushSpacing: 3
         brushOverallScale: 1
         brushOverlapCheck: 1
         brushOverlapCheckMode: 0
-        brushOverlapDistance: 8
-        brushOverlapCheckObjects: 0
-        brushOverlapCheckLayers:
-          serializedVersion: 2
-          m_Bits: 0
-        ppOrientationMode: 0
-        ppFlipOrientation: 0
-        ppFixedRotation: 0
-        ppFixedRotationValue: {x: 0, y: 0, z: 0}
-        ppFixedRotationTransformMode: 0
-        ppFixedScale: 0
-        ppFixedScaleValue: {x: 1, y: 1, z: 1}
-        ppFixedScaleTransformMode: 0
-        positionOffset: {x: 0, y: 0, z: 0}
-        orientationTransformMode: 0
-        orientationMode: 0
-        flipOrientation: 0
-        rotation: {x: 0, y: 0, z: 0}
-        randomizeOrientationX: 0
-        randomizeOrientationY: 100
-        randomizeOrientationZ: 0
-        scaleTransformMode: 0
-        scaleMode: 0
-        scaleUniformMin: 1
-        scaleUniformMax: 1
-        scalePerAxisMin: {x: 1, y: 1, z: 1}
-        scalePerAxisMax: {x: 1, y: 1, z: 1}
-        scaleAux: 1
-        multibrushEnabled: 0
-        multibrushSlots:
-        - enabled: 1
-          raiting: 1
-          position: {x: 0, y: 0, z: 0}
-          rotation: {x: 0, y: 0, z: 0}
-          scale: {x: 1, y: 1, z: 1}
-          pivotOffset: {x: 0, y: 0.23989439, z: 0}
-        - enabled: 1
-          raiting: 1
-          position: {x: 0, y: 0, z: 0}
-          rotation: {x: 0, y: 0, z: 0}
-          scale: {x: 1, y: 1, z: 1}
-          pivotOffset: {x: 0, y: 0, z: 0}
-        - enabled: 1
-          raiting: 1
-          position: {x: 0, y: 0, z: 0}
-          rotation: {x: 0, y: 0, z: 0}
-          scale: {x: 1, y: 1, z: 1}
-          pivotOffset: {x: 0, y: 0, z: 0}
-        - enabled: 1
-          raiting: 1
-          position: {x: 0, y: 0, z: 0}
-          rotation: {x: 0, y: 0, z: 0}
-          scale: {x: 1, y: 1, z: 1}
-          pivotOffset: {x: 0, y: 0, z: 0}
-        - enabled: 1
-          raiting: 1
-          position: {x: 0, y: 0, z: 0}
-          rotation: {x: 0, y: 0, z: 0}
-          scale: {x: 1, y: 1, z: 1}
-          pivotOffset: {x: 0, y: 0, z: 0}
-        - enabled: 1
-          raiting: 1
-          position: {x: 0, y: 0, z: 0}
-          rotation: {x: 0, y: 0, z: 0}
-          scale: {x: 1, y: 1, z: 1}
-          pivotOffset: {x: 0, y: 0, z: 0}
-        - enabled: 1
-          raiting: 1
-          position: {x: 0, y: 0, z: 0}
-          rotation: {x: 0, y: 0, z: 0}
-          scale: {x: 1, y: 1, z: 1}
-          pivotOffset: {x: 0, y: 0, z: 0}
-        - enabled: 1
-          raiting: 1
-          position: {x: 0, y: 0, z: 0}
-          rotation: {x: 0, y: 0, z: 0}
-          scale: {x: 1, y: 1, z: 1}
-          pivotOffset: {x: 0, y: 0, z: 0}
-        - enabled: 1
-          raiting: 1
-          position: {x: 0, y: 0, z: 0}
-          rotation: {x: 0, y: 0, z: 0}
-          scale: {x: 1, y: 1, z: 1}
-          pivotOffset: {x: 0, y: 0, z: 0}
-        - enabled: 1
-          raiting: 1
-          position: {x: 0, y: 0, z: 0}
-          rotation: {x: 0, y: 0, z: 0}
-          scale: {x: 1, y: 1, z: 1}
-          pivotOffset: {x: 0, y: 0, z: 0}
-        multibrushPaintSelectedSlot: 0
-        multibrushMode: 0
-        multibrushPattern: 0 1 2 3 5 6 7 8 9
-        multibrushPatternContinue: 0
-        advancedSettingsEnabled: 0
-        roundScale: 0
-        roundScaleValue: 0
-        roundRotation: 0
-        roundRotationValue: 0
-        slopeEnabled: 0
-        slopeAngleMin: 0
-        slopeAngleMax: 35
-        slopeVector: 1
-        slopeVectorCustom: {x: 0, y: 1, z: 0}
-        slopeVectorFlip: 0
-        gridEnabled: 0
-        gridOrigin: {x: 0, y: 0}
-        gridStep: {x: 5, y: 5}
-        gridPlane: 1
-        gridNormal: {x: 0, y: 1, z: 0}
-        gridAngle: 0
-      prefabSlots:
-      - gameObject: {fileID: 7662421104586968841, guid: 306951537f2e688408ddbdebf01ca1f5,
-          type: 3}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      selectedSlot: 0
-      selected: 0
-      colorTag: 0
-    - name: ObstacleBoulder_1
-      settings:
-        brushRadius: 1
-        brushSpacing: 0.5
-        brushOverallScale: 1
-        brushOverlapCheck: 0
-        brushOverlapCheckMode: 0
-        brushOverlapDistance: 0.5
+        brushOverlapDistance: 5
         brushOverlapCheckObjects: 1
         brushOverlapCheckLayers:
           serializedVersion: 2
@@ -700,18 +431,18 @@ MonoBehaviour:
         ppFixedScale: 0
         ppFixedScaleValue: {x: 1, y: 1, z: 1}
         ppFixedScaleTransformMode: 0
-        positionOffset: {x: 0, y: 0, z: 0}
+        positionOffset: {x: 0, y: -0.2, z: 0}
         orientationTransformMode: 0
-        orientationMode: 1
+        orientationMode: 4
         flipOrientation: 0
         rotation: {x: 0, y: 0, z: 0}
-        randomizeOrientationX: 100
+        randomizeOrientationX: 5
         randomizeOrientationY: 100
-        randomizeOrientationZ: 100
+        randomizeOrientationZ: 5
         scaleTransformMode: 0
         scaleMode: 0
-        scaleUniformMin: 1
-        scaleUniformMax: 1
+        scaleUniformMin: 0.8
+        scaleUniformMax: 1.3
         scalePerAxisMin: {x: 1, y: 1, z: 1}
         scalePerAxisMax: {x: 1, y: 1, z: 1}
         scaleAux: 1
@@ -799,8 +530,7 @@ MonoBehaviour:
         gridNormal: {x: 0, y: 1, z: 0}
         gridAngle: 0
       prefabSlots:
-      - gameObject: {fileID: 7041910269008906693, guid: 388d9f3dcc5f77c44ab1c730c85866d1,
-          type: 3}
+      - gameObject: {fileID: 131906, guid: ba260558c316b4cda92178dc6fef1161, type: 2}
       - gameObject: {fileID: 0}
       - gameObject: {fileID: 0}
       - gameObject: {fileID: 0}
@@ -813,14 +543,14 @@ MonoBehaviour:
       selectedSlot: 0
       selected: 0
       colorTag: 0
-    - name: Boulder_VarA
+    - name: tree random
       settings:
-        brushRadius: 7.86
-        brushSpacing: 0.5
+        brushRadius: 5.9484143
+        brushSpacing: 3
         brushOverallScale: 1
-        brushOverlapCheck: 0
+        brushOverlapCheck: 1
         brushOverlapCheckMode: 0
-        brushOverlapDistance: 0.5
+        brushOverlapDistance: 5
         brushOverlapCheckObjects: 1
         brushOverlapCheckLayers:
           serializedVersion: 2
@@ -833,18 +563,18 @@ MonoBehaviour:
         ppFixedScale: 0
         ppFixedScaleValue: {x: 1, y: 1, z: 1}
         ppFixedScaleTransformMode: 0
-        positionOffset: {x: 0, y: 0, z: 0}
+        positionOffset: {x: 0, y: -0.2, z: 0}
         orientationTransformMode: 0
-        orientationMode: 1
+        orientationMode: 4
         flipOrientation: 0
         rotation: {x: 0, y: 0, z: 0}
-        randomizeOrientationX: 0
-        randomizeOrientationY: 0
-        randomizeOrientationZ: 0
+        randomizeOrientationX: 5
+        randomizeOrientationY: 100
+        randomizeOrientationZ: 5
         scaleTransformMode: 0
         scaleMode: 0
-        scaleUniformMin: 1
-        scaleUniformMax: 1
+        scaleUniformMin: 0.8
+        scaleUniformMax: 1.3
         scalePerAxisMin: {x: 1, y: 1, z: 1}
         scalePerAxisMax: {x: 1, y: 1, z: 1}
         scaleAux: 1
@@ -932,148 +662,10 @@ MonoBehaviour:
         gridNormal: {x: 0, y: 1, z: 0}
         gridAngle: 0
       prefabSlots:
-      - gameObject: {fileID: 5914886177472225777, guid: 170e6dc74e6c7ec45a0fce71fdda4587,
-          type: 3}
-      - gameObject: {fileID: 3223831480576194985, guid: c8b2a351e6ef6c0469ea2df189c5edb7,
-          type: 3}
-      - gameObject: {fileID: 7707577211078420603, guid: 07093bb48eeda2c479b4b42064699c48,
-          type: 3}
-      - gameObject: {fileID: 4502205658955305840, guid: 83d183c1577b6c44a9b0155648a9f651,
-          type: 3}
-      - gameObject: {fileID: 4016787323511799952, guid: 477bc16dd9ed770419b1345a1f3bb64d,
-          type: 3}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      selectedSlot: 0
-      selected: 1
-      colorTag: 0
-    - name: Track
-      settings:
-        brushRadius: 1
-        brushSpacing: 5
-        brushOverallScale: 1
-        brushOverlapCheck: 0
-        brushOverlapCheckMode: 0
-        brushOverlapDistance: 0.5
-        brushOverlapCheckObjects: 1
-        brushOverlapCheckLayers:
-          serializedVersion: 2
-          m_Bits: 0
-        ppOrientationMode: 0
-        ppFlipOrientation: 0
-        ppFixedRotation: 0
-        ppFixedRotationValue: {x: 0, y: 0, z: 0}
-        ppFixedRotationTransformMode: 0
-        ppFixedScale: 0
-        ppFixedScaleValue: {x: 1, y: 1, z: 1}
-        ppFixedScaleTransformMode: 0
-        positionOffset: {x: 0, y: 0, z: 0}
-        orientationTransformMode: 0
-        orientationMode: 1
-        flipOrientation: 0
-        rotation: {x: 0, y: 0, z: 0}
-        randomizeOrientationX: 0
-        randomizeOrientationY: 100
-        randomizeOrientationZ: 0
-        scaleTransformMode: 0
-        scaleMode: 0
-        scaleUniformMin: 1
-        scaleUniformMax: 1
-        scalePerAxisMin: {x: 1, y: 1, z: 1}
-        scalePerAxisMax: {x: 1, y: 1, z: 1}
-        scaleAux: 1
-        multibrushEnabled: 0
-        multibrushSlots:
-        - enabled: 1
-          raiting: 1
-          position: {x: 0, y: 0, z: 0}
-          rotation: {x: 0, y: 0, z: 0}
-          scale: {x: 1, y: 1, z: 1}
-          pivotOffset: {x: 0.00000011920929, y: -0.2269476, z: 0}
-        - enabled: 1
-          raiting: 1
-          position: {x: 0, y: 0, z: 0}
-          rotation: {x: 0, y: 0, z: 0}
-          scale: {x: 1, y: 1, z: 1}
-          pivotOffset: {x: 0, y: 0, z: 0}
-        - enabled: 1
-          raiting: 1
-          position: {x: 0, y: 0, z: 0}
-          rotation: {x: 0, y: 0, z: 0}
-          scale: {x: 1, y: 1, z: 1}
-          pivotOffset: {x: 0, y: 0, z: 0}
-        - enabled: 1
-          raiting: 1
-          position: {x: 0, y: 0, z: 0}
-          rotation: {x: 0, y: 0, z: 0}
-          scale: {x: 1, y: 1, z: 1}
-          pivotOffset: {x: 0, y: 0, z: 0}
-        - enabled: 1
-          raiting: 1
-          position: {x: 0, y: 0, z: 0}
-          rotation: {x: 0, y: 0, z: 0}
-          scale: {x: 1, y: 1, z: 1}
-          pivotOffset: {x: 0, y: 0, z: 0}
-        - enabled: 1
-          raiting: 1
-          position: {x: 0, y: 0, z: 0}
-          rotation: {x: 0, y: 0, z: 0}
-          scale: {x: 1, y: 1, z: 1}
-          pivotOffset: {x: 0, y: 0, z: 0}
-        - enabled: 1
-          raiting: 1
-          position: {x: 0, y: 0, z: 0}
-          rotation: {x: 0, y: 0, z: 0}
-          scale: {x: 1, y: 1, z: 1}
-          pivotOffset: {x: 0, y: 0, z: 0}
-        - enabled: 1
-          raiting: 1
-          position: {x: 0, y: 0, z: 0}
-          rotation: {x: 0, y: 0, z: 0}
-          scale: {x: 1, y: 1, z: 1}
-          pivotOffset: {x: 0, y: 0, z: 0}
-        - enabled: 1
-          raiting: 1
-          position: {x: 0, y: 0, z: 0}
-          rotation: {x: 0, y: 0, z: 0}
-          scale: {x: 1, y: 1, z: 1}
-          pivotOffset: {x: 0, y: 0, z: 0}
-        - enabled: 1
-          raiting: 1
-          position: {x: 0, y: 0, z: 0}
-          rotation: {x: 0, y: 0, z: 0}
-          scale: {x: 1, y: 1, z: 1}
-          pivotOffset: {x: 0, y: 0, z: 0}
-        multibrushPaintSelectedSlot: 0
-        multibrushMode: 0
-        multibrushPattern: 0 1 2 3 5 6 7 8 9
-        multibrushPatternContinue: 0
-        advancedSettingsEnabled: 0
-        roundScale: 0
-        roundScaleValue: 0
-        roundRotation: 0
-        roundRotationValue: 0
-        slopeEnabled: 0
-        slopeAngleMin: 0
-        slopeAngleMax: 35
-        slopeVector: 1
-        slopeVectorCustom: {x: 0, y: 1, z: 0}
-        slopeVectorFlip: 0
-        gridEnabled: 0
-        gridOrigin: {x: 0, y: 0}
-        gridStep: {x: 5, y: 5}
-        gridPlane: 1
-        gridNormal: {x: 0, y: 1, z: 0}
-        gridAngle: 0
-      prefabSlots:
-      - gameObject: {fileID: 2622212310027546019, guid: 231e5a63cde58af49aaa0fa98bd94fa5,
-          type: 3}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
+      - gameObject: {fileID: 142772, guid: 8e66ff4afa28c4be7821a9ae9372d1f7, type: 2}
+      - gameObject: {fileID: 100618, guid: e07b9ca3ecaff4d4fbf82c30d96cf38b, type: 2}
+      - gameObject: {fileID: 178792, guid: 0dd60fda408f047bfb07894449319218, type: 2}
+      - gameObject: {fileID: 131906, guid: ba260558c316b4cda92178dc6fef1161, type: 2}
       - gameObject: {fileID: 0}
       - gameObject: {fileID: 0}
       - gameObject: {fileID: 0}
@@ -2408,7 +2000,7 @@ MonoBehaviour:
       selected: 0
       colorTag: 0
   activeTab: 0
-  paintOnSelected: 1
+  paintOnSelected: 0
   paintLayers:
     serializedVersion: 2
     m_Bits: 1
@@ -2416,14 +2008,14 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 32
   placeUnder: 2
-  overwritePrefabLayer: 0
-  prefabPlaceLayer: 0
+  overwritePrefabLayer: 1
+  prefabPlaceLayer: 5
   groupPrefabs: 1
   ppSnapRotationValue: 15
   ppSnapScaleValue: 0.1
   ppSnapRotation: 1
   ppSnapScale: 1
-  eraseBrushRadius: 3.2
+  eraseBrushRadius: 11.17
   eraseByLayer: 0
   eraseLayers:
     serializedVersion: 2

@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Footprints_Mat
-  m_Shader: {fileID: 4800000, guid: 606dc7dbf2c0a1c4cb421ceb709f8919, type: 3}
+  m_Name: Water
+  m_Shader: {fileID: 4800000, guid: a17409a193c18654f89361efa0e8ac86, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 0
@@ -39,10 +39,6 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _Footprint_Mask:
-        m_Texture: {fileID: 2800000, guid: b615e3cef8f7f5c428791d9ba54ec7c9, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -64,28 +60,39 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _Active_Multiplier: 2
+    - _BaseOpacity: 0.8
+    - _BaseScale: 4.6
     - _BumpScale: 1
     - _Cutoff: 0.5
+    - _DecalStrength: 0.54
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _IsActive: 0
+    - _Max: 5
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
+    - _Opacityness: 1
     - _Parallax: 0.02
+    - _RiveOffset: 45
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
+    - _TransAmbient: 0.2
+    - _TransDirect: 1
+    - _TransNormalDistortion: 0
+    - _TransScattering: 2
+    - _TransShadow: 0.9
+    - _Translucency: 1.4
+    - _TurbulenceIntenssity: 1.95
+    - _TurbulenceSpeed: 1.62
     - _UVSec: 0
     - _ZWrite: 1
     - __dirty: 0
     m_Colors:
-    - ACTIV: {r: 0, g: 0, b: 0, a: 0}
-    - _Active_Tint: {r: 0.4261292, g: 1, b: 0.3726415, a: 1}
+    - _BaseWater_Color: {r: 0.32208967, g: 0.6848184, b: 0.8867924, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Inactive_Tint: {r: 0.33962262, g: 0.25659704, b: 0.107333556, a: 1}
+    - _Turbulence_Color: {r: 1, g: 1, b: 1, a: 1}
