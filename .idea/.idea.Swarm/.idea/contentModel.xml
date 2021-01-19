@@ -778,9 +778,11 @@
                 <e p="{2f05690b-a336-42a3-b468-bc4260808085}.xml" t="Include" />
                 <e p="{33c555b9-7f10-431a-a246-f4ef93f41747}.xml" t="Include" />
                 <e p="{4824d688-239c-4cac-ae9a-9f2365e5f052}.xml" t="Include" />
+                <e p="{493e3b9b-d0ea-4308-a171-580f2c3cc050}.xml" t="Include" />
                 <e p="{5d2aefcc-69c5-4f4d-8b1a-3ed4aae20c91}.xml" t="Include" />
                 <e p="{6b0a5cfa-d9fa-410e-89ae-4c144795621f}.xml" t="Include" />
                 <e p="{71845ee4-39bf-466d-8914-29678141c2ec}.xml" t="Include" />
+                <e p="{72fba1e5-484f-4438-866b-28bde4b9db3e}.xml" t="Include" />
                 <e p="{97c24c3e-d8b9-4663-8e9e-2b94f060db5b}.xml" t="Include" />
                 <e p="{97e206bd-f520-42ad-bf1c-fde71a390fd2}.xml" t="Include" />
                 <e p="{b6960aa9-766b-4695-b058-34c312a183ab}.xml" t="Include" />
@@ -805,6 +807,7 @@
                 <e p="{183b7cd6-f545-458e-995f-0b020d5e83ec}.xml" t="Include" />
                 <e p="{20f1bf80-cd5c-4bff-950d-8a7b7e919b22}.xml" t="Include" />
                 <e p="{36ff9d95-3a02-4935-bb37-dd49edc1f116}.xml" t="Include" />
+                <e p="{3f295900-1a03-4e28-a1b4-4dd61e70bede}.xml" t="Include" />
                 <e p="{78a90e26-9b95-4278-9ea8-f3be1f145110}.xml" t="Include" />
                 <e p="{8da7148b-b6b9-47b4-ac93-0ee06803d40a}.xml" t="Include" />
                 <e p="{f917ca24-dd91-45f9-9397-8a9e5ffc0c78}.xml" t="Include" />
@@ -816,6 +819,9 @@
               </e>
               <e p="Master.xml" t="Include" />
               <e p="Mixer.xml" t="Include" />
+              <e p="ParameterPreset" t="Include">
+                <e p="{71c38220-6fc7-4265-8f73-cfc6b53168b2}.xml" t="Include" />
+              </e>
               <e p="ParameterPresetFolder" t="Include">
                 <e p="{628ce587-b63a-4a08-bde8-ce519534251b}.xml" t="Include" />
               </e>
@@ -880,6 +886,123 @@
               <e p="PrefabPainterSceneSettings.cs" t="Include" />
               <e p="PrefabPainterSettings.cs" t="Include" />
               <e p="Utility.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Plugins" t="Include">
+          <e p="FMOD" t="Include">
+            <e p="addons" t="Include">
+              <e p="ResonanceAudio" t="Include">
+                <e p="Editor" t="Include">
+                  <e p="FmodResonanceAudioRoomEditor.cs" t="Include" />
+                  <e p="FMODUnityResonanceEditor.asmdef" t="Include" />
+                </e>
+                <e p="Scripts" t="Include">
+                  <e p="FmodResonanceAudio.cs" t="Include" />
+                  <e p="FmodResonanceAudioRoom.cs" t="Include" />
+                  <e p="FMODUnityResonance.asmdef" t="Include" />
+                </e>
+              </e>
+            </e>
+            <e p="FMODUnity.asmdef" t="Include" />
+            <e p="platforms" t="Include">
+              <e p="android" t="Include">
+                <e p="src" t="Include">
+                  <e p="PlatformAndroid.cs" t="Include" />
+                </e>
+              </e>
+              <e p="html5" t="Include">
+                <e p="src" t="Include">
+                  <e p="PlatformWebGL.cs" t="Include" />
+                </e>
+              </e>
+              <e p="ios" t="Include">
+                <e p="src" t="Include">
+                  <e p="PlatformIOS.cs" t="Include" />
+                </e>
+              </e>
+              <e p="linux" t="Include">
+                <e p="src" t="Include">
+                  <e p="PlatformLinux.cs" t="Include" />
+                </e>
+              </e>
+              <e p="mac" t="Include">
+                <e p="src" t="Include">
+                  <e p="PlatformMac.cs" t="Include" />
+                </e>
+              </e>
+              <e p="tvos" t="Include">
+                <e p="src" t="Include">
+                  <e p="PlatformAppleTV.cs" t="Include" />
+                </e>
+              </e>
+              <e p="win" t="Include">
+                <e p="src" t="Include">
+                  <e p="PlatformWindows.cs" t="Include" />
+                </e>
+              </e>
+            </e>
+            <e p="src" t="Include">
+              <e p="Editor" t="Include">
+                <e p="BankRefDrawer.cs" t="Include" />
+                <e p="BoltIntegration.cs" t="Include" />
+                <e p="CreateEventPopup.cs" t="Include" />
+                <e p="EditorBankRef.cs" t="Include" />
+                <e p="EditorEventRef.cs" t="Include" />
+                <e p="EditorParamRef.cs" t="Include" />
+                <e p="EditorUtils.cs" t="Include" />
+                <e p="EventBrowser.cs" t="Include" />
+                <e p="EventCache.cs" t="Include" />
+                <e p="EventManager.cs" t="Include" />
+                <e p="EventRefDrawer.cs" t="Include" />
+                <e p="FindAndReplace.cs" t="Include" />
+                <e p="FMODUnityEditor.asmdef" t="Include" />
+                <e p="LogViewer.cs" t="Include" />
+                <e p="ParamRefDrawer.cs" t="Include" />
+                <e p="SettingsEditor.cs" t="Include" />
+                <e p="StudioBankLoaderEditor.cs" t="Include" />
+                <e p="StudioEventEmitterEditor.cs" t="Include" />
+                <e p="StudioEventEmitterGizmoDrawer.cs" t="Include" />
+                <e p="StudioGlobalParameterTriggerEditor.cs" t="Include" />
+                <e p="StudioListenerEditor.cs" t="Include" />
+                <e p="StudioParameterTriggerEditor.cs" t="Include" />
+                <e p="Timeline" t="Include">
+                  <e p="FMODEventPlayableEditor.cs" t="Include" />
+                </e>
+              </e>
+              <e p="Runtime" t="Include">
+                <e p="BankRefAttribute.cs" t="Include" />
+                <e p="CodeGeneration.cs" t="Include" />
+                <e p="EventHandler.cs" t="Include" />
+                <e p="EventRefAttribute.cs" t="Include" />
+                <e p="FMODRuntimeManagerOnGUIHelper.cs" t="Include" />
+                <e p="ParamRef.cs" t="Include" />
+                <e p="ParamRefAttribute.cs" t="Include" />
+                <e p="Platform.cs" t="Include" />
+                <e p="PlatformDefault.cs" t="Include" />
+                <e p="PlatformGroup.cs" t="Include" />
+                <e p="PlatformMobileHigh.cs" t="Include" />
+                <e p="PlatformMobileLow.cs" t="Include" />
+                <e p="PlatformPlayInEditor.cs" t="Include" />
+                <e p="RuntimeManager.cs" t="Include" />
+                <e p="RuntimeUtils.cs" t="Include" />
+                <e p="Settings.cs" t="Include" />
+                <e p="StudioBankLoader.cs" t="Include" />
+                <e p="StudioEventEmitter.cs" t="Include" />
+                <e p="StudioGlobalParameterTrigger.cs" t="Include" />
+                <e p="StudioListener.cs" t="Include" />
+                <e p="StudioParameterTrigger.cs" t="Include" />
+                <e p="Timeline" t="Include">
+                  <e p="FMODEventPlayable.cs" t="Include" />
+                  <e p="FMODEventTrack.cs" t="Include" />
+                </e>
+                <e p="wrapper" t="Include">
+                  <e p="fmod.cs" t="Include" />
+                  <e p="fmod_dsp.cs" t="Include" />
+                  <e p="fmod_errors.cs" t="Include" />
+                  <e p="fmod_studio.cs" t="Include" />
+                </e>
+              </e>
             </e>
           </e>
         </e>
@@ -966,6 +1089,10 @@
         </e>
         <e p="TrackDetector.cs" t="Include" />
       </e>
+      <e p="FMODUnity.csproj" t="IncludeRecursive" />
+      <e p="FMODUnityEditor.csproj" t="IncludeRecursive" />
+      <e p="FMODUnityResonance.csproj" t="IncludeRecursive" />
+      <e p="FMODUnityResonanceEditor.csproj" t="IncludeRecursive" />
       <e p="NavMeshComponents.csproj" t="IncludeRecursive" />
       <e p="NavMeshComponentsEditor.csproj" t="IncludeRecursive" />
       <e p="NavMeshComponentsExamples.csproj" t="IncludeRecursive" />
