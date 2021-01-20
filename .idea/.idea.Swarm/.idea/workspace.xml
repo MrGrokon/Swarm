@@ -20,20 +20,68 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="748aedf3-fec8-4234-a47f-1d701d1809ba" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/indexLayout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NewScene/Graphics.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NewScene/Graphics/Debug Materials.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NewScene/Graphics/Materials.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NewScene/Materials.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NewScene/Prefabs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NewScene/Scenes.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NewScene/nTools/PrefabPainter.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NewScene/nTools/PrefabPainter/Examples.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NewScene/nTools/PrefabPainter/Scripts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/nTools/PrefabPainter/Examples.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AmplifyShaderEditor/Plugins/EditorResources/Templates/CustomRTTemplates.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AmplifyShaderEditor/Plugins/EditorResources/Templates/HDSRPTemplates.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AmplifyShaderEditor/Plugins/EditorResources/Templates/LWSRPTemplates.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AmplifyShaderEditor/Plugins/EditorResources/Templates/PPStackTemplates.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AmplifyShaderEditor/Plugins/EditorResources/Templates/SRP (Legacy)/HDSRPTemplates 3xx (Legacy).unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AmplifyShaderEditor/Plugins/EditorResources/Templates/SRP (Legacy)/HDSRPTemplates 4xx (Legacy).unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AmplifyShaderEditor/Plugins/EditorResources/Templates/SRP (Legacy)/HDSRPTemplates 572 (Legacy).unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AmplifyShaderEditor/Plugins/EditorResources/Templates/SRP (Legacy)/HDSRPTemplates 5xx (Legacy).unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AmplifyShaderEditor/Plugins/EditorResources/Templates/SRP (Legacy)/HDSRPTemplates 6xx (Legacy).unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AmplifyShaderEditor/Plugins/EditorResources/Templates/SRP (Legacy)/LWSRPTemplates 3xx (Legacy).unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AmplifyShaderEditor/Plugins/EditorResources/Templates/SRP (Legacy)/LWSRPTemplates 4xx (Legacy).unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AmplifyShaderEditor/Plugins/EditorResources/Templates/USRPTemplates.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FMOD.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FMOD/SoundList/Assets.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FMOD/SoundList/Build.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FMOD/SoundList/Metadata/Asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FMOD/SoundList/Metadata/AudioFile/{082dceb0-b031-4170-85d7-939fddcbdcc9}.xml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FMOD/SoundList/Metadata/AudioFile/{169ef670-c583-496f-8193-a4188bca57b0}.xml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FMOD/SoundList/Metadata/AudioFile/{2f05690b-a336-42a3-b468-bc4260808085}.xml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FMOD/SoundList/Metadata/AudioFile/{33c555b9-7f10-431a-a246-f4ef93f41747}.xml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FMOD/SoundList/Metadata/AudioFile/{4824d688-239c-4cac-ae9a-9f2365e5f052}.xml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FMOD/SoundList/Metadata/AudioFile/{493e3b9b-d0ea-4308-a171-580f2c3cc050}.xml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FMOD/SoundList/Metadata/AudioFile/{5d2aefcc-69c5-4f4d-8b1a-3ed4aae20c91}.xml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FMOD/SoundList/Metadata/AudioFile/{6b0a5cfa-d9fa-410e-89ae-4c144795621f}.xml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FMOD/SoundList/Metadata/AudioFile/{71845ee4-39bf-466d-8914-29678141c2ec}.xml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FMOD/SoundList/Metadata/AudioFile/{72fba1e5-484f-4438-866b-28bde4b9db3e}.xml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FMOD/SoundList/Metadata/AudioFile/{97c24c3e-d8b9-4663-8e9e-2b94f060db5b}.xml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FMOD/SoundList/Metadata/AudioFile/{97e206bd-f520-42ad-bf1c-fde71a390fd2}.xml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FMOD/SoundList/Metadata/AudioFile/{b6960aa9-766b-4695-b058-34c312a183ab}.xml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FMOD/SoundList/Metadata/AudioFile/{ba498baf-3c96-4bb9-a84c-3c5b212e0d71}.xml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FMOD/SoundList/Metadata/AudioFile/{c1e0492d-ccb0-4715-b6ec-ccdc870ca283}.xml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FMOD/SoundList/Metadata/Bank.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FMOD/SoundList/Metadata/BankFolder.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FMOD/SoundList/Metadata/EffectPresetFolder.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FMOD/SoundList/Metadata/EncodingSetting.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FMOD/SoundList/Metadata/Event/{01401652-0f94-474b-b878-1a799942008e}.xml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FMOD/SoundList/Metadata/Event/{0f8ec351-502d-4017-8594-f68a0de53fcb}.xml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FMOD/SoundList/Metadata/Event/{183b7cd6-f545-458e-995f-0b020d5e83ec}.xml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FMOD/SoundList/Metadata/Event/{20f1bf80-cd5c-4bff-950d-8a7b7e919b22}.xml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FMOD/SoundList/Metadata/Event/{36ff9d95-3a02-4935-bb37-dd49edc1f116}.xml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FMOD/SoundList/Metadata/Event/{3f295900-1a03-4e28-a1b4-4dd61e70bede}.xml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FMOD/SoundList/Metadata/Event/{78a90e26-9b95-4278-9ea8-f3be1f145110}.xml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FMOD/SoundList/Metadata/Event/{8da7148b-b6b9-47b4-ac93-0ee06803d40a}.xml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FMOD/SoundList/Metadata/Event/{f917ca24-dd91-45f9-9397-8a9e5ffc0c78}.xml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FMOD/SoundList/Metadata/EventFolder.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FMOD/SoundList/Metadata/Master.xml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FMOD/SoundList/Metadata/Mixer.xml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FMOD/SoundList/Metadata/ParameterPreset/{71c38220-6fc7-4265-8f73-cfc6b53168b2}.xml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FMOD/SoundList/Metadata/ParameterPresetFolder.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FMOD/SoundList/Metadata/Platform.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FMOD/SoundList/Metadata/Return.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FMOD/SoundList/Metadata/SnapshotGroup.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FMOD/SoundList/Metadata/Tags.xml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FMOD/SoundList/Metadata/Workspace.xml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FMOD/SoundList/SoundList.fspro.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Craintive.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Craintive.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Fast.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Fast.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Robuste.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Robuste.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/Attack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/Attack.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Prey/Craintive.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Prey/Craintive.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fmod_editor.log" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,7 +98,6 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock://C:/Users/Théo/Documents/GitHub/Swarm/Swarm/Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CreatureMover.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/nTools/PrefabPainter/Scripts/Editor/PrefabPainter.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/AlphaCreature/PackOrderer.cs" root0="FORCE_HIGHLIGHTING" />
@@ -70,10 +117,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Prey/PreyLife.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.0.0/InputSystem/Utilities/DelegateHelpers.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ClimbableTree.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Théo/Documents/GitHub/Swarm/Swarm/Assets/NewScene/Graphics/Debug Materials.meta" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Théo/Documents/GitHub/Swarm/Swarm/Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/AlphaCreature/Attack.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Théo/Documents/GitHub/Swarm/Swarm/Assets/NewScene/Graphics/Debug Materials.meta" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -111,7 +155,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Prey/AIsystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Prey/PreyLife.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Editor/PlayerFieldOfView.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/Attack.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/Targeting.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/ThridPersonCamera.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Prey/HerdPrey.cs" />
@@ -122,13 +165,14 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Tracks/TrackRenderer.cs" />
         <option value="$PROJECT_DIR$/Assets/TrackDetector.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Managers/GeneratePrey.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Prey/Craintive.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Prey/Terrier.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Prey/BasicPrey.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Prey/Robuste.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CameraRotate.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CreatureMover.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/NoiseEmitter.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/Attack.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Prey/Craintive.cs" />
       </list>
     </option>
   </component>
@@ -190,6 +234,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+      <changelist id="748aedf3-fec8-4234-a47f-1d701d1809ba" name="Default Changelist" comment="" />
       <created>1606122712142</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -247,7 +292,8 @@
       <workItem from="1610890749932" duration="2482000" />
       <workItem from="1611059412272" duration="1013000" />
       <workItem from="1611095918951" duration="119000" />
-      <workItem from="1611148126359" duration="328000" />
+      <workItem from="1611148126359" duration="939000" />
+      <workItem from="1611149216914" duration="1547000" />
     </task>
     <task id="LOCAL-00001" summary="Camera system implémenté">
       <created>1606123669149</created>
@@ -522,7 +568,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611148277752</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Update du gitIgnore">
+      <created>1611148917357</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1611148917357</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -554,7 +607,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value=" 0.5.2.0 : Bonne orientation de track renderer visual&#10; Ajustement sur la caméra" />
     <MESSAGE value=" 0.6.1.0 : Ajout de feedback sur le sommeil, Ajout de signes pour le sprint, Augmentation de la vitesse de la caméra, Dépop du cône de traque" />
     <MESSAGE value=" 0.6.2.0 : Réecriture de la caméra, suppression des tremblements lié a mouvements, Suppression de la création des bétas" />
     <MESSAGE value=" 1.0.0.0 : Ajout d'un émetteur de son sur le joueur, changement de la détection du son par les proies, ajout des éléments de LD suivant : hautes-herbes, rochers" />
@@ -579,7 +631,8 @@
     <MESSAGE value="Ajout de l'addon FMOD" />
     <MESSAGE value="[1.2.0.2] Réduction du nombre de niveau de bruit possible à 2" />
     <MESSAGE value="[1.2.0.4] Modification du prefabs de footprint" />
-    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <MESSAGE value="Update du gitIgnore" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update du gitIgnore" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2282" y="65" key="CommitChangelistDialog2" timestamp="1611148277767">
@@ -619,11 +672,11 @@
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="92" y="132" width="1736" height="856" key="VCS.FileHistoryDialog/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1609519868736" />
-    <state x="2334" y="249" key="Vcs.Push.Dialog.v2" timestamp="1611095959477">
+    <state x="2334" y="249" key="Vcs.Push.Dialog.v2" timestamp="1611148918561">
       <screen x="1920" y="40" width="1440" height="860" />
     </state>
     <state x="552" y="293" key="Vcs.Push.Dialog.v2/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1610893394790" />
-    <state x="2334" y="249" key="Vcs.Push.Dialog.v2/0.40.1920.1040/1920.40.1440.860@1920.40.1440.860" timestamp="1611095959477" />
+    <state x="2334" y="249" key="Vcs.Push.Dialog.v2/0.40.1920.1040/1920.40.1440.860@1920.40.1440.860" timestamp="1611148918561" />
     <state x="2503" y="399" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1611148320168">
       <screen x="1920" y="40" width="1440" height="860" />
     </state>

@@ -59,7 +59,7 @@ public class Craintive : PreyAiManager
         #endregion
 
         if(Vector3.Distance(_nm_Agent.destination, transform.position) <= ReachingDistance){
-            Debug.Log("Prey reached his destination");
+            //Debug.Log("Prey reached his destination");
             //Do things when i reach my Position
             switch(MyState){
 
@@ -133,13 +133,15 @@ public class Craintive : PreyAiManager
                 Vector3 FleeMotion = (Objects.Instance.Alpha.transform.position - this.transform.position).normalized * -5;
                 NavMesh.SamplePosition(FleeMotion, out NavMeshHit hit, 1f, 1);
                 Vector3 randomPositionInsideSphere = hit.position + Random.insideUnitSphere * 5f;
-                while (_nm_Agent.CalculatePath(randomPositionInsideSphere, new NavMeshPath()) == false)
+                if (_nm_Agent.CalculatePath(hit.position, new NavMeshPath()))
                 {
-                    FleeMotion = (Objects.Instance.Alpha.transform.position - this.transform.position).normalized * -5;
-                    NavMesh.SamplePosition(FleeMotion, out NavMeshHit hit2, 1f, 1);
-                    randomPositionInsideSphere = hit.position + Random.insideUnitSphere * 5f;
+                    _nm_Agent.SetDestination(hit.position);
                 }
-                _nm_Agent.SetDestination(hit.position);
+                else
+                {
+                    _nm_Agent.SetDestination(transform.position);
+                }
+                
                 print("destination : " +_nm_Agent.destination);
                 actualFleeTime = fleeTime;
 
