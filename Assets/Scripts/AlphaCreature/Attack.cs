@@ -118,7 +118,9 @@ public class Attack : MonoBehaviour
         {
             _ressource.GainRessource(RessourceManager.Resource.Hunger, 20f);
             PackManager.packInstance.gameObject.GetComponent<GeneratePrey>().listOfPrey.Remove(obj.gameObject);
+            print(obj);
             obj.GetComponent<PreyLife>().ApplyDammage(1);
+            
             //GetComponent<PreySniffer>().ResetTrackerValue();
         }
        
@@ -142,6 +144,7 @@ public class Attack : MonoBehaviour
             _ressource.GainRessource(RessourceManager.Resource.Hunger, 20f);
             PackManager.packInstance.gameObject.GetComponent<GeneratePrey>().listOfPrey.Remove(obj.gameObject);
             GetComponent<Rigidbody>().MovePosition(obj.transform.position);
+            print("Proie : " +obj);
             obj.GetComponent<PreyLife>().InstantKill(); 
         }
     }
