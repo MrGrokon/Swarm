@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8367501904014501637}
   - component: {fileID: 3544707047421430542}
   - component: {fileID: 7203462301895716866}
+  - component: {fileID: 929430585}
   m_Layer: 0
   m_Name: Footprint
   m_TagString: Track
@@ -158,3 +159,16 @@ MonoBehaviour:
   DistanceToPoint: 5
   TimeToBeDisplayed: 5
   lastPrevisuMesh: {fileID: 0}
+--- !u!65 &929430585
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3242810064093954689}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 15, y: 15, z: 15}
+  m_Center: {x: -2.8907855, y: 0, z: 0}
