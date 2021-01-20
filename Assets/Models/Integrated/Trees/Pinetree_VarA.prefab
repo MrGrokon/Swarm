@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8012731740164798398}
   - component: {fileID: 3456025158265936160}
   - component: {fileID: 4891626722830867854}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Col
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +71,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9031862252534894991}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pinetree_VarA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -190,6 +190,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_NavMeshLayer
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: efad271e2409fad44977c3a7ca141c7a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: efad271e2409fad44977c3a7ca141c7a, type: 3}
