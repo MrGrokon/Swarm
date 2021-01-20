@@ -19,8 +19,22 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1edd0d37-b333-4aa9-b5cd-217dae9d2baf" name="Revert: " comment="[1.2.0.2] Réduction du nombre de niveau de bruit possible à 2">
+    <list default="true" id="748aedf3-fec8-4234-a47f-1d701d1809ba" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NewScene/Graphics.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NewScene/Graphics/Debug Materials.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NewScene/Graphics/Materials.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NewScene/Materials.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NewScene/Prefabs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NewScene/Scenes.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NewScene/nTools/PrefabPainter.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NewScene/nTools/PrefabPainter/Examples.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NewScene/nTools/PrefabPainter/Scripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/nTools/PrefabPainter/Examples.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fmod_editor.log" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +50,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock://C:/Users/Théo/Documents/GitHub/Swarm/Swarm/Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CreatureMover.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/nTools/PrefabPainter/Scripts/Editor/PrefabPainter.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/AlphaCreature/PackOrderer.cs" root0="FORCE_HIGHLIGHTING" />
@@ -55,7 +70,10 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Prey/PreyLife.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.0.0/InputSystem/Utilities/DelegateHelpers.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ClimbableTree.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Théo/Documents/GitHub/Swarm/Swarm/Assets/NewScene/Graphics/Debug Materials.meta" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Théo/Documents/GitHub/Swarm/Swarm/Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/AlphaCreature/Attack.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Théo/Documents/GitHub/Swarm/Swarm/Assets/NewScene/Graphics/Debug Materials.meta" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -229,6 +247,7 @@
       <workItem from="1610890749932" duration="2482000" />
       <workItem from="1611059412272" duration="1013000" />
       <workItem from="1611095918951" duration="119000" />
+      <workItem from="1611148126359" duration="328000" />
     </task>
     <task id="LOCAL-00001" summary="Camera system implémenté">
       <created>1606123669149</created>
@@ -489,7 +508,21 @@
       <option name="project" value="LOCAL" />
       <updated>1611095958753</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038">
+      <created>1611148176145</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1611148176145</updated>
+    </task>
+    <task id="LOCAL-00039">
+      <created>1611148277752</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1611148277752</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -546,13 +579,22 @@
     <MESSAGE value="Ajout de l'addon FMOD" />
     <MESSAGE value="[1.2.0.2] Réduction du nombre de niveau de bruit possible à 2" />
     <MESSAGE value="[1.2.0.4] Modification du prefabs de footprint" />
-    <option name="LAST_COMMIT_MESSAGE" value="[1.2.0.4] Modification du prefabs de footprint" />
+    <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="184" y="126" key="MergeDialog" timestamp="1610111580298">
-      <screen x="0" y="40" width="1920" height="1040" />
+    <state x="2282" y="65" key="CommitChangelistDialog2" timestamp="1611148277767">
+      <screen x="1920" y="40" width="1440" height="860" />
+    </state>
+    <state x="2282" y="65" key="CommitChangelistDialog2/0.40.1920.1040/1920.40.1440.860@1920.40.1440.860" timestamp="1611148277767" />
+    <state x="2012" y="132" width="1256" height="676" key="DiffContextDialog" timestamp="1611148457269">
+      <screen x="1920" y="40" width="1440" height="860" />
+    </state>
+    <state x="2012" y="132" width="1256" height="676" key="DiffContextDialog/0.40.1920.1040/1920.40.1440.860@1920.40.1440.860" timestamp="1611148457269" />
+    <state x="1920" y="40" key="MergeDialog" timestamp="1611148338271">
+      <screen x="1920" y="40" width="1440" height="860" />
     </state>
     <state x="184" y="126" key="MergeDialog/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1610111580298" />
+    <state x="1920" y="40" key="MergeDialog/0.40.1920.1040/1920.40.1440.860@1920.40.1440.860" timestamp="1611148338271" />
     <state x="598" y="321" key="MultipleFileMergeDialog" timestamp="1610790629395">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
@@ -561,6 +603,18 @@
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="670" y="238" key="RiderGenerateDialog/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1610576584078" />
+    <state x="2418" y="180" key="RollbackChangesDialog" timestamp="1611148271496">
+      <screen x="1920" y="40" width="1440" height="860" />
+    </state>
+    <state x="2418" y="180" key="RollbackChangesDialog/0.40.1920.1040/1920.40.1440.860@1920.40.1440.860" timestamp="1611148271496" />
+    <state x="2427" y="187" key="VCS.ChangeListViewerDialog" timestamp="1611148244289">
+      <screen x="1920" y="40" width="1440" height="860" />
+    </state>
+    <state x="2427" y="187" key="VCS.ChangeListViewerDialog/0.40.1920.1040/1920.40.1440.860@1920.40.1440.860" timestamp="1611148244289" />
+    <state x="2410" y="383" key="VCS.ChangelistChooser" timestamp="1611148198149">
+      <screen x="1920" y="40" width="1440" height="860" />
+    </state>
+    <state x="2410" y="383" key="VCS.ChangelistChooser/0.40.1920.1040/1920.40.1440.860@1920.40.1440.860" timestamp="1611148198149" />
     <state x="92" y="132" width="1736" height="856" key="VCS.FileHistoryDialog" timestamp="1609519868736">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
@@ -570,10 +624,11 @@
     </state>
     <state x="552" y="293" key="Vcs.Push.Dialog.v2/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1610893394790" />
     <state x="2334" y="249" key="Vcs.Push.Dialog.v2/0.40.1920.1040/1920.40.1440.860@1920.40.1440.860" timestamp="1611095959477" />
-    <state x="777" y="474" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1610755680298">
-      <screen x="0" y="40" width="1920" height="1040" />
+    <state x="2503" y="399" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1611148320168">
+      <screen x="1920" y="40" width="1440" height="860" />
     </state>
     <state x="777" y="474" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1610755680298" />
+    <state x="2503" y="399" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.40.1920.1040/1920.40.1440.860@1920.40.1440.860" timestamp="1611148320168" />
     <state x="732" y="274" key="git4idea.branch.GitSmartOperationDialog" timestamp="1610577647801">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
