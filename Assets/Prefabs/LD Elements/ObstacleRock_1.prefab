@@ -212,6 +212,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5faddbc9cc0c6f44195ee72e9fd2fb06,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 95
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5faddbc9cc0c6f44195ee72e9fd2fb06,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5faddbc9cc0c6f44195ee72e9fd2fb06, type: 3}
 --- !u!4 &8384520816483990983 stripped
