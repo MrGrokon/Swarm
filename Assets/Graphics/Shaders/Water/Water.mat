@@ -61,10 +61,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _BaseOpacity: 0.8
-    - _BaseScale: 4.6
+    - _BaseScale: 10
     - _BumpScale: 1
     - _Cutoff: 0.5
-    - _DecalStrength: 0.54
+    - _DecalStrength: 0.35
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _GlossMapScale: 1
@@ -87,7 +87,7 @@ Material:
     - _TransShadow: 0.9
     - _Translucency: 1.4
     - _TurbulenceIntenssity: 1.95
-    - _TurbulenceSpeed: 1.62
+    - _TurbulenceSpeed: 0.5
     - _UVSec: 0
     - _ZWrite: 1
     - __dirty: 0
