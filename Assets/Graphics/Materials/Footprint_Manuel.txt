@@ -1,0 +1,3 @@
+la couleur d'Activness doit seulement passer de Noir(inactif) a Blanc(completement actif),
+pas de couleurs.
+Je doit toujours revoir ca plus tard.
