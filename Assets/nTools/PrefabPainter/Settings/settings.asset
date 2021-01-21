@@ -1215,15 +1215,15 @@ MonoBehaviour:
       - gameObject: {fileID: 0}
       - gameObject: {fileID: 0}
       selectedSlot: 1
-      selected: 1
+      selected: 0
       colorTag: 0
     - name: Grass_VarA
       settings:
-        brushRadius: 9
-        brushSpacing: 0.5
+        brushRadius: 3.83
+        brushSpacing: 2.24
         brushOverallScale: 1
         brushOverlapCheck: 0
-        brushOverlapCheckMode: 0
+        brushOverlapCheckMode: 1
         brushOverlapDistance: 0.5
         brushOverlapCheckObjects: 1
         brushOverlapCheckLayers:
@@ -1242,13 +1242,13 @@ MonoBehaviour:
         orientationMode: 1
         flipOrientation: 0
         rotation: {x: 0, y: 0, z: 0}
-        randomizeOrientationX: 0
-        randomizeOrientationY: 0
-        randomizeOrientationZ: 0
+        randomizeOrientationX: 3.4
+        randomizeOrientationY: 100
+        randomizeOrientationZ: 2.9
         scaleTransformMode: 0
         scaleMode: 0
-        scaleUniformMin: 1
-        scaleUniformMax: 1
+        scaleUniformMin: 0.6
+        scaleUniformMax: 1.3
         scalePerAxisMin: {x: 1, y: 1, z: 1}
         scalePerAxisMax: {x: 1, y: 1, z: 1}
         scaleAux: 1
@@ -1259,7 +1259,7 @@ MonoBehaviour:
           position: {x: 0, y: 0, z: 0}
           rotation: {x: 0, y: 0, z: 0}
           scale: {x: 1, y: 1, z: 1}
-          pivotOffset: {x: 0, y: 0, z: 0}
+          pivotOffset: {x: -0.08880973, y: 0.29603314, z: 0}
         - enabled: 1
           raiting: 1
           position: {x: 0, y: 0, z: 0}
@@ -1348,7 +1348,7 @@ MonoBehaviour:
       - gameObject: {fileID: 0}
       - gameObject: {fileID: 0}
       selectedSlot: 0
-      selected: 0
+      selected: 1
       colorTag: 0
   - name: Decals
     brushes:
