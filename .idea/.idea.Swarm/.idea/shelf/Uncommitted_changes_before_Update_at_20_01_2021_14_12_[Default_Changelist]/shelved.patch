@@ -1,0 +1,244 @@
+Index: Assets/NewScene/Prefabs.meta
+===================================================================
+--- Assets/NewScene/Prefabs.meta	(revision bca36bfe9168c1fe349f6fed639edbfa8fa364b7)
++++ Assets/NewScene/Prefabs.meta	(revision bca36bfe9168c1fe349f6fed639edbfa8fa364b7)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: 0b099ff37de3c52478cfc7d98de2b2c0
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/NewScene/Graphics/Debug Materials.meta
+===================================================================
+--- Assets/NewScene/Graphics/Debug Materials.meta	(revision bca36bfe9168c1fe349f6fed639edbfa8fa364b7)
++++ Assets/NewScene/Graphics/Debug Materials.meta	(revision bca36bfe9168c1fe349f6fed639edbfa8fa364b7)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: dc92af21041c0cf4596ef3f610679a7a
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/nTools/PrefabPainter/Examples.meta
+===================================================================
+--- Assets/nTools/PrefabPainter/Examples.meta	(revision bca36bfe9168c1fe349f6fed639edbfa8fa364b7)
++++ Assets/nTools/PrefabPainter/Examples.meta	(revision bca36bfe9168c1fe349f6fed639edbfa8fa364b7)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: dd82b5ea95706f340b552c424382c7dd
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/NewScene/nTools/PrefabPainter/Examples.meta
+===================================================================
+--- Assets/NewScene/nTools/PrefabPainter/Examples.meta	(revision bca36bfe9168c1fe349f6fed639edbfa8fa364b7)
++++ Assets/NewScene/nTools/PrefabPainter/Examples.meta	(revision bca36bfe9168c1fe349f6fed639edbfa8fa364b7)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: 8a6fe17be1d8fb84ea141f75fb57dcf5
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/NewScene/nTools/PrefabPainter/Scripts.meta
+===================================================================
+--- Assets/NewScene/nTools/PrefabPainter/Scripts.meta	(revision bca36bfe9168c1fe349f6fed639edbfa8fa364b7)
++++ Assets/NewScene/nTools/PrefabPainter/Scripts.meta	(revision bca36bfe9168c1fe349f6fed639edbfa8fa364b7)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: 1de74d655aefe314a93273b42befa70a
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/NewScene/Scenes.meta
+===================================================================
+--- Assets/NewScene/Scenes.meta	(revision bca36bfe9168c1fe349f6fed639edbfa8fa364b7)
++++ Assets/NewScene/Scenes.meta	(revision bca36bfe9168c1fe349f6fed639edbfa8fa364b7)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: 0682a66efa409ea44a19900a85617120
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/NewScene/Materials.meta
+===================================================================
+--- Assets/NewScene/Materials.meta	(revision bca36bfe9168c1fe349f6fed639edbfa8fa364b7)
++++ Assets/NewScene/Materials.meta	(revision bca36bfe9168c1fe349f6fed639edbfa8fa364b7)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: e40cbac4ea9f5c54793cb13205c5c9f3
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/NewScene/Graphics/Materials.meta
+===================================================================
+--- Assets/NewScene/Graphics/Materials.meta	(revision bca36bfe9168c1fe349f6fed639edbfa8fa364b7)
++++ Assets/NewScene/Graphics/Materials.meta	(revision bca36bfe9168c1fe349f6fed639edbfa8fa364b7)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: 03535f2c5f4b6084d80fef7295b56650
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: fmod_editor.log
+===================================================================
+--- fmod_editor.log	(revision bca36bfe9168c1fe349f6fed639edbfa8fa364b7)
++++ fmod_editor.log	(revision bca36bfe9168c1fe349f6fed639edbfa8fa364b7)
+@@ -1,30 +0,0 @@
+-[LOG] System::create                           : Header version = 2.01.07. Current version = 2.01.07.
+-[LOG] Manager::init                            : maxchannels = 256 studioflags = 00000006 flags 00000000 extradriverdata 0000000000000000.
+-[LOG] SystemI::init                            : Initialize version=20107 (113487), maxchannels=256, flags=0x00020000
+-[LOG] SystemI::setOutputInternal               : Setting output to 'FMOD WASAPI Output'
+-[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEX): wFormatTag=0xFFFE, nChannels=2, nSamplesPerSec=48000, nAvgBytesPerSec=384000, nBlockAlign=8, wBitsPerSample=32, cbSize=22.
+-[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEXTENSIBLE): wValidBitsPerSample=32, dwChannelMask=0x00000003, SubFormat=00000003-0000-0010-8000-00AA00389B71.
+-[LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
+-[LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
+-[LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x8000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
+-[LOG] AsyncManager::init                       : manager 0000019BAB2B3538 isAsync 0 updatePeriod 0.02
+-[LOG] AsyncManager::init                       : done
+-[LOG] PlaybackSystem::init                     : 
+-[LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
+-[LOG] PlaybackSystem::init                     : done
+-[LOG] Thread::initThread                       : Init FMOD Studio bank load thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
+-[LOG] Manager::init                            : done.
+-[LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 135)
+-[LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 135)
+-[LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 135)
+-[LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 135)
+-[LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 135)
+-[LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 135)
+-[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
+-[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
+-[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
+-[LOG] LiveUpdate::release                      : 
+-[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
+-[LOG] Thread::callback                         : FMOD stream thread finished.
+-[LOG] Thread::callback                         : FMOD mixer thread finished.
+-[LOG] SystemI::close                           : Closed.
+Index: .idea/.idea.Swarm/.idea/indexLayout.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ContentModelUserStore\">\r\n    <attachedFolders />\r\n    <explicitIncludes>\r\n      <Path>Library/PackageCache/com.unity.ads@3.5.0</Path>\r\n      <Path>Library/PackageCache/com.unity.analytics@3.3.5</Path>\r\n      <Path>Library/PackageCache/com.unity.cinemachine@2.6.3</Path>\r\n      <Path>Library/PackageCache/com.unity.collab-proxy@1.2.16</Path>\r\n      <Path>Library/PackageCache/com.unity.ext.nunit@1.0.0</Path>\r\n      <Path>Library/PackageCache/com.unity.ide.rider@1.1.4</Path>\r\n      <Path>Library/PackageCache/com.unity.ide.vscode@1.2.2</Path>\r\n      <Path>Library/PackageCache/com.unity.inputsystem@1.0.0</Path>\r\n      <Path>Library/PackageCache/com.unity.multiplayer-hlapi@1.0.6</Path>\r\n      <Path>Library/PackageCache/com.unity.purchasing@2.1.1</Path>\r\n      <Path>Library/PackageCache/com.unity.test-framework@1.1.18</Path>\r\n      <Path>Library/PackageCache/com.unity.textmeshpro@2.1.1</Path>\r\n      <Path>Library/PackageCache/com.unity.timeline@1.2.17</Path>\r\n      <Path>Library/PackageCache/com.unity.xr.legacyinputhelpers@2.1.4</Path>\r\n      <Path>Library/PackageCache/nuget.mono-cecil@0.1.6-preview</Path>\r\n      <Path>Packages</Path>\r\n      <Path>ProjectSettings</Path>\r\n    </explicitIncludes>\r\n    <explicitExcludes>\r\n      <Path>.git</Path>\r\n      <Path>.idea</Path>\r\n      <Path>.vscode</Path>\r\n      <Path>Documentation</Path>\r\n      <Path>Library</Path>\r\n      <Path>Logs</Path>\r\n      <Path>Temp</Path>\r\n      <Path>obj</Path>\r\n    </explicitExcludes>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/.idea.Swarm/.idea/indexLayout.xml	(revision bca36bfe9168c1fe349f6fed639edbfa8fa364b7)
++++ .idea/.idea.Swarm/.idea/indexLayout.xml	(date 1611148319413)
+@@ -28,7 +28,6 @@
+       <Path>Documentation</Path>
+       <Path>Library</Path>
+       <Path>Logs</Path>
+-      <Path>Temp</Path>
+       <Path>obj</Path>
+     </explicitExcludes>
+   </component>
+Index: Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>%YAML 1.1\r\n%TAG !u! tag:unity3d.com,2011:\r\n--- !u!114 &-7510760629193301972\r\nMonoBehaviour:\r\n  m_ObjectHideFlags: 0\r\n  m_CorrespondingSourceObject: {fileID: 0}\r\n  m_PrefabInstance: {fileID: 0}\r\n  m_PrefabAsset: {fileID: 0}\r\n  m_GameObject: {fileID: 0}\r\n  m_Enabled: 1\r\n  m_EditorHideFlags: 0\r\n  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}\r\n  m_Name: event:/Proie/ProieMeuteBruit\r\n  m_EditorClassIdentifier: \r\n  Path: event:/Proie/ProieMeuteBruit\r\n  guid: 80bff1205ccdff4b950d8a7b7e919b22\r\n  Banks:\r\n  - {fileID: 5502520808265794526}\r\n  IsStream: 0\r\n  Is3D: 1\r\n  IsOneShot: 1\r\n  Parameters: []\r\n  MinDistance: 1\r\n  MaxDistance: 20\r\n  Length: 0\r\n--- !u!114 &-4162568908422001122\r\nMonoBehaviour:\r\n  m_ObjectHideFlags: 0\r\n  m_CorrespondingSourceObject: {fileID: 0}\r\n  m_PrefabInstance: {fileID: 0}\r\n  m_PrefabAsset: {fileID: 0}\r\n  m_GameObject: {fileID: 0}\r\n  m_Enabled: 1\r\n  m_EditorHideFlags: 0\r\n  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}\r\n  m_Name: event:/Proie/ProieRapideBruit\r\n  m_EditorClassIdentifier: \r\n  Path: event:/Proie/ProieRapideBruit\r\n  guid: 51c38e0f2d5017408594f68a0de53fcb\r\n  Banks:\r\n  - {fileID: 5502520808265794526}\r\n  IsStream: 0\r\n  Is3D: 1\r\n  IsOneShot: 1\r\n  Parameters: []\r\n  MinDistance: 1\r\n  MaxDistance: 20\r\n  Length: 2397\r\n--- !u!114 &-2649767071719687579\r\nMonoBehaviour:\r\n  m_ObjectHideFlags: 0\r\n  m_CorrespondingSourceObject: {fileID: 0}\r\n  m_PrefabInstance: {fileID: 0}\r\n  m_PrefabAsset: {fileID: 0}\r\n  m_GameObject: {fileID: 0}\r\n  m_Enabled: 1\r\n  m_EditorHideFlags: 0\r\n  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}\r\n  m_Name: event:/Avatar/Smell\r\n  m_EditorClassIdentifier: \r\n  Path: event:/Avatar/Smell\r\n  guid: d67c3b1845f58e45995f0b020d5e83ec\r\n  Banks:\r\n  - {fileID: 5502520808265794526}\r\n  IsStream: 0\r\n  Is3D: 1\r\n  IsOneShot: 1\r\n  Parameters: []\r\n  MinDistance: 1\r\n  MaxDistance: 20\r\n  Length: 1500\r\n--- !u!114 &-2643706278247323853\r\nMonoBehaviour:\r\n  m_ObjectHideFlags: 0\r\n  m_CorrespondingSourceObject: {fileID: 0}\r\n  m_PrefabInstance: {fileID: 0}\r\n  m_PrefabAsset: {fileID: 0}\r\n  m_GameObject: {fileID: 0}\r\n  m_Enabled: 1\r\n  m_EditorHideFlags: 0\r\n  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}\r\n  m_Name: event:/Proie/ProieCraintiveBruit\r\n  m_EditorClassIdentifier: \r\n  Path: event:/Proie/ProieCraintiveBruit\r\n  guid: 959dff36023a3549bb37dd49edc1f116\r\n  Banks:\r\n  - {fileID: 5502520808265794526}\r\n  IsStream: 0\r\n  Is3D: 1\r\n  IsOneShot: 1\r\n  Parameters: []\r\n  MinDistance: 1\r\n  MaxDistance: 20\r\n  Length: 2220\r\n--- !u!114 &-970190109679767326\r\nMonoBehaviour:\r\n  m_ObjectHideFlags: 0\r\n  m_CorrespondingSourceObject: {fileID: 0}\r\n  m_PrefabInstance: {fileID: 0}\r\n  m_PrefabAsset: {fileID: 0}\r\n  m_GameObject: {fileID: 0}\r\n  m_Enabled: 1\r\n  m_EditorHideFlags: 0\r\n  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}\r\n  m_Name: event:/Avatar/AvatarCourse\r\n  m_EditorClassIdentifier: \r\n  Path: event:/Avatar/AvatarCourse\r\n  guid: 0059293f031a284ea1b44dd61e70bede\r\n  Banks:\r\n  - {fileID: 5502520808265794526}\r\n  IsStream: 0\r\n  Is3D: 1\r\n  IsOneShot: 0\r\n  Parameters:\r\n  - {fileID: 955045564553429278}\r\n  MinDistance: 1\r\n  MaxDistance: 20\r\n  Length: 1350\r\n--- !u!114 &-873247298474708590\r\nMonoBehaviour:\r\n  m_ObjectHideFlags: 0\r\n  m_CorrespondingSourceObject: {fileID: 0}\r\n  m_PrefabInstance: {fileID: 0}\r\n  m_PrefabAsset: {fileID: 0}\r\n  m_GameObject: {fileID: 0}\r\n  m_Enabled: 1\r\n  m_EditorHideFlags: 0\r\n  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}\r\n  m_Name: event:/Proie/ProieRobusteBruit\r\n  m_EditorClassIdentifier: \r\n  Path: event:/Proie/ProieRobusteBruit\r\n  guid: 24ca17f991ddf94593978a9e5ffc0c78\r\n  Banks:\r\n  - {fileID: 5502520808265794526}\r\n  IsStream: 0\r\n  Is3D: 1\r\n  IsOneShot: 1\r\n  Parameters: []\r\n  MinDistance: 1\r\n  MaxDistance: 20\r\n  Length: 1610\r\n--- !u!114 &11400000\r\nMonoBehaviour:\r\n  m_ObjectHideFlags: 0\r\n  m_CorrespondingSourceObject: {fileID: 0}\r\n  m_PrefabInstance: {fileID: 0}\r\n  m_PrefabAsset: {fileID: 0}\r\n  m_GameObject: {fileID: 0}\r\n  m_Enabled: 1\r\n  m_EditorHideFlags: 0\r\n  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}\r\n  m_Name: FMODStudioCache\r\n  m_EditorClassIdentifier: \r\n  EditorBanks:\r\n  - {fileID: 2869120908650435100}\r\n  - {fileID: 5502520808265794526}\r\n  EditorEvents:\r\n  - {fileID: -970190109679767326}\r\n  - {fileID: -873247298474708590}\r\n  - {fileID: 6900830697717481447}\r\n  - {fileID: -4162568908422001122}\r\n  - {fileID: 7592498546806052035}\r\n  - {fileID: -7510760629193301972}\r\n  - {fileID: 5175432729508644451}\r\n  - {fileID: -2643706278247323853}\r\n  - {fileID: -2649767071719687579}\r\n  EditorParameters: []\r\n  MasterBanks:\r\n  - {fileID: 5502520808265794526}\r\n  StringsBanks:\r\n  - {fileID: 2869120908650435100}\r\n  stringsBankWriteTime: 637466599035341852\r\n  cacheVersion: 6\r\n--- !u!114 &955045564553429278\r\nMonoBehaviour:\r\n  m_ObjectHideFlags: 0\r\n  m_CorrespondingSourceObject: {fileID: 0}\r\n  m_PrefabInstance: {fileID: 0}\r\n  m_PrefabAsset: {fileID: 0}\r\n  m_GameObject: {fileID: 0}\r\n  m_Enabled: 1\r\n  m_EditorHideFlags: 0\r\n  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}\r\n  m_Name: parameter:/AvatarCourse/CourseRapide\r\n  m_EditorClassIdentifier: \r\n  Name: CourseRapide\r\n  Min: 0\r\n  Max: 1\r\n  Default: 0\r\n  ID:\r\n    data1: 0\r\n    data2: 0\r\n  Exists: 1\r\n--- !u!114 &2869120908650435100\r\nMonoBehaviour:\r\n  m_ObjectHideFlags: 0\r\n  m_CorrespondingSourceObject: {fileID: 0}\r\n  m_PrefabInstance: {fileID: 0}\r\n  m_PrefabAsset: {fileID: 0}\r\n  m_GameObject: {fileID: 0}\r\n  m_Enabled: 1\r\n  m_EditorHideFlags: 0\r\n  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}\r\n  m_Name: bank:/Master.strings.bank\r\n  m_EditorClassIdentifier: \r\n  Path: Assets/FMOD/SoundList/Build/Desktop/Master.strings.bank\r\n  Name: Master.strings\r\n  StudioPath: bank:/Master.strings\r\n  lastModified: 637466599035341852\r\n  LoadResult: 0\r\n  FileSizes:\r\n  - Name: Desktop\r\n    Value: 1196\r\n  Exists: 1\r\n--- !u!114 &5175432729508644451\r\nMonoBehaviour:\r\n  m_ObjectHideFlags: 0\r\n  m_CorrespondingSourceObject: {fileID: 0}\r\n  m_PrefabInstance: {fileID: 0}\r\n  m_PrefabAsset: {fileID: 0}\r\n  m_GameObject: {fileID: 0}\r\n  m_Enabled: 1\r\n  m_EditorHideFlags: 0\r\n  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}\r\n  m_Name: event:/Proie/ProieTerrierBruit\r\n  m_EditorClassIdentifier: \r\n  Path: event:/Proie/ProieTerrierBruit\r\n  guid: 8b14a78db9b6b447ac930ee06803d40a\r\n  Banks:\r\n  - {fileID: 5502520808265794526}\r\n  IsStream: 0\r\n  Is3D: 1\r\n  IsOneShot: 1\r\n  Parameters: []\r\n  MinDistance: 1\r\n  MaxDistance: 20\r\n  Length: 0\r\n--- !u!114 &5502520808265794526\r\nMonoBehaviour:\r\n  m_ObjectHideFlags: 0\r\n  m_CorrespondingSourceObject: {fileID: 0}\r\n  m_PrefabInstance: {fileID: 0}\r\n  m_PrefabAsset: {fileID: 0}\r\n  m_GameObject: {fileID: 0}\r\n  m_Enabled: 1\r\n  m_EditorHideFlags: 0\r\n  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}\r\n  m_Name: bank:/Master.bank\r\n  m_EditorClassIdentifier: \r\n  Path: Assets/FMOD/SoundList/Build/Desktop/Master.bank\r\n  Name: Master\r\n  StudioPath: bank:/Master\r\n  lastModified: 637466599035311952\r\n  LoadResult: 0\r\n  FileSizes: []\r\n  Exists: 1\r\n--- !u!114 &6900830697717481447\r\nMonoBehaviour:\r\n  m_ObjectHideFlags: 0\r\n  m_CorrespondingSourceObject: {fileID: 0}\r\n  m_PrefabInstance: {fileID: 0}\r\n  m_PrefabAsset: {fileID: 0}\r\n  m_GameObject: {fileID: 0}\r\n  m_Enabled: 1\r\n  m_EditorHideFlags: 0\r\n  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}\r\n  m_Name: event:/Proie/PreyRoam\r\n  m_EditorClassIdentifier: \r\n  Path: event:/Proie/PreyRoam\r\n  guid: 260ea978959b78429ea8f3be1f145110\r\n  Banks:\r\n  - {fileID: 5502520808265794526}\r\n  IsStream: 0\r\n  Is3D: 1\r\n  IsOneShot: 1\r\n  Parameters: []\r\n  MinDistance: 1\r\n  MaxDistance: 20\r\n  Length: 195\r\n--- !u!114 &7592498546806052035\r\nMonoBehaviour:\r\n  m_ObjectHideFlags: 0\r\n  m_CorrespondingSourceObject: {fileID: 0}\r\n  m_PrefabInstance: {fileID: 0}\r\n  m_PrefabAsset: {fileID: 0}\r\n  m_GameObject: {fileID: 0}\r\n  m_Enabled: 1\r\n  m_EditorHideFlags: 0\r\n  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}\r\n  m_Name: event:/Avatar/HunterEat\r\n  m_EditorClassIdentifier: \r\n  Path: event:/Avatar/HunterEat\r\n  guid: 52164001940f4b47b8781a799942008e\r\n  Banks:\r\n  - {fileID: 5502520808265794526}\r\n  IsStream: 1\r\n  Is3D: 1\r\n  IsOneShot: 1\r\n  Parameters: []\r\n  MinDistance: 1\r\n  MaxDistance: 20\r\n  Length: 1500\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset	(revision bca36bfe9168c1fe349f6fed639edbfa8fa364b7)
++++ Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset	(date 1611148313369)
+@@ -112,7 +112,7 @@
+   Is3D: 1
+   IsOneShot: 0
+   Parameters:
+-  - {fileID: 955045564553429278}
++  - {fileID: 8691054670200407412}
+   MinDistance: 1
+   MaxDistance: 20
+   Length: 1350
+@@ -169,7 +169,7 @@
+   - {fileID: 5502520808265794526}
+   StringsBanks:
+   - {fileID: 2869120908650435100}
+-  stringsBankWriteTime: 637466599035341852
++  stringsBankWriteTime: 637467413803556239
+   cacheVersion: 6
+ --- !u!114 &955045564553429278
+ MonoBehaviour:
+@@ -190,7 +190,7 @@
+   ID:
+     data1: 0
+     data2: 0
+-  Exists: 1
++  Exists: 0
+ --- !u!114 &2869120908650435100
+ MonoBehaviour:
+   m_ObjectHideFlags: 0
+@@ -206,7 +206,7 @@
+   Path: Assets/FMOD/SoundList/Build/Desktop/Master.strings.bank
+   Name: Master.strings
+   StudioPath: bank:/Master.strings
+-  lastModified: 637466599035341852
++  lastModified: 637467413803556239
+   LoadResult: 0
+   FileSizes:
+   - Name: Desktop
+@@ -250,7 +250,7 @@
+   Path: Assets/FMOD/SoundList/Build/Desktop/Master.bank
+   Name: Master
+   StudioPath: bank:/Master
+-  lastModified: 637466599035311952
++  lastModified: 637467413803536289
+   LoadResult: 0
+   FileSizes: []
+   Exists: 1
+@@ -300,3 +300,23 @@
+   MinDistance: 1
+   MaxDistance: 20
+   Length: 1500
++--- !u!114 &8691054670200407412
++MonoBehaviour:
++  m_ObjectHideFlags: 0
++  m_CorrespondingSourceObject: {fileID: 0}
++  m_PrefabInstance: {fileID: 0}
++  m_PrefabAsset: {fileID: 0}
++  m_GameObject: {fileID: 0}
++  m_Enabled: 1
++  m_EditorHideFlags: 0
++  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
++  m_Name: parameter:/AvatarCourse/CourseRapide
++  m_EditorClassIdentifier: 
++  Name: CourseRapide
++  Min: 0
++  Max: 1
++  Default: 0
++  ID:
++    data1: 0
++    data2: 0
++  Exists: 1
+diff --git .idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_01_2021_10_44__Default_Changelist_1.xml .idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_01_2021_10_44__Default_Changelist_1.xml
+diff --git .idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Update_at_16_01_2021_10_45__Default_Changelist_.xml .idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Update_at_16_01_2021_10_45__Default_Changelist_.xml
+diff --git .idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_01_2021_12_58__Revert___.xml .idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_01_2021_12_58__Revert___.xml
+diff --git .idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Update_at_18_01_2021_19_27__Revert___.xml .idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Update_at_18_01_2021_19_27__Revert___.xml
+diff --git .idea/.idea.Swarm/.idea/shelf/Default_Changelist3.xml .idea/.idea.Swarm/.idea/shelf/Default_Changelist3.xml
+diff --git .idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_01_2021_10_50__Revert___.xml .idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_01_2021_10_50__Revert___.xml
+diff --git .idea/.idea.Swarm/.idea/shelf/Default_Changelist2.xml .idea/.idea.Swarm/.idea/shelf/Default_Changelist2.xml
+diff --git .idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_01_2021_10_49__Default_Changelist_.xml .idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_01_2021_10_49__Default_Changelist_.xml
+diff --git .idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_01_2021_10_44__Default_Changelist_.xml .idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_01_2021_10_44__Default_Changelist_.xml
+diff --git .idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Update_at_16_01_2021_10_47__Default_Changelist_.xml .idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Update_at_16_01_2021_10_47__Default_Changelist_.xml

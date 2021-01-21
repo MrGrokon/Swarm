@@ -1,0 +1,143 @@
+Index: Assets/NewScene/Prefabs.meta
+===================================================================
+--- Assets/NewScene/Prefabs.meta	(revision bca36bfe9168c1fe349f6fed639edbfa8fa364b7)
++++ Assets/NewScene/Prefabs.meta	(revision bca36bfe9168c1fe349f6fed639edbfa8fa364b7)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: 0b099ff37de3c52478cfc7d98de2b2c0
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/NewScene/Graphics/Debug Materials.meta
+===================================================================
+--- Assets/NewScene/Graphics/Debug Materials.meta	(revision bca36bfe9168c1fe349f6fed639edbfa8fa364b7)
++++ Assets/NewScene/Graphics/Debug Materials.meta	(revision bca36bfe9168c1fe349f6fed639edbfa8fa364b7)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: dc92af21041c0cf4596ef3f610679a7a
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/nTools/PrefabPainter/Examples.meta
+===================================================================
+--- Assets/nTools/PrefabPainter/Examples.meta	(revision bca36bfe9168c1fe349f6fed639edbfa8fa364b7)
++++ Assets/nTools/PrefabPainter/Examples.meta	(revision bca36bfe9168c1fe349f6fed639edbfa8fa364b7)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: dd82b5ea95706f340b552c424382c7dd
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/NewScene/nTools/PrefabPainter/Examples.meta
+===================================================================
+--- Assets/NewScene/nTools/PrefabPainter/Examples.meta	(revision bca36bfe9168c1fe349f6fed639edbfa8fa364b7)
++++ Assets/NewScene/nTools/PrefabPainter/Examples.meta	(revision bca36bfe9168c1fe349f6fed639edbfa8fa364b7)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: 8a6fe17be1d8fb84ea141f75fb57dcf5
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/NewScene/nTools/PrefabPainter/Scripts.meta
+===================================================================
+--- Assets/NewScene/nTools/PrefabPainter/Scripts.meta	(revision bca36bfe9168c1fe349f6fed639edbfa8fa364b7)
++++ Assets/NewScene/nTools/PrefabPainter/Scripts.meta	(revision bca36bfe9168c1fe349f6fed639edbfa8fa364b7)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: 1de74d655aefe314a93273b42befa70a
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/NewScene/Scenes.meta
+===================================================================
+--- Assets/NewScene/Scenes.meta	(revision bca36bfe9168c1fe349f6fed639edbfa8fa364b7)
++++ Assets/NewScene/Scenes.meta	(revision bca36bfe9168c1fe349f6fed639edbfa8fa364b7)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: 0682a66efa409ea44a19900a85617120
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/NewScene/Materials.meta
+===================================================================
+--- Assets/NewScene/Materials.meta	(revision bca36bfe9168c1fe349f6fed639edbfa8fa364b7)
++++ Assets/NewScene/Materials.meta	(revision bca36bfe9168c1fe349f6fed639edbfa8fa364b7)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: e40cbac4ea9f5c54793cb13205c5c9f3
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: Assets/NewScene/Graphics/Materials.meta
+===================================================================
+--- Assets/NewScene/Graphics/Materials.meta	(revision bca36bfe9168c1fe349f6fed639edbfa8fa364b7)
++++ Assets/NewScene/Graphics/Materials.meta	(revision bca36bfe9168c1fe349f6fed639edbfa8fa364b7)
+@@ -1,8 +0,0 @@
+-fileFormatVersion: 2
+-guid: 03535f2c5f4b6084d80fef7295b56650
+-folderAsset: yes
+-DefaultImporter:
+-  externalObjects: {}
+-  userData: 
+-  assetBundleName: 
+-  assetBundleVariant: 
+Index: fmod_editor.log
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>[LOG] System::create                           : Header version = 2.01.07. Current version = 2.01.07.\r\n[LOG] Manager::init                            : maxchannels = 256 studioflags = 00000006 flags 00000000 extradriverdata 0000000000000000.\r\n[LOG] SystemI::init                            : Initialize version=20107 (113487), maxchannels=256, flags=0x00020000\r\n[LOG] SystemI::setOutputInternal               : Setting output to 'FMOD WASAPI Output'\r\n[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEX): wFormatTag=0xFFFE, nChannels=2, nSamplesPerSec=48000, nAvgBytesPerSec=384000, nBlockAlign=8, wBitsPerSample=32, cbSize=22.\r\n[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEXTENSIBLE): wValidBitsPerSample=32, dwChannelMask=0x00000003, SubFormat=00000003-0000-0010-8000-00AA00389B71.\r\n[LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4\r\n[LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.\r\n[LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x8000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.\r\n[LOG] AsyncManager::init                       : manager 0000019BAB2B3538 isAsync 0 updatePeriod 0.02\r\n[LOG] AsyncManager::init                       : done\r\n[LOG] PlaybackSystem::init                     : \r\n[LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.\r\n[LOG] PlaybackSystem::init                     : done\r\n[LOG] Thread::initThread                       : Init FMOD Studio bank load thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.\r\n[LOG] Manager::init                            : done.\r\n[LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 135)\r\n[LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 135)\r\n[LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 135)\r\n[LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 135)\r\n[LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 135)\r\n[LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 135)\r\n[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6\r\n[LOG] Thread::callback                         : FMOD Studio bank load thread finished.\r\n[LOG] Thread::callback                         : FMOD Studio sample load thread finished.\r\n[LOG] LiveUpdate::release                      : \r\n[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)\r\n[LOG] Thread::callback                         : FMOD stream thread finished.\r\n[LOG] Thread::callback                         : FMOD mixer thread finished.\r\n[LOG] SystemI::close                           : Closed.\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- fmod_editor.log	(revision bca36bfe9168c1fe349f6fed639edbfa8fa364b7)
++++ fmod_editor.log	(date 1611148086829)
+@@ -7,7 +7,7 @@
+ [LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
+ [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
+ [LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x8000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
+-[LOG] AsyncManager::init                       : manager 0000019BAB2B3538 isAsync 0 updatePeriod 0.02
++[LOG] AsyncManager::init                       : manager 000001A1BACD39B8 isAsync 0 updatePeriod 0.02
+ [LOG] AsyncManager::init                       : done
+ [LOG] PlaybackSystem::init                     : 
+ [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
+@@ -21,10 +21,3 @@
+ [LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 135)
+ [LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 135)
+ [LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
+-[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
+-[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
+-[LOG] LiveUpdate::release                      : 
+-[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
+-[LOG] Thread::callback                         : FMOD stream thread finished.
+-[LOG] Thread::callback                         : FMOD mixer thread finished.
+-[LOG] SystemI::close                           : Closed.
+diff --git .idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_01_2021_10_44__Default_Changelist_1.xml .idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_01_2021_10_44__Default_Changelist_1.xml
+diff --git .idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Update_at_16_01_2021_10_45__Default_Changelist_.xml .idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Update_at_16_01_2021_10_45__Default_Changelist_.xml
+diff --git .idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_01_2021_12_58__Revert___.xml .idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_01_2021_12_58__Revert___.xml
+diff --git .idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Update_at_18_01_2021_19_27__Revert___.xml .idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Update_at_18_01_2021_19_27__Revert___.xml
+diff --git .idea/.idea.Swarm/.idea/shelf/Default_Changelist3.xml .idea/.idea.Swarm/.idea/shelf/Default_Changelist3.xml
+diff --git .idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_01_2021_10_50__Revert___.xml .idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_01_2021_10_50__Revert___.xml
+diff --git .idea/.idea.Swarm/.idea/shelf/Default_Changelist2.xml .idea/.idea.Swarm/.idea/shelf/Default_Changelist2.xml
+diff --git .idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_01_2021_10_49__Default_Changelist_.xml .idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_01_2021_10_49__Default_Changelist_.xml
+diff --git .idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_01_2021_10_44__Default_Changelist_.xml .idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_01_2021_10_44__Default_Changelist_.xml
+diff --git .idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Update_at_16_01_2021_10_47__Default_Changelist_.xml .idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Update_at_16_01_2021_10_47__Default_Changelist_.xml
