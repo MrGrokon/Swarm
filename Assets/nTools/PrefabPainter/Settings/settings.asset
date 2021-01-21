@@ -17,7 +17,7 @@ MonoBehaviour:
     brushes:
     - name: Hautes-Herbes
       settings:
-        brushRadius: 1
+        brushRadius: 11.59
         brushSpacing: 3.55
         brushOverallScale: 1
         brushOverlapCheck: 0
@@ -1215,11 +1215,11 @@ MonoBehaviour:
       - gameObject: {fileID: 0}
       - gameObject: {fileID: 0}
       selectedSlot: 1
-      selected: 1
+      selected: 0
       colorTag: 0
     - name: Grass_VarA
       settings:
-        brushRadius: 9
+        brushRadius: 13.25
         brushSpacing: 0.5
         brushOverallScale: 1
         brushOverlapCheck: 0
@@ -1348,7 +1348,7 @@ MonoBehaviour:
       - gameObject: {fileID: 0}
       - gameObject: {fileID: 0}
       selectedSlot: 0
-      selected: 0
+      selected: 1
       colorTag: 0
   - name: Decals
     brushes:
@@ -2690,7 +2690,7 @@ MonoBehaviour:
   ppSnapScaleValue: 0.1
   ppSnapRotation: 1
   ppSnapScale: 1
-  eraseBrushRadius: 3.2
+  eraseBrushRadius: 10.88
   eraseByLayer: 0
   eraseLayers:
     serializedVersion: 2

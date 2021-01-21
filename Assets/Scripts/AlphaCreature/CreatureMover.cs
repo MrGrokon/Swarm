@@ -2,13 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering.PostProcessing;
 
 public class CreatureMover : MonoBehaviour
 {
     private Rigidbody _rb;
+    [SerializeField] private PostProcessVolume PS;
 
     public float speedMultiplier;
     public float maxSpeedMultiplier;
+    public float normalFOV;
+    public float runningFOV;
     [SerializeField] private float multiplierAddedAtEachInput;
     [SerializeField] private float multiplierLosseOverTime;
     public float speed;
@@ -24,12 +28,19 @@ public class CreatureMover : MonoBehaviour
 
     [SerializeField] private ParticleSystem playerStepPS;
     [SerializeField] private ParticleSystem playerSpeedPS;
+    private float lerpStep = 1;
+    private float actualLerpStep;
+    private float returnLerpStep = 0.5f;
+    private float actualReturnLerpStep;
+    private float magnitude;
+    private ChromaticAberration CA = null;
 
     #region Unity Functions
     void Start()
     {
         speed = 0;
         _rb = GetComponent<Rigidbody>();
+        PS.profile.TryGetSettings(out CA);
     }
 
     
@@ -87,13 +98,27 @@ public class CreatureMover : MonoBehaviour
             GetComponent<Renderer>().material.color = Color.white;
             
         }
-
-        if (_rb.velocity.magnitude > 0.5f && speedMultiplier > 1.2f)
+        if (speedMultiplier > 1)
         {
+            actualReturnLerpStep = 0;
+            if (actualLerpStep < lerpStep)
+            {
+                actualLerpStep += 1*Time.deltaTime;
+            }
+            Camera.main.fieldOfView = Mathf.Lerp(60, runningFOV, actualLerpStep/lerpStep);
+            CA.intensity.value = Mathf.Lerp(0, 1, actualLerpStep / lerpStep);
             playerSpeedPS.Play();
         }
-        else
+        else if (speedMultiplier <= 1 || _rb.velocity.magnitude == 0)
         {
+            actualLerpStep = 0;
+            if (actualReturnLerpStep < returnLerpStep)
+            {
+                actualReturnLerpStep += 1*Time.deltaTime;
+            }
+
+            CA.intensity.value = Mathf.Lerp(1, 0, actualReturnLerpStep/returnLerpStep);
+            Camera.main.fieldOfView = Mathf.Lerp(runningFOV, normalFOV, actualReturnLerpStep/returnLerpStep);
             playerSpeedPS.Stop();
         }
         
@@ -104,7 +129,7 @@ public class CreatureMover : MonoBehaviour
 
     private void SprintStateManager()
     {
-        playerStepPS.Play();
+        //playerStepPS.Play();
         print(1);
         switch (sprintState)
         {

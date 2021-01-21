@@ -786,6 +786,9 @@
                 <e p="Skybox-Cubed.shader" t="Include" />
                 <e p="Skybox.shader" t="Include" />
               </e>
+              <e p="Moons" t="Include">
+                <e p="Moon_Decal.shader" t="Include" />
+              </e>
             </e>
             <e p="Water" t="Include">
               <e p="NewUnlitShader.shader" t="Include" />
