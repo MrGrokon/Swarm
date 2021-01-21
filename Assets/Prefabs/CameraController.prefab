@@ -45,12 +45,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraSpeed: 80
-  maxX: 45
-  minX: -45
   inversedControl: 0
-  Follow: {fileID: 0}
   offset: {x: -2, y: 2, z: 0}
   PlayerRef: {fileID: 0}
+  rotation: {x: 0, y: 0}
 --- !u!1 &9171322782753937883
 GameObject:
   m_ObjectHideFlags: 0
@@ -61,7 +59,6 @@ GameObject:
   m_Component:
   - component: {fileID: 9171322782753937880}
   - component: {fileID: 9171322782753937894}
-  - component: {fileID: 9171322782753937881}
   - component: {fileID: 9171322782753937895}
   m_Layer: 0
   m_Name: Camera
@@ -127,14 +124,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &9171322782753937881
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9171322782753937883}
-  m_Enabled: 1
 --- !u!114 &9171322782753937895
 MonoBehaviour:
   m_ObjectHideFlags: 0
