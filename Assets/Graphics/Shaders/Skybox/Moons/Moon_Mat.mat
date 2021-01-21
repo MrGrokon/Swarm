@@ -65,7 +65,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _BumpScale: 1
-    - _Cutoff: 0.62
+    - _Cutoff: 0.69
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _GlossMapScale: 1
@@ -78,7 +78,7 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _TintMultiplier: 1
+    - _TintMultiplier: 1.2
     - _UVSec: 0
     - _ZWrite: 1
     - __dirty: 0
