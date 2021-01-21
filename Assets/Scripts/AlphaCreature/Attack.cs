@@ -117,7 +117,8 @@ public class Attack : MonoBehaviour
         if (obj)
         {
             _ressource.GainRessource(RessourceManager.Resource.Hunger, 20f);
-            PackManager.packInstance.gameObject.GetComponent<GeneratePrey>().listOfPrey.Remove(obj.gameObject);
+            if(PackManager.packInstance)
+                PackManager.packInstance.gameObject.GetComponent<GeneratePrey>().listOfPrey.Remove(obj.gameObject);
             print(obj);
             obj.GetComponent<PreyLife>().ApplyDammage(1);
             
