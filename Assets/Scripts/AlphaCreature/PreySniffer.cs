@@ -25,7 +25,7 @@ public class PreySniffer : MonoBehaviour
                     //this will sort the arrey so ProofList[0] will always be the closest to the alpha
                     ProofsList.OrderBy(x => Vector3.Distance(this.transform.position, x.transform.position));
                     ProofsList[0].GetComponent<TrackRenderer>().UseTrack();
-                    ProofsList[0].GetComponent<MeshRenderer>().material.SetColor("ACTIC", Color.white);
+                    //ProofsList[0].GetComponent<MeshRenderer>().material.SetColor("ACTIC", Color.white);
                 }
             }
             #region InputReseter

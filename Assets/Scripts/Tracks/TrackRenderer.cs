@@ -17,8 +17,7 @@ public class TrackRenderer : MonoBehaviour
     public float TimeToBeDisplayed = 5f;
     private float TimePassed = 0f;
     private bool IsDisplayed = false;
-
-    private LineRenderer _Line;
+    
 
     [SerializeField] private GameObject lastPrevisuMesh;
 
@@ -28,12 +27,6 @@ public class TrackRenderer : MonoBehaviour
     #region Unity Functions
     void Start()
     {
-        _Line = this.transform.GetChild(1).GetComponent<LineRenderer>();
-        if(_Line == null){
-            _Line.enabled = false;
-            Debug.Log("Error: _LineRenderer not defined for " + this.name + " child");
-            
-        }
 
         GetComponentInChildren<MeshRenderer>().enabled = false;
 
@@ -74,25 +67,12 @@ public class TrackRenderer : MonoBehaviour
         //drawn the track Info toward the next target or prey
         Debug.DrawLine(this.transform.position, PositionTargeted, Color.magenta);
 
-        #region track info by line renderer
-        if(DebugLineRenderer){
-            _Line.enabled = true;
-        // _nextPos not right but Debug.drawnLine working pretty well, to be solved later
-        Vector3 _nextPos = (this.transform.position - PositionTargeted ) * DistanceToPoint;
-        _Line.SetPosition(0, this.transform.position);
-        _Line.SetPosition(1, PositionTargeted);
-        _Line.startColor = GetGradientColorOverFreshness();
-        _Line.endColor = GetGradientColorOverFreshness();
-        }
-        #endregion
-        
         //TODO: Theo changes
         CreateVisualMesh();
     }
 
     private void EraseTrail(){ 
         IsDisplayed = false;
-        _Line.enabled = false;
         TimePassed = 0f;
     }
 

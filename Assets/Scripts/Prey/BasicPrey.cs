@@ -104,32 +104,12 @@ public class BasicPrey : PreyAiManager
         switch (_state)
         {
             case PreyStates.Flee:
-                //If i found an Enemy
-                Debug.Log("Prey spot the player");
-
-                //TODO: Test au moment de la detection, selon les behavior a mettre en place:
-                //  -chercher à se cacher
-                //  -fuire vers le reste de la meute
-                //  -...
-
+                Vector3 FleeMotion = (transform.position - Objects.Instance.Alpha.transform.position).normalized * 5f;
+                NavMesh.SamplePosition(FleeMotion, out NavMeshHit hit, 10f, 1);
+                _nm_Agent.SetDestination(hit.position);
                 _animator.SetBool("IsRunning", true);
                 Dust_PS.Play();
-                //ce vector pointe parfois dans la direction du joueur, ce qui implique que le joueur peu la toucher sur son chemin de fuite
-                Vector3 FleeMotion = (Objects.Instance.Alpha.transform.position - this.transform.position).normalized * -5;
-                NavMesh.SamplePosition(FleeMotion, out NavMeshHit hit, 1f, 1);
-                Vector3 randomPositionInsideSphere = hit.position + Random.insideUnitSphere * 5f;
-                if (_nm_Agent.CalculatePath(hit.position, new NavMeshPath()))
-                {
-                    _nm_Agent.SetDestination(hit.position);
-                }
-                else
-                {
-                    _nm_Agent.SetDestination(transform.position);
-                }
-                _nm_Agent.SetDestination(hit.position);
-                print("destination : " +_nm_Agent.destination);
                 actualFleeTime = fleeTime;
-
                 break;
         }
     }

@@ -19,35 +19,16 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="748aedf3-fec8-4234-a47f-1d701d1809ba" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/indexLayout.xml" afterDir="false" />
+    <list default="true" id="748aedf3-fec8-4234-a47f-1d701d1809ba" name="Default Changelist" comment="Base files for proposition">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AmplifyShaderEditor/Plugins/EditorResources/Templates/CustomRTTemplates.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AmplifyShaderEditor/Plugins/EditorResources/Templates/HDSRPTemplates.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AmplifyShaderEditor/Plugins/EditorResources/Templates/LWSRPTemplates.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AmplifyShaderEditor/Plugins/EditorResources/Templates/PPStackTemplates.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AmplifyShaderEditor/Plugins/EditorResources/Templates/SRP (Legacy)/HDSRPTemplates 3xx (Legacy).unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AmplifyShaderEditor/Plugins/EditorResources/Templates/SRP (Legacy)/HDSRPTemplates 4xx (Legacy).unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AmplifyShaderEditor/Plugins/EditorResources/Templates/SRP (Legacy)/HDSRPTemplates 572 (Legacy).unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AmplifyShaderEditor/Plugins/EditorResources/Templates/SRP (Legacy)/HDSRPTemplates 5xx (Legacy).unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AmplifyShaderEditor/Plugins/EditorResources/Templates/SRP (Legacy)/HDSRPTemplates 6xx (Legacy).unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AmplifyShaderEditor/Plugins/EditorResources/Templates/SRP (Legacy)/LWSRPTemplates 3xx (Legacy).unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AmplifyShaderEditor/Plugins/EditorResources/Templates/SRP (Legacy)/LWSRPTemplates 4xx (Legacy).unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AmplifyShaderEditor/Plugins/EditorResources/Templates/USRPTemplates.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FMOD/SoundList/Build.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FMOD/SoundList/SoundList.fspro.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Shaders/Water/Water.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Graphics/Shaders/Water/Water.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Shaders/Water/Water.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Graphics/Shaders/Water/Water.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/New Terrain 2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/New Terrain 2.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NewLayer.terrainlayer" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NewLayer.terrainlayer" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/FMOD/Resources/FMODStudioSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/FMOD/Resources/FMODStudioSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Deprecated/Track.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Deprecated/Track.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Bastien_LD2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Bastien_LD2.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Bastien_LD2/NavMesh.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Bastien_LD2/NavMesh.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CreatureMover.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CreatureMover.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/nTools/PrefabPainter/Settings/settings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/nTools/PrefabPainter/Settings/settings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/Attack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/Attack.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/PreySniffer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/PreySniffer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Prey/BasicPrey.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Prey/BasicPrey.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Prey/Craintive.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Prey/Craintive.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Prey/Robuste.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Prey/Robuste.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tracks/TrackRenderer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tracks/TrackRenderer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -72,6 +53,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Prey/Terrier.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Prey/Craintive.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://F:/UnityProject/CsLike/CsLike/Assets/Scripts/BotTargeting.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Théo/Documents/GitHub/Swarm/Swarm/Assets/Scripts/Prey/Robuste.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CharacterController/InputTester.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Prey/Robuste.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CharacterController/PlayerInputs.cs" root0="FORCE_HIGHLIGHTING" />
@@ -101,7 +83,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Prey/FieldOfViewEditor.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/BetaCreature_Creator.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/PackOrderer.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/PreySniffer.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/RessourceManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/BetaCreature/CreatureIntelligence.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Common/HealthSysteme.cs" />
@@ -128,17 +109,18 @@
         <option value="$PROJECT_DIR$/Assets/herdManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CharacterController/PlayerInputs.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Prey/PreyAiManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Tracks/TrackRenderer.cs" />
         <option value="$PROJECT_DIR$/Assets/TrackDetector.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Managers/GeneratePrey.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Prey/Terrier.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CameraRotate.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/NoiseEmitter.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/Attack.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Prey/Craintive.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Prey/Robuste.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Prey/BasicPrey.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CreatureMover.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Prey/Robuste.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Prey/Craintive.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Prey/BasicPrey.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Tracks/TrackRenderer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/PreySniffer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/Attack.cs" />
       </list>
     </option>
   </component>
@@ -262,7 +244,7 @@
       <workItem from="1611149216914" duration="1547000" />
       <workItem from="1611163078572" duration="337000" />
       <workItem from="1611231145045" duration="182000" />
-      <workItem from="1611252473683" duration="3363000" />
+      <workItem from="1611252473683" duration="7205000" />
     </task>
     <task id="LOCAL-00001" summary="Camera system implémenté">
       <created>1606123669149</created>
@@ -558,7 +540,21 @@
       <option name="project" value="LOCAL" />
       <updated>1611231282747</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="Base files for proposition">
+      <created>1611263637179</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1611263637179</updated>
+    </task>
+    <task id="LOCAL-00044" summary="Base files for proposition">
+      <created>1611263657233</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1611263657233</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -590,7 +586,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value=" 1.0.0.0 : Ajout d'un émetteur de son sur le joueur, changement de la détection du son par les proies, ajout des éléments de LD suivant : hautes-herbes, rochers" />
     <MESSAGE value="1.0.0.0b : Ajout de l'arbre grimpable ainsi que la possibilité d'attaquer depuis ce dernier, Ajout de la couleur de fraicheur de la traçe (nécessitera un petit fix sur la couleur), Changement du scripts d'attaque pour qu'un script extérieur puisse invoquer l'attaque du joueur, Ajout d'une touche de grimpe pour le joueur'" />
     <MESSAGE value=" 1.0.1.4 : Ajout de la rotation de la caméra sur l'axe X" />
     <MESSAGE value="Meta manquant" />
@@ -615,7 +610,8 @@
     <MESSAGE value="Update du gitIgnore" />
     <MESSAGE value="[1.2.0.6] Correction de la boucle infini lié à la fuite des proies -&gt; Fuite moins smooth et risque que les proies se bloquent elle-mêmes" />
     <MESSAGE value="Réparation du navmesh" />
-    <option name="LAST_COMMIT_MESSAGE" value="Réparation du navmesh" />
+    <MESSAGE value="Base files for proposition" />
+    <option name="LAST_COMMIT_MESSAGE" value="Base files for proposition" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2282" y="65" key="CommitChangelistDialog2" timestamp="1611148277767">
@@ -655,10 +651,10 @@
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="92" y="132" width="1736" height="856" key="VCS.FileHistoryDialog/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1609519868736" />
-    <state x="2334" y="249" key="Vcs.Push.Dialog.v2" timestamp="1611231283235">
-      <screen x="1920" y="40" width="1440" height="860" />
+    <state x="552" y="293" key="Vcs.Push.Dialog.v2" timestamp="1611273091906">
+      <screen x="0" y="40" width="1920" height="1040" />
     </state>
-    <state x="552" y="293" key="Vcs.Push.Dialog.v2/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1610893394790" />
+    <state x="552" y="293" key="Vcs.Push.Dialog.v2/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1611273091906" />
     <state x="2334" y="249" key="Vcs.Push.Dialog.v2/0.40.1920.1040/1920.40.1440.860@1920.40.1440.860" timestamp="1611231283235" />
     <state x="2503" y="399" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1611163086025">
       <screen x="1920" y="40" width="1440" height="860" />
