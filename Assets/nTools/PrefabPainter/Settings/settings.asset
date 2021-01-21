@@ -279,7 +279,7 @@ MonoBehaviour:
       - gameObject: {fileID: 0}
       - gameObject: {fileID: 0}
       selectedSlot: 0
-      selected: 0
+      selected: 1
       colorTag: 0
     - name: ObstacleTree1
       settings:
@@ -1085,7 +1085,7 @@ MonoBehaviour:
       colorTag: 0
     - name: Pinetree_VarA
       settings:
-        brushRadius: 20
+        brushRadius: 3.5
         brushSpacing: 5
         brushOverallScale: 1
         brushOverlapCheck: 0
@@ -1215,7 +1215,7 @@ MonoBehaviour:
       - gameObject: {fileID: 0}
       - gameObject: {fileID: 0}
       selectedSlot: 1
-      selected: 1
+      selected: 0
       colorTag: 0
     - name: Grass_VarA
       settings:
