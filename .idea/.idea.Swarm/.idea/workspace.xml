@@ -20,6 +20,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="748aedf3-fec8-4234-a47f-1d701d1809ba" name="Default Changelist" comment="Fix de l'attaque">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_01_2021_10_49__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_01_2021_10_49__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_01_2021_10_50__Revert___.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_01_2021_10_50__Revert___.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_01_2021_12_58__Revert___.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_01_2021_12_58__Revert___.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Update_at_18_01_2021_19_27__Revert___.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Update_at_18_01_2021_19_27__Revert___.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Update_at_20_01_2021_14_09__Revert___.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Update_at_20_01_2021_14_09__Revert___.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Update_at_20_01_2021_14_09__Revert___1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Update_at_20_01_2021_14_09__Revert___1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Update_at_20_01_2021_14_10__Revert___.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Update_at_20_01_2021_14_10__Revert___.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Update_at_20_01_2021_14_12__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Update_at_20_01_2021_14_12__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Update_at_20_01_2021_14_22__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Update_at_20_01_2021_14_22__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Update_at_20_01_2021_18_18__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/Uncommitted_changes_before_Update_at_20_01_2021_18_18__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/unnamed1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/unnamed1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/unnamed2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/shelf/unnamed2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/NewScene/Graphics.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/NewScene/nTools/PrefabPainter.meta" beforeDir="false" />
     </list>
@@ -45,21 +58,18 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Prey/Terrier.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Prey/Craintive.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://F:/UnityProject/CsLike/CsLike/Assets/Scripts/BotTargeting.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Théo/Documents/GitHub/Swarm/Swarm/Assets/Scripts/Prey/Robuste.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CharacterController/InputTester.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Prey/Robuste.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Théo/Documents/GitHub/Swarm/Swarm/Assets/Scripts/AlphaCreature/Attack.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CharacterController/PlayerInputs.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/GeneratePrey.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://F:/UnityProject/CsLike/CsLike/Assets/Scripts/BotDetection.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Prey/BasicPrey.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/LevelManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/BetaCreature/IntelligenceInterface.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/Objects.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Prey/PreyLife.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Théo/Documents/GitHub/Swarm/Swarm/Assets/Scripts/Prey/BasicPrey.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.0.0/InputSystem/Utilities/DelegateHelpers.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ClimbableTree.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/LevelManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/AlphaCreature/Attack.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -240,6 +250,7 @@
       <workItem from="1611163078572" duration="337000" />
       <workItem from="1611231145045" duration="182000" />
       <workItem from="1611252473683" duration="10036000" />
+      <workItem from="1611351374836" duration="668000" />
     </task>
     <task id="LOCAL-00001" summary="Camera system implémenté">
       <created>1606123669149</created>
