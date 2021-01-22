@@ -5147,8 +5147,8 @@ GameObject:
   m_Component:
   - component: {fileID: 617887557151187510}
   - component: {fileID: 8694803894544275544}
-  - component: {fileID: 6575628024041508880}
   - component: {fileID: 9002342232859413828}
+  - component: {fileID: 1702546123941322377}
   m_Layer: 8
   m_Name: Grass_VarA
   m_TagString: Bushes
@@ -5190,7 +5190,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5.4706955, y: 5.177122, z: 4.339536}
   m_Center: {x: 0.4883889, y: 2.088561, z: -0.59007925}
---- !u!95 &6575628024041508880
+--- !u!114 &9002342232859413828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4552889971176359370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 321a42ca72f1c7c48aa44503afa0e141, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &1702546123941322377
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -5209,18 +5221,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &9002342232859413828
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4552889971176359370}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 321a42ca72f1c7c48aa44503afa0e141, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7098453305674720715
 GameObject:
   m_ObjectHideFlags: 0
