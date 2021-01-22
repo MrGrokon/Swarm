@@ -61,7 +61,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _BaseOpacity: 0.579
-    - _BaseScale: 20.2
+    - _BaseScale: 200
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DecalStrength: 0.51
