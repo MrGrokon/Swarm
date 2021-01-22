@@ -137,6 +137,30 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""FirstPart"",
+                    ""type"": ""Button"",
+                    ""id"": ""a0bd92bf-06cb-43fd-959e-9a867057784a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""SecondPart"",
+                    ""type"": ""Button"",
+                    ""id"": ""d1cbe70e-9ecd-44ec-86bf-0d8375ffca43"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""ThirdPart"",
+                    ""type"": ""Button"",
+                    ""id"": ""3f48b124-3a58-4179-9fdd-e49825989f32"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -304,6 +328,39 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                     ""action"": ""Reset"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ac11f887-844a-48ae-bd37-49294c6f373e"",
+                    ""path"": ""<Keyboard>/f1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""FirstPart"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ab2c9a81-f7f8-4e9d-ba59-4289eb78ad08"",
+                    ""path"": ""<Keyboard>/f2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SecondPart"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ae2123bd-7568-4413-aef3-b36a4d0c5a82"",
+                    ""path"": ""<Keyboard>/f3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ThirdPart"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -339,6 +396,9 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
         m_Actions_SwitchTarget = m_Actions.FindAction("SwitchTarget", throwIfNotFound: true);
         m_Actions_Climb = m_Actions.FindAction("Climb", throwIfNotFound: true);
         m_Actions_Targeting = m_Actions.FindAction("Targeting", throwIfNotFound: true);
+        m_Actions_FirstPart = m_Actions.FindAction("FirstPart", throwIfNotFound: true);
+        m_Actions_SecondPart = m_Actions.FindAction("SecondPart", throwIfNotFound: true);
+        m_Actions_ThirdPart = m_Actions.FindAction("ThirdPart", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -403,6 +463,9 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
     private readonly InputAction m_Actions_SwitchTarget;
     private readonly InputAction m_Actions_Climb;
     private readonly InputAction m_Actions_Targeting;
+    private readonly InputAction m_Actions_FirstPart;
+    private readonly InputAction m_Actions_SecondPart;
+    private readonly InputAction m_Actions_ThirdPart;
     public struct ActionsActions
     {
         private @PlayerInputs m_Wrapper;
@@ -422,6 +485,9 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
         public InputAction @SwitchTarget => m_Wrapper.m_Actions_SwitchTarget;
         public InputAction @Climb => m_Wrapper.m_Actions_Climb;
         public InputAction @Targeting => m_Wrapper.m_Actions_Targeting;
+        public InputAction @FirstPart => m_Wrapper.m_Actions_FirstPart;
+        public InputAction @SecondPart => m_Wrapper.m_Actions_SecondPart;
+        public InputAction @ThirdPart => m_Wrapper.m_Actions_ThirdPart;
         public InputActionMap Get() { return m_Wrapper.m_Actions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -476,6 +542,15 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                 @Targeting.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnTargeting;
                 @Targeting.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnTargeting;
                 @Targeting.canceled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnTargeting;
+                @FirstPart.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnFirstPart;
+                @FirstPart.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnFirstPart;
+                @FirstPart.canceled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnFirstPart;
+                @SecondPart.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnSecondPart;
+                @SecondPart.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnSecondPart;
+                @SecondPart.canceled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnSecondPart;
+                @ThirdPart.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnThirdPart;
+                @ThirdPart.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnThirdPart;
+                @ThirdPart.canceled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnThirdPart;
             }
             m_Wrapper.m_ActionsActionsCallbackInterface = instance;
             if (instance != null)
@@ -525,6 +600,15 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                 @Targeting.started += instance.OnTargeting;
                 @Targeting.performed += instance.OnTargeting;
                 @Targeting.canceled += instance.OnTargeting;
+                @FirstPart.started += instance.OnFirstPart;
+                @FirstPart.performed += instance.OnFirstPart;
+                @FirstPart.canceled += instance.OnFirstPart;
+                @SecondPart.started += instance.OnSecondPart;
+                @SecondPart.performed += instance.OnSecondPart;
+                @SecondPart.canceled += instance.OnSecondPart;
+                @ThirdPart.started += instance.OnThirdPart;
+                @ThirdPart.performed += instance.OnThirdPart;
+                @ThirdPart.canceled += instance.OnThirdPart;
             }
         }
     }
@@ -555,5 +639,8 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
         void OnSwitchTarget(InputAction.CallbackContext context);
         void OnClimb(InputAction.CallbackContext context);
         void OnTargeting(InputAction.CallbackContext context);
+        void OnFirstPart(InputAction.CallbackContext context);
+        void OnSecondPart(InputAction.CallbackContext context);
+        void OnThirdPart(InputAction.CallbackContext context);
     }
 }

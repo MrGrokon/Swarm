@@ -15,12 +15,14 @@ public class PreyAiManager : MonoBehaviour
         Flee,
         Scan
     }
+
     
-    [Header("Basic AI Parameters")]
-    [Range(1f, 3f)]
+    public bool canMove;
+    [Header("Basic AI Parameters")] [Range(0f, 3f)]
     public float ReachingDistance = 1.5f; 
     public PreyStates MyState;
     public PreyProfile MyProfile;
+    public Transform fleePosition;
 
     public NavMeshAgent _nm_Agent;
     public AiDetection myDetector;

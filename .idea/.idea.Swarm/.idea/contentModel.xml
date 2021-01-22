@@ -996,6 +996,7 @@
             <e p="PlayerFieldOfView.cs" t="Include" />
             <e p="SoundRangeEditor.cs" t="Include" />
           </e>
+          <e p="LevelManager.cs" t="Include" />
           <e p="Managers" t="Include">
             <e p="GeneratePrey.cs" t="Include" />
             <e p="Objects.cs" t="Include" />

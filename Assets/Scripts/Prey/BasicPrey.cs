@@ -104,12 +104,19 @@ public class BasicPrey : PreyAiManager
         switch (_state)
         {
             case PreyStates.Flee:
-                Vector3 FleeMotion = (transform.position - Objects.Instance.Alpha.transform.position).normalized * 5f;
-                NavMesh.SamplePosition(FleeMotion, out NavMeshHit hit, 10f, 1);
-                _nm_Agent.SetDestination(hit.position);
-                _animator.SetBool("IsRunning", true);
-                Dust_PS.Play();
-                actualFleeTime = fleeTime;
+                if (fleePosition)
+                {
+                    _nm_Agent.SetDestination(fleePosition.position);
+                }
+                else
+                {
+                    Vector3 FleeMotion = (transform.position - Objects.Instance.Alpha.transform.position).normalized * 5f;
+                    NavMesh.SamplePosition(FleeMotion, out NavMeshHit hit, 10f, 1);
+                    _nm_Agent.SetDestination(hit.position);
+                    _animator.SetBool("IsRunning", true);
+                    Dust_PS.Play();
+                    actualFleeTime = fleeTime;
+                }
                 break;
         }
     }
@@ -157,13 +164,20 @@ public class BasicPrey : PreyAiManager
     
     #region Low Level Functions
 
-    private Vector3 GetRandomRoamingPosition(){
-        //TODO: get a random position on the walkable NavMesh
-        Vector3 _randomPos = Random.insideUnitSphere * 10f + this.transform.position;
-        NavMeshHit _hit;
-        NavMesh.SamplePosition(_randomPos, out _hit, Mathf.Infinity, 1); // 1 == au mask d'area Walkable du navMash
-        return _hit.position;
-    
+    private Vector3 GetRandomRoamingPosition()
+    {
+        if (canMove)
+        {
+            //TODO: get a random position on the walkable NavMesh
+            Vector3 _randomPos = Random.insideUnitSphere * 10f + this.transform.position;
+            NavMeshHit _hit;
+            NavMesh.SamplePosition(_randomPos, out _hit, Mathf.Infinity, 1); // 1 == au mask d'area Walkable du navMash
+            return _hit.position;
+        }
+        else
+            return transform.position;
+
+
     }
 
     private void Change_NMA_Properties(PreyStates _state){
