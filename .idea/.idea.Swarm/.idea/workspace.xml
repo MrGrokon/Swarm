@@ -19,17 +19,16 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="748aedf3-fec8-4234-a47f-1d701d1809ba" name="Default Changelist" comment="Base files for proposition">
+    <list default="true" id="748aedf3-fec8-4234-a47f-1d701d1809ba" name="Default Changelist" comment="Changement du lighting, Ajustement de l'ancre de l'UI, Correction du bug de l'IA qui fuit">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Swarm/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Deprecated/Track.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Deprecated/Track.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Bastien_LD2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Bastien_LD2.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/Attack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/Attack.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/PreySniffer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/PreySniffer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CharacterController/PlayerInputs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CharacterController/PlayerInputs.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CharacterController/PlayerInputs.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CharacterController/PlayerInputs.inputactions" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Prey/BasicPrey.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Prey/BasicPrey.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Prey/Craintive.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Prey/Craintive.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Prey/PreyAiManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Prey/PreyAiManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Prey/Robuste.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Prey/Robuste.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tracks/TrackRenderer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tracks/TrackRenderer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +59,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/GeneratePrey.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://F:/UnityProject/CsLike/CsLike/Assets/Scripts/BotDetection.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Prey/BasicPrey.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/LevelManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/BetaCreature/IntelligenceInterface.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/Objects.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Prey/PreyLife.cs" root0="FORCE_HIGHLIGHTING" />
@@ -70,7 +70,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/DetectPlayer.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Prey/PreyManagerOrWhatEverWeCallIt.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/InputTester.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PreySniffer.cs" />
@@ -108,19 +107,20 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Prey/AiSoundDetection.cs" />
         <option value="$PROJECT_DIR$/Assets/herdManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CharacterController/PlayerInputs.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Prey/PreyAiManager.cs" />
         <option value="$PROJECT_DIR$/Assets/TrackDetector.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Managers/GeneratePrey.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Prey/Terrier.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CameraRotate.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/NoiseEmitter.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/CreatureMover.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Prey/Robuste.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Prey/Craintive.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Prey/BasicPrey.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tracks/TrackRenderer.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/PreySniffer.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AlphaCreature/Attack.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/LevelManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Prey/PreyAiManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Prey/BasicPrey.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Prey/Robuste.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Prey/Craintive.cs" />
       </list>
     </option>
   </component>
@@ -244,7 +244,7 @@
       <workItem from="1611149216914" duration="1547000" />
       <workItem from="1611163078572" duration="337000" />
       <workItem from="1611231145045" duration="182000" />
-      <workItem from="1611252473683" duration="7205000" />
+      <workItem from="1611252473683" duration="8532000" />
     </task>
     <task id="LOCAL-00001" summary="Camera system implémenté">
       <created>1606123669149</created>
@@ -554,7 +554,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611263657233</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="Changement du lighting, Ajustement de l'ancre de l'UI, Correction du bug de l'IA qui fuit">
+      <created>1611273132761</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1611273132761</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -586,7 +593,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="1.0.0.0b : Ajout de l'arbre grimpable ainsi que la possibilité d'attaquer depuis ce dernier, Ajout de la couleur de fraicheur de la traçe (nécessitera un petit fix sur la couleur), Changement du scripts d'attaque pour qu'un script extérieur puisse invoquer l'attaque du joueur, Ajout d'une touche de grimpe pour le joueur'" />
     <MESSAGE value=" 1.0.1.4 : Ajout de la rotation de la caméra sur l'axe X" />
     <MESSAGE value="Meta manquant" />
     <MESSAGE value="1.0.6.0 : Ajout des suppression des tracks over the time" />
@@ -611,7 +617,8 @@
     <MESSAGE value="[1.2.0.6] Correction de la boucle infini lié à la fuite des proies -&gt; Fuite moins smooth et risque que les proies se bloquent elle-mêmes" />
     <MESSAGE value="Réparation du navmesh" />
     <MESSAGE value="Base files for proposition" />
-    <option name="LAST_COMMIT_MESSAGE" value="Base files for proposition" />
+    <MESSAGE value="Changement du lighting, Ajustement de l'ancre de l'UI, Correction du bug de l'IA qui fuit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changement du lighting, Ajustement de l'ancre de l'UI, Correction du bug de l'IA qui fuit" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2282" y="65" key="CommitChangelistDialog2" timestamp="1611148277767">
@@ -651,10 +658,10 @@
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="92" y="132" width="1736" height="856" key="VCS.FileHistoryDialog/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1609519868736" />
-    <state x="552" y="293" key="Vcs.Push.Dialog.v2" timestamp="1611273091906">
+    <state x="552" y="293" key="Vcs.Push.Dialog.v2" timestamp="1611273133112">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
-    <state x="552" y="293" key="Vcs.Push.Dialog.v2/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1611273091906" />
+    <state x="552" y="293" key="Vcs.Push.Dialog.v2/0.40.1920.1040/1920.40.1440.860@0.40.1920.1040" timestamp="1611273133112" />
     <state x="2334" y="249" key="Vcs.Push.Dialog.v2/0.40.1920.1040/1920.40.1440.860@1920.40.1440.860" timestamp="1611231283235" />
     <state x="2503" y="399" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1611163086025">
       <screen x="1920" y="40" width="1440" height="860" />
