@@ -113,10 +113,10 @@ public class BasicPrey : PreyAiManager
                     Vector3 FleeMotion = (transform.position - Objects.Instance.Alpha.transform.position).normalized * 5f;
                     NavMesh.SamplePosition(FleeMotion, out NavMeshHit hit, 10f, 1);
                     _nm_Agent.SetDestination(hit.position);
-                    _animator.SetBool("IsRunning", true);
-                    Dust_PS.Play();
-                    actualFleeTime = fleeTime;
                 }
+                _animator.SetBool("IsRunning", true);
+                Dust_PS.Play();
+                actualFleeTime = fleeTime;
                 break;
         }
     }
